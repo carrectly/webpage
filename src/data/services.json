@@ -1,0 +1,734 @@
+[
+    {
+      "id": 4,
+      "name": "Brake Fluid Flush",
+      "price": 150,
+      "description": ""
+    },
+    {
+      "id": 22,
+      "name": "Jump Start & Battery Replacement",
+      "price": 240,
+      "description": ""
+    },
+    {
+      "id": 24,
+      "name": "Long-Haul Transit",
+      "price": 500,
+      "description": ""
+    },
+    {
+      "id": 25,
+      "name": "Long-Term Vehicle Storage",
+      "price": 70,
+      "description": ""
+    },
+    {
+      "id": 26,
+      "name": "Miscellaneous",
+      "price": 0,
+      "description": ""
+    },
+    {
+      "id": 27,
+      "name": "One Way Transport",
+      "price": 40,
+      "description": ""
+    },
+    {
+      "id": 28,
+      "name": "Paint Correction",
+      "price": 500,
+      "description": ""
+    },
+    {
+      "id": 30,
+      "name": "Panel Repaint",
+      "price": 400,
+      "description": ""
+    },
+    {
+      "id": 31,
+      "name": "PPF Full Car",
+      "price": 3000,
+      "description": ""
+    },
+    {
+      "id": 32,
+      "name": "PPF Full Front",
+      "price": 1500,
+      "description": ""
+    },
+    {
+      "id": 33,
+      "name": "PPF half Front",
+      "price": 650,
+      "description": ""
+    },
+    {
+      "id": 38,
+      "name": "Roundtrip Transport",
+      "price": 70,
+      "description": ""
+    },
+    {
+      "id": 39,
+      "name": "Shampoo Floor Mats",
+      "price": 20,
+      "description": ""
+    },
+    {
+      "id": 40,
+      "name": "Short-Term Vehicle Storage",
+      "price": 15,
+      "description": ""
+    },
+    {
+      "id": 42,
+      "name": "Small Part Replacement",
+      "price": 60,
+      "description": ""
+    },
+    {
+      "id": 43,
+      "name": "Spiff / Light Detail",
+      "price": 120,
+      "description": ""
+    },
+    {
+      "id": 44,
+      "name": "Stickers & Adhesive Removal",
+      "price": 5,
+      "description": ""
+    },
+    {
+      "id": 46,
+      "name": "Tar Removal",
+      "price": 25,
+      "description": ""
+    },
+    {
+      "id": 48,
+      "name": "Tint Removal",
+      "price": 25,
+      "description": ""
+    },
+    {
+      "id": 51,
+      "name": "Tire Installation",
+      "price": 20,
+      "description": ""
+    },
+    {
+      "id": 53,
+      "name": "Tire Storage",
+      "price": 100,
+      "description": ""
+    },
+    {
+      "id": 55,
+      "name": "TPMS Sensor Replacement",
+      "price": 120,
+      "description": ""
+    },
+    {
+      "id": 58,
+      "name": "Wax",
+      "price": 40,
+      "description": ""
+    },
+    {
+      "id": 59,
+      "name": "Wet Sand",
+      "price": 20,
+      "description": ""
+    },
+    {
+      "id": 61,
+      "name": "Wheel Restoration",
+      "price": 150,
+      "description": ""
+    },
+    {
+      "id": 64,
+      "name": "Wrap",
+      "price": 2500,
+      "description": ""
+    },
+    {
+      "id": 65,
+      "name": "Ozone",
+      "price": 20,
+      "description": ""
+    },
+    {
+      "id": 115,
+      "name": "Tire @cost",
+      "price": 143.88,
+      "description": ""
+    },
+    {
+      "id": 68,
+      "name": "Extra Services",
+      "price": 1,
+      "description": "extra services as communicated"
+    },
+    {
+      "id": 111,
+      "name": "Chrome Delete",
+      "price": 0,
+      "description": ""
+    },
+    {
+      "id": 2,
+      "name": "Alignment",
+      "price": 145,
+      "description": ""
+    },
+    {
+      "id": 45,
+      "name": "Synthetic Oil Change",
+      "price": 105,
+      "description": ""
+    },
+    {
+      "id": 69,
+      "name": "Custom Item",
+      "price": 0,
+      "description": "service that's not on the list"
+    },
+    {
+      "id": 112,
+      "name": "Dealership Run",
+      "price": 70,
+      "description": ""
+    },
+    {
+      "id": 18,
+      "name": "Headlight Restoration",
+      "price": 90,
+      "description": ""
+    },
+    {
+      "id": 8,
+      "name": "Ceramic Coating & Correction",
+      "price": 1300,
+      "description": ""
+    },
+    {
+      "id": 106,
+      "name": "Deluxe Wash (Luxury Sedan & SUV)",
+      "price": 40,
+      "description": ""
+    },
+    {
+      "id": 6,
+      "name": "Brake Pads Replacement",
+      "price": 270,
+      "description": ""
+    },
+    {
+      "id": 71,
+      "name": "Part Replacement - Battery",
+      "price": 0,
+      "description": ""
+    },
+    {
+      "id": 72,
+      "name": "Labor Hours",
+      "price": 0,
+      "description": ""
+    },
+    {
+      "id": 21,
+      "name": "Jump Start",
+      "price": 50,
+      "description": ""
+    },
+    {
+      "id": 5,
+      "name": "Brake Pads (x2) & Rotors (x2)",
+      "price": 480,
+      "description": ""
+    },
+    {
+      "id": 109,
+      "name": "Multi-point inspection",
+      "price": 140,
+      "description": ""
+    },
+    {
+      "id": 107,
+      "name": "Body Work",
+      "price": 0,
+      "description": ""
+    },
+    {
+      "id": 10,
+      "name": "Deluxe Wash (Small Sedan)",
+      "price": 35,
+      "description": ""
+    },
+    {
+      "id": 105,
+      "name": "Gas Fill Up (cost)",
+      "price": 0,
+      "description": ""
+    },
+    {
+      "id": 49,
+      "name": "Tire Rotation",
+      "price": 70,
+      "description": ""
+    },
+    {
+      "id": 149,
+      "name": "Auto Leather Repair",
+      "price": 100,
+      "description": ""
+    },
+    {
+      "id": 35,
+      "name": "Protective Floor Wrap",
+      "price": 4,
+      "description": ""
+    },
+    {
+      "id": 29,
+      "name": "PDR (Paintless Dent Removal)",
+      "price": 0,
+      "description": ""
+    },
+    {
+      "id": 164,
+      "name": "Labor Cost / hour",
+      "price": 130,
+      "description": ""
+    },
+    {
+      "id": 50,
+      "name": "Tire Fix",
+      "price": 60,
+      "description": ""
+    },
+    {
+      "id": 150,
+      "name": "Car Storage",
+      "price": 500,
+      "description": ""
+    },
+    {
+      "id": 17,
+      "name": "Mechanical Repairs",
+      "price": 0,
+      "description": ""
+    },
+    {
+      "id": 70,
+      "name": "Flat Tire Swap",
+      "price": 60,
+      "description": ""
+    },
+    {
+      "id": 15,
+      "name": "FREE QUOTE",
+      "price": 0,
+      "description": ""
+    },
+    {
+      "id": 16,
+      "name": "Fuel Up",
+      "price": 10,
+      "description": ""
+    },
+    {
+      "id": 19,
+      "name": "Independent Shops' Estimate",
+      "price": 35,
+      "description": ""
+    },
+    {
+      "id": 36,
+      "name": "Recall & Dealership Run",
+      "price": 70,
+      "description": ""
+    },
+    {
+      "id": 47,
+      "name": "Tints",
+      "price": 380,
+      "description": ""
+    },
+    {
+      "id": 52,
+      "name": "Tire Rotation & Balancing",
+      "price": 120,
+      "description": ""
+    },
+    {
+      "id": 54,
+      "name": "TPMS Repair",
+      "price": 120,
+      "description": ""
+    },
+    {
+      "id": 56,
+      "name": "Transmission Fluid Flush",
+      "price": 230,
+      "description": ""
+    },
+    {
+      "id": 57,
+      "name": "Wash & Sealant Wax",
+      "price": 80,
+      "description": ""
+    },
+    {
+      "id": 62,
+      "name": "Wheel Welding",
+      "price": 110,
+      "description": ""
+    },
+    {
+      "id": 63,
+      "name": "Wiper Blade Replacement",
+      "price": 30,
+      "description": ""
+    },
+    {
+      "id": 151,
+      "name": "Car Unlock",
+      "price": 90,
+      "description": ""
+    },
+    {
+      "id": 152,
+      "name": "Deluxe Wash (XL)",
+      "price": 45,
+      "description": ""
+    },
+    {
+      "id": 155,
+      "name": "Find New / Used Tires QUOTE",
+      "price": 0,
+      "description": ""
+    },
+    {
+      "id": 156,
+      "name": "Flooded Carpet Repair",
+      "price": 450,
+      "description": ""
+    },
+    {
+      "id": 157,
+      "name": "FREE Repair Quote",
+      "price": 0,
+      "description": ""
+    },
+    {
+      "id": 158,
+      "name": "Full Synthetic Oil Change",
+      "price": 105,
+      "description": ""
+    },
+    {
+      "id": 159,
+      "name": "Glass Repair",
+      "price": 110,
+      "description": ""
+    },
+    {
+      "id": 160,
+      "name": "Groupon Special",
+      "price": 180,
+      "description": ""
+    },
+    {
+      "id": 161,
+      "name": "Headliner Replacement",
+      "price": 400,
+      "description": ""
+    },
+    {
+      "id": 162,
+      "name": "Inter-State Car shipping",
+      "price": 500,
+      "description": ""
+    },
+    {
+      "id": 166,
+      "name": "Ozone Disinfection",
+      "price": 40,
+      "description": ""
+    },
+    {
+      "id": 168,
+      "name": "Paintless Dent Removal",
+      "price": 125,
+      "description": ""
+    },
+    {
+      "id": 171,
+      "name": "Tire Repair",
+      "price": 60,
+      "description": ""
+    },
+    {
+      "id": 174,
+      "name": "Undercarriage Power Wash",
+      "price": 14,
+      "description": ""
+    },
+    {
+      "id": 175,
+      "name": "Vinyl Wrap",
+      "price": 2500,
+      "description": ""
+    },
+    {
+      "id": 7,
+      "name": "Showroom Detail (Medium & Large)",
+      "price": 375,
+      "description": ""
+    },
+    {
+      "id": 9,
+      "name": "Pet Hair Removal",
+      "price": 35,
+      "description": ""
+    },
+    {
+      "id": 23,
+      "name": "Regular Maintenance (Large / Luxury)",
+      "price": 350,
+      "description": ""
+    },
+    {
+      "id": 167,
+      "name": "Paint Chip Fix / Touch-Up",
+      "price": 130,
+      "description": ""
+    },
+    {
+      "id": 172,
+      "name": "Towing",
+      "price": 150,
+      "description": ""
+    },
+    {
+      "id": 165,
+      "name": "Mini Detail",
+      "price": 125,
+      "description": ""
+    },
+    {
+      "id": 14,
+      "name": "Exterior Detail",
+      "price": 225,
+      "description": ""
+    },
+    {
+      "id": 20,
+      "name": "Interior Detail (Small)",
+      "price": 200,
+      "description": ""
+    },
+    {
+      "id": 34,
+      "name": "Problem Diagnostics",
+      "price": 100,
+      "description": ""
+    },
+    {
+      "id": 169,
+      "name": "Regular Maintenance",
+      "price": 320,
+      "description": ""
+    },
+    {
+      "id": 11,
+      "name": "Pet Hair Removal",
+      "price": 35,
+      "description": ""
+    },
+    {
+      "id": 41,
+      "name": "Showroom Detail",
+      "price": 355,
+      "description": ""
+    },
+    {
+      "id": 13,
+      "name": "Engine Detail",
+      "price": 75,
+      "description": ""
+    },
+    {
+      "id": 12,
+      "name": "Emission Test",
+      "price": 65,
+      "description": ""
+    },
+    {
+      "id": 3,
+      "name": "Battery Jump, Test & Swap",
+      "price": 75,
+      "description": ""
+    },
+    {
+      "id": 154,
+      "name": "Detail & Oil Change",
+      "price": 295,
+      "description": ""
+    },
+    {
+      "id": 153,
+      "name": "Detail & Full Inspection",
+      "price": 325,
+      "description": ""
+    },
+    {
+      "id": 163,
+      "name": "Interior Detail",
+      "price": 225,
+      "description": ""
+    },
+    {
+      "id": 66,
+      "name": "Mini Detail - SUV EXTRA",
+      "price": 15,
+      "description": ""
+    },
+    {
+      "id": 110,
+      "name": "Exterior Detail (XL)",
+      "price": 285,
+      "description": ""
+    },
+    {
+      "id": 113,
+      "name": "Interior Detail (Medium + Large)",
+      "price": 255,
+      "description": ""
+    },
+    {
+      "id": 177,
+      "name": "Winterization",
+      "price": 155,
+      "description": ""
+    },
+    {
+      "id": 60,
+      "name": "Wheel & Tire Storage",
+      "price": 140,
+      "description": ""
+    },
+    {
+      "id": 178,
+      "name": "Ceramic Maintenance Wash",
+      "price": 95,
+      "description": ""
+    },
+    {
+      "id": 179,
+      "name": "Wax - Add on to Interior detail",
+      "price": 40,
+      "description": ""
+    },
+    {
+      "id": 1,
+      "name": "AC Coolant Recharge",
+      "price": 175,
+      "description": "AC not blowing cold on a hot day in Chicago? We can help"
+    },
+    {
+      "id": 37,
+      "name": "Regular Maintenance (S)",
+      "price": 320,
+      "description": ""
+    },
+    {
+      "id": 181,
+      "name": "Car Seat Cleaning",
+      "price": 30,
+      "description": ""
+    },
+    {
+      "id": 180,
+      "name": "Deductible",
+      "price": 0,
+      "description": ""
+    },
+    {
+      "id": 182,
+      "name": "Touch-Ups",
+      "price": 0,
+      "description": ""
+    },
+    {
+      "id": 184,
+      "name": "Interior Detail - Truck & Van EXTRA",
+      "price": 60,
+      "description": ""
+    },
+    {
+      "id": 183,
+      "name": "Interior Detail - SUV EXTRA",
+      "price": 30,
+      "description": ""
+    },
+    {
+      "id": 185,
+      "name": "Exterior Detail - SUV EXTRA",
+      "price": 30,
+      "description": ""
+    },
+    {
+      "id": 186,
+      "name": "Exterior Detail - Truck & Van EXTRA",
+      "price": 60,
+      "description": ""
+    },
+    {
+      "id": 187,
+      "name": "Showroom Detail - SUV EXTRA",
+      "price": 20,
+      "description": ""
+    },
+    {
+      "id": 188,
+      "name": "Showroom Detail - Truck & Van EXTRA",
+      "price": 40,
+      "description": ""
+    },
+    {
+      "id": 67,
+      "name": "Mini Detail - Truck & Van EXTRA",
+      "price": 30,
+      "description": ""
+    },
+    {
+      "id": 108,
+      "name": "Exterior Detail (Medium + Large)",
+      "price": 255,
+      "description": ""
+    },
+    {
+      "id": 114,
+      "name": "Interior Detail (XL)",
+      "price": 285,
+      "description": ""
+    },
+    {
+      "id": 170,
+      "name": "Showroom Detail (XL)",
+      "price": 395,
+      "description": ""
+    },
+    {
+      "id": 189,
+      "name": "Ceramic Maintenance Wash",
+      "price": 95,
+      "description": "95-135"
+    }
+   ]
