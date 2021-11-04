@@ -1,20 +1,34 @@
-import React, { FC } from 'react';
+import React, { ReactNode, FC } from 'react';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
-import styles from '../../../styles/Layout.module.css';
+import Head from 'next/head';
+import { AppBar, Container, Toolbar, Typography, makeStyles, createStyles } from '@mui/material';
+import style from '../Header/Header.module.css'
 
-type children = JSX.Element;
 
-const Layout: FC = ({ children }): JSX.Element => {
+type Props = {
+  children: ReactNode;
+};
+
+
+const Layout: FC<Props> = (props: Props) => {
+  const { children } = props;
+
   return (
     <>
-      <Header />
-      <div className={styles.container}>
-        <main className={styles.main}>
-          <h1>Hello</h1>
-          {children}
-        </main>
-      </div>
+      <Head>
+        <title>Carrectly - Car Service on demand</title>
+        <meta name="andre" content="initial-scale=1, width=device-width" />
+      </Head>
+      <AppBar position="static" className={style.nav}>
+        <Toolbar>
+          <Typography>Carrectly</Typography>
+        </Toolbar>
+
+      </AppBar>
+      <Container>
+        {children}
+      </Container>
       <Footer />
     </>
   );
