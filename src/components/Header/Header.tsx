@@ -1,11 +1,12 @@
 import React from 'react';
 import Link from 'next/link';
 import navStyles from './Header.module.css';
-// import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import { ShoppingCart } from '@mui/icons-material';
+import StyledNavBar from './StyledAppBar';
 
 const Header = () => {
   return (
-    <nav className={navStyles.nav}>
+    <StyledNavBar>
       <ul>
         <li>
           <Link href="/">Home</Link>
@@ -14,10 +15,10 @@ const Header = () => {
           <Link href="/about">About</Link>
         </li>
         <li>
-          <Link href="/services">Text</Link>
+          <Link href="/services"><ShoppingCart/></Link>
         </li>
       </ul>
-    </nav>
+      </StyledNavBar>
   );
 };
 
