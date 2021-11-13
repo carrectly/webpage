@@ -14,6 +14,7 @@ import {
   LinkProps,
   BottomNavigation,
   BottomNavigationAction,
+  Grid
 } from '@mui/material';
 import style from './Layout.module.css';
 import StyledNavBar from '../Header/StyledAppBar';
@@ -41,9 +42,12 @@ const Layout: FC<Props> = (props: Props) => {
     <>
       <Head>
         <title>Carrectly - Car Service on demand</title>
-        <meta name="andre" content="initial-scale=1, width=device-width" />
+        <meta name="author" content="Andre Birkus" />
+        <meta name="keywords" content="car wash, detailing, repair, on demand, deluxe, carwash, body shop, breakes, oil change, cleaning, delivery" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+        <meta property="og:title" content="Carrectly: Chicago Car Wash, Service and Maintenance That Doesn't Suck"/>
       </Head>
-      <Box sx={{ flexGrow: 1 }}>
+      <Box sx={{ display: 'flex', flexDirection: 'column', margin: 0, padding: 0, minHeight: '100vh', width: '100vw' }}>
         <AppBar position="static">
           {/* <Toolbar className={style.nav}> */}
           <Toolbar>
@@ -60,8 +64,8 @@ const Layout: FC<Props> = (props: Props) => {
             </Box>
           </Toolbar>
         </AppBar>
-        <Container>{children}</Container>
-        <BottomNavigation showLabels value={'Developed by AB'} sx={{backgroundColor: 'primary.main'}}>
+        <Grid sx={{margin: 0, padding: 0, height: '100%', width: '100vw' }}>{children}</Grid>
+        <BottomNavigation showLabels value={'Developed by AB'} sx={{backgroundColor: 'primary.main', width: '100vw'}}>
           <BottomNavigationAction label={<span>773.800.9085 | info@carrectly.com</span>} showLabel  sx={{color: 'white'}} />
           <StyledLink href='https://www.facebook.com/Carrectly' target='_blank'><BottomNavigationAction label="Facebook" showLabel  sx={{color: 'white'}} icon={<FacebookIcon color="secondary" />} /></StyledLink>
           <StyledLink href='https://twitter.com/Carrectly' target='_blank'><BottomNavigationAction label="Twitter" showLabel  sx={{color: 'white'}} icon={<TwitterIcon color="secondary" />} /></StyledLink>
