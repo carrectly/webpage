@@ -61,6 +61,12 @@ const Layout: FC<Props> = (props: Props) => {
               <NextLink href="/services" passHref>
                 <StyledLink>Services</StyledLink>
               </NextLink>
+              <NextLink href="/faq" passHref>
+                <StyledLink>FAQ</StyledLink>
+              </NextLink>
+              <NextLink href="/faq" passHref>
+                <StyledLink>Shopping Cart</StyledLink>
+              </NextLink>
             </Box>
           </Toolbar>
         </AppBar>
