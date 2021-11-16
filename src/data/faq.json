@@ -1,0 +1,136 @@
+{
+  "basics": [
+    {
+      "question": "What is Carrectly?",
+      "answer": "We are a team of auto enthusiasts who got frustrated with how hard it was to find a trustworthy mechanic, the waits, the lines, and the hassle of taking cars for services. Carrectly became the solution: we find reliable shops and maintenance centers, schedule repairs with your dealer, drop off, pick up, and service your car. We are also helping honest, reliable service centers get more business."
+    },
+    {
+      "question": "How does it work?",
+      "answer": "(1) Select Round Trip service, One Way delivery, or a Fixed Price package and tell us what needs to be done. \n (2) Pick your preferred service center or let Carrectly choose a trusted partner. \n (3) We come to you, take your car for service, and keep you updated. \n (4) You only pay after the service is completed and your car is returned to you – wherever you are."
+    },
+    {
+      "question": "What services does Carrectly provide?",
+      "answer": "Any kind of auto service, maintenance, or delivery: from an oil change, wash, or refuel to complex repairs that take a few days or more. We handle Round Trip services, One Way pick-ups and drop-offs, rental and loaner returns, and various custom requests."
+    },
+    {
+      "question": "Do you show instant quotes on car repairs?",
+      "answer": "Other than Fixed Priced packages – we do not. There are some sites that claim to give you the “best” quotes on repairs online, before a technician has even examined the car. Often, by giving you an initial low quote to win your business, many repair centers do a poor job, replace cheap parts, or use techniques to upsell you. Carrectly is trying to change this way of doing business. When we receive your request, we send you an email with our best assessment, possible fixes, and a range of prices based on our data, your description, and your location. We don’t want to mislead you with the lowest online quote – as any auto professional would tell you: an honest estimate can only be given after a mechanic inspects the car."
+    },
+    {
+      "question": "Will you charge me more than what the service provider charges?",
+      "answer": "Never. You always know and pay what a service center quotes. In fact, we are often able to secure discounts on services and we pass the savings onto you. The only extra is our pick-up and delivery concierge service charge."
+    },
+    {
+      "question": "I don’t know what’s wrong with my car, can you still fix it?",
+      "answer": "Absolutely. In fact, majority of people don’t know what repairs are needed because there are so many things that can go wrong with most modern cars. Simply describe your problem and we will take your car to a professional technician for diagnostics, keep you informed of the causes, fixes, and costs, and bring it back to you when fixed."
+    },
+    {
+      "question": "Can you take my car to my own dealer, car wash, or shop?",
+      "answer": "Of course. Just tell us where and when to pick it up and drop it off and we will run that errand for you."
+    },
+    {
+      "question": "I don’t have a preferred location, can you find a reliable place and take my car for service?",
+      "answer": "Absolutely! We will take your car to one of our trusted partners located across the city. We spend a lot of time searching for and reviewing reliable shops to service your vehicle so you don’t have to."
+    },
+    {
+      "question": "How do you select your partner centers?",
+      "answer": "We personally evaluate quality of service, use technology to compare prices, account for traffic and availability, and calculate distance, wait, and service times. We also sort through online reviews and evaluate our own customers’ feedback to select local businesses that provide the best quality and price."
+    },
+    {
+      "question": "Who are the concierges?",
+      "answer": "Our professional concierges go through rigorous vetting, as well as background and driving record checks. Every driver is trained to provide exceptional customer service and be ready to ask the right questions at the shop or dealership."
+    },
+    {
+      "question": "Is my car safe with Carrectly?",
+      "answer": "That’s our top priority. All dealers, partner shops, and washes have garage liability and business auto policies while your car is serviced. While en route to and from the service, in addition to your own auto policy, we carry $1MM liability insurance so your car, you, and others are protected. You can have complete peace of mind from pickup to drop-off. Please note: Our concierge will ask for your insurance policy card as it is Illinois law to “always carry your insurance card in your vehicle and show it upon request by any law enforcement officer” (Illinois Secretary of State). More details here: https://www.cyberdriveillinois.com/departments/vehicles/mandatory_insurance.html"
+    },
+    {
+      "question": "Where are you located and what area do you cover?",
+      "answer": "We are located in 222 W. Merchandise Mart Plaza, Chicago, IL 60654. Currently, we only service Chicago and the suburbs."
+    }
+  ],
+  "services": [
+    {
+      "question": "Should I schedule ahead of time or are you available on-demand?",
+      "answer": "We pick up the car from you so you can schedule services whenever it is convenient. Quicker services, such as washes and oil changes, are available last minute, on-demand. However, for us to better plan the logistics and minimize the wait, we encourage you to schedule ahead of time, especially more time-consuming services."
+    },
+    {
+      "question": "How long do services take?",
+      "answer": "It depends. Most common services, including the pickup and delivery back to you take: \n  Washes / Oil Changes / Emission Testing / Tire repair or rotation – around 2 hours \n Detailing / Scheduled Maintenance / Brake Jobs – up to 4 hours."
+    },
+    {
+      "question": "What if I requested a Round Trip service, but it takes more than a few hours?",
+      "answer": "Don’t worry, you won’t pay for all that wait time. Once we are notified that a quick Round Trip service might take longer than expected we will leave the car and pick it up when ready. We want to save you money and concierge’s time, so Carrectly’s quote will only based on One Way mileage or the time our driver was with your car – not the idle wait time."
+    },
+    {
+      "question": "Do you keep me in the know while the car is serviced?",
+      "answer": "Yes, you are updated on the status and/or if there are any repair costs that need your approval."
+    },
+    {
+      "question": "Can you bring me a loaner / car to test drive? Can you drop off my rental car?",
+      "answer": "Yes, we can easily bring and return your dealer’s car to test drive or a loaner. As for rentals – currently, most car rental companies only allow people, whose names are on the initial rental paperwork to drive their vehicles; we are working to change that. For now, if you request us to drop off and fill-up gas for your rental car – we will do so with your permission."
+    }
+  ],
+  "payments": [
+    {
+      "question": "When and how do I pay?",
+      "answer": "We value your trust and are very confident in the quality of the service we provide: you only pay when the service is completed. You will get an email with a receipt and payment information, which you can pay online. Moreover, our concierge will bring a Square app reader to the drop-off location, so you can pay with cash or any credit card then."
+    },
+    {
+      "question": "Do I get a receipt and do I need to tip the concierge driver?",
+      "answer": "A concierge will bring a receipt of the services at drop-off and you will also get an email. You don’t have to tip the driver, but if you feel the service was exceptional our awesome concierges would greatly appreciate it, of course."
+    }
+  ],
+  "changes": [
+    {
+      "question": "Can I change my pick up / drop-off time or location on a reservation?",
+      "answer": "Of course. Email or call us and we will update the details."
+    },
+    {
+      "question": "You are servicing my car but I’ve moved around the city. Can you bring it to a new drop off address?",
+      "answer": "Yes! If the return address is different from the initial pick up – let the concierge know where he or she should meet you next. For example – if you requested an oil change from work and are already home when the car is ready – we will drop it off at your home."
+    },
+    {
+      "question": "Can I cancel a request for service?",
+      "answer": "Sure. Simply let us know at least 1 hour before your scheduled pick-up. There are no fees or penalties. If we have already dispatched a driver – then you only pay for his or her driving time – rarely more than $30."
+    },
+    {
+      "question": "I changed my mind and don’t want Carrectly to service my car?",
+      "answer": "That is also okay. If you decide not to proceed with any services – let us know and we will bring the car back to you without completing any services. There are no fees, you will only pay for our logistics and concierge’s time at $30 / hr."
+    },
+    {
+      "question": "I am not happy about something.",
+      "answer": "Oh no! Unexpected things happen – let us resolve them. Any potential issues or claims with a dealer, service provider, or Carrectly, must be submitted within a day after any service is completed. We will investigate all issues on your behalf and make things right."
+    }
+  ],
+  "info": [
+    {
+      "question": "Where are you located?",
+      "answer": "222 W. Merchandise Mart Plaza. Chicago, IL 60654. We only service Chicago and the close suburbs."
+    },
+    {
+      "question": "What are the hours of operation?",
+      "answer": "Fixed Priced Packages: 8am – 6pm, 7 days a week; Round Trip & One Way services: 8am – 6pm, Mon-Sat"
+    },
+    {
+      "question": "What area do you cover?",
+      "answer": "As of now, we facilitate services and dispatch drivers almost anywhere in Chicago and certain suburbs. We are expanding, so please let us know if you think we should be in your area."
+    },
+    {
+      "question": "Do you have an app?",
+      "answer": "We are working on creating apps on both the Android and Apple platforms. Put your name on our email list and we will update you when those are available. In the meantime, our site is 100% mobile friendly so you can book the services straight from your phone."
+    },
+    {
+      "question": "Can I become part of the team?",
+      "answer": "We love people who feel as enthusiastic about this as we do. Shoot us a line."
+    },
+    {
+      "question": "I have a promo code or want to share Carrectly’s services with friends.",
+      "answer": "Want to share some Carrectly love with friends? Tell them to write your code or name in the Comment Box – they’ll get a discount and you’ll get a bonus. We greatly appreciate your referral! Already have a promo? Make sure to enter it in the Comment Box during booking."
+    },
+    {
+      "question": "Subscriptions / Discounts",
+      "answer": "Loyal customers get discounts and other perks. Corporate and multi car discounts are also available. Send us an email if interested."
+    }
+  ]
+}
