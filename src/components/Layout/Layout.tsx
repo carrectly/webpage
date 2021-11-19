@@ -24,6 +24,7 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import GoogleMapReact from 'google-map-react';
 
 type Props = {
@@ -65,7 +66,7 @@ const Layout: FC<Props> = (props: Props) => {
                 <StyledLink>FAQ</StyledLink>
               </NextLink>
               <NextLink href="/faq" passHref>
-                <StyledLink>Shopping Cart</StyledLink>
+                <StyledLink><ShoppingCartIcon/></StyledLink>
               </NextLink>
             </Box>
           </Toolbar>
