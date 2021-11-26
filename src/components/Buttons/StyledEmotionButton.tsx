@@ -1,8 +1,13 @@
 import styled from '@emotion/styled';
-import { FC } from 'react';
+import { ReactNode } from 'react';
 
 interface IButtonProps {
   backgroundColor: string;
+}
+
+interface StyledEmotionButtonProps {
+  color?: string;
+  children: ReactNode;
 }
 
 const StyledButton = styled.button<IButtonProps>`
@@ -17,9 +22,9 @@ const StyledButton = styled.button<IButtonProps>`
   }
 `;
 
-const StyledEmotionButton: FC = () => {
+const StyledEmotionButton = ({color, children}: StyledEmotionButtonProps): JSX.Element => {
   return (
-    <StyledButton backgroundColor="red">This my button component.</StyledButton>
+    <StyledButton backgroundColor={color}>{children}</StyledButton>
   );
 };
 

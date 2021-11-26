@@ -7,7 +7,6 @@ import { Carousel, CarouselProps } from 'antd';
 import styles from '../../styles/Layout.module.css';
 import styled from '@emotion/styled';
 import { FC } from 'react';
-import BgImage from '../components/BgImage/BgImage';
 
 const contentStyle = {
   height: '160px',

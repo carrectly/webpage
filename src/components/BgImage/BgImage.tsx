@@ -1,4 +1,4 @@
-import Image from "next/image"
+import Image, {ImageProps} from "next/image"
 import styled from '@emotion/styled';
 import React, { ReactNode, FC } from 'react';
 
@@ -12,12 +12,19 @@ interface ContainerProps {
 
 const Container = styled.section<ContainerProps>`
   z-index: -5;
+  position: relative;
+  margin: 5px;
   align-items: ${ props => props.alignItems };
   display: flex;
   justify-content: ${ props => props.justifyContent };
   height: ${ props => props.height };
   width: ${ props => props.width };
 `;
+
+const StyledImage = styled(Image)<ImageProps>`
+  border-radius: 5px;
+`;
+
 
 const InnerContainer = styled.div`
   z-index: 10;
@@ -58,9 +65,9 @@ const BgImage = ({
   children,
   imgalt = 'Background Image',
   imgsrc,
-  height = '50vh',
+  height = '215px',
   justifyContent = 'center',
-  width = '100%'
+  width = '320px'
 }: BgImageProps): JSX.Element => {
 
   return(
@@ -70,15 +77,12 @@ const BgImage = ({
       justifyContent={ justifyContent }
       width={ width }
     >
-      <Image
+      <StyledImage
         alt={ imgalt }
         src={ imgsrc }
-        // layout="fill"
-        // objectFit="cover"
-        // quality={ 80 }
-        layout="responsive"
-        width={700}
-        height={425}
+        layout="fill"
+        objectFit="cover"
+        quality={ 100 }
       />
       { children && 
         <InnerContainer>
