@@ -28,6 +28,8 @@ const StyledImage = styled(Image)<ImageProps>`
 
 const InnerContainer = styled.div`
   z-index: 10;
+  width: 100%;
+  height: 100%;
 `
 
 interface BgImageProps {

@@ -3,276 +3,322 @@
       "id": 4,
       "name": "Brake Fluid Flush",
       "price": 150,
-      "description": ""
+      "description": "",
+      "image": ""
     },
     {
       "id": 22,
       "name": "Jump Start & Battery Replacement",
       "price": 240,
-      "description": ""
+      "description": "",
+      "image": ""
     },
     {
       "id": 24,
       "name": "Long-Haul Transit",
       "price": 500,
+      "image": "",
       "description": ""
     },
     {
       "id": 25,
       "name": "Long-Term Vehicle Storage",
       "price": 70,
+      "image": "",
       "description": ""
     },
     {
       "id": 26,
       "name": "Miscellaneous",
       "price": 0,
+      "image": "",
       "description": ""
     },
     {
       "id": 27,
       "name": "One Way Transport",
       "price": 40,
+      "image": "",
       "description": ""
     },
     {
       "id": 28,
       "name": "Paint Correction",
       "price": 500,
+      "image": "",
       "description": ""
     },
     {
       "id": 30,
       "name": "Panel Repaint",
       "price": 400,
+      "image": "",
       "description": ""
     },
     {
       "id": 31,
       "name": "PPF Full Car",
       "price": 3000,
+      "image": "",
       "description": ""
     },
     {
       "id": 32,
       "name": "PPF Full Front",
       "price": 1500,
+      "image": "",
       "description": ""
     },
     {
       "id": 33,
       "name": "PPF half Front",
       "price": 650,
+      "image": "",
       "description": ""
     },
     {
       "id": 38,
       "name": "Roundtrip Transport",
       "price": 70,
+      "image": "",
       "description": ""
     },
     {
       "id": 39,
       "name": "Shampoo Floor Mats",
       "price": 20,
+      "image": "",
       "description": ""
     },
     {
       "id": 40,
       "name": "Short-Term Vehicle Storage",
       "price": 15,
+      "image": "",
       "description": ""
     },
     {
       "id": 42,
       "name": "Small Part Replacement",
       "price": 60,
+      "image": "",
       "description": ""
     },
     {
       "id": 43,
       "name": "Spiff / Light Detail",
       "price": 120,
+      "image": "",
       "description": ""
     },
     {
       "id": 44,
       "name": "Stickers & Adhesive Removal",
       "price": 5,
+      "image": "",
       "description": ""
     },
     {
       "id": 46,
       "name": "Tar Removal",
       "price": 25,
+      "image": "",
       "description": ""
     },
     {
       "id": 48,
       "name": "Tint Removal",
       "price": 25,
+      "image": "",
       "description": ""
     },
     {
       "id": 51,
       "name": "Tire Installation",
       "price": 20,
+      "image": "",
       "description": ""
     },
     {
       "id": 53,
       "name": "Tire Storage",
       "price": 100,
+      "image": "",
       "description": ""
     },
     {
       "id": 55,
       "name": "TPMS Sensor Replacement",
       "price": 120,
+      "image": "",
       "description": ""
     },
     {
       "id": 58,
       "name": "Wax",
       "price": 40,
+      "image": "",
       "description": ""
     },
     {
       "id": 59,
       "name": "Wet Sand",
       "price": 20,
+      "image": "",
       "description": ""
     },
     {
       "id": 61,
       "name": "Wheel Restoration",
       "price": 150,
+      "image": "",
       "description": ""
     },
     {
       "id": 64,
       "name": "Wrap",
       "price": 2500,
+      "image": "",
       "description": ""
     },
     {
       "id": 65,
       "name": "Ozone",
       "price": 20,
+      "image": "",
       "description": ""
     },
     {
       "id": 115,
       "name": "Tire @cost",
       "price": 143.88,
+      "image": "",
       "description": ""
     },
     {
       "id": 68,
       "name": "Extra Services",
       "price": 1,
+      "image": "",
       "description": "extra services as communicated"
     },
     {
       "id": 111,
       "name": "Chrome Delete",
       "price": 0,
+      "image": "",
       "description": ""
     },
     {
       "id": 2,
       "name": "Alignment",
       "price": 145,
+      "image": "",
       "description": ""
     },
     {
       "id": 45,
       "name": "Synthetic Oil Change",
       "price": 105,
+      "image": "",
       "description": ""
     },
     {
       "id": 69,
       "name": "Custom Item",
       "price": 0,
+      "image": "",
       "description": "service that's not on the list"
     },
     {
       "id": 112,
       "name": "Dealership Run",
       "price": 70,
+      "image": "",
       "description": ""
     },
     {
       "id": 18,
       "name": "Headlight Restoration",
       "price": 90,
+      "image": "",
       "description": ""
     },
     {
       "id": 8,
       "name": "Ceramic Coating & Correction",
       "price": 1300,
+      "image": "",
       "description": ""
     },
     {
       "id": 106,
       "name": "Deluxe Wash (Luxury Sedan & SUV)",
       "price": 40,
+      "image": "",
       "description": ""
     },
     {
       "id": 6,
       "name": "Brake Pads Replacement",
       "price": 270,
+      "image": "",
       "description": ""
     },
     {
       "id": 71,
       "name": "Part Replacement - Battery",
       "price": 0,
+      "image": "",
       "description": ""
     },
     {
       "id": 72,
       "name": "Labor Hours",
       "price": 0,
+      "image": "",
       "description": ""
     },
     {
       "id": 21,
       "name": "Jump Start",
       "price": 50,
+      "image": "",
       "description": ""
     },
     {
       "id": 5,
       "name": "Brake Pads (x2) & Rotors (x2)",
       "price": 480,
+      "image": "",
       "description": ""
     },
     {
       "id": 109,
       "name": "Multi-point inspection",
       "price": 140,
+      "image": "",
       "description": ""
     },
     {
       "id": 107,
       "name": "Body Work",
       "price": 0,
+      "image": "",
       "description": ""
     },
     {
       "id": 10,
       "name": "Deluxe Wash (Small Sedan)",
       "price": 35,
+      "image": "",
       "description": ""
     },
     {
       "id": 105,
       "name": "Gas Fill Up (cost)",
       "price": 0,
+      "image": "",
       "description": ""
     },
     {

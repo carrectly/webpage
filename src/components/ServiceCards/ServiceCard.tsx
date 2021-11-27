@@ -9,23 +9,41 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { Carousel, CarouselProps } from 'antd';
 import BgImage from '../BgImage/BgImage';
-import StyledEmotionButton from '../Buttons/StyledEmotionButton'
+import StyledEmotionButton from '../Buttons/StyledEmotionButton';
 import InfoIcon from '@mui/icons-material/Info';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 
-const ServiceCard = (): JSX.Element => {
+interface ServiceCardProps {
+  name: string;
+}
+
+const Title = styled.div`
+  font-family: roboto, sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 20px;
+  text-transform: uppercase;
+  color: #fff;
+  text-align: left;
+  margin: 0;
+`;
+
+const ServiceCard = ({ name }: ServiceCardProps): JSX.Element => {
   return (
-    <Box
-      display="flex"
-      flexDirection="row"
-      justifyContent="center"
-    >
-      <BgImage imgsrc="/images/wp_images/7-scaled.jpg" imgalt="test">
-        <Typography variant="h3">Testing here</Typography>
-        <StyledEmotionButton color="white">More <InfoIcon/></StyledEmotionButton>
-        <StyledEmotionButton color="purple">Add <AddCircleOutlineIcon/></StyledEmotionButton>
-      </BgImage>
-    </Box>
+    <BgImage imgsrc="/images/wp_images/7-scaled.jpg" imgalt="test">
+      <Box display="flex" flexDirection="column" justifyContent="space-between" alignContent="space-between" sx={{width: '100%', height: '100%', padding: '10px'}}>
+        <Title>{name}</Title>
+        <Typography variant="body1" color="white" fontFamily="roboto, sans-serif">some descripive text. please check it out</Typography>
+        <Box display="flex" flexDirection="row" justifyContent="space-between" sx={{width: '100%'}}>
+          <StyledEmotionButton bgColor="#fff" textColor="rgb(116, 55, 148)">
+            More <InfoIcon fontSize="small" />
+          </StyledEmotionButton>
+          <StyledEmotionButton bgColor="rgb(116, 55, 148)" textColor="#fff">
+            Add <AddCircleOutlineIcon fontSize="small" />
+          </StyledEmotionButton>
+        </Box>
+      </Box>
+    </BgImage>
   );
 };
 

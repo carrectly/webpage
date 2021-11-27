@@ -3,28 +3,45 @@ import { ReactNode } from 'react';
 
 interface IButtonProps {
   backgroundColor: string;
+  fontColor: string;
 }
 
 interface StyledEmotionButtonProps {
-  color?: string;
+  bgColor: string;
+  textColor: string;
   children: ReactNode;
 }
 
 const StyledButton = styled.button<IButtonProps>`
-  padding: 32px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
   background-color: ${(props) => props.backgroundColor};
-  font-size: 24px;
-  border-radius: 4px;
-  color: black;
-  font-weight: bold;
+  color: ${(props) => props.fontColor};
+  font-family: roboto, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 15px;
+  text-transform: uppercase;
+  border-radius: 10px;
+  padding: 4px;
+  margin: 5px;
   &:hover {
     color: white;
   }
 `;
 
-const StyledEmotionButton = ({color, children}: StyledEmotionButtonProps): JSX.Element => {
+const StyledEmotionButton = ({
+  bgColor,
+  textColor,
+  children,
+}: StyledEmotionButtonProps): JSX.Element => {
   return (
-    <StyledButton backgroundColor={color}>{children}</StyledButton>
+    <StyledButton backgroundColor={bgColor} fontColor={textColor}>
+      {children}
+    </StyledButton>
   );
 };
 
