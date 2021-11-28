@@ -15,6 +15,8 @@ import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 
 interface ServiceCardProps {
   name: string;
+  image: string;
+  shortDescription: string;
 }
 
 const Title = styled.div`
@@ -28,12 +30,12 @@ const Title = styled.div`
   margin: 0;
 `;
 
-const ServiceCard = ({ name }: ServiceCardProps): JSX.Element => {
+const ServiceCard = ({ name, image, shortDescription }: ServiceCardProps): JSX.Element => {
   return (
-    <BgImage imgsrc="/images/wp_images/7-scaled.jpg" imgalt="test">
+    <BgImage imgsrc={image} imgalt="test">
       <Box display="flex" flexDirection="column" justifyContent="space-between" alignContent="space-between" sx={{width: '100%', height: '100%', padding: '10px'}}>
         <Title>{name}</Title>
-        <Typography variant="body1" color="white" fontFamily="roboto, sans-serif">some descripive text. please check it out</Typography>
+        <Typography variant="body1" color="white" fontFamily="roboto, sans-serif">{shortDescription}</Typography>
         <Box display="flex" flexDirection="row" justifyContent="space-between" sx={{width: '100%'}}>
           <StyledEmotionButton bgColor="#fff" textColor="rgb(116, 55, 148)">
             More <InfoIcon fontSize="small" />

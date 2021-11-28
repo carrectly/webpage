@@ -27,9 +27,15 @@ const StyledImage = styled(Image)<ImageProps>`
 
 
 const InnerContainer = styled.div`
+  font-family: roboto,sans-serif;
+  font-style: normal;
+  font-weight: 400;
   z-index: 10;
   width: 100%;
   height: 100%;
+  border-radius: 5px;
+  background: linear-gradient(
+    180deg,rgba(39,39,39,.8) 45%,rgba(39,39,39,0) 94.67%);
 `
 
 interface BgImageProps {
@@ -66,7 +72,7 @@ const BgImage = ({
   alignItems = 'center',
   children,
   imgalt = 'Background Image',
-  imgsrc,
+  imgsrc = '/images/wp_images/popular/showroom_detail.jpg',
   height = '215px',
   justifyContent = 'center',
   width = '320px'
