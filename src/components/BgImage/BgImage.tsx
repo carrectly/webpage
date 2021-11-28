@@ -1,51 +1,53 @@
-import Image, {ImageProps} from "next/image"
+import Image, { ImageProps } from 'next/image';
 import styled from '@emotion/styled';
 import React, { ReactNode, FC } from 'react';
+import { FabClasses } from '@mui/material';
 
 interface ContainerProps {
-    alignItems: string;
-    justifyContent: string;
-    height: string;
-    width: string;
+  alignItems: string;
+  justifyContent: string;
+  height: string;
+  width: string;
 }
 
-
 const Container = styled.section<ContainerProps>`
-  z-index: -5;
   position: relative;
   margin: 5px;
-  align-items: ${ props => props.alignItems };
+  align-items: ${(props) => props.alignItems};
   display: flex;
-  justify-content: ${ props => props.justifyContent };
-  height: ${ props => props.height };
-  width: ${ props => props.width };
+  justify-content: ${(props) => props.justifyContent};
+  height: ${(props) => props.height};
+  width: ${(props) => props.width};
 `;
 
 const StyledImage = styled(Image)<ImageProps>`
+  z-index: -20;
   border-radius: 5px;
 `;
 
-
 const InnerContainer = styled.div`
-  font-family: roboto,sans-serif;
+  font-family: roboto, sans-serif;
   font-style: normal;
   font-weight: 400;
-  z-index: 10;
+  z-index: 20;
   width: 100%;
   height: 100%;
   border-radius: 5px;
   background: linear-gradient(
-    180deg,rgba(39,39,39,.8) 45%,rgba(39,39,39,0) 94.67%);
-`
+    180deg,
+    rgba(39, 39, 39, 0.8) 45%,
+    rgba(39, 39, 39, 0) 94.67%
+  );
+`;
 
 interface BgImageProps {
-    alignItems?: string;
-    children: ReactNode;
-    imgalt: string;
-    imgsrc: string;
-    height?: string;
-    justifyContent?: string;
-    width?: string;
+  alignItems?: string;
+  children: ReactNode;
+  imgalt: string;
+  imgsrc: string;
+  height?: string;
+  justifyContent?: string;
+  width?: string;
 }
 
 /**
@@ -54,11 +56,11 @@ interface BgImageProps {
  * The new next/image optimization setup handles background images oddly
  * It requires they be foreground images placed inside of a container
  * This component abstracts that logic away for better DX
- * 
+ *
  * You can layer text and imagery on top of the background image
  * All you have to do is pass that text or imagery into this component
- * 
- * Note: all images get processed through Webpack so you must import! 
+ *
+ * Note: all images get processed through Webpack so you must import!
  * No absolute URLs as they will break during site generation
  *
  * @param { string } alignItems - vertical alignment of inner content
@@ -68,37 +70,32 @@ interface BgImageProps {
  * @param { number } height - how tall the background image should be (default: 50vh)
  * @param { number } width - how wide image should be (default: 100%)
  */
-const BgImage = ({ 
+const BgImage = ({
   alignItems = 'center',
   children,
   imgalt = 'Background Image',
   imgsrc = '/images/wp_images/popular/showroom_detail.jpg',
   height = '215px',
   justifyContent = 'center',
-  width = '320px'
+  width = '320px',
 }: BgImageProps): JSX.Element => {
-
-  return(
+  return (
     <Container
-      alignItems={ alignItems }
-      height={ height }
-      justifyContent={ justifyContent }
-      width={ width }
+      alignItems={alignItems}
+      height={height}
+      justifyContent={justifyContent}
+      width={width}
     >
       <StyledImage
-        alt={ imgalt }
-        src={ imgsrc }
+        alt={imgalt}
+        src={imgsrc}
         layout="fill"
         objectFit="cover"
-        quality={ 100 }
+        quality={100}
       />
-      { children && 
-        <InnerContainer>
-          { children }
-        </InnerContainer>
-      }
+      {children && <InnerContainer>{children}</InnerContainer>}
     </Container>
-  )
-}
+  );
+};
 
-export default BgImage
+export default BgImage;

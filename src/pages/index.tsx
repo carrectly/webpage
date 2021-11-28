@@ -1,7 +1,7 @@
 import type { NextPage } from 'next';
 import Image from 'next/image';
 import Head from 'next/head';
-import { Box, Typography } from '@mui/material';
+import { Box, Typography, Button } from '@mui/material';
 import Layout from '../components/Layout/Layout';
 import { Carousel, CarouselProps } from 'antd';
 import styles from '../../styles/Layout.module.css';
@@ -77,6 +77,7 @@ const Home: NextPage = () => {
         }}
       >
         HOW IT WORKS
+        <Button onClick={() => console.log('clicker')} >  Clickerss </Button>
       </Typography>
       <div className={styles.landingImageDiv}>
         <div className={styles.carouselWrap}>

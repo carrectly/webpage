@@ -10,6 +10,7 @@ interface StyledEmotionButtonProps {
   bgColor: string;
   textColor: string;
   children: ReactNode;
+  handleClick?: React.MouseEventHandler<HTMLButtonElement>;
 }
 
 const StyledButton = styled.button<IButtonProps>`
@@ -37,9 +38,10 @@ const StyledEmotionButton = ({
   bgColor,
   textColor,
   children,
+  handleClick
 }: StyledEmotionButtonProps): JSX.Element => {
   return (
-    <StyledButton backgroundColor={bgColor} fontColor={textColor}>
+    <StyledButton backgroundColor={bgColor} fontColor={textColor} onClick={handleClick}>
       {children}
     </StyledButton>
   );
