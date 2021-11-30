@@ -4,7 +4,7 @@ import styled from '@emotion/styled';
 import { FC } from 'react';
 
 const StyledCarousel = styled(Carousel)`
-  width: 20vw;
+  // width: 20vw;
   z-index: 10;
   > .slick-dots li button {
     width: 10px;
