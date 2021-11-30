@@ -3,7 +3,8 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
-
+import StyledCarousel from '../StyledCarousel/StyledCarousel';
+import BgImage from '../BgImage/BgImage';
 interface ModalProps {
     open: boolean;
     onClose: () => void;
@@ -31,6 +32,15 @@ export default function ServiceDetailsModal({open, onClose}: ModalProps) {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
+          <StyledCarousel autoplay={true}>
+            <BgImage imgsrc='/images/wp_images/popular/dent_removal.jpg' imgalt="test">
+                <div/>
+              </BgImage>
+
+              <BgImage imgsrc='/images/wp_images/popular/ozone.jpg' imgalt="test">
+                <div/>
+              </BgImage>
+          </StyledCarousel>
           <Typography id="modal-modal-title" variant="h6" component="h2">
             Text in a modal
           </Typography>
