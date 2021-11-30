@@ -7,6 +7,7 @@ import { Carousel, CarouselProps } from 'antd';
 import styles from '../../styles/Layout.module.css';
 import styled from '@emotion/styled';
 import { FC } from 'react';
+import BgImage from '../components/BgImage/BgImage';
 
 const contentStyle = {
   height: '160px',
@@ -77,9 +78,8 @@ const Home: NextPage = () => {
         }}
       >
         HOW IT WORKS
-        <Button onClick={() => console.log('clicker')} >  Clickerss </Button>
       </Typography>
-      <div className={styles.landingImageDiv}>
+        <BgImage imgsrc='/images/home/car-1.jpg'   imgalt='test' height='900px' width='100%'>
         <div className={styles.carouselWrap}>
           <Box
             display="flex"
@@ -87,7 +87,7 @@ const Home: NextPage = () => {
             justifyContent="center"
             sx={{ height: '600px' }}
           >
-            <StyledCarousel dots={true} effect="scrollx" arrows={true}>
+            <StyledCarousel dots={true} effect="scrollx" arrows={true} autoplay={true}>
               <Box className={styles.carouselCard}>
                 <Typography
                   variant="h2"
@@ -161,7 +161,7 @@ const Home: NextPage = () => {
             </StyledCarousel>
           </Box>
         </div>
-      </div>
+        </BgImage>
     </Layout>
   );
 };

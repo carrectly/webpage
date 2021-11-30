@@ -33,11 +33,6 @@ const InnerContainer = styled.div`
   width: 100%;
   height: 100%;
   border-radius: 5px;
-  background: linear-gradient(
-    180deg,
-    rgba(39, 39, 39, 0.8) 45%,
-    rgba(39, 39, 39, 0) 94.67%
-  );
 `;
 
 interface BgImageProps {

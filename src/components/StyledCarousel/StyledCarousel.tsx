@@ -3,7 +3,7 @@ import { Carousel, CarouselProps } from 'antd';
 import styled from '@emotion/styled';
 import { FC } from 'react';
 
-const StyledCarousel = styled(Carousel)<CarouselProps>`
+const StyledCarousel = styled(Carousel)`
   width: 20vw;
   z-index: 10;
   > .slick-dots li button {
@@ -37,8 +37,8 @@ const StyledCarousel = styled(Carousel)<CarouselProps>`
   }
 `;
 
-const StyledCarouselComponent: FC = ({ children }) => {
-    return <StyledCarousel>{children}</StyledCarousel>;
+const StyledCarouselComponent: FC = (props: CarouselProps) => {
+    return <StyledCarousel autoplay={props.autoplay}>{props.children}</StyledCarousel>;
   };
 
 

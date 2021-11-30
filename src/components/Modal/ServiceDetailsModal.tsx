@@ -8,6 +8,7 @@ import BgImage from '../BgImage/BgImage';
 interface ModalProps {
     open: boolean;
     onClose: () => void;
+    serviceDetails: any;
 }
 
 const style = {
@@ -22,7 +23,7 @@ const style = {
   p: 4,
 };
 
-export default function ServiceDetailsModal({open, onClose}: ModalProps) {
+export default function ServiceDetailsModal({open, onClose, serviceDetails}: ModalProps) {
   return (
     <div>
       <Modal
@@ -45,7 +46,7 @@ export default function ServiceDetailsModal({open, onClose}: ModalProps) {
             Text in a modal
           </Typography>
           <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+            {serviceDetails.LONGDESCRIPTION}
           </Typography>
         </Box>
       </Modal>

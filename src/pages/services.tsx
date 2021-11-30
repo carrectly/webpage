@@ -13,7 +13,7 @@ const services = () => {
     <Layout>
       <Grid display="flex" flexDirection="row" flexWrap='wrap' justifyContent="space-evenly">
         {popularServices.map((el) => (
-          <ServiceCard name={el.SERVICE} image={el.IMAGE} shortDescription={el.SHORTDESCRIPTIONS}/>
+          <ServiceCard serviceObject={el}/>
         ))}
       </Grid>
     </Layout>

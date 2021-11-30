@@ -3,113 +3,113 @@
     {
       "SERVICE": "FREE Quote",
       "PRICE": "0",
-      "SHORTDESCRIPTIONS": "Free online quote for any mechanical repair or body work",
-      "LONG DESCRIPTIONS": "✔Describe a problem in a comment box below ✔Email us the photos + VIN for any body work ✔We will run our estimate and send you a free quote ✔No obligation at all",
+      "SHORTDESCRIPTION": "Free online quote for any mechanical repair or body work",
+      "LONGDESCRIPTION": "✔Describe a problem in a comment box below ✔Email us the photos + VIN for any body work ✔We will run our estimate and send you a free quote ✔No obligation at all",
       "IMAGE": "/images/wp_images/popular/dent_removal.jpg"
     },
     {
       "SERVICE": "Fuel Up",
       "PRICE": "10",
-      "SHORTDESCRIPTIONS": "Can't or don't want to leave your home to fill up gas? We can do it for you. ",
-      "LONG DESCRIPTIONS": "✔ We locate the best price of gas near by and fill up the car for you ",
+      "SHORTDESCRIPTION": "Can't or don't want to leave your home to fill up gas? We can do it for you. ",
+      "LONGDESCRIPTION": "✔ We locate the best price of gas near by and fill up the car for you ",
       "IMAGE": "/images/wp_images/popular/dent_removal.jpg"
     },
     {
       "SERVICE": "Deluxe Wash",
       "PRICE": "35 / 40 / 45",
-      "SHORTDESCRIPTIONS": "Best in and out hand car wash in Chicago, without waiting in line",
-      "LONG DESCRIPTIONS": "✔Soft cloth exterior wash ✔All carpets, seats, and trunk vacuumed ✔Interior, dash and console wiped down ✔Tire dressing and microfiber drying are included",
+      "SHORTDESCRIPTION": "Best in and out hand car wash in Chicago, without waiting in line",
+      "LONGDESCRIPTION": "✔Soft cloth exterior wash ✔All carpets, seats, and trunk vacuumed ✔Interior, dash and console wiped down ✔Tire dressing and microfiber drying are included",
       "IMAGE": "/images/wp_images/popular/deluxe_wash.jpg"
     },
     {
       "SERVICE": "Ozone Disinfection",
       "PRICE": "40 2 hrs / 70 4 hrs / 110 8 hrs",
-      "SHORTDESCRIPTIONS": "Disinfect your car with ozone - it destroys mold, bacteria, viruses & odors",
-      "LONG DESCRIPTIONS": "✔ Ozone is one of the most powerful disinfectants ✔ Quickly and effectively sanitizes passenger vehicles and kills germs  ✔In addition to eliminating bacteria, it also destroys bad odors",
+      "SHORTDESCRIPTION": "Disinfect your car with ozone - it destroys mold, bacteria, viruses & odors",
+      "LONGDESCRIPTION": "✔ Ozone is one of the most powerful disinfectants ✔ Quickly and effectively sanitizes passenger vehicles and kills germs  ✔In addition to eliminating bacteria, it also destroys bad odors",
       "IMAGE": "/images/wp_images/popular/ozone.jpg"
     },
     {
       "SERVICE": "Emission Test",
       "PRICE": "55",
-      "SHORTDESCRIPTIONS": "With no EPA facilities left in Chicago, pass the test without wasting hours",
-      "LONG DESCRIPTIONS": "✔With no EPA facilities left in Chicago, we bring your car to one in the nearest suburb ✔Shall the car fail the test – we can take it for diagnostics and repair at the shop",
+      "SHORTDESCRIPTION": "With no EPA facilities left in Chicago, pass the test without wasting hours",
+      "LONGDESCRIPTION": "✔With no EPA facilities left in Chicago, we bring your car to one in the nearest suburb ✔Shall the car fail the test – we can take it for diagnostics and repair at the shop",
       "IMAGE": "/images/wp_images/popular/emissions.png"
     },
     {
       "SERVICE": "Tire Repair",
       "PRICE": "60",
-      "SHORTDESCRIPTIONS": "Tire leaking air? No worries: we'll patch, re-seal, and re-balance it",
-      "LONG DESCRIPTIONS": "✔Is your tire leaking air? ✔We will inspect it, patch or reseal it ✔If non-reparable, we can find an identical new or used ✔Installation and re-balancing is included",
+      "SHORTDESCRIPTION": "Tire leaking air? No worries: we'll patch, re-seal, and re-balance it",
+      "LONGDESCRIPTION": "✔Is your tire leaking air? ✔We will inspect it, patch or reseal it ✔If non-reparable, we can find an identical new or used ✔Installation and re-balancing is included",
       "IMAGE": "/images/wp_images/popular/ceramic_coating.jpg"
     },
     {
       "SERVICE": "Battery Jump, Test & Swap",
       "PRICE": "70",
-      "SHORTDESCRIPTIONS": "Dead battery? We come to you to jump, test or replace the battery",
-      "LONG DESCRIPTIONS": "✔Concierge will come to you to jump the car ✔We will test the battery and either replace the battery on the spot or take it into the shop to install it",
+      "SHORTDESCRIPTION": "Dead battery? We come to you to jump, test or replace the battery",
+      "LONGDESCRIPTION": "✔Concierge will come to you to jump the car ✔We will test the battery and either replace the battery on the spot or take it into the shop to install it",
       "IMAGE": "/images/wp_images/popular/car-battery-tester.jpg"
     },
     {
       "SERVICE": "Problem Diagnostics",
       "PRICE": "90",
-      "SHORTDESCRIPTIONS": "Car acting up, warning lights on? We'll take it for diagnostics and estimate repairs",
-      "LONG DESCRIPTIONS": "✔Car acting up, warning light on? ✔We take it to diagnose the problem, update you on the issue and send an estimate ✔If you decide to repair, $45 goes towards its cost",
+      "SHORTDESCRIPTION": "Car acting up, warning lights on? We'll take it for diagnostics and estimate repairs",
+      "LONGDESCRIPTION": "✔Car acting up, warning light on? ✔We take it to diagnose the problem, update you on the issue and send an estimate ✔If you decide to repair, $45 goes towards its cost",
       "IMAGE": "/images/wp_images/popular/diagnositcs.jpg"
     },
     {
       "SERVICE": "Synthetic Oil Change",
       "PRICE": "105",
-      "SHORTDESCRIPTIONS": "Synthetic Oil and filter change with none of the hassles or wasted time",
-      "LONG DESCRIPTIONS": "✔Full synthetic Oil & Filter change ✔Fluids check and top-off ✔Up to 5 QTs for most car ✔Newer, higher-end vehicles will need Premium Mobile1 oil (+ $35)",
+      "SHORTDESCRIPTION": "Synthetic Oil and filter change with none of the hassles or wasted time",
+      "LONGDESCRIPTION": "✔Full synthetic Oil & Filter change ✔Fluids check and top-off ✔Up to 5 QTs for most car ✔Newer, higher-end vehicles will need Premium Mobile1 oil (+ $35)",
       "IMAGE": "/images/wp_images/popular/showroom_detail.jpg"
     },
     {
       "SERVICE": "Mini Detail",
       "PRICE": "115 / 125 / 135",
-      "SHORTDESCRIPTIONS": "Better than a wash, less than a full detail. Wash + Spot Cleaning",
-      "LONG DESCRIPTIONS": "✔A thorough deluxe wash, detailers spend more time on the car, spot and stain cleaning only ✔Unlike full Interior Detail, does not include shampooing",
+      "SHORTDESCRIPTION": "Better than a wash, less than a full detail. Wash + Spot Cleaning",
+      "LONGDESCRIPTION": "✔A thorough deluxe wash, detailers spend more time on the car, spot and stain cleaning only ✔Unlike full Interior Detail, does not include shampooing",
       "IMAGE": "/images/wp_images/popular/showroom_detail.jpg"
     },
     {
       "SERVICE": "Full Inspection",
       "PRICE": "120",
-      "SHORTDESCRIPTIONS": "Check the basics of your car or steer away from buying a lemon",
-      "LONG DESCRIPTIONS": "✔Multi-point inspection of fluids, hoses, belts, brakes, cooling system, suspension, HVAC, tires, etc ✔Check engine errors scan, battery test ✔You'll get a full report",
+      "SHORTDESCRIPTION": "Check the basics of your car or steer away from buying a lemon",
+      "LONGDESCRIPTION": "✔Multi-point inspection of fluids, hoses, belts, brakes, cooling system, suspension, HVAC, tires, etc ✔Check engine errors scan, battery test ✔You'll get a full report",
       "IMAGE": "/images/wp_images/popular/showroom_detail.jpg"
     },
     {
       "SERVICE": "Interior Detail",
       "PRICE": "180 / 210 / 240",
-      "SHORTDESCRIPTIONS": "Full deep cleaning and shampoo of your entire interior. Fresh, clean, and sparkling. ",
-      "LONG DESCRIPTIONS": "✔Compressed air blow-out ✔Vacuum, brush & shampoo carpets, mats, headliner, belts & trunk ✔All cracks, vents, crevices are detailed ✔Seats are deep cleaned & shampooed; leather is treated with conditioner",
+      "SHORTDESCRIPTION": "Full deep cleaning and shampoo of your entire interior. Fresh, clean, and sparkling. ",
+      "LONGDESCRIPTION": "✔Compressed air blow-out ✔Vacuum, brush & shampoo carpets, mats, headliner, belts & trunk ✔All cracks, vents, crevices are detailed ✔Seats are deep cleaned & shampooed; leather is treated with conditioner",
       "IMAGE": "/images/wp_images/popular/showroom_detail.jpg"
     },
     {
       "SERVICE": "Exterior Detail",
       "PRICE": "180 / 210 / 240",
-      "SHORTDESCRIPTIONS": "Removes scratches and swirl marks. Restores and locks-in the shine",
-      "LONG DESCRIPTIONS": "✔Snow foam pre-soak & full hand wash ✔Clay Bar & IronX treatment to decontaminate the paint ✔ Microfiber, chamois & air drying ✔1-step buff & 2-step polish to restore the shine, remove minor scratches & swirls ✔Synthetic sealant with wax for protection✔Regular inside wash - included",
+      "SHORTDESCRIPTION": "Removes scratches and swirl marks. Restores and locks-in the shine",
+      "LONGDESCRIPTION": "✔Snow foam pre-soak & full hand wash ✔Clay Bar & IronX treatment to decontaminate the paint ✔ Microfiber, chamois & air drying ✔1-step buff & 2-step polish to restore the shine, remove minor scratches & swirls ✔Synthetic sealant with wax for protection✔Regular inside wash - included",
       "IMAGE": "/images/wp_images/popular/showroom_detail.jpg"
     },
     {
       "SERVICE": "Brake Pads / Pads with Rotors",
       "PRICE": "270 / 480",
-      "SHORTDESCRIPTIONS": "Squeaking or grinding noise? You need new pads or pads & rotors. Consider it solved",
-      "LONG DESCRIPTIONS": "✔We’ll inspect your brakes, rotors and tires ✔Brake pads replacement for one fixed price, per axle (covers 95% of cars) ✔Parts, labor, taxes, and logistics included",
+      "SHORTDESCRIPTION": "Squeaking or grinding noise? You need new pads or pads & rotors. Consider it solved",
+      "LONGDESCRIPTION": "✔We’ll inspect your brakes, rotors and tires ✔Brake pads replacement for one fixed price, per axle (covers 95% of cars) ✔Parts, labor, taxes, and logistics included",
       "IMAGE": "/images/wp_images/popular/brake_pads.jpeg"
     },
     {
       "SERVICE": "Regular Maintenance",
       "PRICE": "285 / 325",
-      "SHORTDESCRIPTIONS": "Oil change, inspection, tire rotation, filters change, fluids, check engine, scan & more",
-      "LONG DESCRIPTIONS": "✔Full Maintenance service ✔Synthetic Oil package, PLUS: ✔Multi-Point Inspection ✔Cabin and Air Filters replacement ✔Tire rotation and balancing",
+      "SHORTDESCRIPTION": "Oil change, inspection, tire rotation, filters change, fluids, check engine, scan & more",
+      "LONGDESCRIPTION": "✔Full Maintenance service ✔Synthetic Oil package, PLUS: ✔Multi-Point Inspection ✔Cabin and Air Filters replacement ✔Tire rotation and balancing",
       "IMAGE": "/images/wp_images/popular/boise-mechnic.jpg"
     },
     {
       "SERVICE": "Showroom Detail",
       "PRICE": "290 / 330 / 370",
-      "SHORTDESCRIPTIONS": "Best premium quality full detailing service in Chicago. Period.",
-      "LONG DESCRIPTIONS": "Combines the services of INTERIOR & EXTERIOR detailing with a FREE Engine cleaning as a bonus for a total saving of $125",
+      "SHORTDESCRIPTION": "Best premium quality full detailing service in Chicago. Period.",
+      "LONGDESCRIPTION": "Combines the services of INTERIOR & EXTERIOR detailing with a FREE Engine cleaning as a bonus for a total saving of $125",
       "IMAGE": "/images/wp_images/popular/showroom_detail.jpg"
     }
    ], 
@@ -117,120 +117,120 @@
     {
       "SERVICE": "Ozone Disinfection",
       "PRICE": "40 2 hrs / 70 4 hrs / 110 8 hrs",
-      "SHORTDESCRIPTIONS": "Disinfect your car with ozone - it destroys mold, bacteria, viruses & odors",
-      "LONG DESCRIPTIONS": "✔ Ozone is one of the most powerful disinfectants ✔ Quickly and effectively sanitizes passenger vehicles and kills germs  ✔In addition to eliminating bacteria, it also destroys bad odors",
+      "SHORTDESCRIPTION": "Disinfect your car with ozone - it destroys mold, bacteria, viruses & odors",
+      "LONGDESCRIPTION": "✔ Ozone is one of the most powerful disinfectants ✔ Quickly and effectively sanitizes passenger vehicles and kills germs  ✔In addition to eliminating bacteria, it also destroys bad odors",
       "IMAGE": ""
     },
     {
       "SERVICE": "Deluxe Wash",
       "PRICE": "35 / 40 / 45",
-      "SHORTDESCRIPTIONS": "Best in and out hand car wash in Chicago, without waiting in line",
-      "LONG DESCRIPTIONS": "✔Soft cloth exterior wash ✔All carpets, seats, and trunk vacuumed ✔Interior, dash and console wiped down ✔Tire dressing and microfiber drying are included",
+      "SHORTDESCRIPTION": "Best in and out hand car wash in Chicago, without waiting in line",
+      "LONGDESCRIPTION": "✔Soft cloth exterior wash ✔All carpets, seats, and trunk vacuumed ✔Interior, dash and console wiped down ✔Tire dressing and microfiber drying are included",
       "IMAGE": ""
     },
     {
       "SERVICE": "Engine Detail",
       "PRICE": "60",
-      "SHORTDESCRIPTIONS": "Aesthetics? A leak? Rodden problem? We will decrease and detail it",
-      "LONG DESCRIPTIONS": "✔Engine looking gross? ✔Have a rodent problem?  ✔Need to find a leak? ✔We will de-grease, detail, and apply sealant to your engine",
+      "SHORTDESCRIPTION": "Aesthetics? A leak? Rodden problem? We will decrease and detail it",
+      "LONGDESCRIPTION": "✔Engine looking gross? ✔Have a rodent problem?  ✔Need to find a leak? ✔We will de-grease, detail, and apply sealant to your engine",
       "IMAGE": ""
     },
     {
       "SERVICE": "Wash & Sealant Wax",
       "PRICE": "75 / 80 / 85",
-      "SHORTDESCRIPTIONS": "Car lost its shine? Wash and hand wax it to make it shiner and protect it a little ",
-      "LONG DESCRIPTIONS": "✔Full service of a regular Deluxe Wash - full in and our hand wash PLUS hand application of wax to protect the paint and give your car more shine ",
+      "SHORTDESCRIPTION": "Car lost its shine? Wash and hand wax it to make it shiner and protect it a little ",
+      "LONGDESCRIPTION": "✔Full service of a regular Deluxe Wash - full in and our hand wash PLUS hand application of wax to protect the paint and give your car more shine ",
       "IMAGE": ""
     },
     {
       "SERVICE": "Headlight Restoration",
       "PRICE": "90",
-      "SHORTDESCRIPTIONS": "Oxidized, yellow, cloudy headlights? Improve the look, visibility and safety",
-      "LONG DESCRIPTIONS": "✔Oxidized, discolored, yellow, cloudy headlights? ✔We'll buff, polish, and apply a sealant to improve the look, visibility and safety ✔Restores to about 85% of the “like new”",
+      "SHORTDESCRIPTION": "Oxidized, yellow, cloudy headlights? Improve the look, visibility and safety",
+      "LONGDESCRIPTION": "✔Oxidized, discolored, yellow, cloudy headlights? ✔We'll buff, polish, and apply a sealant to improve the look, visibility and safety ✔Restores to about 85% of the “like new”",
       "IMAGE": ""
     },
     {
       "SERVICE": "Mini Detail",
       "PRICE": "115 / 125 / 135",
-      "SHORTDESCRIPTIONS": "Better than a wash, less than a full detail. Wash + Spot Cleaning",
-      "LONG DESCRIPTIONS": "✔A thorough deluxe wash, detailers spend more time on the car, spot and stain cleaning only ✔Unlike full Interior Detail, does not include shampooing",
+      "SHORTDESCRIPTION": "Better than a wash, less than a full detail. Wash + Spot Cleaning",
+      "LONGDESCRIPTION": "✔A thorough deluxe wash, detailers spend more time on the car, spot and stain cleaning only ✔Unlike full Interior Detail, does not include shampooing",
       "IMAGE": ""
     },
     {
       "SERVICE": "Interior Detail",
       "PRICE": "180 / 210 / 240",
-      "SHORTDESCRIPTIONS": "Full deep cleaning and shampoo of your entire interior. Fresh, clean, and sparkling. ",
-      "LONG DESCRIPTIONS": "✔Compressed air blow-out ✔Vacuum, brush & shampoo carpets, mats, headliner, belts & trunk ✔All cracks, vents, crevices are detailed ✔Seats are deep cleaned & shampooed; leather is treated with conditioner",
+      "SHORTDESCRIPTION": "Full deep cleaning and shampoo of your entire interior. Fresh, clean, and sparkling. ",
+      "LONGDESCRIPTION": "✔Compressed air blow-out ✔Vacuum, brush & shampoo carpets, mats, headliner, belts & trunk ✔All cracks, vents, crevices are detailed ✔Seats are deep cleaned & shampooed; leather is treated with conditioner",
       "IMAGE": ""
     },
     {
       "SERVICE": "Exterior Detail",
       "PRICE": "180 / 210 / 240",
-      "SHORTDESCRIPTIONS": "Removes scratches and swirl marks. Restores and locks-in the shine",
-      "LONG DESCRIPTIONS": "✔Snow foam pre-soak & full hand wash ✔Clay Bar & IronX treatment to decontaminate the paint ✔ Microfiber, chamois & air drying ✔1-step buff & 2-step polish to restore the shine, remove minor scratches & swirls ✔Synthetic sealant with wax for protection✔Regular inside wash - included",
+      "SHORTDESCRIPTION": "Removes scratches and swirl marks. Restores and locks-in the shine",
+      "LONGDESCRIPTION": "✔Snow foam pre-soak & full hand wash ✔Clay Bar & IronX treatment to decontaminate the paint ✔ Microfiber, chamois & air drying ✔1-step buff & 2-step polish to restore the shine, remove minor scratches & swirls ✔Synthetic sealant with wax for protection✔Regular inside wash - included",
       "IMAGE": ""
     },
     {
       "SERVICE": "Showroom Detail",
       "PRICE": "290 / 330 / 370",
-      "SHORTDESCRIPTIONS": "Best premium quality full detailing service in Chicago. Period.",
-      "LONG DESCRIPTIONS": "✔Combines the services of INTERIOR & EXTERIOR detailing with a FREE Engine cleaning as a bonus for a total saving of $125",
+      "SHORTDESCRIPTION": "Best premium quality full detailing service in Chicago. Period.",
+      "LONGDESCRIPTION": "✔Combines the services of INTERIOR & EXTERIOR detailing with a FREE Engine cleaning as a bonus for a total saving of $125",
       "IMAGE": ""
     },
     {
       "SERVICE": "Paint Correction ",
       "PRICE": "500 - 1500",
-      "SHORTDESCRIPTIONS": "Restoring and rejuvenating the paintwork of a vehicle",
-      "LONG DESCRIPTIONS": "✔Starts with a thorough wash and decontamination of the vehicle with a clay bar ✔Polishing is usually a multistage process as a range of different grades of polish are used for a refiner finish ✔when viewed in direct sunlight, it will show only true reflections and no swirl marks, scratches or blemishes \n\n",
+      "SHORTDESCRIPTION": "Restoring and rejuvenating the paintwork of a vehicle",
+      "LONGDESCRIPTION": "✔Starts with a thorough wash and decontamination of the vehicle with a clay bar ✔Polishing is usually a multistage process as a range of different grades of polish are used for a refiner finish ✔when viewed in direct sunlight, it will show only true reflections and no swirl marks, scratches or blemishes \n\n",
       "IMAGE": ""
     },
     {
       "SERVICE": "WASH & DETAIL EXTRAS",
       "PRICE": "",
-      "SHORTDESCRIPTIONS": "",
-      "LONG DESCRIPTIONS": "",
+      "SHORTDESCRIPTION": "",
+      "LONGDESCRIPTION": "",
       "IMAGE": ""
     },
     {
       "SERVICE": "Protective Plastic Floor Wrap",
       "PRICE": "4",
-      "SHORTDESCRIPTIONS": "We can put an adhesive plastic that preserves the carpet from getting dirty",
-      "LONG DESCRIPTIONS": "✔ Plastic protectors to effectively and efficiently cover your freshly clean interior ",
+      "SHORTDESCRIPTION": "We can put an adhesive plastic that preserves the carpet from getting dirty",
+      "LONGDESCRIPTION": "✔ Plastic protectors to effectively and efficiently cover your freshly clean interior ",
       "IMAGE": ""
     },
     {
       "SERVICE": "Stickers & Adhesive Removal",
       "PRICE": "5",
-      "SHORTDESCRIPTIONS": "All those old window stickers - gone Steam and / or razor removal",
-      "LONG DESCRIPTIONS": "✔ Removal of old window stickers and adhesive residue ",
+      "SHORTDESCRIPTION": "All those old window stickers - gone Steam and / or razor removal",
+      "LONGDESCRIPTION": "✔ Removal of old window stickers and adhesive residue ",
       "IMAGE": ""
     },
     {
       "SERVICE": "Shampoo Floor Mats",
       "PRICE": "20",
-      "SHORTDESCRIPTIONS": "If your carpets are clean, but only the mats need some love - we'll get them shampooed",
-      "LONG DESCRIPTIONS": "✔ If your vehicle does not need complete shampooing, we can take care of the mats only",
+      "SHORTDESCRIPTION": "If your carpets are clean, but only the mats need some love - we'll get them shampooed",
+      "LONGDESCRIPTION": "✔ If your vehicle does not need complete shampooing, we can take care of the mats only",
       "IMAGE": ""
     },
     {
       "SERVICE": "Tar Removal",
       "PRICE": "25 - 100",
-      "SHORTDESCRIPTIONS": "Parked under the \"EL'? Drove on a freshly done road with tar splashing on your rockers?",
-      "LONG DESCRIPTIONS": "✔Though it doesn’t rigidly harden on your car finish, it doesn’t come out well with ordinary cleaning ✔We use special chemicals to remove tar and get paint looking new again ",
+      "SHORTDESCRIPTION": "Parked under the \"EL'? Drove on a freshly done road with tar splashing on your rockers?",
+      "LONGDESCRIPTION": "✔Though it doesn’t rigidly harden on your car finish, it doesn’t come out well with ordinary cleaning ✔We use special chemicals to remove tar and get paint looking new again ",
       "IMAGE": ""
     },
     {
       "SERVICE": "Dog Hair",
       "PRICE": "35 light / 55 medium / 75 heavy",
-      "SHORTDESCRIPTIONS": "Only dog owners know how hard it is to remove the hair off seats and carpets. Extra cost.",
-      "LONG DESCRIPTIONS": "✔ Regular vacuuming does not remove dog hairs ✔Our detailers manually brush our pet hairs, price depends on how excessive ",
+      "SHORTDESCRIPTION": "Only dog owners know how hard it is to remove the hair off seats and carpets. Extra cost.",
+      "LONGDESCRIPTION": "✔ Regular vacuuming does not remove dog hairs ✔Our detailers manually brush our pet hairs, price depends on how excessive ",
       "IMAGE": ""
     },
     {
       "SERVICE": "Hand Wax with Synthetic Sealant",
       "PRICE": "40",
-      "SHORTDESCRIPTIONS": "Synthetic sealant with wax will protect the paint and bring back the sparkle",
-      "LONG DESCRIPTIONS": "✔Full service of a regular Deluxe Wash - full in and our hand wash PLUS hand application of wax to protect the paint and give your car more shine ",
+      "SHORTDESCRIPTION": "Synthetic sealant with wax will protect the paint and bring back the sparkle",
+      "LONGDESCRIPTION": "✔Full service of a regular Deluxe Wash - full in and our hand wash PLUS hand application of wax to protect the paint and give your car more shine ",
       "IMAGE": ""
     }
    ], 
@@ -238,113 +238,113 @@
     {
       "SERVICE": "FREE QUOTE",
       "PRICE": "0",
-      "SHORTDESCRIPTIONS": "Free online quote for any mechanical repair or body work",
-      "LONG DESCRIPTIONS": "✔Describe a problem in a comment box below ✔Email us the photos + VIN for any body work ✔We will run our estimate and send you a free quote ✔No obligation at all",
+      "SHORTDESCRIPTION": "Free online quote for any mechanical repair or body work",
+      "LONGDESCRIPTION": "✔Describe a problem in a comment box below ✔Email us the photos + VIN for any body work ✔We will run our estimate and send you a free quote ✔No obligation at all",
       "IMAGE": ""
     },
     {
       "SERVICE": "Fuel up",
       "PRICE": "10",
-      "SHORTDESCRIPTIONS": "Can't or don't want to leave your home to fill up gas? We can do it for you. ",
-      "LONG DESCRIPTIONS": "✔ We locate the best price of gas near by and fill up the car for you ",
+      "SHORTDESCRIPTION": "Can't or don't want to leave your home to fill up gas? We can do it for you. ",
+      "LONGDESCRIPTION": "✔ We locate the best price of gas near by and fill up the car for you ",
       "IMAGE": ""
     },
     {
       "SERVICE": "Battery Jump, Test & Swap",
       "PRICE": "70",
-      "SHORTDESCRIPTIONS": "Dead battery? We come to you to jump, test or replace the battery",
-      "LONG DESCRIPTIONS": "✔We will send a concierge to you to get your car going again ✔We will try jumping it, test the battery & alternator, and bring a new battery to swap it on a spot ✔Cost is for the service only, cost of the battery is not included. We will message you prices and options for you to pick from before heading out to you",
+      "SHORTDESCRIPTION": "Dead battery? We come to you to jump, test or replace the battery",
+      "LONGDESCRIPTION": "✔We will send a concierge to you to get your car going again ✔We will try jumping it, test the battery & alternator, and bring a new battery to swap it on a spot ✔Cost is for the service only, cost of the battery is not included. We will message you prices and options for you to pick from before heading out to you",
       "IMAGE": ""
     },
     {
       "SERVICE": "Emissions Test",
       "PRICE": "55",
-      "SHORTDESCRIPTIONS": "With no EPA facilities left in Chicago, pass the test without wasting hours",
-      "LONG DESCRIPTIONS": "✔With no EPA facilities left in Chicago, we bring your car to one in the nearest suburb ✔Shall the car fail the test – we can take it for diagnostics and repair at the shop",
+      "SHORTDESCRIPTION": "With no EPA facilities left in Chicago, pass the test without wasting hours",
+      "LONGDESCRIPTION": "✔With no EPA facilities left in Chicago, we bring your car to one in the nearest suburb ✔Shall the car fail the test – we can take it for diagnostics and repair at the shop",
       "IMAGE": ""
     },
     {
       "SERVICE": "Small Part Replacement",
       "PRICE": "55",
-      "SHORTDESCRIPTIONS": "Filters? Bulbs? This covers any service under 30 mins. ",
-      "LONG DESCRIPTIONS": "✔Routine vehicle maintenance includes replacing car parts that fail due to normal wear and tear or a lack of proper maintenance ✔Cost of part plus reduced labor ",
+      "SHORTDESCRIPTION": "Filters? Bulbs? This covers any service under 30 mins. ",
+      "LONGDESCRIPTION": "✔Routine vehicle maintenance includes replacing car parts that fail due to normal wear and tear or a lack of proper maintenance ✔Cost of part plus reduced labor ",
       "IMAGE": ""
     },
     {
       "SERVICE": "Recall & Dealership Run",
       "PRICE": "70",
-      "SHORTDESCRIPTIONS": "We'll bring your car for a recall or appointment with your dealership",
-      "LONG DESCRIPTIONS": "✔If you are having troubles we cannot resolve for you and must take to dealership, we will gladly take the hassle out of it for you ✔Any recalls or reprogramming, we will make the dealership run so you do not have to ",
+      "SHORTDESCRIPTION": "We'll bring your car for a recall or appointment with your dealership",
+      "LONGDESCRIPTION": "✔If you are having troubles we cannot resolve for you and must take to dealership, we will gladly take the hassle out of it for you ✔Any recalls or reprogramming, we will make the dealership run so you do not have to ",
       "IMAGE": ""
     },
     {
       "SERVICE": "Problem Diagnostics",
       "PRICE": "90",
-      "SHORTDESCRIPTIONS": "Car acting up, warning lights on? We'll take it for diagnostics and estimate",
-      "LONG DESCRIPTIONS": "✔Car acting up, warning light on? ✔We take it to diagnose the problem, update you on the issue and send an estimate ✔If you decide to repair, $45 goes towards its cost",
+      "SHORTDESCRIPTION": "Car acting up, warning lights on? We'll take it for diagnostics and estimate",
+      "LONGDESCRIPTION": "✔Car acting up, warning light on? ✔We take it to diagnose the problem, update you on the issue and send an estimate ✔If you decide to repair, $45 goes towards its cost",
       "IMAGE": ""
     },
     {
       "SERVICE": "Full Inspection",
       "PRICE": "120",
-      "SHORTDESCRIPTIONS": "Check the basics of your car or steer away from buying a lemon",
-      "LONG DESCRIPTIONS": "✔Multi-point inspection of fluids, hoses, belts, brakes, cooling system, suspension, HVAC, tires, etc ✔Check engine errors scan, battery test ✔You'll get a full report",
+      "SHORTDESCRIPTION": "Check the basics of your car or steer away from buying a lemon",
+      "LONGDESCRIPTION": "✔Multi-point inspection of fluids, hoses, belts, brakes, cooling system, suspension, HVAC, tires, etc ✔Check engine errors scan, battery test ✔You'll get a full report",
       "IMAGE": ""
     },
     {
       "SERVICE": "Synthetic Oil Change",
       "PRICE": "105 / 140",
-      "SHORTDESCRIPTIONS": "Synthetic Oil and filter change with none of the hassles or wasted time",
-      "LONG DESCRIPTIONS": "✔Full synthetic Oil & Filter change ✔Fluids check and top-off ✔Up to 5 QTs for most car ✔Newer, higher-end vehicles will need Premium Mobile1 oil (+ $35)",
+      "SHORTDESCRIPTION": "Synthetic Oil and filter change with none of the hassles or wasted time",
+      "LONGDESCRIPTION": "✔Full synthetic Oil & Filter change ✔Fluids check and top-off ✔Up to 5 QTs for most car ✔Newer, higher-end vehicles will need Premium Mobile1 oil (+ $35)",
       "IMAGE": ""
     },
     {
       "SERVICE": "Labor Cost / hour",
       "PRICE": "120",
-      "SHORTDESCRIPTIONS": "Hourly Labor Cost. We don't milk time or charging $200+ like some dealerships ",
-      "LONG DESCRIPTIONS": "✔Whether it's a hitch installation or you have the part you need and require labor, our hourly rate is competitive with Chicago shops AND includes pick up and drop off ",
+      "SHORTDESCRIPTION": "Hourly Labor Cost. We don't milk time or charging $200+ like some dealerships ",
+      "LONGDESCRIPTION": "✔Whether it's a hitch installation or you have the part you need and require labor, our hourly rate is competitive with Chicago shops AND includes pick up and drop off ",
       "IMAGE": ""
     },
     {
       "SERVICE": "TPMS Repair",
       "PRICE": "120",
-      "SHORTDESCRIPTIONS": "Tires are OK, but TPMS light is on? We'll diagnose and replace the sensor",
-      "LONG DESCRIPTIONS": "✔TPMS light is on even when the tires seem fine? ✔We will perform tire system diagnostics ✔Will replace a failing Tire-Pressure Monitoring Sensor",
+      "SHORTDESCRIPTION": "Tires are OK, but TPMS light is on? We'll diagnose and replace the sensor",
+      "LONGDESCRIPTION": "✔TPMS light is on even when the tires seem fine? ✔We will perform tire system diagnostics ✔Will replace a failing Tire-Pressure Monitoring Sensor",
       "IMAGE": ""
     },
     {
       "SERVICE": "AC Coolant Recharge",
       "PRICE": "150",
-      "SHORTDESCRIPTIONS": "AC not blowing cold on a hot day in Chicago? We can help",
-      "LONG DESCRIPTIONS": "✔Full  AC recharge involves evacuating the old refrigerant, and then refilling it with fresh freon",
+      "SHORTDESCRIPTION": "AC not blowing cold on a hot day in Chicago? We can help",
+      "LONGDESCRIPTION": "✔Full  AC recharge involves evacuating the old refrigerant, and then refilling it with fresh freon",
       "IMAGE": ""
     },
     {
       "SERVICE": "Brake Fluid Flush",
       "PRICE": "150",
-      "SHORTDESCRIPTIONS": "Will check your fluid and change it when needed based on condition or car's manual",
-      "LONG DESCRIPTIONS": "✔A brake fluid flush takes all the old, dirty brake fluid out of your system and replaces it with fresh, clean fluid ✔Including a brake fluid flush in your regular car maintenance is important and should be done around every 30,000 miles or every two years",
+      "SHORTDESCRIPTION": "Will check your fluid and change it when needed based on condition or car's manual",
+      "LONGDESCRIPTION": "✔A brake fluid flush takes all the old, dirty brake fluid out of your system and replaces it with fresh, clean fluid ✔Including a brake fluid flush in your regular car maintenance is important and should be done around every 30,000 miles or every two years",
       "IMAGE": ""
     },
     {
       "SERVICE": "Transmission Fluid Flush",
       "PRICE": "230",
-      "SHORTDESCRIPTIONS": "Extend the life of your transmission by doing the flush",
-      "LONG DESCRIPTIONS": "✔Involves connecting your transmission to a professional grade machine to completely flush the transmission ✔Running solution through the lines until they come out clean ✔It then fills your system with new fluid✔Can extend life of your transmission",
+      "SHORTDESCRIPTION": "Extend the life of your transmission by doing the flush",
+      "LONGDESCRIPTION": "✔Involves connecting your transmission to a professional grade machine to completely flush the transmission ✔Running solution through the lines until they come out clean ✔It then fills your system with new fluid✔Can extend life of your transmission",
       "IMAGE": ""
     },
     {
       "SERVICE": "Brake Pads Replacement",
       "PRICE": "270 / 480",
-      "SHORTDESCRIPTIONS": "Squeaking or grinding noise? You need new pads; we'll replace them",
-      "LONG DESCRIPTIONS": "✔We’ll inspect your brakes, rotors and tires ✔Brake pads replacement for one fixed price, per axle (covers 95% of cars) Grinding, vibrating, and wobbling? You might need pads and rotors ✔Parts, labor, taxes, and logistics included",
+      "SHORTDESCRIPTION": "Squeaking or grinding noise? You need new pads; we'll replace them",
+      "LONGDESCRIPTION": "✔We’ll inspect your brakes, rotors and tires ✔Brake pads replacement for one fixed price, per axle (covers 95% of cars) Grinding, vibrating, and wobbling? You might need pads and rotors ✔Parts, labor, taxes, and logistics included",
       "IMAGE": ""
     },
     {
       "SERVICE": "Regular Maintenance",
       "PRICE": "285 / 325",
-      "SHORTDESCRIPTIONS": "Oil change, inspection, tire rotation, filters change, fluids, check engine, scan & more",
-      "LONG DESCRIPTIONS": "✔Full Maintenance service ✔Synthetic Oil package, PLUS: ✔Multi-Point Inspection ✔Cabin and Air Filters replacement ✔Tire rotation and balancing",
+      "SHORTDESCRIPTION": "Oil change, inspection, tire rotation, filters change, fluids, check engine, scan & more",
+      "LONGDESCRIPTION": "✔Full Maintenance service ✔Synthetic Oil package, PLUS: ✔Multi-Point Inspection ✔Cabin and Air Filters replacement ✔Tire rotation and balancing",
       "IMAGE": ""
     }
    ], 
@@ -352,64 +352,64 @@
     {
       "SERVICE": "Find New / Used Tires QUOTE",
       "PRICE": "0",
-      "SHORTDESCRIPTIONS": "Inventory of more than 50,000 used tires & can find you any new one - let us get you a deal",
-      "LONG DESCRIPTIONS": "✔Whether you are preparing for the winter or need replacement of all seasons tires, we will get you a quote on new or used tires for your vehicle",
+      "SHORTDESCRIPTION": "Inventory of more than 50,000 used tires & can find you any new one - let us get you a deal",
+      "LONGDESCRIPTION": "✔Whether you are preparing for the winter or need replacement of all seasons tires, we will get you a quote on new or used tires for your vehicle",
       "IMAGE": ""
     },
     {
       "SERVICE": "Tire Repair",
       "PRICE": "60",
-      "SHORTDESCRIPTIONS": "Tire leaking air? No worries: we'll patch, re-seal, and re-balance it",
-      "LONG DESCRIPTIONS": "✔Is your tire leaking air? ✔We will inspect it, patch or reseal it ✔If non-reparable, we can find an identical new or used ✔Installation and re-balancing is included",
+      "SHORTDESCRIPTION": "Tire leaking air? No worries: we'll patch, re-seal, and re-balance it",
+      "LONGDESCRIPTION": "✔Is your tire leaking air? ✔We will inspect it, patch or reseal it ✔If non-reparable, we can find an identical new or used ✔Installation and re-balancing is included",
       "IMAGE": ""
     },
     {
       "SERVICE": "Tire Rotation",
       "PRICE": "70",
-      "SHORTDESCRIPTIONS": "Extend the life of your tires and ensure even tire wear",
-      "LONG DESCRIPTIONS": "✔By rotating your tires, you give the tires a chance to even out their wear and get extended life out of your tires✔Most manufacturers typically recommend rotating your tires every 5,000-10,000 miles",
+      "SHORTDESCRIPTION": "Extend the life of your tires and ensure even tire wear",
+      "LONGDESCRIPTION": "✔By rotating your tires, you give the tires a chance to even out their wear and get extended life out of your tires✔Most manufacturers typically recommend rotating your tires every 5,000-10,000 miles",
       "IMAGE": ""
     },
     {
       "SERVICE": "Wheel Welding",
       "PRICE": "110",
-      "SHORTDESCRIPTIONS": "Chicago roads.... We know.... If the rim is fixable - we will fix it",
-      "LONG DESCRIPTIONS": "✔If the wheel or rim is bent, we will find a way to fix it ",
+      "SHORTDESCRIPTION": "Chicago roads.... We know.... If the rim is fixable - we will fix it",
+      "LONGDESCRIPTION": "✔If the wheel or rim is bent, we will find a way to fix it ",
       "IMAGE": ""
     },
     {
       "SERVICE": "Tire Rotation & Balancing",
       "PRICE": "120",
-      "SHORTDESCRIPTIONS": "If you drive in Chicago,balancing is only recommended once a year, but you most likely need it",
-      "LONG DESCRIPTIONS": "✔During rotation, each tire and wheel is removed from your vehicle and moved to a different position to ensure that all tires wear evenly and last longer",
+      "SHORTDESCRIPTION": "If you drive in Chicago,balancing is only recommended once a year, but you most likely need it",
+      "LONGDESCRIPTION": "✔During rotation, each tire and wheel is removed from your vehicle and moved to a different position to ensure that all tires wear evenly and last longer",
       "IMAGE": ""
     },
     {
       "SERVICE": "TPMS Sensor Replacement",
       "PRICE": "120",
-      "SHORTDESCRIPTIONS": "Tires are OK, but TPMS light is on? We'll diagnose and replace the sensor",
-      "LONG DESCRIPTIONS": "✔TPMS light is on even when the tires seem fine? ✔We will perform tire system diagnostics ✔Will replace a failing Tire-Pressure Monitoring Sensor",
+      "SHORTDESCRIPTION": "Tires are OK, but TPMS light is on? We'll diagnose and replace the sensor",
+      "LONGDESCRIPTION": "✔TPMS light is on even when the tires seem fine? ✔We will perform tire system diagnostics ✔Will replace a failing Tire-Pressure Monitoring Sensor",
       "IMAGE": ""
     },
     {
       "SERVICE": "Wheel & Tire Storage",
       "PRICE": "140",
-      "SHORTDESCRIPTIONS": "Yes, we can store your summer tires through the winter season and swap them in the spring",
-      "LONG DESCRIPTIONS": "✔If you are running out of storage space but would like to keep your seasonal tires; we will gladly take care of them for you until you need them again",
+      "SHORTDESCRIPTION": "Yes, we can store your summer tires through the winter season and swap them in the spring",
+      "LONGDESCRIPTION": "✔If you are running out of storage space but would like to keep your seasonal tires; we will gladly take care of them for you until you need them again",
       "IMAGE": ""
     },
     {
       "SERVICE": "Wheel Restoration",
       "PRICE": "150 - 250",
-      "SHORTDESCRIPTIONS": "We offer two options: repainting and full-out powder coating. Please call with questions",
-      "LONG DESCRIPTIONS": "✔Based on your preference, we will refinish the wheels to factory finish ",
+      "SHORTDESCRIPTION": "We offer two options: repainting and full-out powder coating. Please call with questions",
+      "LONGDESCRIPTION": "✔Based on your preference, we will refinish the wheels to factory finish ",
       "IMAGE": ""
     },
     {
       "SERVICE": "Alignment",
       "PRICE": "145 SM / 165 L",
-      "SHORTDESCRIPTIONS": "Tires wear unevenly? Car drifts to one side? You need an alignment",
-      "LONG DESCRIPTIONS": "✔Refers to an adjustment of vehicle suspension ✔Proper alignment is adjusting the angles of the tires which affects how they make contact with the road",
+      "SHORTDESCRIPTION": "Tires wear unevenly? Car drifts to one side? You need an alignment",
+      "LONGDESCRIPTION": "✔Refers to an adjustment of vehicle suspension ✔Proper alignment is adjusting the angles of the tires which affects how they make contact with the road",
       "IMAGE": ""
     }
    ],
@@ -417,71 +417,71 @@
     {
       "SERVICE": "FREE QUOTE",
       "PRICE": "0",
-      "SHORTDESCRIPTIONS": "Fill out the form and email us some photos & VIN - we will work on a free estimate right away",
-      "LONG DESCRIPTIONS": "✔No need to drive your car to a shop to get an estimate; send us an email or a text message with the photos and the VIN and we will send you a precise quote ",
+      "SHORTDESCRIPTION": "Fill out the form and email us some photos & VIN - we will work on a free estimate right away",
+      "LONGDESCRIPTION": "✔No need to drive your car to a shop to get an estimate; send us an email or a text message with the photos and the VIN and we will send you a precise quote ",
       "IMAGE": ""
     },
     {
       "SERVICE": "Independent Shops' Estimate",
       "PRICE": "35",
-      "SHORTDESCRIPTIONS": "We can take your car & take it to up to 3 body shops to collect estimates for you to save you time",
-      "LONG DESCRIPTIONS": "✔To verify you are getting the best price when it comes to vehicle repairs or maintenance, we will gladly do research for you and take it to couple of shops to compare ",
+      "SHORTDESCRIPTION": "We can take your car & take it to up to 3 body shops to collect estimates for you to save you time",
+      "LONGDESCRIPTION": "✔To verify you are getting the best price when it comes to vehicle repairs or maintenance, we will gladly do research for you and take it to couple of shops to compare ",
       "IMAGE": ""
     },
     {
       "SERVICE": "Wet Sand",
       "PRICE": "40-100",
-      "SHORTDESCRIPTIONS": "Sometimes you do not need to repaint just yet - we can wetsand the damaged paint and save it",
-      "LONG DESCRIPTIONS": "✔Wet sanding is the process of sanding a certain measure of clear coat in order to improve or fix severely defected paint, and/or random isolated deep scratches.✔ After the sanding has been done, a heavy cutting polish is applied to bring back the gloss and shine",
+      "SHORTDESCRIPTION": "Sometimes you do not need to repaint just yet - we can wetsand the damaged paint and save it",
+      "LONGDESCRIPTION": "✔Wet sanding is the process of sanding a certain measure of clear coat in order to improve or fix severely defected paint, and/or random isolated deep scratches.✔ After the sanding has been done, a heavy cutting polish is applied to bring back the gloss and shine",
       "IMAGE": ""
     },
     {
       "SERVICE": "Auto Leather Repair",
       "PRICE": "100+",
-      "SHORTDESCRIPTIONS": "We have one of the best leather and upholstery technicians in town. Patch or replacement - we got it ",
-      "LONG DESCRIPTIONS": "✔When the seat, carpet or interior trim of a vehicle is beyond replacement, we can replace the entire upholstery of a vehicle✔ Or in cases of only one component, such as a damaged seat, upholstery replacement can be done so that the new material matches the existing material ",
+      "SHORTDESCRIPTION": "We have one of the best leather and upholstery technicians in town. Patch or replacement - we got it ",
+      "LONGDESCRIPTION": "✔When the seat, carpet or interior trim of a vehicle is beyond replacement, we can replace the entire upholstery of a vehicle✔ Or in cases of only one component, such as a damaged seat, upholstery replacement can be done so that the new material matches the existing material ",
       "IMAGE": ""
     },
     {
       "SERVICE": "Glass Repair",
       "PRICE": "110+",
-      "SHORTDESCRIPTIONS": "From a glass chip repair to full replacement - let us know what's needed - we will find a soluton ",
-      "LONG DESCRIPTIONS": "✔Whether it's a  broken mirror, windshield or damage, we will provide a quote and replace it for you ",
+      "SHORTDESCRIPTION": "From a glass chip repair to full replacement - let us know what's needed - we will find a soluton ",
+      "LONGDESCRIPTION": "✔Whether it's a  broken mirror, windshield or damage, we will provide a quote and replace it for you ",
       "IMAGE": ""
     },
     {
       "SERVICE": "Paint Chip Fix / Touch-Up",
       "PRICE": "125+",
-      "SHORTDESCRIPTIONS": "Let us clean up the damage, match your paint, and touch up the paint to cover the damage",
-      "LONG DESCRIPTIONS": "✔If there is no need to full repainting parts of the vehicle, we can do small touch ups to match the factory color",
+      "SHORTDESCRIPTION": "Let us clean up the damage, match your paint, and touch up the paint to cover the damage",
+      "LONGDESCRIPTION": "✔If there is no need to full repainting parts of the vehicle, we can do small touch ups to match the factory color",
       "IMAGE": ""
     },
     {
       "SERVICE": "Paintless Dent Removal",
       "PRICE": "125+",
-      "SHORTDESCRIPTIONS": "PDR is a great method to pull some dings without paying a price of a full repair and repainting",
-      "LONG DESCRIPTIONS": "✔Paintless Dent Removal will eliminate random dings on the car without removing or replacing any parts of your vehicle ",
+      "SHORTDESCRIPTION": "PDR is a great method to pull some dings without paying a price of a full repair and repainting",
+      "LONGDESCRIPTION": "✔Paintless Dent Removal will eliminate random dings on the car without removing or replacing any parts of your vehicle ",
       "IMAGE": ""
     },
     {
       "SERVICE": "Headliner Replacement",
       "PRICE": "400 - 700",
-      "SHORTDESCRIPTIONS": "We can repair and replace the sagging headliner. Materials + labor is included. A few days of work. ",
-      "LONG DESCRIPTIONS": "✔Replacing sagging headliners that become loose over time is another common repair ✔Will match color to the rest of the interior and have it looking like new again",
+      "SHORTDESCRIPTION": "We can repair and replace the sagging headliner. Materials + labor is included. A few days of work. ",
+      "LONGDESCRIPTION": "✔Replacing sagging headliners that become loose over time is another common repair ✔Will match color to the rest of the interior and have it looking like new again",
       "IMAGE": ""
     },
     {
       "SERVICE": "Panel Repaint",
       "PRICE": "400 - 650",
-      "SHORTDESCRIPTIONS": "Any small or big paint job is not a problem - just send us some photos and we'll fix it for you ",
-      "LONG DESCRIPTIONS": "✔Individual, damaged quarter panel replacement can be done in an effort to save the customer time and money ✔We do any type of work: Repair dents, fix scratches, repaint any panels ",
+      "SHORTDESCRIPTION": "Any small or big paint job is not a problem - just send us some photos and we'll fix it for you ",
+      "LONGDESCRIPTION": "✔Individual, damaged quarter panel replacement can be done in an effort to save the customer time and money ✔We do any type of work: Repair dents, fix scratches, repaint any panels ",
       "IMAGE": ""
     },
     {
       "SERVICE": "Flooded Carpet Repair",
       "PRICE": "450+",
-      "SHORTDESCRIPTIONS": "Flooded car, wet and soaked carpet & padding, odor or mold? We can still save it! ",
-      "LONG DESCRIPTIONS": "✔If your car has been flooded, we can help and deal with the insurance company. ✔Whether it's stripping old padding, assesing mold damage, installing new upholstery, we will get it back to pre-water damage condition ",
+      "SHORTDESCRIPTION": "Flooded car, wet and soaked carpet & padding, odor or mold? We can still save it! ",
+      "LONGDESCRIPTION": "✔If your car has been flooded, we can help and deal with the insurance company. ✔Whether it's stripping old padding, assesing mold damage, installing new upholstery, we will get it back to pre-water damage condition ",
       "IMAGE": ""
     }
    ], 
@@ -489,57 +489,57 @@
     {
       "SERVICE": "Tint Removal",
       "PRICE": "25 - 100",
-      "SHORTDESCRIPTIONS": "Yes, we can peel that old tint for you begfore you put on nice, new ones",
-      "LONG DESCRIPTIONS": "✔If your old tints are peeling or damaged, we will gladly remove them for you before applying a new set ",
+      "SHORTDESCRIPTION": "Yes, we can peel that old tint for you begfore you put on nice, new ones",
+      "LONGDESCRIPTION": "✔If your old tints are peeling or damaged, we will gladly remove them for you before applying a new set ",
       "IMAGE": ""
     },
     {
       "SERVICE": "Chrome Delete",
       "PRICE": "50-750",
-      "SHORTDESCRIPTIONS": "Don't like the outdated look of chrome? Chrome-delete any element you'd like",
-      "LONG DESCRIPTIONS": "✔Beautiful, no damage process of creating a subtle difference from the factory finish ✔Change the styling of your car quickly, easily and at an affordable price",
+      "SHORTDESCRIPTION": "Don't like the outdated look of chrome? Chrome-delete any element you'd like",
+      "LONGDESCRIPTION": "✔Beautiful, no damage process of creating a subtle difference from the factory finish ✔Change the styling of your car quickly, easily and at an affordable price",
       "IMAGE": ""
     },
     {
       "SERVICE": "Tints",
       "PRICE": "260 - 600",
-      "SHORTDESCRIPTIONS": "Tints provide heat and UV protection, and eliminates a feeling of driving in an aquarium",
-      "LONG DESCRIPTIONS": "✔If you need help picking a brand or tinting percentage, we will gladly provide advice and samples of product ✔ Let the true pros do your next tint job. ",
+      "SHORTDESCRIPTION": "Tints provide heat and UV protection, and eliminates a feeling of driving in an aquarium",
+      "LONGDESCRIPTION": "✔If you need help picking a brand or tinting percentage, we will gladly provide advice and samples of product ✔ Let the true pros do your next tint job. ",
       "IMAGE": ""
     },
     {
       "SERVICE": "PPF half Front",
       "PRICE": "650 / 800",
-      "SHORTDESCRIPTIONS": "There is no protection against chips and scratches like PPF - Half Front.",
-      "LONG DESCRIPTIONS": "✔Protect the high impact areas of your vehicle with this partial protection package",
+      "SHORTDESCRIPTION": "There is no protection against chips and scratches like PPF - Half Front.",
+      "LONGDESCRIPTION": "✔Protect the high impact areas of your vehicle with this partial protection package",
       "IMAGE": ""
     },
     {
       "SERVICE": "PPF Full Front",
       "PRICE": "1500 / 2100",
-      "SHORTDESCRIPTIONS": "There is no protection against chips and scratches like PPF - Full Front.",
-      "LONG DESCRIPTIONS": "✔Our most popular application ✔Makes the film practically invisible ",
+      "SHORTDESCRIPTION": "There is no protection against chips and scratches like PPF - Full Front.",
+      "LONGDESCRIPTION": "✔Our most popular application ✔Makes the film practically invisible ",
       "IMAGE": ""
     },
     {
       "SERVICE": "PPF Full Car",
       "PRICE": "3000+",
-      "SHORTDESCRIPTIONS": "There is no protection against chips and scratches like PPF - Full Car",
-      "LONG DESCRIPTIONS": "✔If you have a special car and want to keep it looking perfect all the time with minimal fuss then this is the solution✔ This package provides peace of mind that the entire painted surface of your vehicle is protected from impacts",
+      "SHORTDESCRIPTION": "There is no protection against chips and scratches like PPF - Full Car",
+      "LONGDESCRIPTION": "✔If you have a special car and want to keep it looking perfect all the time with minimal fuss then this is the solution✔ This package provides peace of mind that the entire painted surface of your vehicle is protected from impacts",
       "IMAGE": ""
     },
     {
       "SERVICE": "Ceramic Coating & Paint Correction",
       "PRICE": "750 / 1100 / 1800",
-      "SHORTDESCRIPTIONS": "Please fill out this form and we'll email or call you to answer all your questions",
-      "LONG DESCRIPTIONS": "✔Ceramic is more of an aesthetic choice with some water repellent qualities✔Will gladly walk you through the process! ",
+      "SHORTDESCRIPTION": "Please fill out this form and we'll email or call you to answer all your questions",
+      "LONGDESCRIPTION": "✔Ceramic is more of an aesthetic choice with some water repellent qualities✔Will gladly walk you through the process! ",
       "IMAGE": ""
     },
     {
       "SERVICE": "Vinyl Wrap",
       "PRICE": "2500 / 4500",
-      "SHORTDESCRIPTIONS": "Please fill out this form and we'll email or call you to answer all your questions",
-      "LONG DESCRIPTIONS": "✔Improve your car's apprearance without repainting the whole car! ✔A vinyl wrap is often more cost effective, faster and more durable than that custom paint job",
+      "SHORTDESCRIPTION": "Please fill out this form and we'll email or call you to answer all your questions",
+      "LONGDESCRIPTION": "✔Improve your car's apprearance without repainting the whole car! ✔A vinyl wrap is often more cost effective, faster and more durable than that custom paint job",
       "IMAGE": ""
     }
    ], 
@@ -547,36 +547,36 @@
     {
       "SERVICE": "Wiper Blade Replacement",
       "PRICE": 30,
-      "SHORTDESCRIPTIONS": "As simple as that: we will find swap your blades for you on the spot",
-      "LONG DESCRIPTIONS": "✔We will replace them for you so you can drive confidently in any weather conditions",
+      "SHORTDESCRIPTION": "As simple as that: we will find swap your blades for you on the spot",
+      "LONGDESCRIPTION": "✔We will replace them for you so you can drive confidently in any weather conditions",
       "IMAGE": ""
     },
     {
       "SERVICE": "Jump Start",
       "PRICE": 50,
-      "SHORTDESCRIPTIONS": "No jumping cables? No time to deal with it? We can send a concierge to you ASAP",
-      "LONG DESCRIPTIONS": "✔If your battery died and you do not have time or cables to start it, we will gladly send someone to help! ",
+      "SHORTDESCRIPTION": "No jumping cables? No time to deal with it? We can send a concierge to you ASAP",
+      "LONGDESCRIPTION": "✔If your battery died and you do not have time or cables to start it, we will gladly send someone to help! ",
       "IMAGE": ""
     },
     {
       "SERVICE": "Flat Tire Swap",
       "PRICE": 60,
-      "SHORTDESCRIPTIONS": "Flat tire and definitely not feeling like putting on a donut? We'll do it for you! ",
-      "LONG DESCRIPTIONS": "✔If your tire is flat, we will gladly put on a spare or take it in for patch and resealing if needed ",
+      "SHORTDESCRIPTION": "Flat tire and definitely not feeling like putting on a donut? We'll do it for you! ",
+      "LONGDESCRIPTION": "✔If your tire is flat, we will gladly put on a spare or take it in for patch and resealing if needed ",
       "IMAGE": ""
     },
     {
       "SERVICE": "Battery Jump, Test & Replacement",
       "PRICE": 70,
-      "SHORTDESCRIPTIONS": "Dead battery? We come to you to jump, test or replace the battery",
-      "LONG DESCRIPTIONS": "✔If your battery died and you do not have time or cables to start it, we will gladly send someone to help! ✔We will also bring a battery for your make and model of the vehicle and replace it on the spot for you ",
+      "SHORTDESCRIPTION": "Dead battery? We come to you to jump, test or replace the battery",
+      "LONGDESCRIPTION": "✔If your battery died and you do not have time or cables to start it, we will gladly send someone to help! ✔We will also bring a battery for your make and model of the vehicle and replace it on the spot for you ",
       "IMAGE": ""
     },
     {
       "SERVICE": "Car Unlock",
       "PRICE": 90,
-      "SHORTDESCRIPTIONS": "Similarly to AAA, we can send you a tech who will unlock the car for you",
-      "LONG DESCRIPTIONS": "✔Car unloack assistance without the high price or wait times ",
+      "SHORTDESCRIPTION": "Similarly to AAA, we can send you a tech who will unlock the car for you",
+      "LONGDESCRIPTION": "✔Car unloack assistance without the high price or wait times ",
       "IMAGE": ""
     }
    ], 
@@ -584,29 +584,29 @@
     {
       "SERVICE": "Winterization",
       "PRICE": "155",
-      "SHORTDESCRIPTIONS": "We've pre-packaged some popular services for a discount. ",
-      "LONG DESCRIPTIONS": "✔This package will ensure your car is in good condition to get throigh our Chicago winter. ✔ Includes full regular inspection with an emphasis on safety: Antifreeze, wipers, tires, heating, battery are are thoroughly examined. ✔ Includes both front wipers replacement (parts and labor)",
+      "SHORTDESCRIPTION": "We've pre-packaged some popular services for a discount. ",
+      "LONGDESCRIPTION": "✔This package will ensure your car is in good condition to get throigh our Chicago winter. ✔ Includes full regular inspection with an emphasis on safety: Antifreeze, wipers, tires, heating, battery are are thoroughly examined. ✔ Includes both front wipers replacement (parts and labor)",
       "IMAGE": ""
     },
     {
       "SERVICE": "Detail & Oil Change",
       "PRICE": "240",
-      "SHORTDESCRIPTIONS": "We've pre-packaged some popular services for a discount. ",
-      "LONG DESCRIPTIONS": "✔As simple as that, either a Full Interior OR Full Exterior detailing & Full Synthetic oil change for a discount. ",
+      "SHORTDESCRIPTION": "We've pre-packaged some popular services for a discount. ",
+      "LONGDESCRIPTION": "✔As simple as that, either a Full Interior OR Full Exterior detailing & Full Synthetic oil change for a discount. ",
       "IMAGE": ""
     },
     {
       "SERVICE": "Detail & Full Inspection",
       "PRICE": "260",
-      "SHORTDESCRIPTIONS": "We've pre-packaged some popular services for a discount. ",
-      "LONG DESCRIPTIONS": "✔Detailing and a Full insoection pre-packaged for some extra savings",
+      "SHORTDESCRIPTION": "We've pre-packaged some popular services for a discount. ",
+      "LONGDESCRIPTION": "✔Detailing and a Full insoection pre-packaged for some extra savings",
       "IMAGE": ""
     },
     {
       "SERVICE": "Groupon Special",
       "PRICE": "180-450",
-      "SHORTDESCRIPTIONS": "We've pre-packaged some popular services for a discount. ",
-      "LONG DESCRIPTIONS": "✔Check out our Groupon specials and see if there are any services that might interes you - we are here to help and get it done",
+      "SHORTDESCRIPTION": "We've pre-packaged some popular services for a discount. ",
+      "LONGDESCRIPTION": "✔Check out our Groupon specials and see if there are any services that might interes you - we are here to help and get it done",
       "IMAGE": ""
     }
    ], 
@@ -614,29 +614,29 @@
     {
       "SERVICE": "CUSTOM REQUESTS",
       "PRICE": "0",
-      "SHORTDESCRIPTIONS": "Go ahead, send us you to-do list. We do everything and like a good challenge",
-      "LONG DESCRIPTIONS": "✔Yes, we are probably the only place in North America where you can give pretty much any car service TO-DO list to and we'll get it all sorted out ✔ One place that does it all, without you leaving your home ✔Welcome to the future, Chicagoan :))",
+      "SHORTDESCRIPTION": "Go ahead, send us you to-do list. We do everything and like a good challenge",
+      "LONGDESCRIPTION": "✔Yes, we are probably the only place in North America where you can give pretty much any car service TO-DO list to and we'll get it all sorted out ✔ One place that does it all, without you leaving your home ✔Welcome to the future, Chicagoan :))",
       "IMAGE": ""
     },
     {
       "SERVICE": "TOWING",
       "PRICE": "90+",
-      "SHORTDESCRIPTIONS": "Send us the time and place - we'll arrange the towing for you, even on a short notice",
-      "LONG DESCRIPTIONS": "✔Finding a reliable towing company yourself that would not try to rip you off is not easy, to the the least ✔Or you can reach out to us and we'll arrange everything for you",
+      "SHORTDESCRIPTION": "Send us the time and place - we'll arrange the towing for you, even on a short notice",
+      "LONGDESCRIPTION": "✔Finding a reliable towing company yourself that would not try to rip you off is not easy, to the the least ✔Or you can reach out to us and we'll arrange everything for you",
       "IMAGE": ""
     },
     {
       "SERVICE": "INTER-STATE CAR SHIPPING",
       "PRICE": "500+",
-      "SHORTDESCRIPTIONS": "Please email us your requiremenets and timing - we will work on a quote",
-      "LONG DESCRIPTIONS": "✔If you are here for cross-country car shipping and moving, you probably have done some research already and know how painful the experience of finding a reliable hauling company can be ✔We are here to to make things as simple as they can be",
+      "SHORTDESCRIPTION": "Please email us your requiremenets and timing - we will work on a quote",
+      "LONGDESCRIPTION": "✔If you are here for cross-country car shipping and moving, you probably have done some research already and know how painful the experience of finding a reliable hauling company can be ✔We are here to to make things as simple as they can be",
       "IMAGE": ""
     },
     {
       "SERVICE": "CAR STORAGE",
       "PRICE": "500+ ",
-      "SHORTDESCRIPTIONS": "We offer short and long term vehicle storage solutions. Email with any questions. ",
-      "LONG DESCRIPTIONS": "✔Please contact us for prices and we'll find the best storage solution for you",
+      "SHORTDESCRIPTION": "We offer short and long term vehicle storage solutions. Email with any questions. ",
+      "LONGDESCRIPTION": "✔Please contact us for prices and we'll find the best storage solution for you",
       "IMAGE": ""
     }
    ]

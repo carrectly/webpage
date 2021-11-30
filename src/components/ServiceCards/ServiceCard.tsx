@@ -14,10 +14,19 @@ import InfoIcon from '@mui/icons-material/Info';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import ServiceDetialsModal from '../Modal/ServiceDetailsModal';
 
+//interfaces are used for objects and classes
+//types are used for
+
+interface ServiceObject {
+  serviceObject: ServiceCardProps;
+}
+
 interface ServiceCardProps {
-  name: string;
-  image: string;
-  shortDescription: string;
+  SERVICE: string;
+  PRICE: string;
+  SHORTDESCRIPTION: string;
+  LONGDESCRIPTION: string;
+  IMAGE: string;
 }
 
 const Title = styled.div`
@@ -32,35 +41,75 @@ const Title = styled.div`
   z-index: 15;
 `;
 
-const ServiceCard = ({ name, image, shortDescription }: ServiceCardProps): JSX.Element => {
-    const [open, setOpen] = React.useState(false);
-    const handleOpen = () => {
-        console.log("clicker working - state", open);
-        setOpen(true);
+const ServiceCard: React.FC<ServiceObject> = ({
+  SERVICE,
+  PRICE,
+  SHORTDESCRIPTION,
+  LONGDESCRIPTION,
+  IMAGE,
+}) => {
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => {
+    console.log('clicker working - state', open);
+    setOpen(true);
+  };
+  const handleClose = () => {
+    console.log('clicker working - state', open);
+    setOpen(false);
+  };
 
-    }
-    const handleClose = () => {
-        console.log("clicker working - state", open);
-        setOpen(false)};
-  
   return (
-      <div>
-    <BgImage imgsrc={image} imgalt="test">
-      <Box display="flex" flexDirection="column" justifyContent="space-between" alignContent="space-between" sx={{width: '100%', height: '100%', padding: '10px'}}>
-        <Title>{name}</Title>
-        <Typography variant="body1" color="white" fontFamily="roboto, sans-serif">{shortDescription}</Typography>
-        <Box display="flex" flexDirection="row" justifyContent="space-between" sx={{width: '100%'}}>
-          <StyledEmotionButton handleClick={handleOpen} bgColor="#fff" textColor="rgb(116, 55, 148)">
-            More <InfoIcon fontSize="small" />
-          </StyledEmotionButton>
-          <StyledEmotionButton  handleClick={handleOpen}  bgColor="rgb(116, 55, 148)" textColor="#fff">
-            Add <AddCircleOutlineIcon fontSize="small" />
-          </StyledEmotionButton>
+    <div>
+      <BgImage imgsrc={IMAGE} imgalt="test">
+        <Box
+          display="flex"
+          flexDirection="column"
+          justifyContent="space-between"
+          alignContent="space-between"
+          sx={{
+            width: '100%',
+            height: '100%',
+            padding: '10px',
+            background:
+              'linear-gradient(180deg, rgba(39, 39, 39, 0.8) 45%, rgba(39, 39, 39, 0) 94.67%)',
+          }}
+        >
+          <Title>{SERVICE}</Title>
+          <Typography
+            variant="body1"
+            color="white"
+            fontFamily="roboto, sans-serif"
+          >
+            {SHORTDESCRIPTION}
+          </Typography>
+          <Box
+            display="flex"
+            flexDirection="row"
+            justifyContent="space-between"
+            sx={{ width: '100%' }}
+          >
+            <StyledEmotionButton
+              handleClick={handleOpen}
+              bgColor="#fff"
+              textColor="rgb(116, 55, 148)"
+            >
+              More <InfoIcon fontSize="small" />
+            </StyledEmotionButton>
+            <StyledEmotionButton
+              handleClick={handleOpen}
+              bgColor="rgb(116, 55, 148)"
+              textColor="#fff"
+            >
+              Add <AddCircleOutlineIcon fontSize="small" />
+            </StyledEmotionButton>
+          </Box>
         </Box>
-        
-      </Box>
-    </BgImage>
-    <ServiceDetialsModal open={open} onClose={handleClose}/>
+      </BgImage>
+      <ServiceDetialsModal
+        open={open}
+        onClose={handleClose}
+        serviceDetails={{ SERVICE, PRICE, SHORTDESCRIPTION, LONGDESCRIPTION }}
+      />
     </div>
   );
 };
