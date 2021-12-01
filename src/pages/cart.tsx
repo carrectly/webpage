@@ -67,29 +67,17 @@ function CartScreen() {
                 </TableHead>
                 <TableBody>
                   {cartItems.map((item) => (
-                    <TableRow key={item._id}>
-                      <TableCell>
-                        <NextLink href={`/product/${item.slug}`} passHref>
-                          <Link>
-                            <Image
-                              src={item.image}
-                              alt={item.name}
-                              width={50}
-                              height={50}
-                            ></Image>
-                          </Link>
-                        </NextLink>
-                      </TableCell>
+                    <TableRow key={item.id}>
+                    <TableCell> Empty</TableCell>
 
                       <TableCell>
-                        <NextLink href={`/product/${item.slug}`} passHref>
-                          <Link>
-                            <Typography>{item.name}</Typography>
-                          </Link>
-                        </NextLink>
+                        <Link>
+                          <Typography>{item.name}</Typography>
+                        </Link>
                       </TableCell>
                       <TableCell align="right">
-                        <Select
+                        Quantity
+                        {/* <Select
                           value={item.quantity}
                           onChange={(e) =>
                             updateCartHandler(item, e.target.value)
@@ -99,15 +87,15 @@ function CartScreen() {
                             <MenuItem key={x + 1} value={x + 1}>
                               {x + 1}
                             </MenuItem>
-                          ))}
-                        </Select>
+                          ))} */}
+                        {/* </Select> */}
                       </TableCell>
                       <TableCell align="right">${item.price}</TableCell>
                       <TableCell align="right">
                         <Button
                           variant="contained"
                           color="secondary"
-                          onClick={() => removeItemHandler(item)}
+                          onClick={() => removeItemHandler()}
                         >
                           x
                         </Button>
@@ -122,11 +110,11 @@ function CartScreen() {
             <Card>
               <List>
                 <ListItem>
-                  <Typography variant="h2">
+                  {/* <Typography variant="h2">
                     Subtotal ({cartItems.reduce((a, c) => a + c.quantity, 0)}{' '}
                     items) : $
                     {cartItems.reduce((a, c) => a + c.quantity * c.price, 0)}
-                  </Typography>
+                  </Typography> */}
                 </ListItem>
                 <ListItem>
                   <Button

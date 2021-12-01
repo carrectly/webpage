@@ -100,7 +100,7 @@ const ServiceCard: React.FC<ServiceObject> = ({
               More <InfoIcon fontSize="small" />
             </StyledEmotionButton>
             <StyledEmotionButton
-              handleClick={() => addToCartHandler({id: 1, name: "Andre"})}
+              handleClick={() => addToCartHandler({id: 1, name: "Andre", price: 100})}
               bgColor="rgb(116, 55, 148)"
               textColor="#fff"
             >

@@ -66,7 +66,7 @@ const Layout: FC<Props> = (props: Props) => {
               <NextLink href="/faq" passHref>
                 <StyledLink>FAQ</StyledLink>
               </NextLink>
-              <NextLink href="/faq" passHref>
+              <NextLink href="/cart" passHref>
                 <StyledLink><ShoppingCartIcon/></StyledLink>
               </NextLink>
             </Box>
