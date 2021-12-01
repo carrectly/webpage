@@ -29,6 +29,7 @@ import GoogleMapReact from 'google-map-react';
 
 type Props = {
   children: ReactNode;
+  title?: string;
 };
 
 const StyledLink = styled(Link)<LinkProps>({
@@ -37,12 +38,12 @@ const StyledLink = styled(Link)<LinkProps>({
 });
 
 const Layout: FC<Props> = (props: Props) => {
-  const { children } = props;
+  const { children, title } = props;
 
   return (
     <>
       <Head>
-        <title>Carrectly - Car Service on demand</title>
+      <title>{title ? `${title} - Chicago Car Wash, Service and Maintenance that doesn't suck` : 'Carrectly Auto Care'}</title>
         <meta name="author" content="Andre Birkus" />
         <meta name="keywords" content="car wash, detailing, repair, on demand, deluxe, carwash, body shop, breakes, oil change, cleaning, delivery" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
@@ -73,7 +74,7 @@ const Layout: FC<Props> = (props: Props) => {
         </AppBar>
         <Grid sx={{margin: 0, padding: 0, height: '100%', width: '100vw' }}>{children}</Grid>
         <BottomNavigation showLabels value={'Developed by AB'} sx={{backgroundColor: 'primary.main', width: '100vw'}}>
-          <BottomNavigationAction label={<span>773.800.9085 | info@carrectly.com</span>} showLabel  sx={{color: 'white'}} />
+          <BottomNavigationAction label={<span>773.800.9085 | info@carrectly.com</span>}  sx={{color: 'white'}} />
           <StyledLink href='https://www.facebook.com/Carrectly' target='_blank'><BottomNavigationAction label="Facebook" showLabel  sx={{color: 'white'}} icon={<FacebookIcon color="secondary" />} /></StyledLink>
           <StyledLink href='https://twitter.com/Carrectly' target='_blank'><BottomNavigationAction label="Twitter" showLabel  sx={{color: 'white'}} icon={<TwitterIcon color="secondary" />} /></StyledLink>
           <StyledLink href='https://www.instagram.com/carrectly/' target='_blank'><BottomNavigationAction label="Instagram" showLabel  sx={{color: 'white'}} icon={<InstagramIcon color="secondary" />} /></StyledLink>
