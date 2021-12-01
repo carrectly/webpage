@@ -1,35 +1,60 @@
 import Cookies from 'js-cookie';
-import { createContext, useReducer } from 'react';
+import React, { createContext, useReducer } from 'react';
 
-export const Store = createContext();
+type ServiceType = {
+  id: number;
+  name: string;
+  price: number;
+};
+
+type CartType = {
+  cartItems: ServiceType[];
+  shippingAddress: any;
+};
+
+type InitialStateType = {
+  cart: CartType;
+  userInfo: any;
+};
+
+type ActionType = {
+  type: string;
+  payload: any;
+};
+
 const initialState = {
-  darkMode: Cookies.get('darkMode') === 'ON' ? true : false,
   cart: {
     cartItems: Cookies.get('cartItems')
+    // @ts-ignore
       ? JSON.parse(Cookies.get('cartItems'))
       : [],
     shippingAddress: Cookies.get('shippingAddress')
+    // @ts-ignore
       ? JSON.parse(Cookies.get('shippingAddress'))
       : { location: {} },
-    paymentMethod: Cookies.get('paymentMethod')
-      ? Cookies.get('paymentMethod')
-      : '',
   },
   userInfo: Cookies.get('userInfo')
+  // @ts-ignore
     ? JSON.parse(Cookies.get('userInfo'))
     : null,
 };
 
-function reducer(state, action) {
+export const Store = createContext<{
+  state: InitialStateType;
+  dispatch: React.Dispatch<any>;
+}>({
+  state: initialState,
+  dispatch: () => null
+});
+
+
+
+function reducer(state: InitialStateType, action: ActionType) {
   switch (action.type) {
-    case 'DARK_MODE_ON':
-      return { ...state, darkMode: true };
-    case 'DARK_MODE_OFF':
-      return { ...state, darkMode: false };
     case 'CART_ADD_ITEM': {
       const newItem = action.payload;
       const existItem = state.cart.cartItems.find(
-        (item) => item._id === newItem._id
+        (item) => item.id === newItem.id
       );
       const cartItems = existItem
         ? state.cart.cartItems.map((item) =>
@@ -41,7 +66,7 @@ function reducer(state, action) {
     }
     case 'CART_REMOVE_ITEM': {
       const cartItems = state.cart.cartItems.filter(
-        (item) => item._id !== action.payload._id
+        (item) => item.id !== action.payload.id
       );
       Cookies.set('cartItems', JSON.stringify(cartItems));
       return { ...state, cart: { ...state.cart, cartItems } };
@@ -57,44 +82,17 @@ function reducer(state, action) {
           },
         },
       };
-    case 'SAVE_SHIPPING_ADDRESS_MAP_LOCATION':
-      return {
-        ...state,
-        cart: {
-          ...state.cart,
-          shippingAddress: {
-            ...state.cart.shippingAddress,
-            location: action.payload,
-          },
-        },
-      };
-    case 'SAVE_PAYMENT_METHOD':
-      return {
-        ...state,
-        cart: { ...state.cart, paymentMethod: action.payload },
-      };
     case 'CART_CLEAR':
       return { ...state, cart: { ...state.cart, cartItems: [] } };
-    case 'USER_LOGIN':
-      return { ...state, userInfo: action.payload };
-    case 'USER_LOGOUT':
-      return {
-        ...state,
-        userInfo: null,
-        cart: {
-          cartItems: [],
-          shippingAddress: { location: {} },
-          paymentMethod: '',
-        },
-      };
-
     default:
       return state;
   }
 }
 
-export function StoreProvider(props) {
+export const StoreProvider: React.FC = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
-  const value = { state, dispatch };
-  return <Store.Provider value={value}>{props.children}</Store.Provider>;
-}
+
+  return (
+    <Store.Provider value={{ state, dispatch }}>{children}</Store.Provider>
+  );
+};

@@ -8,6 +8,8 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { Carousel, CarouselProps } from 'antd';
+import { useContext } from 'react';
+import {Store} from '../../../utils/Store'
 import BgImage from '../BgImage/BgImage';
 import StyledEmotionButton from '../Buttons/StyledEmotionButton';
 import InfoIcon from '@mui/icons-material/Info';
@@ -45,6 +47,7 @@ const ServiceCard: React.FC<ServiceObject> = ({
   serviceObject
 }) => {
   const [open, setOpen] = React.useState(false);
+  const { state, dispatch } = useContext(Store);
   const handleOpen = () => {
     console.log('clicker working - state', open);
     setOpen(true);
@@ -52,6 +55,11 @@ const ServiceCard: React.FC<ServiceObject> = ({
   const handleClose = () => {
     console.log('clicker working - state', open);
     setOpen(false);
+  };
+
+  const addToCartHandler = async (product: any) => {
+    console.log("adding product", product);
+    dispatch({ type: 'CART_ADD_ITEM', payload: { ...product } });
   };
 
   return (
@@ -92,7 +100,7 @@ const ServiceCard: React.FC<ServiceObject> = ({
               More <InfoIcon fontSize="small" />
             </StyledEmotionButton>
             <StyledEmotionButton
-              handleClick={handleOpen}
+              handleClick={() => addToCartHandler({id: 1, name: "Andre"})}
               bgColor="rgb(116, 55, 148)"
               textColor="#fff"
             >
