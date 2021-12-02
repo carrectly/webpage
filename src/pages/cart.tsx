@@ -19,10 +19,11 @@ import {
   Button,
   Card,
   List,
-  ListItem,
+  ListItem
 } from '@mui/material';
 import axios from 'axios';
 import { useRouter } from 'next/router';
+import StepperComponent from '../components/Stepper/Stepper';
 
 function CartScreen() {
   const router = useRouter();
@@ -37,18 +38,19 @@ function CartScreen() {
     // dispatch({ type: 'CART_REMOVE_ITEM', payload: item });
   };
   const checkoutHandler = () => {
-    router.push('/shipping');
+    router.push('/customerDetails');
   };
   return (
     <Layout title="Shopping Cart">
       <Typography component="h1" variant="h1">
         Shopping Cart
       </Typography>
+      <StepperComponent activeStep={1}/>
       {cartItems.length === 0 ? (
         <div>
           Cart is empty.{' '}
-          <NextLink href="/" passHref>
-            <Link>Go shopping</Link>
+          <NextLink href="/services" passHref>
+            <Link>Pick a service for your needs</Link>
           </NextLink>
         </div>
       ) : (
