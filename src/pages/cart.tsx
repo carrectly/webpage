@@ -28,6 +28,7 @@ import StepperComponent from '../components/Stepper/Stepper';
 function CartScreen() {
   const router = useRouter();
   const { state, dispatch } = useContext(Store);
+  console.log("here is our state", state)
   const {
     cart: { cartItems },
   } = state;
@@ -38,14 +39,14 @@ function CartScreen() {
     // dispatch({ type: 'CART_REMOVE_ITEM', payload: item });
   };
   const checkoutHandler = () => {
-    router.push('/customerDetails');
+    router.push('/customerdetails');
   };
   return (
     <Layout title="Shopping Cart">
       <Typography component="h1" variant="h1">
         Shopping Cart
       </Typography>
-      <StepperComponent activeStep={1}/>
+      <StepperComponent activeStep={0}/>
       {cartItems.length === 0 ? (
         <div>
           Cart is empty.{' '}
@@ -74,7 +75,7 @@ function CartScreen() {
 
                       <TableCell>
                         <Link>
-                          <Typography>{item.name}</Typography>
+                          <Typography>{item.SERVICE}</Typography>
                         </Link>
                       </TableCell>
                       <TableCell align="right">
@@ -92,7 +93,7 @@ function CartScreen() {
                           ))} */}
                         {/* </Select> */}
                       </TableCell>
-                      <TableCell align="right">${item.price}</TableCell>
+                      <TableCell align="right">${item.PRICE}</TableCell>
                       <TableCell align="right">
                         <Button
                           variant="contained"

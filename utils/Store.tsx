@@ -2,9 +2,11 @@ import Cookies from 'js-cookie';
 import React, { createContext, useReducer } from 'react';
 
 type ServiceType = {
-  id: number;
-  name: string;
-  price: number;
+  ID: number;
+  SERVICE: string;
+  PRICE: string;
+  // SHORTDESCRIPTION: string;
+  IMAGE: string;
 };
 
 type CartType = {
@@ -53,16 +55,18 @@ function reducer(state: InitialStateType, action: ActionType) {
   switch (action.type) {
     case 'CART_ADD_ITEM': {
       const newItem = action.payload;
-      const existItem = state.cart.cartItems.find(
-        (item) => item.id === newItem.id
-      );
-      const cartItems = existItem
-        ? state.cart.cartItems.map((item) =>
-            item.name === existItem.name ? newItem : item
-          )
-        : [...state.cart.cartItems, newItem];
-      Cookies.set('cartItems', JSON.stringify(cartItems));
-      return { ...state, cart: { ...state.cart, cartItems } };
+      const newCartItems = [...state.cart.cartItems, newItem];
+      console.log("reducer adding item", newCartItems);
+      // const existItem = state.cart.cartItems.find(
+      //   (item) => item.id === newItem.id
+      // );
+      // const cartItems = existItem
+      //   ? state.cart.cartItems.map((item) =>
+      //       item.name === existItem.name ? newItem : item
+      //     )
+      //   : [...state.cart.cartItems, newItem];
+      Cookies.set('cartItems', JSON.stringify(newCartItems));
+      return { ...state, cart: { ...state.cart, cartItems: newCartItems } };
     }
     case 'CART_REMOVE_ITEM': {
       const cartItems = state.cart.cartItems.filter(

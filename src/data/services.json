@@ -1,6 +1,7 @@
 {
   "POPULAR": [
     {
+      "ID": "0",
       "SERVICE": "FREE Quote",
       "PRICE": "0",
       "SHORTDESCRIPTION": "Free online quote for any mechanical repair or body work",
@@ -8,6 +9,7 @@
       "IMAGE": "/images/wp_images/popular/dent_removal.jpg"
     },
     {
+      "ID": "1",
       "SERVICE": "Fuel Up",
       "PRICE": "10",
       "SHORTDESCRIPTION": "Can't or don't want to leave your home to fill up gas? We can do it for you. ",
@@ -15,6 +17,7 @@
       "IMAGE": "/images/wp_images/popular/dent_removal.jpg"
     },
     {
+      "ID": "2",
       "SERVICE": "Deluxe Wash",
       "PRICE": "35 / 40 / 45",
       "SHORTDESCRIPTION": "Best in and out hand car wash in Chicago, without waiting in line",
@@ -22,6 +25,7 @@
       "IMAGE": "/images/wp_images/popular/deluxe_wash.jpg"
     },
     {
+      "ID": "3",
       "SERVICE": "Ozone Disinfection",
       "PRICE": "40 2 hrs / 70 4 hrs / 110 8 hrs",
       "SHORTDESCRIPTION": "Disinfect your car with ozone - it destroys mold, bacteria, viruses & odors",
@@ -29,6 +33,7 @@
       "IMAGE": "/images/wp_images/popular/ozone.jpg"
     },
     {
+      "ID": "4",
       "SERVICE": "Emission Test",
       "PRICE": "55",
       "SHORTDESCRIPTION": "With no EPA facilities left in Chicago, pass the test without wasting hours",
@@ -36,6 +41,7 @@
       "IMAGE": "/images/wp_images/popular/emissions.png"
     },
     {
+      "ID": "5",
       "SERVICE": "Tire Repair",
       "PRICE": "60",
       "SHORTDESCRIPTION": "Tire leaking air? No worries: we'll patch, re-seal, and re-balance it",
@@ -43,6 +49,7 @@
       "IMAGE": "/images/wp_images/popular/ceramic_coating.jpg"
     },
     {
+      "ID": "6",
       "SERVICE": "Battery Jump, Test & Swap",
       "PRICE": "70",
       "SHORTDESCRIPTION": "Dead battery? We come to you to jump, test or replace the battery",
@@ -50,6 +57,7 @@
       "IMAGE": "/images/wp_images/popular/car-battery-tester.jpg"
     },
     {
+      "ID": "7",
       "SERVICE": "Problem Diagnostics",
       "PRICE": "90",
       "SHORTDESCRIPTION": "Car acting up, warning lights on? We'll take it for diagnostics and estimate repairs",
@@ -57,6 +65,7 @@
       "IMAGE": "/images/wp_images/popular/diagnositcs.jpg"
     },
     {
+      "ID": "8",
       "SERVICE": "Synthetic Oil Change",
       "PRICE": "105",
       "SHORTDESCRIPTION": "Synthetic Oil and filter change with none of the hassles or wasted time",
@@ -64,6 +73,7 @@
       "IMAGE": "/images/wp_images/popular/showroom_detail.jpg"
     },
     {
+      "ID": "9",
       "SERVICE": "Mini Detail",
       "PRICE": "115 / 125 / 135",
       "SHORTDESCRIPTION": "Better than a wash, less than a full detail. Wash + Spot Cleaning",
@@ -71,6 +81,7 @@
       "IMAGE": "/images/wp_images/popular/showroom_detail.jpg"
     },
     {
+      "ID": "10",
       "SERVICE": "Full Inspection",
       "PRICE": "120",
       "SHORTDESCRIPTION": "Check the basics of your car or steer away from buying a lemon",
@@ -78,6 +89,7 @@
       "IMAGE": "/images/wp_images/popular/showroom_detail.jpg"
     },
     {
+      "ID": "11",
       "SERVICE": "Interior Detail",
       "PRICE": "180 / 210 / 240",
       "SHORTDESCRIPTION": "Full deep cleaning and shampoo of your entire interior. Fresh, clean, and sparkling. ",
@@ -85,6 +97,7 @@
       "IMAGE": "/images/wp_images/popular/showroom_detail.jpg"
     },
     {
+      "ID": "12",
       "SERVICE": "Exterior Detail",
       "PRICE": "180 / 210 / 240",
       "SHORTDESCRIPTION": "Removes scratches and swirl marks. Restores and locks-in the shine",
@@ -92,6 +105,7 @@
       "IMAGE": "/images/wp_images/popular/showroom_detail.jpg"
     },
     {
+      "ID": "13",
       "SERVICE": "Brake Pads / Pads with Rotors",
       "PRICE": "270 / 480",
       "SHORTDESCRIPTION": "Squeaking or grinding noise? You need new pads or pads & rotors. Consider it solved",
@@ -99,6 +113,7 @@
       "IMAGE": "/images/wp_images/popular/brake_pads.jpeg"
     },
     {
+      "ID": "14",
       "SERVICE": "Regular Maintenance",
       "PRICE": "285 / 325",
       "SHORTDESCRIPTION": "Oil change, inspection, tire rotation, filters change, fluids, check engine, scan & more",
@@ -106,6 +121,7 @@
       "IMAGE": "/images/wp_images/popular/boise-mechnic.jpg"
     },
     {
+      "ID": "15",
       "SERVICE": "Showroom Detail",
       "PRICE": "290 / 330 / 370",
       "SHORTDESCRIPTION": "Best premium quality full detailing service in Chicago. Period.",

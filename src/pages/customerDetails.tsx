@@ -28,50 +28,32 @@ import {
       cart: { shippingAddress },
     } = state;
     const { location } = shippingAddress;
-    // useEffect(() => {
-    //   setValue('fullName', shippingAddress.fullName);
-    //   setValue('address', shippingAddress.address);
-    //   setValue('city', shippingAddress.city);
-    //   setValue('postalCode', shippingAddress.postalCode);
-    //   setValue('country', shippingAddress.country);
-    // }, []);
+    useEffect(() => {
+      setValue('firstName', shippingAddress.firstName);
+      setValue('lastName', shippingAddress.lasName);
+      setValue('address', shippingAddress.address);
+      setValue('city', shippingAddress.city);
+      setValue('postalCode', shippingAddress.postalCode);
+      setValue('country', shippingAddress.country);
+    }, []);
   
-    const submitHandler = ({ fullName, address, city, postalCode, country }) => {
+    const submitHandler = ({ firstName, lastName, address, city, postalCode, country }) => {
       dispatch({
         type: 'SAVE_SHIPPING_ADDRESS',
-        payload: { fullName, address, city, postalCode, country, location },
+        payload: { firstName, lastName, address, city, postalCode, country, location },
       });
       Cookies.set('shippingAddress', {
-        fullName,
+        firstName,
+        lastName,
         address,
         city,
         postalCode,
         country,
         location,
       });
-      router.push('/payment');
+      router.push('/placeorder');
     };
   
-    const chooseLocationHandler = () => {
-      const fullName = getValues('fullName');
-      const address = getValues('address');
-      const city = getValues('city');
-      const postalCode = getValues('postalCode');
-      const country = getValues('country');
-      dispatch({
-        type: 'SAVE_SHIPPING_ADDRESS',
-        payload: { fullName, address, city, postalCode, country },
-      });
-      Cookies.set('shippingAddress', {
-        fullName,
-        address,
-        city,
-        postalCode,
-        country,
-        location,
-      });
-      router.push('/map');
-    };
     return (
       <Layout title="Shipping Address">
         <form onSubmit={handleSubmit(submitHandler)} >
@@ -82,7 +64,7 @@ import {
           <List>
             <ListItem>
               <Controller
-                name="fullName"
+                name="firstname"
                 control={control}
                 defaultValue=""
                 rules={{
@@ -93,14 +75,42 @@ import {
                   <TextField
                     variant="outlined"
                     fullWidth
-                    id="fullName"
-                    label="Full Name"
-                    error={Boolean(errors.fullName)}
+                    id="firstName"
+                    label="First Name"
+                    error={Boolean(errors.firstName)}
                     helperText={
-                      errors.fullName
-                        ? errors.fullName.type === 'minLength'
-                          ? 'Full Name length is more than 1'
-                          : 'Full Name is required'
+                      errors.firstName
+                        ? errors.firstName.type === 'minLength'
+                          ? 'First Name length is more than 1'
+                          : 'First Name is required'
+                        : ''
+                    }
+                    {...field}
+                  ></TextField>
+                )}
+              ></Controller>
+            </ListItem>
+            <ListItem>
+              <Controller
+                name="lastname"
+                control={control}
+                defaultValue=""
+                rules={{
+                  required: true,
+                  minLength: 2,
+                }}
+                render={({ field }) => (
+                  <TextField
+                    variant="outlined"
+                    fullWidth
+                    id="firstName"
+                    label="Last Name"
+                    error={Boolean(errors.lastName)}
+                    helperText={
+                      errors.lastName
+                        ? errors.lastName.type === 'minLength'
+                          ? 'Last Name length is more than 1'
+                          : 'Last Name is required'
                         : ''
                     }
                     {...field}
@@ -219,18 +229,6 @@ import {
                   ></TextField>
                 )}
               ></Controller>
-            </ListItem>
-            <ListItem>
-              <Button
-                variant="contained"
-                type="button"
-                onClick={chooseLocationHandler}
-              >
-                Choose on map
-              </Button>
-              <Typography>
-                {location.lat && `${location.lat}, ${location.lat}`}
-              </Typography>
             </ListItem>
             <ListItem>
               <Button variant="contained" type="submit" fullWidth color="primary">

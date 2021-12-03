@@ -24,6 +24,7 @@ interface ServiceObject {
 }
 
 interface ServiceCardProps {
+  ID: string;
   SERVICE: string;
   PRICE: string;
   SHORTDESCRIPTION: string;
@@ -58,8 +59,9 @@ const ServiceCard: React.FC<ServiceObject> = ({
   };
 
   const addToCartHandler = async (product: any) => {
+    const {ID, SERVICE, IMAGE, PRICE} = product
     console.log("adding product", product);
-    dispatch({ type: 'CART_ADD_ITEM', payload: { ...product } });
+    dispatch({ type: 'CART_ADD_ITEM', payload: { ID, SERVICE, IMAGE, PRICE } });
   };
 
   return (
@@ -100,7 +102,7 @@ const ServiceCard: React.FC<ServiceObject> = ({
               More <InfoIcon fontSize="small" />
             </StyledEmotionButton>
             <StyledEmotionButton
-              handleClick={() => addToCartHandler({id: 1, name: "Andre", price: 100})}
+              handleClick={() => addToCartHandler(serviceObject)}
               bgColor="rgb(116, 55, 148)"
               textColor="#fff"
             >
