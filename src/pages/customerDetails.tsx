@@ -24,32 +24,20 @@ import {
     const router = useRouter();
     const { state, dispatch } = useContext(Store);
     const {
-      userInfo,
-      cart: { shippingAddress },
+      shippingAddress 
     } = state;
-    const { location } = shippingAddress;
     useEffect(() => {
       setValue('firstName', shippingAddress.firstName);
-      setValue('lastName', shippingAddress.lasName);
+      setValue('lastName', shippingAddress.lastName);
       setValue('address', shippingAddress.address);
       setValue('city', shippingAddress.city);
       setValue('postalCode', shippingAddress.postalCode);
-      setValue('country', shippingAddress.country);
     }, []);
   
-    const submitHandler = ({ firstName, lastName, address, city, postalCode, country }) => {
+    const submitHandler = ({ firstName, lastName, address, city, postalCode }) => {
       dispatch({
         type: 'SAVE_SHIPPING_ADDRESS',
-        payload: { firstName, lastName, address, city, postalCode, country, location },
-      });
-      Cookies.set('shippingAddress', {
-        firstName,
-        lastName,
-        address,
-        city,
-        postalCode,
-        country,
-        location,
+        payload: { firstName, lastName, address, city, postalCode },
       });
       router.push('/placeorder');
     };
@@ -64,7 +52,7 @@ import {
           <List>
             <ListItem>
               <Controller
-                name="firstname"
+                name="firstName"
                 control={control}
                 defaultValue=""
                 rules={{
@@ -92,7 +80,7 @@ import {
             </ListItem>
             <ListItem>
               <Controller
-                name="lastname"
+                name="lastName"
                 control={control}
                 defaultValue=""
                 rules={{
@@ -103,7 +91,7 @@ import {
                   <TextField
                     variant="outlined"
                     fullWidth
-                    id="firstName"
+                    id="lastName"
                     label="Last Name"
                     error={Boolean(errors.lastName)}
                     helperText={
@@ -195,34 +183,6 @@ import {
                         ? errors.postalCode.type === 'minLength'
                           ? 'Postal Code length is more than 1'
                           : 'Postal Code is required'
-                        : ''
-                    }
-                    {...field}
-                  ></TextField>
-                )}
-              ></Controller>
-            </ListItem>
-            <ListItem>
-              <Controller
-                name="country"
-                control={control}
-                defaultValue=""
-                rules={{
-                  required: true,
-                  minLength: 2,
-                }}
-                render={({ field }) => (
-                  <TextField
-                    variant="outlined"
-                    fullWidth
-                    id="country"
-                    label="Country"
-                    error={Boolean(errors.country)}
-                    helperText={
-                      errors.country
-                        ? errors.country.type === 'minLength'
-                          ? 'Country length is more than 1'
-                          : 'Country is required'
                         : ''
                     }
                     {...field}

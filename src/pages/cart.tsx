@@ -28,9 +28,8 @@ import StepperComponent from '../components/Stepper/Stepper';
 function CartScreen() {
   const router = useRouter();
   const { state, dispatch } = useContext(Store);
-  console.log("here is our state", state)
   const {
-    cart: { cartItems },
+    cartItems 
   } = state;
   const updateCartHandler = async () => {
     // dispatch({ type: 'CART_ADD_ITEM', payload: { ...item } });

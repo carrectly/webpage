@@ -24,50 +24,47 @@ import axios from 'axios';
 import { useRouter } from 'next/router';
 // import { useSnackbar } from 'notistack';
 import { getError } from '../../utils/error';
-import Cookies from 'js-cookie';
 import StepperComponent from '../components/Stepper/Stepper';
 
 function PlaceOrder() {
   const router = useRouter();
   const { state, dispatch } = useContext(Store);
-  const {
-    userInfo,
-    cart: { cartItems, shippingAddress },
-  } = state;
+  const { cartItems, shippingAddress } = state;
 
   useEffect(() => {
     if (cartItems.length === 0) {
       router.push('/cart');
     }
+    console.log('state after adding address', state);
   }, []);
   //   const { closeSnackbar, enqueueSnackbar } = useSnackbar();
   const [loading, setLoading] = useState(false);
-//   const placeOrderHandler = async () => {
-//     // closeSnackbar();
-//     try {
-//       setLoading(true);
-//       const { data } = await axios.post(
-//         '/api/orders',
-//         {
-//           orderItems: cartItems,
-//           shippingAddress,
-//           itemsPrice,
-//         },
-//         {
-//           headers: {
-//             authorization: `Bearer ${userInfo.token}`,
-//           },
-//         }
-//       );
-//       dispatch({ type: 'CART_CLEAR' });
-//       Cookies.remove('cartItems');
-//       setLoading(false);
-//       router.push(`/order/${data._id}`);
-//     } catch (err) {
-//       setLoading(false);
-//       //   enqueueSnackbar(getError(err), { variant: 'error' });
-//     }
-//   };
+  const placeOrderHandler = async () => {
+    // closeSnackbar();
+    try {
+      setLoading(true);
+      //   const { data } = await axios.post(
+      //     '/api/orders',
+      //     {
+      //       orderItems: cartItems,
+      //       shippingAddress,
+      //       itemsPrice,
+      //     },
+      //     {
+      //       headers: {
+      //         authorization: `Bearer ${userInfo.token}`,
+      //       },
+      //     }
+      //   );
+      dispatch({ type: 'CART_CLEAR' });
+
+      setLoading(false);
+      //   router.push(`/order/${data._id}`);
+    } catch (err) {
+      setLoading(false);
+      //   enqueueSnackbar(getError(err), { variant: 'error' });
+    }
+  };
   return (
     <Layout title="Place Order">
       <StepperComponent activeStep={3}></StepperComponent>
@@ -85,9 +82,9 @@ function PlaceOrder() {
                 </Typography>
               </ListItem>
               <ListItem>
-                {shippingAddress.firstName}, {shippingAddress.lastName},  {shippingAddress.address},{' '}
-                {shippingAddress.city}, {shippingAddress.postalCode},{' '}
-                {shippingAddress.country}
+                {shippingAddress.firstName}, {shippingAddress.lastName},{' '}
+                {shippingAddress.address}, {shippingAddress.city},{' '}
+                {shippingAddress.postalCode}, {shippingAddress.country}
               </ListItem>
             </List>
           </Card>
@@ -111,7 +108,7 @@ function PlaceOrder() {
                     </TableHead>
                     <TableBody>
                       {cartItems.map((item) => (
-                        <TableRow key={item.id}>
+                        <TableRow key={item.ID}>
                           {/* <TableCell>
                             <Link>
                               <Image
@@ -125,11 +122,11 @@ function PlaceOrder() {
 
                           <TableCell>
                             <Link>
-                              <Typography>{item.name}</Typography>
+                              <Typography>{item.SERVICE}</Typography>
                             </Link>
                           </TableCell>
                           <TableCell align="right">
-                            <Typography>${item.price}</Typography>
+                            <Typography>${item.PRICE}</Typography>
                           </TableCell>
                         </TableRow>
                       ))}
@@ -172,7 +169,7 @@ function PlaceOrder() {
               </ListItem>
               <ListItem>
                 <Button
-                //   onClick={placeOrderHandler}
+                  onClick={placeOrderHandler}
                   variant="contained"
                   color="primary"
                   fullWidth
