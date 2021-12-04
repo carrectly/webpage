@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { Store } from '../../utils/Store';
 import {
   Box,
   Typography,
@@ -23,7 +24,7 @@ type faqSubGroupsTypes = 'basics' | 'services' | 'payments' | 'changes' | 'info'
 
 function TabPanel(props: TabPanelProps) {
   const { children, value, index, ...other } = props;
-
+  const { state, dispatch } = useContext(Store);
   return (
     <div
       role="tabpanel"

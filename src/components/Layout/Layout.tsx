@@ -1,4 +1,5 @@
-import React, { ReactNode, FC } from 'react';
+import React, { ReactNode, FC, useContext, useEffect } from 'react';
+import dynamic from 'next/dynamic';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import Head from 'next/head';
@@ -24,8 +25,10 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import GoogleMapReact from 'google-map-react';
+import StyledCartIcon from '../StyledCartIcon/StyledCartIcon';
+import { Store } from '../../../utils/Store';
+
 
 type Props = {
   children: ReactNode;
@@ -37,8 +40,14 @@ const StyledLink = styled(Link)<LinkProps>({
   padding: 10,
 });
 
+
 const Layout: FC<Props> = (props: Props) => {
   const { children, title } = props;
+  const { state, dispatch } = useContext(Store);
+  const {
+    cartItems 
+  } = state;
+
 
   return (
     <>
@@ -67,7 +76,7 @@ const Layout: FC<Props> = (props: Props) => {
                 <StyledLink>FAQ</StyledLink>
               </NextLink>
               <NextLink href="/cart" passHref>
-                <StyledLink><ShoppingCartIcon/></StyledLink>
+                <StyledLink><StyledCartIcon /></StyledLink>
               </NextLink>
             </Box>
           </Toolbar>

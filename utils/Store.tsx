@@ -68,6 +68,7 @@ function reducer(state: InitialStateType, action: ActionType) {
       Cookies.remove('cartItems');
       return { ...state, cartItems: [] };
     default:
+      console.log("getting default state", state)
       return state;
   }
 }

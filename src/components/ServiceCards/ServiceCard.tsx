@@ -8,13 +8,13 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { Carousel, CarouselProps } from 'antd';
-import { useContext } from 'react';
-import {Store} from '../../../utils/Store'
 import BgImage from '../BgImage/BgImage';
 import StyledEmotionButton from '../Buttons/StyledEmotionButton';
 import InfoIcon from '@mui/icons-material/Info';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import ServiceDetialsModal from '../Modal/ServiceDetailsModal';
+import CheckCircleOutlinedIcon from '@mui/icons-material/CheckCircleOutlined';
+import AddButton from '../Buttons/AddButton'
 
 //interfaces are used for objects and classes
 //types are used for
@@ -44,24 +44,13 @@ const Title = styled.div`
   z-index: 15;
 `;
 
-const ServiceCard: React.FC<ServiceObject> = ({
-  serviceObject
-}) => {
+const ServiceCard: React.FC<ServiceObject> = ({ serviceObject }) => {
   const [open, setOpen] = React.useState(false);
-  const { state, dispatch } = useContext(Store);
   const handleOpen = () => {
-    console.log('clicker working - state', open);
     setOpen(true);
   };
   const handleClose = () => {
-    console.log('clicker working - state', open);
     setOpen(false);
-  };
-
-  const addToCartHandler = async (product: any) => {
-    const {ID, SERVICE, IMAGE, PRICE} = product
-    console.log("adding product", product);
-    dispatch({ type: 'CART_ADD_ITEM', payload: { ID, SERVICE, IMAGE, PRICE } });
   };
 
   return (
@@ -101,13 +90,7 @@ const ServiceCard: React.FC<ServiceObject> = ({
             >
               More <InfoIcon fontSize="small" />
             </StyledEmotionButton>
-            <StyledEmotionButton
-              handleClick={() => addToCartHandler(serviceObject)}
-              bgColor="rgb(116, 55, 148)"
-              textColor="#fff"
-            >
-              Add <AddCircleOutlineIcon fontSize="small" />
-            </StyledEmotionButton>
+            <AddButton serviceObject={serviceObject} />
           </Box>
         </Box>
       </BgImage>
