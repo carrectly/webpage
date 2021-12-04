@@ -1,4 +1,3 @@
-import { useContext } from 'react';
 import { Store } from '../../utils/Store';
 import EmotionButton from '../components/Buttons/EmotionButton';
 import StyledEmotionButton from '../components/Buttons/StyledEmotionButton';
@@ -8,7 +7,6 @@ import aboutInfoArray from '../data/about.json';
 import { Box, Typography, Container } from '@mui/material';
 
 const about = () => {
-  const { state, dispatch } = useContext(Store);
   return (
     <Layout>
       <Container>

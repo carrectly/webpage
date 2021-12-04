@@ -6,7 +6,7 @@ import Layout from '../components/Layout/Layout';
 import { Carousel, CarouselProps } from 'antd';
 import styles from '../../styles/Layout.module.css';
 import styled from '@emotion/styled';
-import { FC, useContext } from 'react';
+import { FC} from 'react';
 import BgImage from '../components/BgImage/BgImage';
 import { Store } from '../../utils/Store';
 
@@ -57,8 +57,7 @@ const StyledCarouselComponent: FC = ({ children }) => {
 };
 
 const Home: NextPage = () => {
-  const { state, dispatch } = useContext(Store);
-  
+
   return (
     <Layout>
       <Image

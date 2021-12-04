@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React from 'react';
 import serviceArray from '../data/services.json';
 import Layout from '../components/Layout/Layout';
 import ServiceCard from '../components/ServiceCards/ServiceCard';
@@ -8,7 +8,6 @@ import { Store } from '../../utils/Store';
 const popularServices = serviceArray.POPULAR;
 
 const services = () => {
-  const { state, dispatch } = useContext(Store);
 
   return (
     <Layout>

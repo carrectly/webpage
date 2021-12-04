@@ -5,10 +5,6 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import dynamic from 'next/dynamic';
 import { Store } from '../../../utils/Store';
 
-type cartIconProps = {
-  itemsCount: number;
-};
-
 const StyledBadge = styled(Badge)<BadgeProps>(({ theme }) => ({
   '& .MuiBadge-badge': {
     right: -3,
@@ -18,7 +14,7 @@ const StyledBadge = styled(Badge)<BadgeProps>(({ theme }) => ({
   },
 }));
 
-const StyledCartIcon: FC<cartIconProps> = () => {
+const StyledCartIcon: FC = () => {
     const { state } = useContext(Store);
     const {
       cartItems 
