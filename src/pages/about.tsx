@@ -70,7 +70,7 @@ const about = () => {
           WHAT DRIVES US
         </Typography>
 
-        <Box display="flex" flexDirection="row" flexWrap="wrap">
+        <Box display="flex" flexDirection="row" justifyContent="center"  flexWrap="wrap">
           {aboutInfoArray.map((el) => (
             <AboutCard info={el} />
           ))}

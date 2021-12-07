@@ -51,7 +51,7 @@ function reducer(state: InitialStateType, action: ActionType) {
     }
     case 'CART_REMOVE_ITEM': {
       const cartItems = state.cartItems.filter(
-        (item) => item.ID !== action.payload.ID
+        (item) => Number(item.ID) !== Number(action.payload)
       );
       Cookies.set('cartItems', JSON.stringify(cartItems));
       return { cartItems: cartItems, shippingAddress: state.shippingAddress };
@@ -68,7 +68,7 @@ function reducer(state: InitialStateType, action: ActionType) {
       Cookies.remove('cartItems');
       return { ...state, cartItems: [] };
     default:
-      console.log("getting default state", state)
+      console.log('getting default state', state);
       return state;
   }
 }

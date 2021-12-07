@@ -34,8 +34,8 @@ function CartScreen() {
   const updateCartHandler = async () => {
     // dispatch({ type: 'CART_ADD_ITEM', payload: { ...item } });
   };
-  const removeItemHandler = () => {
-    // dispatch({ type: 'CART_REMOVE_ITEM', payload: item });
+  const removeItemHandler = (itemId: any) => {
+    dispatch({ type: 'CART_REMOVE_ITEM', payload: itemId });
   };
   const checkoutHandler = () => {
     router.push('/customerdetails');
@@ -62,14 +62,13 @@ function CartScreen() {
                   <TableRow>
                     <TableCell>Image</TableCell>
                     <TableCell>Name</TableCell>
-                    <TableCell align="right">Quantity</TableCell>
                     <TableCell align="right">Price</TableCell>
                     <TableCell align="right">Action</TableCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>
                   {cartItems.map((item) => (
-                    <TableRow key={item.id}>
+                    <TableRow key={item.ID}>
                     <TableCell> Empty</TableCell>
 
                       <TableCell>
@@ -77,27 +76,12 @@ function CartScreen() {
                           <Typography>{item.SERVICE}</Typography>
                         </Link>
                       </TableCell>
-                      <TableCell align="right">
-                        Quantity
-                        {/* <Select
-                          value={item.quantity}
-                          onChange={(e) =>
-                            updateCartHandler(item, e.target.value)
-                          }
-                        >
-                          {[...Array(item.countInStock).keys()].map((x) => (
-                            <MenuItem key={x + 1} value={x + 1}>
-                              {x + 1}
-                            </MenuItem>
-                          ))} */}
-                        {/* </Select> */}
-                      </TableCell>
                       <TableCell align="right">${item.PRICE}</TableCell>
                       <TableCell align="right">
                         <Button
                           variant="contained"
                           color="secondary"
-                          onClick={() => removeItemHandler()}
+                          onClick={() => removeItemHandler(item.ID)}
                         >
                           x
                         </Button>

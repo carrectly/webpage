@@ -1,14 +1,9 @@
 import type { NextPage } from 'next';
 import Image from 'next/image';
-import Head from 'next/head';
 import { Box, Typography, Button } from '@mui/material';
 import Layout from '../components/Layout/Layout';
-import { Carousel, CarouselProps } from 'antd';
 import styles from '../../styles/Layout.module.css';
-import styled from '@emotion/styled';
-import { FC } from 'react';
 import BgImage from '../components/BgImage/BgImage';
-import { Store } from '../../utils/Store';
 import howItWorksArr from '../data/howItWorks.json';
 import KeyboardArrowLeftOutlinedIcon from '@mui/icons-material/KeyboardArrowLeftOutlined';
 import ChevronRightOutlinedIcon from '@mui/icons-material/ChevronRightOutlined';
