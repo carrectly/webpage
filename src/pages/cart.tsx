@@ -31,14 +31,12 @@ function CartScreen() {
   const {
     cartItems 
   } = state;
-  const updateCartHandler = async () => {
-    // dispatch({ type: 'CART_ADD_ITEM', payload: { ...item } });
-  };
+
   const removeItemHandler = (itemId: any) => {
     dispatch({ type: 'CART_REMOVE_ITEM', payload: itemId });
   };
   const checkoutHandler = () => {
-    router.push('/customerdetails');
+    router.push('/datepicker');
   };
   return (
     <Layout title="Shopping Cart">
