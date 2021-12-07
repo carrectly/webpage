@@ -6,58 +6,22 @@ import Layout from '../components/Layout/Layout';
 import { Carousel, CarouselProps } from 'antd';
 import styles from '../../styles/Layout.module.css';
 import styled from '@emotion/styled';
-import { FC} from 'react';
+import { FC } from 'react';
 import BgImage from '../components/BgImage/BgImage';
 import { Store } from '../../utils/Store';
+import howItWorksArr from '../data/howItWorks.json';
+import KeyboardArrowLeftOutlinedIcon from '@mui/icons-material/KeyboardArrowLeftOutlined';
+import ChevronRightOutlinedIcon from '@mui/icons-material/ChevronRightOutlined';
+import StyledCarouselComponent from '../components/StyledCarousel/StyledCarousel';
 
-const contentStyle = {
-  height: '160px',
-  color: '#fff',
-  lineHeight: '160px',
-  textAlign: 'center',
-  background: '#364d79',
-};
-
-const StyledCarousel = styled(Carousel)<CarouselProps>`
-  width: 20vw;
-  z-index: 10;
-  > .slick-dots li button {
-    width: 10px;
-    height: 10px;
-    border-radius: 100%;
-    background: #83509f;
-  }
-  > .slick-dots li.slick-active button {
-    width: 12px;
-    height: 12px;
-    border-radius: 100%;
-    background: #cdafde;
-  }
-  .ant-carousel .slick-prev,
-  .ant-carousel .slick-prev:hover {
-    left: 10px;
-    z-index: 12;
-    color: white;
-    font-size: 20px;
-    height: 30px;
-  }
-
-  .ant-carousel .slick-next,
-  .ant-carousel .slick-next:hover {
-    right: 10px;
-    z-index: 12;
-    color: white;
-    font-size: 20px;
-    height: 30px;
-  }
-`;
-
-const StyledCarouselComponent: FC = ({ children }) => {
-  return <StyledCarousel>{children}</StyledCarousel>;
-};
+const carouselWrap = {
+  height: "900px",
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "center",
+}
 
 const Home: NextPage = () => {
-
   return (
     <Layout>
       <Image
@@ -81,89 +45,45 @@ const Home: NextPage = () => {
       >
         HOW IT WORKS
       </Typography>
-        <BgImage imgsrc='/images/home/car-1.jpg'   imgalt='test' height='900px' width='100%'>
-        <div className={styles.carouselWrap}>
+      <BgImage
+        imgsrc="/images/home/car-1.jpg"
+        imgalt="test"
+        height="900px"
+        width="100%"
+      >
+        <Box sx={carouselWrap} >
           <Box
             display="flex"
             flexDirection="row"
             justifyContent="center"
-            sx={{ height: '600px' }}
+            sx={{ height: '600px', position: 'relative' }}
           >
-            <StyledCarousel dots={true} effect="scrollx" arrows={true} autoplay={true}>
-              <Box className={styles.carouselCard}>
-                <Typography
-                  variant="h2"
-                  align="center"
-                  sx={{ color: '#bababa' }}
-                >
-                  REQUEST
-                </Typography>
-                <Typography variant="body1" align="center">
-                  Book any vehicle service in advance or on-demand for the
-                  upfront price. We work around your schedule, not the other way
-                  around.
-                </Typography>
-              </Box>
-              <Box className={styles.carouselCard}>
-                <Typography
-                  variant="h2"
-                  align="center"
-                  sx={{ color: '#bababa' }}
-                >
-                  PICK UP
-                </Typography>
-                <Typography variant="body1" align="center">
-                  Carrectly team answers all your questions & confirms your
-                  priority service. We reach out to coordinate your free
-                  concierge vehicle pick-up.
-                </Typography>
-              </Box>
-              <Box className={styles.carouselCard}>
-                <Typography
-                  variant="h2"
-                  align="center"
-                  sx={{ color: '#bababa' }}
-                >
-                  SERVICE
-                </Typography>
-                <Typography variant="body1" align="center">
-                  Work starts right away. Our knowledgeable team keeps you
-                  updated and asks your approval prior to all extra repairs or
-                  services.
-                </Typography>
-              </Box>
-              <Box className={styles.carouselCard}>
-                <Typography
-                  variant="h2"
-                  align="center"
-                  sx={{ color: '#bababa' }}
-                >
-                  DROP OFF
-                </Typography>
-                <Typography variant="body1" align="center">
-                  The vehicle is delivered back to you, wherever you are in
-                  Chicago. You pay online once you have your car back and are
-                  happy.
-                </Typography>
-              </Box>
-              <Box className={styles.carouselCard}>
-                <Typography
-                  variant="h2"
-                  align="center"
-                  sx={{ color: '#bababa' }}
-                >
-                  WOW
-                </Typography>
-                <Typography variant="body1" align="center">
-                  You've just experienced the fastest, most transparent and
-                  convenient auto care, ever. No rip-offs, up-sells, hassles, or
-                  waiting.
-                </Typography>
-              </Box>
-            </StyledCarousel>
+            <StyledCarouselComponent
+              dots={true}
+              width="400px"
+              effect="scrollx"
+              arrows={true}
+              autoplay={false}
+              prevArrow={<KeyboardArrowLeftOutlinedIcon />} nextArrow={<ChevronRightOutlinedIcon />}
+            >
+              {howItWorksArr.map((el, index) => (
+                <Box className={styles.carouselCard} sx={{ width: '400px' }}>
+                  <Typography
+                    variant="h2"
+                    align="center"
+                    sx={{ color: '#bababa' }}
+                  >
+                    {index+1}. {el.title}
+                  </Typography>
+                  <Typography variant="body1" align="center">
+                    {el.description}
+                  </Typography>
+                </Box>
+              ))}
+            </StyledCarouselComponent>
           </Box>
-        </div>
-        </BgImage>
+          </Box>
+      </BgImage>
     </Layout>
   );
 };

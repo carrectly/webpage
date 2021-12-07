@@ -68,6 +68,7 @@
 }
 
 .carouselCard {
+  width: 400px;
   height: 200px;
   color: #fff;
   line-height: 160px;
@@ -88,12 +89,7 @@
   resize: both;
 }
 
-.carouselWrap {
-  height: 900px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
+
 
 
 .bgWrap {

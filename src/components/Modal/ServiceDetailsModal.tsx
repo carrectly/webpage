@@ -38,7 +38,7 @@ export default function ServiceDetailsModal({
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
-          <StyledCarousel autoplay={true}>
+          <StyledCarousel autoplay={true} arrows={true}>
             <Image
               src="/images/wp_images/popular/dent_removal.jpg"
               alt="car shampoo"
