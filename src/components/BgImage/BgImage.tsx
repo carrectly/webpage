@@ -1,16 +1,9 @@
 import Image, { ImageProps } from 'next/image';
 import styled from '@emotion/styled';
 import React, { ReactNode, FC } from 'react';
-import { FabClasses } from '@mui/material';
+import {BgImageContainerProps, BgImageProps} from '../../../utils/types'
 
-interface ContainerProps {
-  alignItems: string;
-  justifyContent: string;
-  height: string;
-  width: string;
-}
-
-const Container = styled.section<ContainerProps>`
+const Container = styled.section<BgImageContainerProps>`
   position: relative;
   margin: 5px;
   align-items: ${(props) => props.alignItems};
@@ -35,15 +28,6 @@ const InnerContainer = styled.div`
   border-radius: 5px;
 `;
 
-interface BgImageProps {
-  alignItems?: string;
-  children: ReactNode;
-  imgalt: string;
-  imgsrc: string;
-  height?: string;
-  justifyContent?: string;
-  width?: string;
-}
 
 /**
  * <BgImage>
@@ -65,7 +49,7 @@ interface BgImageProps {
  * @param { number } height - how tall the background image should be (default: 50vh)
  * @param { number } width - how wide image should be (default: 100%)
  */
-const BgImage = ({
+const BgImage: FC<BgImageProps> = ({
   alignItems = 'center',
   children,
   imgalt = 'Background Image',
@@ -73,7 +57,7 @@ const BgImage = ({
   height = '215px',
   justifyContent = 'center',
   width = '320px',
-}: BgImageProps): JSX.Element => {
+}) => {
   return (
     <Container
       alignItems={alignItems}

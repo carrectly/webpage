@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { ReactNode } from 'react';
+import { FC } from 'react';
 
 interface IButtonProps {
   backgroundColor: string;
@@ -9,7 +9,6 @@ interface IButtonProps {
 interface StyledEmotionButtonProps {
   bgColor: string;
   textColor: string;
-  children: ReactNode;
   handleClick?: React.MouseEventHandler<HTMLButtonElement>;
 }
 
@@ -34,12 +33,12 @@ const StyledButton = styled.button<IButtonProps>`
   }
 `;
 
-const StyledEmotionButton = ({
+const StyledEmotionButton: FC<StyledEmotionButtonProps> = ({
   bgColor,
   textColor,
   children,
   handleClick
-}: StyledEmotionButtonProps): JSX.Element => {
+}) => {
   return (
     <StyledButton backgroundColor={bgColor} fontColor={textColor} onClick={handleClick}>
       {children}

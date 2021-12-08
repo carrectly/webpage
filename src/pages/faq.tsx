@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { FC, useContext } from 'react';
 import { Store } from '../../utils/Store';
 import {
   Box,
@@ -12,19 +12,11 @@ import {
 import Layout from '../components/Layout/Layout';
 import faqData from '../data/faq.json';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import {TabPanelProps, faqSubGroupsTypes} from '../../utils/types'
 
 const faqSubGroupsArr = ['basics', 'services', 'payments', 'changes', 'info'];
-interface TabPanelProps {
-  children?: React.ReactNode;
-  index: number;
-  value: number;
-}
 
-type faqSubGroupsTypes = 'basics' | 'services' | 'payments' | 'changes' | 'info';
-
-function TabPanel(props: TabPanelProps) {
-  const { children, value, index, ...other } = props;
-  const { state, dispatch } = useContext(Store);
+const TabPanel: FC<TabPanelProps> = ({children, value, index, ...other}) => {
   return (
     <div
       role="tabpanel"

@@ -15,22 +15,12 @@ import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import ServiceDetialsModal from '../Modal/ServiceDetailsModal';
 import CheckCircleOutlinedIcon from '@mui/icons-material/CheckCircleOutlined';
 import AddButton from '../Buttons/AddButton'
+import {ServiceObject} from '../../../utils/types'
 
 //interfaces are used for objects and classes
 //types are used for
 
-interface ServiceObject {
-  serviceObject: ServiceCardProps;
-}
 
-interface ServiceCardProps {
-  ID: string;
-  SERVICE: string;
-  PRICE: string;
-  SHORTDESCRIPTION: string;
-  LONGDESCRIPTION: string;
-  IMAGE: string;
-}
 
 const Title = styled.div`
   font-family: roboto, sans-serif;

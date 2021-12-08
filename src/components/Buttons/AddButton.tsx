@@ -4,19 +4,7 @@ import StyledEmotionButton from './StyledEmotionButton';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import CheckCircleOutlinedIcon from '@mui/icons-material/CheckCircleOutlined';
 import { Store } from '../../../utils/Store';
-
-interface ServiceObject {
-    serviceObject: ServiceCardProps;
-  }
-  
-  interface ServiceCardProps {
-    ID: string;
-    SERVICE: string;
-    PRICE: string;
-    SHORTDESCRIPTION: string;
-    LONGDESCRIPTION: string;
-    IMAGE: string;
-  }
+import {ServiceObject} from '../../../utils/types'
 
 const AddButton: FC<ServiceObject> = ({serviceObject}) => {
 const { state, dispatch } = useContext(Store);

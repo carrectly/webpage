@@ -12,6 +12,7 @@ import StaticDatePicker from '@mui/lab/StaticDatePicker';
 
 export default function DatePicker() {
   const [value, setValue] = React.useState<Date | null>(new Date());
+  const router = useRouter();
   const checkoutHandler = () => {
     router.push('/customerdetails');
   };

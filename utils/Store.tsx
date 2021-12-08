@@ -1,23 +1,7 @@
 import Cookies from 'js-cookie';
 import React, { createContext, useReducer } from 'react';
+import {StateType, ActionType} from '../utils/types'
 
-type ServiceType = {
-  ID: number;
-  SERVICE: string;
-  PRICE: string;
-  // SHORTDESCRIPTION: string;
-  IMAGE: string;
-};
-
-type InitialStateType = {
-  cartItems: ServiceType[];
-  shippingAddress: any;
-};
-
-type ActionType = {
-  type: string;
-  payload: any;
-};
 
 const initialState = {
   cartItems: Cookies.get('cartItems')
@@ -31,14 +15,14 @@ const initialState = {
 };
 
 export const Store = createContext<{
-  state: InitialStateType;
+  state: StateType;
   dispatch: React.Dispatch<any>;
 }>({
   state: initialState,
   dispatch: () => null,
 });
 
-function reducer(state: InitialStateType, action: ActionType) {
+function reducer(state: StateType, action: ActionType) {
   switch (action.type) {
     case 'CART_ADD_ITEM': {
       const newItem = action.payload;

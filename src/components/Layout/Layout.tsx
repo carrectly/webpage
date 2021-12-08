@@ -31,7 +31,6 @@ import StyledCartIcon from '../StyledCartIcon/StyledCartIcon';
 import { Store } from '../../../utils/Store';
 
 type Props = {
-  children: ReactNode;
   title?: string;
 };
 
@@ -40,8 +39,7 @@ const StyledLink = styled(Link)<LinkProps>({
   padding: 10,
 });
 
-const Layout: FC<Props> = (props: Props) => {
-  const { children, title } = props;
+const Layout: FC<Props> = ({children, title}) => {
 
   return (
     <>

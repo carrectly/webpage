@@ -8,13 +8,9 @@ import StyledCarousel from '../StyledCarousel/StyledCarousel';
 import StyledEmotionButton from '../Buttons/StyledEmotionButton';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import BgImage from '../BgImage/BgImage';
-interface ModalProps {
-  open: boolean;
-  onClose: () => void;
-  serviceDetails: any;
-}
+import { ModalProps } from '../../../utils/types';
 
-const style = {
+const wrapper = {
   position: 'absolute' as 'absolute',
   top: '50%',
   left: '50%',
@@ -37,7 +33,7 @@ export default function ServiceDetailsModal({
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Box sx={style}>
+        <Box sx={wrapper}>
           <StyledCarousel autoplay={true} arrows={true}>
             <Image
               src="/images/wp_images/popular/dent_removal.jpg"
