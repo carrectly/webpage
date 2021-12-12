@@ -45,7 +45,7 @@ const ServiceCard: React.FC<ServiceObject> = ({ serviceObject }) => {
 
   return (
     <div>
-      <BgImage imgsrc={serviceObject.IMAGE} imgalt="test">
+      <BgImage imgsrc={serviceObject.images[0]} imgalt="test">
         <Box
           display="flex"
           flexDirection="column"
@@ -59,13 +59,13 @@ const ServiceCard: React.FC<ServiceObject> = ({ serviceObject }) => {
               'linear-gradient(180deg, rgba(39, 39, 39, 0.8) 45%, rgba(39, 39, 39, 0) 94.67%)',
           }}
         >
-          <Title>{serviceObject.SERVICE}</Title>
+          <Title>{serviceObject.name}</Title>
           <Typography
             variant="body1"
             color="white"
             fontFamily="roboto, sans-serif"
           >
-            {serviceObject.SHORTDESCRIPTION}
+            {serviceObject.shortDescription}
           </Typography>
           <Box
             display="flex"

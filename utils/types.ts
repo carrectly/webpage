@@ -11,12 +11,13 @@ export type faqSubGroupsTypes =
   | 'info';
 
 export type ServiceType = {
-  ID: string;
-  SERVICE: string;
-  PRICE: string;
-  SHORTDESCRIPTION: string;
-  LONGDESCRIPTION: string;
-  IMAGE: string;
+  id: number;
+  name: string;
+  price: string;
+  duration?: string;
+  shortDescription: string;
+  longDescription: string;
+  images: Array<string>;
 };
 
 export type StateType = {
@@ -62,5 +63,11 @@ export interface ServiceObject {
 export interface ModalProps {
   open: boolean;
   onClose: () => void;
-  serviceDetails: any;
+  serviceDetails: ServiceType;
+}
+
+
+export interface ServicesDataType {
+  category: string;
+  services: Array<ServiceType>;
 }

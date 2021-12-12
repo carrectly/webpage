@@ -35,20 +35,15 @@ export default function ServiceDetailsModal({
       >
         <Box sx={wrapper}>
           <StyledCarousel autoplay={true} arrows={true}>
-            <Image
-              src="/images/wp_images/popular/dent_removal.jpg"
-              alt="car shampoo"
+            {serviceDetails.images.map((image) => ( 
+              <Image
+              src={image}
+              alt={serviceDetails.name}
               layout="responsive"
               width={700}
               height={425}
             />
-            <Image
-              src="/images/wp_images/popular/ozone.jpg"
-              alt="car"
-              layout="responsive"
-              width={700}
-              height={425}
-            />
+            ))}
             {/* <BgImage
             width='500'
               imgsrc="/images/wp_images/popular/dent_removal.jpg"
@@ -62,10 +57,10 @@ export default function ServiceDetailsModal({
             </BgImage> */}
           </StyledCarousel>
           <Typography id="modal-modal-title" variant="h6" component="h2">
-            {serviceDetails.SERVICE}
+            {serviceDetails.name}
           </Typography>
           <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            {serviceDetails.LONGDESCRIPTION.split('✔').map((el: string) => {
+            {serviceDetails.longDescription.split('✔').map((el: string) => {
               if (el.length > 1) {
                 return <div>{`✔ ${el}`}</div>;
               }
@@ -77,12 +72,12 @@ export default function ServiceDetailsModal({
             justifyContent="space-between"
           >
             <Typography sx={{ mt: 2 }}>
-              Price: ${serviceDetails.PRICE}
+              Price: ${serviceDetails.price}
             </Typography>
             {/* need to update once we have the hours field in the data */}
             {false ? (
               <Typography sx={{ mt: 2 }}>
-                Time: ${serviceDetails.PRICE}
+                Time: ${serviceDetails.price}
               </Typography>
             ) : (
               <div />

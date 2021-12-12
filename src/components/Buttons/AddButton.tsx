@@ -15,7 +15,7 @@ const { state, dispatch } = useContext(Store);
     dispatch({ type: 'CART_ADD_ITEM', payload: { ID, SERVICE, IMAGE, PRICE } });
   };
 
-  const inCart = cartItems.find(({ ID }) => Number(ID) === Number(serviceObject.ID));
+  const inCart = cartItems.find(({ id }) => id === serviceObject.id);
   if (inCart) {
     return (
       <StyledEmotionButton bgColor="#339c53" textColor="#fff">
