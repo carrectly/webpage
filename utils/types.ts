@@ -1,10 +1,15 @@
 export interface TabPanelProps {
-    index: number;
-    value: number;
-  }
-  
- export type faqSubGroupsTypes = 'basics' | 'services' | 'payments' | 'changes' | 'info';
-  
+  index: number;
+  value: number;
+}
+
+export type faqSubGroupsTypes =
+  | 'basics'
+  | 'services'
+  | 'payments'
+  | 'changes'
+  | 'info';
+
 export type ServiceType = {
   ID: string;
   SERVICE: string;
@@ -34,29 +39,28 @@ export type AboutCardProps = {
   info: aboutDetailsProps;
 };
 
-
 export interface BgImageProps {
-    alignItems?: string;
-    imgalt: string;
-    imgsrc: string;
-    height?: string;
-    justifyContent?: string;
-    width?: string;
-  }
-  
-  export interface BgImageContainerProps {
-    alignItems: string;
-    justifyContent: string;
-    height: string;
-    width: string;
-  }
+  alignItems?: string;
+  imgalt: string;
+  imgsrc: string;
+  height?: string;
+  justifyContent?: string;
+  width?: string;
+}
 
-  export interface ServiceObject {
-    serviceObject: ServiceType;
-  }
+export interface BgImageContainerProps {
+  alignItems: string;
+  justifyContent: string;
+  height: string;
+  width: string;
+}
 
-  export interface ModalProps {
-    open: boolean;
-    onClose: () => void;
-    serviceDetails: any;
-  }
+export interface ServiceObject {
+  serviceObject: ServiceType;
+}
+
+export interface ModalProps {
+  open: boolean;
+  onClose: () => void;
+  serviceDetails: any;
+}
