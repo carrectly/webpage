@@ -26,7 +26,7 @@ function CartScreen() {
   const { state, dispatch } = useContext(Store);
   const { cartItems } = state;
 
-  const removeItemHandler = (itemId: any) => {
+  const removeItemHandler = (itemId: number) => {
     dispatch({ type: 'CART_REMOVE_ITEM', payload: itemId });
   };
   const checkoutHandler = () => {
@@ -60,20 +60,20 @@ function CartScreen() {
                 </TableHead>
                 <TableBody>
                   {cartItems.map((item) => (
-                    <TableRow key={item.ID}>
+                    <TableRow key={item.id}>
                       <TableCell> Empty</TableCell>
 
                       <TableCell>
                         <Link>
-                          <Typography>{item.SERVICE}</Typography>
+                          <Typography>{item.name}</Typography>
                         </Link>
                       </TableCell>
-                      <TableCell align="right">${item.PRICE}</TableCell>
+                      <TableCell align="right">${item.price}</TableCell>
                       <TableCell align="right">
                         <Button
                           variant="contained"
                           color="secondary"
-                          onClick={() => removeItemHandler(item.ID)}
+                          onClick={() => removeItemHandler(item.id)}
                         >
                           x
                         </Button>

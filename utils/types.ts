@@ -13,7 +13,7 @@ export type faqSubGroupsTypes =
 export type ServiceType = {
   id: number;
   name: string;
-  price: string;
+  price?: string | number;
   duration?: string;
   shortDescription: string;
   longDescription: string;
@@ -65,7 +65,6 @@ export interface ModalProps {
   onClose: () => void;
   serviceDetails: ServiceType;
 }
-
 
 export interface ServicesDataType {
   category: string;

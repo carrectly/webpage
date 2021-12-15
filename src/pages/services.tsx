@@ -7,10 +7,8 @@ import {
   Box,
   Accordion,
   AccordionSummary,
-  AccordionSummaryProps,
   AccordionDetails,
 } from '@mui/material';
-import styled from '@emotion/styled';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import StarIcon from '@mui/icons-material/Star';
 import LocalCarWashIcon from '@mui/icons-material/LocalCarWash';
@@ -30,77 +28,60 @@ const iconsArr = [
   <AirlineSeatReclineExtraIcon />,
   <AspectRatioIcon />,
   <CarRepairIcon />,
-  <Inventory2Icon/>,
-  <CarRentalIcon />
+  <Inventory2Icon />,
+  <CarRentalIcon />,
 ];
 
-const AccordionSummaryStyled = styled((props: AccordionSummaryProps) => (
-  <MuiAccordionSummary
-    expandIcon={<ArrowForwardIosSharpIcon sx={{ fontSize: '0.9rem' }} />}
-    {...props}
-  />
-))(({ theme }) => ({
-  backgroundColor: '#e6e6e6',
-  flexDirection: 'row-reverse',
-  '& .MuiAccordionSummary-expandIconWrapper.Mui-expanded': {
-    transform: 'rotate(90deg)',
-  },
-  '& hover': {
-    backgroundColor: '#ddd',
-  },
-}));
-
-const styleA = {
-  backgroundColor: '#e6e6e6',
-  flexDirection: 'row',
-  '&:hover': {
-    backgroundColor: '#ddd',
-  },
-};
-
-const services = () => {
+const Services = () => {
   return (
     <Layout>
-      <Grid container justifyContent='center'>
-      {serviceArray.map((service, index) => (
-        <Accordion key={`accordiong_id_${index}`} sx={{width: '90vw', margin: '10px'}}>
-          <AccordionSummary
-            sx={styleA}
-            expandIcon={<ExpandMoreIcon color="primary" />}
-            aria-controls="panel1a-content"
-            id="panel1a-header"
+      <Grid container justifyContent="center">
+        {serviceArray.map((service, index) => (
+          <Accordion
+            key={`accordiong_id_${index}`}
+            sx={{ width: '90vw', margin: '10px' }}
           >
-            <Box>
-            {iconsArr[index]}
-            </Box>
-            <Box
+            <AccordionSummary
+              sx={{
+                backgroundColor: '#e6e6e6',
+                flexDirection: 'row',
+                ':hover': {
+                  backgroundColor: '#dddd',
+                },
+              }}
+              expandIcon={<ExpandMoreIcon color="primary" />}
+              aria-controls="panel1a-content"
+              id="panel1a-header"
+            >
+              <Box>{iconsArr[index]}</Box>
+              <Box
+                sx={{
+                  width: '100%',
+                  textAlign: 'center',
+                }}
+              >
+                {service.category}
+              </Box>
+            </AccordionSummary>
+
+            <AccordionDetails
               sx={{
                 width: '100%',
-                textAlign: 'center'
+                display: 'flex',
+                flexDirection: 'row',
+                flexWrap: 'wrap',
+                justifyContent: 'space-evenly',
               }}
             >
-             {service.category}
-            </Box>
-          </AccordionSummary>
-
-          <AccordionDetails
-            sx={{
-              width: '100%',
-              display: 'flex',
-              flexDirection: 'row',
-              flexWrap: 'wrap',
-              justifyContent: 'space-evenly',
-            }}
-          >
-            {service.services.map((el) => (
-              <ServiceCard serviceObject={el} />
-            ))}
-          </AccordionDetails>
-        </Accordion>
-      ))}
+              {service.services.map((el, i) => (
+                <ServiceCard serviceObject={el} key={`service-card-id-${i}`} />
+              ))}
+            </AccordionDetails>
+          </Accordion>
+        ))}
       </Grid>
     </Layout>
   );
 };
 
-export default services;
+export default Services;

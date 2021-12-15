@@ -104,7 +104,7 @@ function PlaceOrder() {
                     </TableHead>
                     <TableBody>
                       {cartItems.map((item) => (
-                        <TableRow key={item.ID}>
+                        <TableRow key={item.id}>
                           {/* <TableCell>
                             <Link>
                               <Image
@@ -118,11 +118,11 @@ function PlaceOrder() {
 
                           <TableCell>
                             <Link>
-                              <Typography>{item.SERVICE}</Typography>
+                              <Typography>{item.name}</Typography>
                             </Link>
                           </TableCell>
                           <TableCell align="right">
-                            <Typography>${item.PRICE}</Typography>
+                            <Typography>${item.price}</Typography>
                           </TableCell>
                         </TableRow>
                       ))}

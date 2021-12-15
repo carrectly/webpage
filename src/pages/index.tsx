@@ -9,13 +9,6 @@ import KeyboardArrowLeftOutlinedIcon from '@mui/icons-material/KeyboardArrowLeft
 import ChevronRightOutlinedIcon from '@mui/icons-material/ChevronRightOutlined';
 import StyledCarouselComponent from '../components/StyledCarousel/StyledCarousel';
 
-const carouselWrap = {
-  height: "900px",
-  display: "flex",
-  flexDirection: "column",
-  justifyContent: "center",
-}
-
 const Home: NextPage = () => {
   return (
     <Layout>
@@ -46,7 +39,12 @@ const Home: NextPage = () => {
         height="900px"
         width="100%"
       >
-        <Box sx={carouselWrap} >
+        <Box
+          display="flex"
+          flexDirection={'column'}
+          justifyContent="center"
+          sx={{ height: '900px' }}
+        >
           <Box
             display="flex"
             flexDirection="row"
@@ -59,16 +57,21 @@ const Home: NextPage = () => {
               effect="scrollx"
               arrows={true}
               autoplay={false}
-              prevArrow={<KeyboardArrowLeftOutlinedIcon />} nextArrow={<ChevronRightOutlinedIcon />}
+              prevArrow={<KeyboardArrowLeftOutlinedIcon />}
+              nextArrow={<ChevronRightOutlinedIcon />}
             >
               {howItWorksArr.map((el, index) => (
-                <Box className={styles.carouselCard} sx={{ width: '400px' }}>
+                <Box
+                  className={styles.carouselCard}
+                  sx={{ width: '400px' }}
+                  key={`home-slider-id-${index}`}
+                >
                   <Typography
                     variant="h2"
                     align="center"
                     sx={{ color: '#bababa' }}
                   >
-                    {index+1}. {el.title}
+                    {index + 1}. {el.title}
                   </Typography>
                   <Typography variant="body1" align="center">
                     {el.description}
@@ -77,7 +80,7 @@ const Home: NextPage = () => {
               ))}
             </StyledCarouselComponent>
           </Box>
-          </Box>
+        </Box>
       </BgImage>
     </Layout>
   );

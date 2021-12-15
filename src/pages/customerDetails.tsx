@@ -6,6 +6,14 @@ import { Store } from '../../utils/Store';
 import { Controller, useForm } from 'react-hook-form';
 import StepperComponent from '../components/Stepper/Stepper';
 
+type submitPropTypes = {
+  firstName: string;
+  lastName: string;
+  address: string;
+  city: string;
+  postalCode: string;
+};
+
 export default function Shipping() {
   const {
     handleSubmit,
@@ -31,7 +39,7 @@ export default function Shipping() {
     address,
     city,
     postalCode,
-  }) => {
+  }: submitPropTypes) => {
     dispatch({
       type: 'SAVE_SHIPPING_ADDRESS',
       payload: { firstName, lastName, address, city, postalCode },

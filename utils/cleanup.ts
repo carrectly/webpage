@@ -27,3 +27,5 @@ const cleanUp = (arr) => {
 };
 
 cleanUp(imagesData);
+
+export {};

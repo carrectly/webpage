@@ -11,7 +11,7 @@ import {
 import Layout from '../components/Layout/Layout';
 import faqData from '../data/faq.json';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import { TabPanelProps, faqSubGroupsTypes } from '../../utils/types';
+import { TabPanelProps } from '../../utils/types';
 
 const faqSubGroupsArr = ['basics', 'services', 'payments', 'changes', 'info'];
 
@@ -42,7 +42,7 @@ function a11yProps(index: number) {
 
 const renderAccordion = (
   faqDataObj: any,
-  faqGroup: faqSubGroupsTypes
+  faqGroup: string
 ): React.ReactNode => {
   if (faqDataObj[faqGroup]) {
     return faqDataObj[faqGroup].map((el: any, index: number) => (
