@@ -2,8 +2,6 @@ import React, { useContext, useEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
 import Layout from '../components/Layout/Layout';
 import { Store } from '../../utils/Store';
-import NextLink from 'next/link';
-import Image from 'next/image';
 import {
   Grid,
   TableContainer,
@@ -20,10 +18,8 @@ import {
   List,
   ListItem,
 } from '@mui/material';
-import axios from 'axios';
 import { useRouter } from 'next/router';
 // import { useSnackbar } from 'notistack';
-import { getError } from '../../utils/error';
 import StepperComponent from '../components/Stepper/Stepper';
 
 function PlaceOrder() {

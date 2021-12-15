@@ -1,26 +1,16 @@
 import styled from '@emotion/styled';
-import { AppBar, AppBarProps, CardProps, Box } from '@mui/material';
+import { Box } from '@mui/material';
 import * as React from 'react';
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import { Carousel, CarouselProps } from 'antd';
 import BgImage from '../BgImage/BgImage';
 import StyledEmotionButton from '../Buttons/StyledEmotionButton';
 import InfoIcon from '@mui/icons-material/Info';
-import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import ServiceDetialsModal from '../Modal/ServiceDetailsModal';
-import CheckCircleOutlinedIcon from '@mui/icons-material/CheckCircleOutlined';
-import AddButton from '../Buttons/AddButton'
-import {ServiceObject} from '../../../utils/types'
+import AddButton from '../Buttons/AddButton';
+import { ServiceObject } from '../../../utils/types';
 
 //interfaces are used for objects and classes
 //types are used for
-
-
 
 const Title = styled.div`
   font-family: roboto, sans-serif;

@@ -1,17 +1,15 @@
 import * as React from 'react';
 import Image from 'next/image';
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import StyledCarousel from '../StyledCarousel/StyledCarousel';
 import StyledEmotionButton from '../Buttons/StyledEmotionButton';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
-import BgImage from '../BgImage/BgImage';
 import { ModalProps } from '../../../utils/types';
 
 const wrapper = {
-  position: 'absolute' as 'absolute',
+  position: 'absolute' as const,
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
@@ -35,26 +33,16 @@ export default function ServiceDetailsModal({
       >
         <Box sx={wrapper}>
           <StyledCarousel autoplay={true} arrows={true}>
-            {serviceDetails.images.map((image) => ( 
+            {serviceDetails.images.map((image, i) => (
               <Image
-              src={image}
-              alt={serviceDetails.name}
-              layout="responsive"
-              width={700}
-              height={425}
-            />
+                src={image}
+                alt={serviceDetails.name}
+                layout="responsive"
+                width={700}
+                height={425}
+                key={`card-slider-id-${i}`}
+              />
             ))}
-            {/* <BgImage
-            width='500'
-              imgsrc="/images/wp_images/popular/dent_removal.jpg"
-              imgalt="test"
-            >
-              <div />
-            </BgImage>
-
-            <BgImage  width='500' imgsrc="/images/wp_images/popular/ozone.jpg" imgalt="test">
-              <div />
-            </BgImage> */}
           </StyledCarousel>
           <Typography id="modal-modal-title" variant="h6" component="h2">
             {serviceDetails.name}

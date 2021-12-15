@@ -1,34 +1,23 @@
-import React, { ReactNode, FC } from 'react';
-import dynamic from 'next/dynamic';
-import Header from '../Header/Header';
-import Footer from '../Footer/Footer';
+import React, { FC } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 import {
   AppBar,
-  Container,
   Toolbar,
-  Typography,
-  makeStyles,
   Link,
-  Theme,
   Box,
   LinkProps,
   BottomNavigation,
   BottomNavigationAction,
   Grid,
 } from '@mui/material';
-import style from './Layout.module.css';
-import StyledNavBar from '../Header/StyledAppBar';
 import { styled } from '@mui/material/styles';
 import NextLink from 'next/link';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import GoogleMapReact from 'google-map-react';
 import StyledCartIcon from '../StyledCartIcon/StyledCartIcon';
-import { Store } from '../../../utils/Store';
 
 type Props = {
   title?: string;
@@ -39,8 +28,7 @@ const StyledLink = styled(Link)<LinkProps>({
   padding: 10,
 });
 
-const Layout: FC<Props> = ({children, title}) => {
-
+const Layout: FC<Props> = ({ children, title }) => {
   return (
     <>
       <Head>
@@ -82,22 +70,21 @@ const Layout: FC<Props> = ({children, title}) => {
               justifyContent="space-evenly"
               sx={{ width: '100%' }}
             >
-              <NextLink  href="/" passHref>
-              <Box
-                   display="flex"
-                   flexDirection="column"
-                   justifyContent="center"
-                sx={{ width: 200}}
-              >
-                <Image
-                  src="/images/home/logo.png"
-                  alt="car wrench"
-               
-                  width={200}
-                  height={50}
-                  priority
-                />
-              </Box>
+              <NextLink href="/" passHref>
+                <Box
+                  display="flex"
+                  flexDirection="column"
+                  justifyContent="center"
+                  sx={{ width: 200 }}
+                >
+                  <Image
+                    src="/images/home/logo.png"
+                    alt="car wrench"
+                    width={200}
+                    height={50}
+                    priority
+                  />
+                </Box>
               </NextLink>
               <NextLink href="/" passHref>
                 <StyledLink>Home</StyledLink>

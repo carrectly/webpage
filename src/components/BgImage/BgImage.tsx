@@ -1,6 +1,6 @@
 import Image, { ImageProps } from 'next/image';
 import styled from '@emotion/styled';
-import React, { ReactNode, FC } from 'react';
+import React, { FC } from 'react';
 import {BgImageContainerProps, BgImageProps} from '../../../utils/types'
 
 const Container = styled.section<BgImageContainerProps>`

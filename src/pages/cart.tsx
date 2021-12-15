@@ -3,7 +3,6 @@ import dynamic from 'next/dynamic';
 import Layout from '../components/Layout/Layout';
 import { Store } from '../../utils/Store';
 import NextLink from 'next/link';
-import Image from 'next/image';
 import {
   Grid,
   TableContainer,
@@ -14,23 +13,18 @@ import {
   TableRow,
   TableCell,
   Link,
-  Select,
-  MenuItem,
   Button,
   Card,
   List,
-  ListItem
+  ListItem,
 } from '@mui/material';
-import axios from 'axios';
 import { useRouter } from 'next/router';
 import StepperComponent from '../components/Stepper/Stepper';
 
 function CartScreen() {
   const router = useRouter();
   const { state, dispatch } = useContext(Store);
-  const {
-    cartItems 
-  } = state;
+  const { cartItems } = state;
 
   const removeItemHandler = (itemId: any) => {
     dispatch({ type: 'CART_REMOVE_ITEM', payload: itemId });
@@ -43,7 +37,7 @@ function CartScreen() {
       <Typography component="h1" variant="h1">
         Shopping Cart
       </Typography>
-      <StepperComponent activeStep={0}/>
+      <StepperComponent activeStep={0} />
       {cartItems.length === 0 ? (
         <div>
           Cart is empty.{' '}
@@ -67,7 +61,7 @@ function CartScreen() {
                 <TableBody>
                   {cartItems.map((item) => (
                     <TableRow key={item.ID}>
-                    <TableCell> Empty</TableCell>
+                      <TableCell> Empty</TableCell>
 
                       <TableCell>
                         <Link>

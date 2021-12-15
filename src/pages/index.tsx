@@ -1,6 +1,6 @@
 import type { NextPage } from 'next';
 import Image from 'next/image';
-import { Box, Typography, Button } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import Layout from '../components/Layout/Layout';
 import styles from '../../styles/Layout.module.css';
 import BgImage from '../components/BgImage/BgImage';

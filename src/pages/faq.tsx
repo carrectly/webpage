@@ -1,5 +1,4 @@
-import React, { FC, useContext } from 'react';
-import { Store } from '../../utils/Store';
+import React, { FC, useState } from 'react';
 import {
   Box,
   Typography,
@@ -12,11 +11,11 @@ import {
 import Layout from '../components/Layout/Layout';
 import faqData from '../data/faq.json';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import {TabPanelProps, faqSubGroupsTypes} from '../../utils/types'
+import { TabPanelProps, faqSubGroupsTypes } from '../../utils/types';
 
 const faqSubGroupsArr = ['basics', 'services', 'payments', 'changes', 'info'];
 
-const TabPanel: FC<TabPanelProps> = ({children, value, index, ...other}) => {
+const TabPanel: FC<TabPanelProps> = ({ children, value, index, ...other }) => {
   return (
     <div
       role="tabpanel"
@@ -32,7 +31,7 @@ const TabPanel: FC<TabPanelProps> = ({children, value, index, ...other}) => {
       )}
     </div>
   );
-}
+};
 
 function a11yProps(index: number) {
   return {
@@ -41,7 +40,10 @@ function a11yProps(index: number) {
   };
 }
 
-const renderAccordion = (faqDataObj: any, faqGroup: faqSubGroupsTypes): React.ReactNode => {
+const renderAccordion = (
+  faqDataObj: any,
+  faqGroup: faqSubGroupsTypes
+): React.ReactNode => {
   if (faqDataObj[faqGroup]) {
     return faqDataObj[faqGroup].map((el: any, index: number) => (
       <Accordion key={`accordiong_id_${index}`}>
@@ -61,8 +63,8 @@ const renderAccordion = (faqDataObj: any, faqGroup: faqSubGroupsTypes): React.Re
   return <div />;
 };
 
-const faq = () => {
-  const [value, setValue] = React.useState(0);
+const Faq = () => {
+  const [value, setValue] = useState(0);
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
@@ -74,7 +76,15 @@ const faq = () => {
         FAQ
       </Typography>
       <Box sx={{ width: '100%' }}>
-        <Box sx={{ borderBottom: 1, borderColor: 'divider', display: 'flex', flexDirection: 'row', justifyContent: 'space-evenly' }}>
+        <Box
+          sx={{
+            borderBottom: 1,
+            borderColor: 'divider',
+            display: 'flex',
+            flexDirection: 'row',
+            justifyContent: 'space-evenly',
+          }}
+        >
           <Tabs
             value={value}
             onChange={handleChange}
@@ -82,13 +92,17 @@ const faq = () => {
           >
             {faqSubGroupsArr.length &&
               faqSubGroupsArr.map((el, i) => (
-                <Tab label={el.toUpperCase()} {...a11yProps(i)} />
+                <Tab
+                  label={el.toUpperCase()}
+                  {...a11yProps(i)}
+                  key={`tab_id_${i}`}
+                />
               ))}
           </Tabs>
         </Box>
         {faqSubGroupsArr.length &&
           faqSubGroupsArr.map((el, i) => (
-            <TabPanel value={value} index={i}>
+            <TabPanel value={value} index={i} key={`tabpanel_id_${i}`}>
               {renderAccordion(faqData, el)}
             </TabPanel>
           ))}
@@ -97,4 +111,4 @@ const faq = () => {
   );
 };
 
-export default faq;
+export default Faq;

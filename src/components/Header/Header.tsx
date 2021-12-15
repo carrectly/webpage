@@ -1,6 +1,5 @@
 import React from 'react';
 import Link from 'next/link';
-import navStyles from './Header.module.css';
 import { ShoppingCart } from '@mui/icons-material';
 import StyledNavBar from './StyledAppBar';
 

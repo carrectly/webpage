@@ -1,6 +1,3 @@
-import { Store } from '../../utils/Store';
-import EmotionButton from '../components/Buttons/EmotionButton';
-import StyledEmotionButton from '../components/Buttons/StyledEmotionButton';
 import Layout from '../components/Layout/Layout';
 import AboutCard from '../components/AboutCards/AboutCard';
 import aboutInfoArray from '../data/about.json';
@@ -70,9 +67,14 @@ const about = () => {
           WHAT DRIVES US
         </Typography>
 
-        <Box display="flex" flexDirection="row" justifyContent="center"  flexWrap="wrap">
-          {aboutInfoArray.map((el) => (
-            <AboutCard info={el} />
+        <Box
+          display="flex"
+          flexDirection="row"
+          justifyContent="center"
+          flexWrap="wrap"
+        >
+          {aboutInfoArray.map((el, i) => (
+            <AboutCard info={el} key={`${el.title}-${i}`} />
           ))}
         </Box>
       </Container>

@@ -1,19 +1,15 @@
-import React, { FC } from 'react';
+import React from 'react';
 import serviceArray from '../data/services.json';
 import Layout from '../components/Layout/Layout';
 import ServiceCard from '../components/ServiceCards/ServiceCard';
 import {
   Grid,
   Box,
-  Typography,
-  Tabs,
-  Tab,
   Accordion,
   AccordionSummary,
   AccordionSummaryProps,
   AccordionDetails,
 } from '@mui/material';
-import { ServicesDataType } from '../../utils/types';
 import styled from '@emotion/styled';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import StarIcon from '@mui/icons-material/Star';
