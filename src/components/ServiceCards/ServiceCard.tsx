@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import { Box } from '@mui/material';
-import * as React from 'react';
+import React, { useState, FC } from 'react';
 import Typography from '@mui/material/Typography';
 import BgImage from '../BgImage/BgImage';
 import StyledEmotionButton from '../Buttons/StyledEmotionButton';
@@ -24,8 +24,9 @@ const Title = styled.div`
   z-index: 15;
 `;
 
-const ServiceCard: React.FC<ServiceObject> = ({ serviceObject }) => {
-  const [open, setOpen] = React.useState(false);
+const ServiceCard: FC<ServiceObject> = ({ serviceObject }) => {
+  const [open, setOpen] = useState(false);
+  const cardImage = serviceObject.images[0];
   const handleOpen = () => {
     setOpen(true);
   };
@@ -35,7 +36,7 @@ const ServiceCard: React.FC<ServiceObject> = ({ serviceObject }) => {
 
   return (
     <div>
-      <BgImage imgsrc={serviceObject.images[0]} imgalt="test">
+      <BgImage imgsrc={cardImage} imgalt="test">
         <Box
           display="flex"
           flexDirection="column"

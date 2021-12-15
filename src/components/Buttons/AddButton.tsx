@@ -4,15 +4,15 @@ import StyledEmotionButton from './StyledEmotionButton';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import CheckCircleOutlinedIcon from '@mui/icons-material/CheckCircleOutlined';
 import { Store } from '../../../utils/Store';
-import {ServiceObject} from '../../../utils/types'
+import { ServiceObject } from '../../../utils/types';
+import { ServiceType } from '../../../utils/types';
 
-const AddButton: FC<ServiceObject> = ({serviceObject}) => {
-const { state, dispatch } = useContext(Store);
+const AddButton: FC<ServiceObject> = ({ serviceObject }) => {
+  const { state, dispatch } = useContext(Store);
   const { cartItems } = state;
 
-  const addToCartHandler = async (product: any) => {
-    const { ID, SERVICE, IMAGE, PRICE } = product;
-    dispatch({ type: 'CART_ADD_ITEM', payload: { ID, SERVICE, IMAGE, PRICE } });
+  const addToCartHandler = async (product: ServiceType) => {
+    dispatch({ type: 'CART_ADD_ITEM', payload: product });
   };
 
   const inCart = cartItems.find(({ id }) => id === serviceObject.id);

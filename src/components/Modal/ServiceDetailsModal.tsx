@@ -4,10 +4,8 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import StyledCarousel from '../StyledCarousel/StyledCarousel';
-import StyledEmotionButton from '../Buttons/StyledEmotionButton';
-import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import { ModalProps } from '../../../utils/types';
-
+import AddButton from '../Buttons/AddButton';
 const wrapper = {
   position: 'absolute' as const,
   top: '50%',
@@ -70,9 +68,7 @@ export default function ServiceDetailsModal({
             ) : (
               <div />
             )}
-            <StyledEmotionButton bgColor="rgb(116, 55, 148)" textColor="#fff">
-              Add <AddCircleOutlineIcon fontSize="small" />
-            </StyledEmotionButton>
+            <AddButton serviceObject={serviceDetails} />
           </Box>
         </Box>
       </Modal>

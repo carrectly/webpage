@@ -20,10 +20,12 @@ import {
 } from '@mui/material';
 import { useRouter } from 'next/router';
 import StepperComponent from '../components/Stepper/Stepper';
+import CartModal from '../components/Modal/CartModal';
 
 function CartScreen() {
   const router = useRouter();
   const { state, dispatch } = useContext(Store);
+
   const { cartItems } = state;
 
   const removeItemHandler = (itemId: number) => {
@@ -32,6 +34,7 @@ function CartScreen() {
   const checkoutHandler = () => {
     router.push('/datepicker');
   };
+
   return (
     <Layout title="Shopping Cart">
       <Typography component="h1" variant="h1">
@@ -64,9 +67,7 @@ function CartScreen() {
                       <TableCell> Empty</TableCell>
 
                       <TableCell>
-                        <Link>
-                          <Typography>{item.name}</Typography>
-                        </Link>
+                        <CartModal serviceObject={item} />
                       </TableCell>
                       <TableCell align="right">${item.price}</TableCell>
                       <TableCell align="right">
