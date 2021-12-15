@@ -1,7 +1,6 @@
 import Cookies from 'js-cookie';
 import React, { createContext, useReducer } from 'react';
-import {StateType, ActionType} from '../utils/types'
-
+import { StateType, ActionType } from '../utils/types';
 
 const initialState = {
   cartItems: Cookies.get('cartItems')
@@ -35,7 +34,7 @@ function reducer(state: StateType, action: ActionType) {
     }
     case 'CART_REMOVE_ITEM': {
       const cartItems = state.cartItems.filter(
-        (item) => Number(item.ID) !== Number(action.payload)
+        (item) => Number(item.id) !== Number(action.payload)
       );
       Cookies.set('cartItems', JSON.stringify(cartItems));
       return { cartItems: cartItems, shippingAddress: state.shippingAddress };
