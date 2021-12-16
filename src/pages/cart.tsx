@@ -55,21 +55,20 @@ function CartScreen() {
               <Table>
                 <TableHead>
                   <TableRow>
-                    <TableCell>Image</TableCell>
                     <TableCell>Name</TableCell>
-                    <TableCell align="right">Price</TableCell>
+                    <TableCell align="right">Estimated Price</TableCell>
+                    <TableCell align="right">Estimated Durarion</TableCell>
                     <TableCell align="right">Action</TableCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>
                   {cartItems.map((item) => (
                     <TableRow key={item.id}>
-                      <TableCell> Empty</TableCell>
-
                       <TableCell>
                         <CartModal serviceObject={item} />
                       </TableCell>
                       <TableCell align="right">${item.price}</TableCell>
+                      <TableCell align="right">{item.duration}</TableCell>
                       <TableCell align="right">
                         <Button
                           variant="contained"
@@ -88,13 +87,7 @@ function CartScreen() {
           <Grid item md={3} xs={12}>
             <Card>
               <List>
-                <ListItem>
-                  {/* <Typography variant="h2">
-                    Subtotal ({cartItems.reduce((a, c) => a + c.quantity, 0)}{' '}
-                    items) : $
-                    {cartItems.reduce((a, c) => a + c.quantity * c.price, 0)}
-                  </Typography> */}
-                </ListItem>
+                <ListItem></ListItem>
                 <ListItem>
                   <Button
                     onClick={checkoutHandler}
