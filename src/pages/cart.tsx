@@ -37,7 +37,7 @@ function CartScreen() {
 
   return (
     <Layout title="Shopping Cart">
-      <Typography component="h1" variant="h1">
+      <Typography component="h1" variant="h1" align="center">
         Shopping Cart
       </Typography>
       <StepperComponent activeStep={0} />

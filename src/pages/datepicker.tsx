@@ -1,14 +1,31 @@
-import { Typography, TextField, Button, Box, Grid } from '@mui/material';
+import { Typography, Button, Box, Grid } from '@mui/material';
 import { useRouter } from 'next/router';
 import React from 'react';
 import Layout from '../components/Layout/Layout';
 import StepperComponent from '../components/Stepper/Stepper';
-import isWeekend from 'date-fns/isWeekend';
-import AdapterDateFns from '@mui/lab/AdapterDateFns';
-import LocalizationProvider from '@mui/lab/LocalizationProvider';
-import MobileDateTimePicker from '@mui/lab/MobileDateTimePicker';
+import { DatePicker } from 'antd';
+import moment from 'moment';
 
-export default function DatePicker() {
+function range(start, end) {
+  const result = [];
+  for (let i = start; i < end; i++) {
+    result.push(i);
+  }
+  return result;
+}
+
+function disabledDate(current) {
+  // Can not select days before today and today
+  return current && current < moment().endOf('day');
+}
+
+function disabledDateTime() {
+  return {
+    disabledHours: () => [...range(0, 8), ...range(18, 24)],
+  };
+}
+
+export default function DatePickerPage() {
   const [pickUpValue, setPickUpValue] = React.useState<Date | null>(new Date());
   const [returnValue, setReturnValue] = React.useState<Date | null>(new Date());
   const router = useRouter();
@@ -18,40 +35,33 @@ export default function DatePicker() {
   };
   return (
     <Layout title="Service Date">
+      <Typography component="h1" variant="h1" align="center">
+        Pick your service date
+      </Typography>
       <StepperComponent activeStep={1} />
       <Grid container flex="row-wrap" justifyContent="space-around">
         <Box>
           <Typography component="h4" variant="h4">
-            Pick your service date
+            Desired car pickup date
           </Typography>
 
-          <LocalizationProvider dateAdapter={AdapterDateFns}>
-            <MobileDateTimePicker
-              value={pickUpValue}
-              shouldDisableDate={isWeekend}
-              minutesStep={60}
-              onChange={(newValue: Date) => {
-                setPickUpValue(newValue);
-              }}
-              renderInput={(params) => <TextField {...params} />}
-            />
-          </LocalizationProvider>
+          <DatePicker
+            format="YYYY-MM-DD HH"
+            showTime={{ defaultValue: moment('00:00:00', 'HH') }}
+            disabledDate={disabledDate}
+            disabledTime={disabledDateTime}
+          />
         </Box>
         <Box>
           <Typography component="h4" variant="h4">
-            Pick your desired return date
+            Desired car return date
           </Typography>
-          <LocalizationProvider dateAdapter={AdapterDateFns}>
-            <MobileDateTimePicker
-              value={returnValue}
-              shouldDisableDate={isWeekend}
-              minutesStep={60}
-              onChange={(newValue: Date) => {
-                setReturnValue(newValue);
-              }}
-              renderInput={(params) => <TextField {...params} />}
-            />
-          </LocalizationProvider>
+          <DatePicker
+            format="YYYY-MM-DD HH"
+            showTime={{ defaultValue: moment('00:00:00', 'HH') }}
+            disabledDate={disabledDate}
+            disabledTime={disabledDateTime}
+          />
         </Box>
         <Button
           onClick={checkoutHandler}
