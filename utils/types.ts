@@ -20,8 +20,14 @@ export type ServiceType = {
   images: Array<string>;
 };
 
+export type ServiceDatesType = {
+  pickUpDate: Date;
+  returnDate: Date;
+};
+
 export type StateType = {
   cartItems: ServiceType[];
+  serviceDates: any;
   shippingAddress: any;
 };
 

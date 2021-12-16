@@ -1,4 +1,4 @@
-import { Typography, Button, Box, Grid } from '@mui/material';
+import { Typography, Button, Grid } from '@mui/material';
 import { useRouter } from 'next/router';
 import React from 'react';
 import Layout from '../components/Layout/Layout';
@@ -39,20 +39,36 @@ export default function DatePickerPage() {
         Pick your service date
       </Typography>
       <StepperComponent activeStep={1} />
-      <Grid container flex="row-wrap" justifyContent="space-around">
-        <Box>
+      <Grid container spacing={2} columns={8}>
+        <Grid
+          item
+          xs={4}
+          display="flex"
+          flexDirection="column"
+          justifyContent="center"
+        >
           <Typography component="h4" variant="h4">
             Desired car pickup date
           </Typography>
 
           <DatePicker
-            format="YYYY-MM-DD HH"
-            showTime={{ defaultValue: moment('00:00:00', 'HH') }}
+            format="YYYY-MM-DD HH:mm"
+            showTime={{
+              defaultValue: moment('00:00:00', 'HH:mm'),
+              minuteStep: 60,
+            }}
             disabledDate={disabledDate}
             disabledTime={disabledDateTime}
           />
-        </Box>
-        <Box>
+        </Grid>
+
+        <Grid
+          item
+          xs={4}
+          display="flex"
+          flexDirection="column"
+          justifyContent="center"
+        >
           <Typography component="h4" variant="h4">
             Desired car return date
           </Typography>
@@ -62,15 +78,17 @@ export default function DatePickerPage() {
             disabledDate={disabledDate}
             disabledTime={disabledDateTime}
           />
-        </Box>
-        <Button
-          onClick={checkoutHandler}
-          variant="contained"
-          color="primary"
-          sx={{ padding: '20px' }}
-        >
-          Proceed to user info
-        </Button>
+        </Grid>
+        <Grid item xs={8} display="flex" justifyContent="center">
+          <Button
+            onClick={checkoutHandler}
+            variant="contained"
+            color="primary"
+            sx={{ padding: '20px' }}
+          >
+            Proceed to user info
+          </Button>
+        </Grid>
       </Grid>
     </Layout>
   );

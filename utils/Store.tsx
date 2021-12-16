@@ -11,6 +11,10 @@ const initialState = {
     ? // @ts-ignore
       JSON.parse(Cookies.get('shippingAddress'))
     : {},
+  serviceDates: Cookies.get('serviceDates')
+    ? // @ts-ignore
+      JSON.parse(Cookies.get('serviceDates'))
+    : {},
 };
 
 export const Store = createContext<{
@@ -42,8 +46,18 @@ function reducer(state: StateType, action: ActionType) {
     case 'SAVE_SHIPPING_ADDRESS':
       Cookies.set('shippingAddress', JSON.stringify({ ...action.payload }));
       return {
-        ...state,
+        ...state.cartItems,
         shippingAddress: {
+          ...action.payload,
+        },
+      };
+
+    case 'SAVE_SERVICE_DATES':
+      Cookies.set('serviceDates', JSON.stringify({ ...action.payload }));
+      return {
+        ...state.cartItems,
+        ...state.shippingAddress,
+        serviceDates: {
           ...action.payload,
         },
       };
