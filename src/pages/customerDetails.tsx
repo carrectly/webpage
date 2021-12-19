@@ -17,6 +17,7 @@ import { Controller, useForm } from 'react-hook-form';
 import StepperComponent from '../components/Stepper/Stepper';
 import DatePickerPage from '../components/Forms/ServiceDates';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
+import { IMaskInput } from 'react-imask';
 
 type submitPropTypes = {
   firstName: string;
@@ -26,6 +27,31 @@ type submitPropTypes = {
   postalCode: string;
   phoneNumber: string;
 };
+
+interface CustomProps {
+  onChange: (event: { target: { name: string; value: string } }) => void;
+  name: string;
+}
+
+const TextMaskCustom = React.forwardRef<HTMLElement, CustomProps>(
+  function TextMaskCustom(props, ref) {
+    const { onChange, ...other } = props;
+    return (
+      <IMaskInput
+        {...other}
+        mask="(#00) 000-0000"
+        definitions={{
+          '#': /[1-9]/,
+        }}
+        inputRef={ref}
+        onAccept={(value: any) =>
+          onChange({ target: { name: props.name, value } })
+        }
+        overwrite
+      />
+    );
+  }
+);
 
 export default function Shipping() {
   const [carYear, setCarYear] = React.useState('');
@@ -145,22 +171,34 @@ export default function Shipping() {
                     maxLength: 10,
                   }}
                   render={({ field }) => (
-                    <TextField
-                      variant="outlined"
-                      type="number"
-                      fullWidth
-                      id="phoneNumber"
-                      label="Phone Number"
-                      error={Boolean(errors.phoneNumber)}
-                      helperText={
-                        errors.phoneNumber
-                          ? errors.phoneNumber.type === 'minLength'
-                            ? 'Phone number must consist of 10 digits'
-                            : 'Phone number is required'
-                          : ''
-                      }
-                      {...field}
-                    ></TextField>
+                    <FormControl variant="standard">
+                      <InputLabel htmlFor="formatted-text-mask-input">
+                        react-imask
+                      </InputLabel>
+                      <Input
+                        value={values.textmask}
+                        onChange={handleChange}
+                        name="textmask"
+                        id="formatted-text-mask-input"
+                        inputComponent={TextMaskCustom as any}
+                      />
+                    </FormControl>
+                    // <TextField
+                    //   variant="outlined"
+                    //   type="number"
+                    //   fullWidth
+                    //   id="phoneNumber"
+                    //   label="Phone Number"
+                    //   error={Boolean(errors.phoneNumber)}
+                    //   helperText={
+                    //     errors.phoneNumber
+                    //       ? errors.phoneNumber.type === 'minLength'
+                    //         ? 'Phone number must consist of 10 digits'
+                    //         : 'Phone number is required'
+                    //       : ''
+                    //   }
+                    //   {...field}
+                    // ></TextField>
                   )}
                 ></Controller>
               </ListItem>
