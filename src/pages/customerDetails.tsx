@@ -1,4 +1,11 @@
-import { List, ListItem, Typography, TextField, Button } from '@mui/material';
+import {
+  List,
+  ListItem,
+  Typography,
+  TextField,
+  Button,
+  Grid,
+} from '@mui/material';
 import { useRouter } from 'next/router';
 import React, { useContext, useEffect } from 'react';
 import Layout from '../components/Layout/Layout';
@@ -20,7 +27,6 @@ export default function Shipping() {
     control,
     formState: { errors },
     setValue,
-    getValues,
   } = useForm();
   const router = useRouter();
   const { state, dispatch } = useContext(Store);
@@ -49,158 +55,181 @@ export default function Shipping() {
 
   return (
     <Layout title="Shipping Address">
+      <Typography component="h1" variant="h1" align="center">
+        Order Details
+      </Typography>
+      <StepperComponent activeStep={2} />
+
       <form onSubmit={handleSubmit(submitHandler)}>
-        <Typography component="h1" variant="h1">
-          Shipping Address
-        </Typography>
-        <StepperComponent activeStep={2} />
-        <List>
-          <ListItem>
-            <Controller
-              name="firstName"
-              control={control}
-              defaultValue=""
-              rules={{
-                required: true,
-                minLength: 2,
-              }}
-              render={({ field }) => (
-                <TextField
-                  variant="outlined"
-                  fullWidth
-                  id="firstName"
-                  label="First Name"
-                  error={Boolean(errors.firstName)}
-                  helperText={
-                    errors.firstName
-                      ? errors.firstName.type === 'minLength'
-                        ? 'First Name length is more than 1'
-                        : 'First Name is required'
-                      : ''
-                  }
-                  {...field}
-                ></TextField>
-              )}
-            ></Controller>
-          </ListItem>
-          <ListItem>
-            <Controller
-              name="lastName"
-              control={control}
-              defaultValue=""
-              rules={{
-                required: true,
-                minLength: 2,
-              }}
-              render={({ field }) => (
-                <TextField
-                  variant="outlined"
-                  fullWidth
-                  id="lastName"
-                  label="Last Name"
-                  error={Boolean(errors.lastName)}
-                  helperText={
-                    errors.lastName
-                      ? errors.lastName.type === 'minLength'
-                        ? 'Last Name length is more than 1'
-                        : 'Last Name is required'
-                      : ''
-                  }
-                  {...field}
-                ></TextField>
-              )}
-            ></Controller>
-          </ListItem>
-          <ListItem>
-            <Controller
-              name="address"
-              control={control}
-              defaultValue=""
-              rules={{
-                required: true,
-                minLength: 2,
-              }}
-              render={({ field }) => (
-                <TextField
-                  variant="outlined"
-                  fullWidth
-                  id="address"
-                  label="Address"
-                  error={Boolean(errors.address)}
-                  helperText={
-                    errors.address
-                      ? errors.address.type === 'minLength'
-                        ? 'Address length is more than 1'
-                        : 'Address is required'
-                      : ''
-                  }
-                  {...field}
-                ></TextField>
-              )}
-            ></Controller>
-          </ListItem>
-          <ListItem>
-            <Controller
-              name="city"
-              control={control}
-              defaultValue=""
-              rules={{
-                required: true,
-                minLength: 2,
-              }}
-              render={({ field }) => (
-                <TextField
-                  variant="outlined"
-                  fullWidth
-                  id="city"
-                  label="City"
-                  error={Boolean(errors.city)}
-                  helperText={
-                    errors.city
-                      ? errors.city.type === 'minLength'
-                        ? 'City length is more than 1'
-                        : 'City is required'
-                      : ''
-                  }
-                  {...field}
-                ></TextField>
-              )}
-            ></Controller>
-          </ListItem>
-          <ListItem>
-            <Controller
-              name="postalCode"
-              control={control}
-              defaultValue=""
-              rules={{
-                required: true,
-                minLength: 2,
-              }}
-              render={({ field }) => (
-                <TextField
-                  variant="outlined"
-                  fullWidth
-                  id="postalCode"
-                  label="Postal Code"
-                  error={Boolean(errors.postalCode)}
-                  helperText={
-                    errors.postalCode
-                      ? errors.postalCode.type === 'minLength'
-                        ? 'Postal Code length is more than 1'
-                        : 'Postal Code is required'
-                      : ''
-                  }
-                  {...field}
-                ></TextField>
-              )}
-            ></Controller>
-          </ListItem>
-          <ListItem>
+        <Grid container spacing={2} width="100%">
+          <Grid item xs={6}>
+            <Typography component="h4" variant="h4" align="center">
+              Customer Information
+            </Typography>
+            <List>
+              <ListItem>
+                <Controller
+                  name="firstName"
+                  control={control}
+                  defaultValue=""
+                  rules={{
+                    required: true,
+                    minLength: 2,
+                  }}
+                  render={({ field }) => (
+                    <TextField
+                      variant="outlined"
+                      fullWidth
+                      id="firstName"
+                      label="First Name"
+                      error={Boolean(errors.firstName)}
+                      helperText={
+                        errors.firstName
+                          ? errors.firstName.type === 'minLength'
+                            ? 'First Name length is more than 1'
+                            : 'First Name is required'
+                          : ''
+                      }
+                      {...field}
+                    ></TextField>
+                  )}
+                ></Controller>
+              </ListItem>
+              <ListItem>
+                <Controller
+                  name="lastName"
+                  control={control}
+                  defaultValue=""
+                  rules={{
+                    required: true,
+                    minLength: 2,
+                  }}
+                  render={({ field }) => (
+                    <TextField
+                      variant="outlined"
+                      fullWidth
+                      id="lastName"
+                      label="Last Name"
+                      error={Boolean(errors.lastName)}
+                      helperText={
+                        errors.lastName
+                          ? errors.lastName.type === 'minLength'
+                            ? 'Last Name length is more than 1'
+                            : 'Last Name is required'
+                          : ''
+                      }
+                      {...field}
+                    ></TextField>
+                  )}
+                ></Controller>
+              </ListItem>
+              <ListItem>
+                <Controller
+                  name="address"
+                  control={control}
+                  defaultValue=""
+                  rules={{
+                    required: true,
+                    minLength: 2,
+                  }}
+                  render={({ field }) => (
+                    <TextField
+                      variant="outlined"
+                      fullWidth
+                      id="address"
+                      label="Address"
+                      error={Boolean(errors.address)}
+                      helperText={
+                        errors.address
+                          ? errors.address.type === 'minLength'
+                            ? 'Address length is more than 1'
+                            : 'Address is required'
+                          : ''
+                      }
+                      {...field}
+                    ></TextField>
+                  )}
+                ></Controller>
+              </ListItem>
+              <ListItem>
+                <Controller
+                  name="city"
+                  control={control}
+                  defaultValue=""
+                  rules={{
+                    required: true,
+                    minLength: 2,
+                  }}
+                  render={({ field }) => (
+                    <TextField
+                      variant="outlined"
+                      fullWidth
+                      id="city"
+                      label="City"
+                      error={Boolean(errors.city)}
+                      helperText={
+                        errors.city
+                          ? errors.city.type === 'minLength'
+                            ? 'City length is more than 1'
+                            : 'City is required'
+                          : ''
+                      }
+                      {...field}
+                    ></TextField>
+                  )}
+                ></Controller>
+              </ListItem>
+              <ListItem>
+                <Controller
+                  name="postalCode"
+                  control={control}
+                  defaultValue=""
+                  rules={{
+                    required: true,
+                    minLength: 2,
+                  }}
+                  render={({ field }) => (
+                    <TextField
+                      variant="outlined"
+                      fullWidth
+                      id="postalCode"
+                      label="Postal Code"
+                      error={Boolean(errors.postalCode)}
+                      helperText={
+                        errors.postalCode
+                          ? errors.postalCode.type === 'minLength'
+                            ? 'Postal Code length is more than 1'
+                            : 'Postal Code is required'
+                          : ''
+                      }
+                      {...field}
+                    ></TextField>
+                  )}
+                ></Controller>
+              </ListItem>
+            </List>
+          </Grid>
+          <Grid item xs={6}>
+            <Typography component="h4" variant="h4" align="center">
+              Car Information
+            </Typography>
+          </Grid>
+          <Grid item xs={6}>
+            <Typography component="h4" variant="h4" align="center">
+              Car Location Information
+            </Typography>
+          </Grid>
+          <Grid item xs={6}>
+            <Typography component="h4" variant="h4" align="center">
+              Service Date
+            </Typography>
+          </Grid>
+          <Grid item xs={12}>
             <Button variant="contained" type="submit" fullWidth color="primary">
               Continue
             </Button>
-          </ListItem>
-        </List>
+          </Grid>
+        </Grid>
       </form>
     </Layout>
   );
