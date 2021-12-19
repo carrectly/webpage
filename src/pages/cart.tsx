@@ -7,7 +7,6 @@ import {
   Grid,
   TableContainer,
   Table,
-  Typography,
   TableHead,
   TableBody,
   TableRow,
@@ -32,7 +31,7 @@ function CartScreen() {
     dispatch({ type: 'CART_REMOVE_ITEM', payload: itemId });
   };
   const checkoutHandler = () => {
-    router.push('/datepicker');
+    router.push('/customerdetails');
   };
 
   const totalPrice = () => {
@@ -41,9 +40,6 @@ function CartScreen() {
 
   return (
     <Layout title="Shopping Cart">
-      <Typography component="h1" variant="h1" align="center">
-        Shopping Cart
-      </Typography>
       <StepperComponent activeStep={0} />
       {cartItems.length === 0 ? (
         <div>

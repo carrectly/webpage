@@ -63,9 +63,9 @@ function PlaceOrder() {
   };
   return (
     <Layout title="Place Order">
-      <StepperComponent activeStep={3}></StepperComponent>
+      <StepperComponent activeStep={2}></StepperComponent>
       <Typography component="h1" variant="h1">
-        Place Order
+        Order summary
       </Typography>
 
       <Grid container spacing={1}>
