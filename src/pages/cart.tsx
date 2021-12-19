@@ -35,6 +35,10 @@ function CartScreen() {
     router.push('/datepicker');
   };
 
+  const totalPrice = () => {
+    return cartItems.reduce((a, c) => a + c.price[0], 0);
+  };
+
   return (
     <Layout title="Shopping Cart">
       <Typography component="h1" variant="h1" align="center">
@@ -67,7 +71,16 @@ function CartScreen() {
                       <TableCell>
                         <CartModal serviceObject={item} />
                       </TableCell>
-                      <TableCell align="right">${item.price}</TableCell>
+                      <TableCell align="right">
+                        <List sx={{ display: 'flex', flexDirection: 'row' }}>
+                          {item.price &&
+                            item.price.map((el, i) => (
+                              <ListItem key={`price-variant-${i}`}>
+                                ${el}
+                              </ListItem>
+                            ))}
+                        </List>
+                      </TableCell>
                       <TableCell align="right">{item.duration}</TableCell>
                       <TableCell align="right">
                         <Button
@@ -87,7 +100,7 @@ function CartScreen() {
           <Grid item md={3} xs={12}>
             <Card>
               <List>
-                <ListItem></ListItem>
+                <ListItem>Estimated total price: ${totalPrice()}</ListItem>
                 <ListItem>
                   <Button
                     onClick={checkoutHandler}

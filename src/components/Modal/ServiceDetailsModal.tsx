@@ -1,5 +1,6 @@
 import * as React from 'react';
 import Image from 'next/image';
+import { List, ListItem } from '@mui/material';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
@@ -57,13 +58,18 @@ export default function ServiceDetailsModal({
             flexDirection="row"
             justifyContent="space-between"
           >
-            <Typography sx={{ mt: 2 }}>
-              Price: ${serviceDetails.price}
-            </Typography>
+            <Typography sx={{ mt: 2 }}>Price:</Typography>
+            <List sx={{ display: 'flex', flexDirection: 'row' }}>
+              {serviceDetails.price &&
+                serviceDetails.price.map((el, i) => (
+                  <ListItem key={`price-variant-${i}`}>${el}</ListItem>
+                ))}
+            </List>
+
             {/* need to update once we have the hours field in the data */}
             {false ? (
               <Typography sx={{ mt: 2 }}>
-                Time: ${serviceDetails.price}
+                Time: ${serviceDetails.duration}
               </Typography>
             ) : (
               <div />

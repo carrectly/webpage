@@ -105,24 +105,23 @@ function PlaceOrder() {
                     <TableBody>
                       {cartItems.map((item) => (
                         <TableRow key={item.id}>
-                          {/* <TableCell>
-                            <Link>
-                              <Image
-                                src={item.image}
-                                alt={item.name}
-                                width={50}
-                                height={50}
-                              ></Image>
-                            </Link>
-                          </TableCell> */}
-
                           <TableCell>
                             <Link>
                               <Typography>{item.name}</Typography>
                             </Link>
                           </TableCell>
                           <TableCell align="right">
-                            <Typography>${item.price}</Typography>
+                            Price:
+                            <List
+                              sx={{ display: 'flex', flexDirection: 'row' }}
+                            >
+                              {item.price &&
+                                item.price.map((el, i) => (
+                                  <ListItem key={`price-variant-${i}`}>
+                                    ${el}
+                                  </ListItem>
+                                ))}
+                            </List>
                           </TableCell>
                         </TableRow>
                       ))}

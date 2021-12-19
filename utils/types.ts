@@ -13,7 +13,7 @@ export type faqSubGroupsTypes =
 export type ServiceType = {
   id: number;
   name: string;
-  price?: string | number;
+  price?: Array<number>;
   duration?: string;
   shortDescription: string;
   longDescription: string;
