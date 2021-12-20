@@ -2,22 +2,23 @@ import {
   List,
   ListItem,
   Typography,
-  TextField,
   Button,
   Grid,
+  MenuItem,
   FormControl,
   InputLabel,
-  MenuItem,
+  TextField,
 } from '@mui/material';
 import { useRouter } from 'next/router';
 import React, { useContext, useEffect } from 'react';
 import Layout from '../components/Layout/Layout';
 import { Store } from '../../utils/Store';
-import { Controller, useForm } from 'react-hook-form';
+import { useForm, Controller } from 'react-hook-form';
 import StepperComponent from '../components/Stepper/Stepper';
-import DatePickerPage from '../components/Forms/ServiceDates';
+import DatePickerCustom from '../components/Forms/ServiceDates';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 import { IMaskInput } from 'react-imask';
+import ControlledInputField from '../components/Forms/ControlledInputField';
 
 type submitPropTypes = {
   firstName: string;
@@ -26,32 +27,28 @@ type submitPropTypes = {
   city: string;
   postalCode: string;
   phoneNumber: string;
+  email: string;
+  pickupDate: Date;
+  returnDate: Date;
 };
 
-interface CustomProps {
-  onChange: (event: { target: { name: string; value: string } }) => void;
-  name: string;
-}
+const customerFields = [
+  { fieldName: 'firstName', fieldLabel: 'First Name' },
+  { fieldName: 'lastName', fieldLabel: 'Last Name' },
+];
 
-const TextMaskCustom = React.forwardRef<HTMLElement, CustomProps>(
-  function TextMaskCustom(props, ref) {
-    const { onChange, ...other } = props;
-    return (
-      <IMaskInput
-        {...other}
-        mask="(#00) 000-0000"
-        definitions={{
-          '#': /[1-9]/,
-        }}
-        inputRef={ref}
-        onAccept={(value: any) =>
-          onChange({ target: { name: props.name, value } })
-        }
-        overwrite
-      />
-    );
-  }
-);
+const vehicleFields = [
+  { fieldName: 'carMake', fieldLabel: 'Car Make' },
+  { fieldName: 'carModel', fieldLabel: 'Car Model' },
+  { fieldName: 'paintColor', fieldLabel: 'Paint Color' },
+  { fieldName: 'vin', fieldLabel: 'VIN Number' },
+];
+
+const locationFields = [
+  { fieldName: 'address', fieldLabel: 'Address' },
+  { fieldName: 'city', fieldLabel: 'City' },
+  { fieldName: 'zipCode', fieldLabel: 'Zip Code' },
+];
 
 export default function Shipping() {
   const [carYear, setCarYear] = React.useState('');
@@ -76,6 +73,7 @@ export default function Shipping() {
     setValue('city', shippingAddress.city);
     setValue('postalCode', shippingAddress.postalCode);
     setValue('phoneNumber', shippingAddress.phoneNumber);
+    setValue('email', shippingAddress.email);
   }, []);
 
   const submitHandler = ({
@@ -84,10 +82,22 @@ export default function Shipping() {
     address,
     city,
     postalCode,
+    email,
+    pickupDate,
+    returnDate,
   }: submitPropTypes) => {
     dispatch({
       type: 'SAVE_SHIPPING_ADDRESS',
-      payload: { firstName, lastName, address, city, postalCode },
+      payload: {
+        firstName,
+        lastName,
+        address,
+        city,
+        postalCode,
+        email,
+        pickupDate,
+        returnDate,
+      },
     });
     router.push('/placeorder');
   };
@@ -104,54 +114,43 @@ export default function Shipping() {
             </Typography>
             <List>
               <ListItem>
-                <Controller
-                  name="firstName"
+                <ControlledInputField
                   control={control}
-                  defaultValue=""
-                  rules={{
-                    required: true,
-                    minLength: 2,
-                  }}
-                  render={({ field }) => (
-                    <TextField
-                      variant="outlined"
-                      fullWidth
-                      id="firstName"
-                      label="First Name"
-                      error={Boolean(errors.firstName)}
-                      helperText={
-                        errors.firstName
-                          ? errors.firstName.type === 'minLength'
-                            ? 'First Name length is more than 1'
-                            : 'First Name is required'
-                          : ''
-                      }
-                      {...field}
-                    ></TextField>
-                  )}
-                ></Controller>
+                  errors={errors}
+                  fieldName="firstName"
+                  fieldLabel="First Name"
+                />
+              </ListItem>
+              <ListItem>
+                <ControlledInputField
+                  control={control}
+                  errors={errors}
+                  fieldName="lastName"
+                  fieldLabel="Last Name"
+                />
               </ListItem>
               <ListItem>
                 <Controller
-                  name="lastName"
+                  name="email"
                   control={control}
                   defaultValue=""
                   rules={{
                     required: true,
-                    minLength: 2,
+                    pattern: /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/,
                   }}
                   render={({ field }) => (
                     <TextField
                       variant="outlined"
                       fullWidth
-                      id="lastName"
-                      label="Last Name"
-                      error={Boolean(errors.lastName)}
+                      id="email"
+                      label="Email"
+                      inputProps={{ type: 'email' }}
+                      error={Boolean(errors.email)}
                       helperText={
-                        errors.lastName
-                          ? errors.lastName.type === 'minLength'
-                            ? 'Last Name length is more than 1'
-                            : 'Last Name is required'
+                        errors.email
+                          ? errors.email.type === 'pattern'
+                            ? 'Email is not valid'
+                            : 'Email is required'
                           : ''
                       }
                       {...field}
@@ -159,7 +158,6 @@ export default function Shipping() {
                   )}
                 ></Controller>
               </ListItem>
-
               <ListItem>
                 <Controller
                   name="phoneNumber"
@@ -168,39 +166,27 @@ export default function Shipping() {
                   rules={{
                     required: true,
                     minLength: 10,
-                    maxLength: 10,
                   }}
-                  render={({ field }) => (
-                    <FormControl variant="standard">
-                      <InputLabel htmlFor="formatted-text-mask-input">
-                        react-imask
-                      </InputLabel>
-                      <Input
-                        value={values.textmask}
-                        onChange={handleChange}
-                        name="textmask"
-                        id="formatted-text-mask-input"
-                        inputComponent={TextMaskCustom as any}
-                      />
-                    </FormControl>
-                    // <TextField
-                    //   variant="outlined"
-                    //   type="number"
-                    //   fullWidth
-                    //   id="phoneNumber"
-                    //   label="Phone Number"
-                    //   error={Boolean(errors.phoneNumber)}
-                    //   helperText={
-                    //     errors.phoneNumber
-                    //       ? errors.phoneNumber.type === 'minLength'
-                    //         ? 'Phone number must consist of 10 digits'
-                    //         : 'Phone number is required'
-                    //       : ''
-                    //   }
-                    //   {...field}
-                    // ></TextField>
+                  render={({ field: { onChange, value } }) => (
+                    <IMaskInput
+                      {...value}
+                      mask="(#00) 000-0000"
+                      definitions={{
+                        '#': /[1-9]/,
+                      }}
+                      value={value}
+                      onChange={onChange}
+                      error={Boolean(errors.phoneNumber)}
+                      helperText={
+                        errors.phoneNumber
+                          ? errors.phoneNumber.type === 'minLength'
+                            ? `Phone number length is 10 digits`
+                            : `Phone number is required`
+                          : ''
+                      }
+                    />
                   )}
-                ></Controller>
+                />
               </ListItem>
             </List>
           </Grid>
@@ -209,55 +195,42 @@ export default function Shipping() {
               Car Information
               <List>
                 <ListItem>
-                  <FormControl fullWidth>
-                    <InputLabel id="demo-simple-select-label">
-                      Car year
-                    </InputLabel>
-                    <Select
-                      labelId="demo-simple-select-label"
-                      id="demo-simple-select"
-                      value={carYear}
-                      label="Car Year"
-                      onChange={handleChange}
-                    >
-                      {[...Array(40).keys()].map((year) => (
-                        <MenuItem value={2021 - year}>{2021 - year}</MenuItem>
-                      ))}
-                    </Select>
-                  </FormControl>
+                  <Controller
+                    render={({ field }) => (
+                      <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">
+                          Car Year
+                        </InputLabel>
+                        <Select
+                          {...field}
+                          labelId="demo-simple-select-label"
+                          fullWidth
+                          variant="outlined"
+                          label="Car Year"
+                        >
+                          {[...Array(40).keys()].map((year) => (
+                            <MenuItem value={2021 - year} key={2021 - year}>
+                              {2021 - year}
+                            </MenuItem>
+                          ))}
+                        </Select>
+                      </FormControl>
+                    )}
+                    control={control}
+                    name="carYear"
+                    defaultValue=""
+                  />
                 </ListItem>
-                <ListItem>
-                  <TextField
-                    variant="outlined"
-                    fullWidth
-                    id="carMake"
-                    label="Car make"
-                  ></TextField>
-                </ListItem>
-                <ListItem>
-                  <TextField
-                    variant="outlined"
-                    fullWidth
-                    id="carModel"
-                    label="Car model"
-                  ></TextField>
-                </ListItem>
-                <ListItem>
-                  <TextField
-                    variant="outlined"
-                    fullWidth
-                    id="paintColor"
-                    label="Paint Color"
-                  ></TextField>
-                </ListItem>
-                <ListItem>
-                  <TextField
-                    variant="outlined"
-                    fullWidth
-                    id="vinNumber"
-                    label="Vin #"
-                  ></TextField>
-                </ListItem>
+                {vehicleFields.map((field, i) => (
+                  <ListItem key={`list-input-id-${i}`}>
+                    <ControlledInputField
+                      control={control}
+                      errors={errors}
+                      fieldName={field.fieldName}
+                      fieldLabel={field.fieldLabel}
+                    />
+                  </ListItem>
+                ))}
               </List>
             </Typography>
           </Grid>
@@ -265,98 +238,73 @@ export default function Shipping() {
             <Typography component="h4" variant="h4" align="center">
               Car Location Information
               <List>
-                <ListItem>
-                  <Controller
-                    name="address"
-                    control={control}
-                    defaultValue=""
-                    rules={{
-                      required: true,
-                      minLength: 2,
-                    }}
-                    render={({ field }) => (
-                      <TextField
-                        variant="outlined"
-                        fullWidth
-                        id="address"
-                        label="Address"
-                        error={Boolean(errors.address)}
-                        helperText={
-                          errors.address
-                            ? errors.address.type === 'minLength'
-                              ? 'Address length is more than 1'
-                              : 'Address is required'
-                            : ''
-                        }
-                        {...field}
-                      ></TextField>
-                    )}
-                  ></Controller>
-                </ListItem>
-                <ListItem>
-                  <Controller
-                    name="city"
-                    control={control}
-                    defaultValue=""
-                    rules={{
-                      required: true,
-                      minLength: 2,
-                    }}
-                    render={({ field }) => (
-                      <TextField
-                        variant="outlined"
-                        fullWidth
-                        id="city"
-                        label="City"
-                        error={Boolean(errors.city)}
-                        helperText={
-                          errors.city
-                            ? errors.city.type === 'minLength'
-                              ? 'City length is more than 1'
-                              : 'City is required'
-                            : ''
-                        }
-                        {...field}
-                      ></TextField>
-                    )}
-                  ></Controller>
-                </ListItem>
-                <ListItem>
-                  <Controller
-                    name="postalCode"
-                    control={control}
-                    defaultValue=""
-                    rules={{
-                      required: true,
-                      minLength: 2,
-                    }}
-                    render={({ field }) => (
-                      <TextField
-                        variant="outlined"
-                        fullWidth
-                        id="postalCode"
-                        label="Postal Code"
-                        error={Boolean(errors.postalCode)}
-                        helperText={
-                          errors.postalCode
-                            ? errors.postalCode.type === 'minLength'
-                              ? 'Postal Code length is more than 1'
-                              : 'Postal Code is required'
-                            : ''
-                        }
-                        {...field}
-                      ></TextField>
-                    )}
-                  ></Controller>
-                </ListItem>
+                {locationFields.map((field, i) => (
+                  <ListItem key={`list-input-id-${i}`}>
+                    <ControlledInputField
+                      control={control}
+                      errors={errors}
+                      fieldName={field.fieldName}
+                      fieldLabel={field.fieldLabel}
+                    />
+                  </ListItem>
+                ))}
               </List>
             </Typography>
           </Grid>
           <Grid item xs={6}>
             <Typography component="h4" variant="h4" align="center">
               Service Date
+              <List>
+                <ListItem>
+                  <Controller
+                    render={({ field }) => (
+                      <DatePickerCustom
+                        placeHolder="Select desired vehicle pickup date"
+                        {...field}
+                      />
+                    )}
+                    name="pickupDate"
+                    control={control}
+                    rules={{
+                      required: true,
+                    }}
+
+                    // onChange={([selected]) => ({ value: selected })}
+                  />
+                  <div>
+                    {errors.pickupDate
+                      ? errors.pickupDate.type === 'minLength'
+                        ? `Date length is 10 digits`
+                        : `Date is required`
+                      : ''}
+                  </div>
+                </ListItem>
+                <ListItem>
+                  <Controller
+                    render={({ field }) => (
+                      <DatePickerCustom
+                        placeHolder="Select desired vehicle return date"
+                        {...field}
+                      />
+                    )}
+                    name="returnDate"
+                    control={control}
+                    rules={{
+                      required: true,
+                    }}
+
+                    // onChange={([selected]) => ({ value: selected })}
+                  />
+                  <div>
+                    {errors.returnDate
+                      ? errors.returnDate.type === 'minLength'
+                        ? `Date length is 10 digits`
+                        : `Date is required`
+                      : ''}
+                  </div>
+                </ListItem>
+              </List>
             </Typography>
-            <DatePickerPage />
           </Grid>
           <Grid item xs={12}>
             <Button variant="contained" type="submit" fullWidth color="primary">
