@@ -32,6 +32,31 @@ type submitPropTypes = {
   returnDate: Date;
 };
 
+interface CustomProps {
+  onChange: (event: { target: { name: string; value: string } }) => void;
+  name: string;
+}
+
+const TextMaskCustom = React.forwardRef<HTMLElement, CustomProps>(
+  function TextMaskCustom(props, ref) {
+    const { onChange, ...other } = props;
+    return (
+      <IMaskInput
+        {...other}
+        mask="(#00) 000-0000"
+        definitions={{
+          '#': /[1-9]/,
+        }}
+        inputRef={ref}
+        onAccept={(value: any) =>
+          onChange({ target: { name: props.name, value } })
+        }
+        overwrite
+      />
+    );
+  }
+);
+
 const customerFields = [
   { fieldName: 'firstName', fieldLabel: 'First Name' },
   { fieldName: 'lastName', fieldLabel: 'Last Name' },
@@ -167,15 +192,16 @@ export default function Shipping() {
                     required: true,
                     minLength: 10,
                   }}
-                  render={({ field: { onChange, value } }) => (
-                    <IMaskInput
-                      {...value}
-                      mask="(#00) 000-0000"
-                      definitions={{
-                        '#': /[1-9]/,
+                  render={({ field }) => (
+                    <TextField
+                      label="Phone Number"
+                      variant="outlined"
+                      fullWidth
+                      name="phoneNumber"
+                      id="formatted-numberformat-input"
+                      InputProps={{
+                        inputComponent: TextMaskCustom as any,
                       }}
-                      value={value}
-                      onChange={onChange}
                       error={Boolean(errors.phoneNumber)}
                       helperText={
                         errors.phoneNumber
@@ -184,7 +210,8 @@ export default function Shipping() {
                             : `Phone number is required`
                           : ''
                       }
-                    />
+                      {...field}
+                    ></TextField>
                   )}
                 />
               </ListItem>
