@@ -11,10 +11,6 @@ const initialState = {
     ? // @ts-ignore
       JSON.parse(Cookies.get('shippingAddress'))
     : {},
-  serviceDates: Cookies.get('serviceDates')
-    ? // @ts-ignore
-      JSON.parse(Cookies.get('serviceDates'))
-    : {},
 };
 
 export const Store = createContext<{
@@ -44,21 +40,12 @@ function reducer(state: StateType, action: ActionType) {
       return { cartItems: cartItems, shippingAddress: state.shippingAddress };
     }
     case 'SAVE_SHIPPING_ADDRESS':
-      Cookies.set('shippingAddress', JSON.stringify({ ...action.payload }));
+      const data = action.payload.props;
+      Cookies.set('shippingAddress', JSON.stringify({ ...data }));
       return {
-        ...state.cartItems,
+        cartItems: [...state.cartItems],
         shippingAddress: {
-          ...action.payload,
-        },
-      };
-
-    case 'SAVE_SERVICE_DATES':
-      Cookies.set('serviceDates', JSON.stringify({ ...action.payload }));
-      return {
-        ...state.cartItems,
-        ...state.shippingAddress,
-        serviceDates: {
-          ...action.payload,
+          ...data,
         },
       };
     case 'CART_CLEAR':

@@ -8,22 +8,22 @@ import {
   FormControl,
   InputLabel,
   TextField,
-  FormHelperText,
   FormLabel,
   RadioGroup,
   FormControlLabel,
   Radio,
 } from '@mui/material';
 import { useRouter } from 'next/router';
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect } from 'react';
 import Layout from '../components/Layout/Layout';
 import { Store } from '../../utils/Store';
 import { useForm, Controller } from 'react-hook-form';
 import StepperComponent from '../components/Stepper/Stepper';
 import DatePickerCustom from '../components/Forms/ServiceDates';
-import Select, { SelectChangeEvent } from '@mui/material/Select';
+import Select from '@mui/material/Select';
 import { IMaskInput } from 'react-imask';
 import ControlledInputField from '../components/Forms/ControlledInputField';
+import { Moment } from 'moment';
 
 type submitPropTypes = {
   firstName: string;
@@ -33,14 +33,14 @@ type submitPropTypes = {
   address: string;
   city: string;
   zipCode: string;
-  carYear: number;
+  carYear: string;
   carMake: string;
   carModel: string;
-  paintColor: string;
-  vinNumber: string;
-  transmission: boolean;
-  pickupDate: Date;
-  returnDate: Date;
+  paintColor?: string;
+  vinNumber?: string;
+  transmission?: string;
+  pickupDate: Moment;
+  returnDate: Moment;
 };
 
 interface CustomProps {
@@ -105,7 +105,7 @@ const vehicleFields = [
     },
   },
   { fieldName: 'paintColor', fieldLabel: 'Paint Color' },
-  { fieldName: 'vin', fieldLabel: 'Vin Number' },
+  { fieldName: 'vinNumber', fieldLabel: 'Vin Number' },
 ];
 
 const locationFields = [
@@ -136,12 +136,6 @@ const locationFields = [
 ];
 
 export default function Shipping() {
-  const [trans, setTrans] = useState('automatic');
-  const [year, setYear] = useState('');
-  const handleYearChange = (event: SelectChangeEvent) => {
-    setYear(event.target.value as string);
-  };
-
   const {
     handleSubmit,
     control,
@@ -159,15 +153,11 @@ export default function Shipping() {
     setValue('address', shippingAddress.address);
     setValue('city', shippingAddress.city);
     setValue('zipCode', shippingAddress.zipCode);
-    setValue('carYear', shippingAddress.carYear);
     setValue('carMake', shippingAddress.carMake);
     setValue('carModel', shippingAddress.carModel);
     setValue('paintColor', shippingAddress.paintColor);
-    setValue('vinNumber', shippingAddress.vinNumber);
     setValue('transmission', shippingAddress.transmission);
-    setValue('pickupDate', shippingAddress.pickupDate);
-    setValue('returnDate', shippingAddress.returnDate);
-    console.log('state', shippingAddress);
+    setValue('vinNumber', shippingAddress.vinNumber);
   }, []);
 
   const submitHandler = (props: submitPropTypes) => {
@@ -246,8 +236,6 @@ export default function Shipping() {
                       label="Phone Number"
                       variant="outlined"
                       fullWidth
-                      name="phoneNumber"
-                      id="formatted-numberformat-input"
                       InputProps={{
                         inputComponent: TextMaskCustom as any,
                       }}
@@ -271,25 +259,31 @@ export default function Shipping() {
               Car Information
               <List>
                 <ListItem>
-                  <FormControl fullWidth>
-                    <InputLabel id="demo-simple-select-label">
-                      Car Year
-                    </InputLabel>
-                    <Select
-                      labelId="demo-simple-select-label"
-                      fullWidth
-                      variant="outlined"
-                      label="Car Year"
-                      value={year}
-                      onChange={handleYearChange}
-                    >
-                      {[...Array(40).keys()].map((year) => (
-                        <MenuItem value={2021 - year} key={2021 - year}>
-                          {2021 - year}
-                        </MenuItem>
-                      ))}
-                    </Select>
-                  </FormControl>
+                  <Controller
+                    control={control}
+                    name="carYear"
+                    render={({ field }) => (
+                      <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">
+                          Car Year
+                        </InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          fullWidth
+                          variant="outlined"
+                          defaultValue={2021}
+                          label="Car Year"
+                          {...field}
+                        >
+                          {[...Array(40).keys()].map((year) => (
+                            <MenuItem value={2021 - year} key={2021 - year}>
+                              {2021 - year}
+                            </MenuItem>
+                          ))}
+                        </Select>
+                      </FormControl>
+                    )}
+                  />
                 </ListItem>
                 {vehicleFields.map((field, i) => (
                   <ListItem key={`list-input-id-${i}`}>
@@ -303,28 +297,32 @@ export default function Shipping() {
                   </ListItem>
                 ))}
                 <ListItem>
-                  <FormControl fullWidth>
-                    <FormLabel component="legend">Transmission</FormLabel>
-                    <RadioGroup
-                      row
-                      aria-label="transmission"
-                      defaultValue="automatic"
-                      value={trans}
-                      onChange={(e) => setTrans(e.target.value)}
-                      name="transmission"
-                    >
-                      <FormControlLabel
-                        value="automatic"
-                        control={<Radio />}
-                        label="Automatic"
-                      />
-                      <FormControlLabel
-                        value="manual"
-                        control={<Radio />}
-                        label="Manual"
-                      />
-                    </RadioGroup>
-                  </FormControl>
+                  <Controller
+                    control={control}
+                    name="transmission"
+                    render={({ field }) => (
+                      <FormControl fullWidth>
+                        <FormLabel component="legend">Transmission</FormLabel>
+                        <RadioGroup
+                          row
+                          defaultValue="automatic"
+                          value={field.value}
+                          onChange={(e) => field.onChange(e)}
+                        >
+                          <FormControlLabel
+                            value="automatic"
+                            control={<Radio />}
+                            label="Automatic"
+                          />
+                          <FormControlLabel
+                            value="manual"
+                            control={<Radio />}
+                            label="Manual"
+                          />
+                        </RadioGroup>
+                      </FormControl>
+                    )}
+                  />
                 </ListItem>
               </List>
             </Typography>
@@ -353,50 +351,28 @@ export default function Shipping() {
               <List>
                 <ListItem>
                   <Controller
-                    render={({ field }) => (
-                      <FormControl fullWidth>
-                        <DatePickerCustom
-                          placeHolder="Select desired vehicle pickup date"
-                          {...field}
-                        />
-                        <FormHelperText>
-                          {errors.pickupDate
-                            ? errors.pickupDate.type === 'minLength'
-                              ? `Date length is 10 digits`
-                              : `Date is required`
-                            : ''}
-                        </FormHelperText>
-                      </FormControl>
-                    )}
-                    name="pickupDate"
                     control={control}
-                    rules={{
-                      required: true,
-                    }}
+                    name="pickupDate"
+                    render={({ field }) => (
+                      <DatePickerCustom
+                        placeHolder="Select desired vehicle pick up date"
+                        onChange={(e) => field.onChange(e)}
+                        value={field.value}
+                      />
+                    )}
                   />
                 </ListItem>
                 <ListItem>
                   <Controller
-                    render={({ field }) => (
-                      <FormControl fullWidth>
-                        <DatePickerCustom
-                          placeHolder="Select desired vehicle return date"
-                          {...field}
-                        />
-                        <FormHelperText>
-                          {errors.returnDate
-                            ? errors.returnDate.type === 'minLength'
-                              ? `Date length is 10 digits`
-                              : `Date is required`
-                            : ''}
-                        </FormHelperText>
-                      </FormControl>
-                    )}
-                    name="returnDate"
                     control={control}
-                    rules={{
-                      required: true,
-                    }}
+                    name="returnDate"
+                    render={({ field }) => (
+                      <DatePickerCustom
+                        placeHolder="Select desired vehicle drop off date"
+                        onChange={(e) => field.onChange(e)}
+                        value={field.value}
+                      />
+                    )}
                   />
                 </ListItem>
               </List>

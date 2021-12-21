@@ -1,9 +1,11 @@
 import React, { FC } from 'react';
-import { DatePicker, DatePickerProps } from 'antd';
-import moment from 'moment';
+import { DatePicker } from 'antd';
+import moment, { Moment } from 'moment';
 
-interface datePickerCustomProps extends DatePickerProps {
+interface datePickerCustomProps {
   placeHolder: string;
+  value?: Moment;
+  onChange?: (value: Moment | null, dateString: string) => void;
 }
 
 function range(start, end) {
@@ -28,7 +30,11 @@ function disabledDateTime() {
   };
 }
 
-const DatePickerCustom: FC<datePickerCustomProps> = ({ placeHolder }) => {
+const DatePickerCustom: FC<datePickerCustomProps> = ({
+  placeHolder,
+  value,
+  onChange,
+}) => {
   return (
     <DatePicker
       format="YYYY-MM-DD HH:mm"
@@ -42,6 +48,8 @@ const DatePickerCustom: FC<datePickerCustomProps> = ({ placeHolder }) => {
       hideDisabledOptions={true}
       style={{ width: '100%', padding: '16.5px 14px' }}
       size="large"
+      value={value}
+      onChange={onChange}
     />
   );
 };
