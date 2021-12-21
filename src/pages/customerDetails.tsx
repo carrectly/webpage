@@ -183,7 +183,7 @@ export default function Shipping() {
 
       <form onSubmit={handleSubmit(submitHandler)}>
         <Grid container spacing={2} width="100%">
-          <Grid item xs={6}>
+          <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
             <Typography component="h4" variant="h4" align="center">
               Customer Information
             </Typography>
@@ -262,7 +262,7 @@ export default function Shipping() {
               </ListItem>
             </List>
           </Grid>
-          <Grid item xs={6}>
+          <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
             <Typography component="h4" variant="h4" align="center">
               Car Information
               <List>
@@ -308,7 +308,7 @@ export default function Shipping() {
               </List>
             </Typography>
           </Grid>
-          <Grid item xs={6}>
+          <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
             <Typography component="h4" variant="h4" align="center">
               Car Location Information
               <List>
@@ -326,7 +326,7 @@ export default function Shipping() {
               </List>
             </Typography>
           </Grid>
-          <Grid item xs={6}>
+          <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
             <Typography component="h4" variant="h4" align="center">
               Service Date
               <List>
