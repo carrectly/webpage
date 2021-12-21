@@ -7,6 +7,7 @@ type formFieldProps = {
   errors: FieldErrors;
   fieldName: string;
   fieldLabel: string;
+  rules?: any;
 };
 
 const ControlledInputField: FC<formFieldProps> = ({
@@ -14,16 +15,14 @@ const ControlledInputField: FC<formFieldProps> = ({
   errors,
   fieldName,
   fieldLabel,
+  rules = {},
 }) => {
   return (
     <Controller
       name={fieldName}
       control={control}
       defaultValue=""
-      rules={{
-        required: true,
-        minLength: 2,
-      }}
+      rules={rules}
       render={({ field }) => (
         <TextField
           variant="outlined"

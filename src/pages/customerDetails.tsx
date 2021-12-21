@@ -8,6 +8,7 @@ import {
   FormControl,
   InputLabel,
   TextField,
+  FormHelperText,
 } from '@mui/material';
 import { useRouter } from 'next/router';
 import React, { useContext, useEffect } from 'react';
@@ -58,21 +59,70 @@ const TextMaskCustom = React.forwardRef<HTMLElement, CustomProps>(
 );
 
 const customerFields = [
-  { fieldName: 'firstName', fieldLabel: 'First Name' },
-  { fieldName: 'lastName', fieldLabel: 'Last Name' },
+  {
+    fieldName: 'firstName',
+    fieldLabel: 'First Name',
+    rules: {
+      required: true,
+      minLength: 2,
+    },
+  },
+  {
+    fieldName: 'lastName',
+    fieldLabel: 'Last Name',
+    rules: {
+      required: true,
+      minLength: 2,
+    },
+  },
 ];
 
 const vehicleFields = [
-  { fieldName: 'carMake', fieldLabel: 'Car Make' },
-  { fieldName: 'carModel', fieldLabel: 'Car Model' },
+  {
+    fieldName: 'carMake',
+    fieldLabel: 'Car Make',
+    rules: {
+      required: true,
+      minLength: 2,
+    },
+  },
+  {
+    fieldName: 'carModel',
+    fieldLabel: 'Car Model',
+    rules: {
+      required: true,
+      minLength: 2,
+    },
+  },
   { fieldName: 'paintColor', fieldLabel: 'Paint Color' },
-  { fieldName: 'vin', fieldLabel: 'VIN Number' },
+  { fieldName: 'vin', fieldLabel: 'Vin Number' },
 ];
 
 const locationFields = [
-  { fieldName: 'address', fieldLabel: 'Address' },
-  { fieldName: 'city', fieldLabel: 'City' },
-  { fieldName: 'zipCode', fieldLabel: 'Zip Code' },
+  {
+    fieldName: 'address',
+    fieldLabel: 'Address',
+    rules: {
+      required: true,
+      minLength: 2,
+    },
+  },
+  {
+    fieldName: 'city',
+    fieldLabel: 'City',
+    rules: {
+      required: true,
+      minLength: 2,
+    },
+  },
+  {
+    fieldName: 'zipCode',
+    fieldLabel: 'Zip Code',
+    rules: {
+      required: true,
+      minLength: 5,
+    },
+  },
 ];
 
 export default function Shipping() {
@@ -138,22 +188,17 @@ export default function Shipping() {
               Customer Information
             </Typography>
             <List>
-              <ListItem>
-                <ControlledInputField
-                  control={control}
-                  errors={errors}
-                  fieldName="firstName"
-                  fieldLabel="First Name"
-                />
-              </ListItem>
-              <ListItem>
-                <ControlledInputField
-                  control={control}
-                  errors={errors}
-                  fieldName="lastName"
-                  fieldLabel="Last Name"
-                />
-              </ListItem>
+              {customerFields.map((field, i) => (
+                <ListItem key={`list-input-id-${i}`}>
+                  <ControlledInputField
+                    control={control}
+                    errors={errors}
+                    fieldName={field.fieldName}
+                    fieldLabel={field.fieldLabel}
+                    rules={field.rules}
+                  />
+                </ListItem>
+              ))}
               <ListItem>
                 <Controller
                   name="email"
@@ -255,9 +300,11 @@ export default function Shipping() {
                       errors={errors}
                       fieldName={field.fieldName}
                       fieldLabel={field.fieldLabel}
+                      rules={field.rules}
                     />
                   </ListItem>
                 ))}
+                <ListItem></ListItem>
               </List>
             </Typography>
           </Grid>
@@ -272,6 +319,7 @@ export default function Shipping() {
                       errors={errors}
                       fieldName={field.fieldName}
                       fieldLabel={field.fieldLabel}
+                      rules={field.rules}
                     />
                   </ListItem>
                 ))}
@@ -285,50 +333,50 @@ export default function Shipping() {
                 <ListItem>
                   <Controller
                     render={({ field }) => (
-                      <DatePickerCustom
-                        placeHolder="Select desired vehicle pickup date"
-                        {...field}
-                      />
+                      <FormControl fullWidth>
+                        <DatePickerCustom
+                          placeHolder="Select desired vehicle pickup date"
+                          {...field}
+                        />
+                        <FormHelperText>
+                          {errors.returnDate
+                            ? errors.returnDate.type === 'minLength'
+                              ? `Date length is 10 digits`
+                              : `Date is required`
+                            : ''}
+                        </FormHelperText>
+                      </FormControl>
                     )}
                     name="pickupDate"
                     control={control}
                     rules={{
                       required: true,
                     }}
-
-                    // onChange={([selected]) => ({ value: selected })}
                   />
-                  <div>
-                    {errors.pickupDate
-                      ? errors.pickupDate.type === 'minLength'
-                        ? `Date length is 10 digits`
-                        : `Date is required`
-                      : ''}
-                  </div>
                 </ListItem>
                 <ListItem>
                   <Controller
                     render={({ field }) => (
-                      <DatePickerCustom
-                        placeHolder="Select desired vehicle return date"
-                        {...field}
-                      />
+                      <FormControl fullWidth>
+                        <DatePickerCustom
+                          placeHolder="Select desired vehicle return date"
+                          {...field}
+                        />
+                        <FormHelperText>
+                          {errors.returnDate
+                            ? errors.returnDate.type === 'minLength'
+                              ? `Date length is 10 digits`
+                              : `Date is required`
+                            : ''}
+                        </FormHelperText>
+                      </FormControl>
                     )}
                     name="returnDate"
                     control={control}
                     rules={{
                       required: true,
                     }}
-
-                    // onChange={([selected]) => ({ value: selected })}
                   />
-                  <div>
-                    {errors.returnDate
-                      ? errors.returnDate.type === 'minLength'
-                        ? `Date length is 10 digits`
-                        : `Date is required`
-                      : ''}
-                  </div>
                 </ListItem>
               </List>
             </Typography>
