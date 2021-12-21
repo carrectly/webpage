@@ -9,9 +9,13 @@ import {
   InputLabel,
   TextField,
   FormHelperText,
+  FormLabel,
+  RadioGroup,
+  FormControlLabel,
+  Radio,
 } from '@mui/material';
 import { useRouter } from 'next/router';
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import Layout from '../components/Layout/Layout';
 import { Store } from '../../utils/Store';
 import { useForm, Controller } from 'react-hook-form';
@@ -24,11 +28,17 @@ import ControlledInputField from '../components/Forms/ControlledInputField';
 type submitPropTypes = {
   firstName: string;
   lastName: string;
+  email: string;
+  phoneNumber: string;
   address: string;
   city: string;
-  postalCode: string;
-  phoneNumber: string;
-  email: string;
+  zipCode: string;
+  carYear: number;
+  carMake: string;
+  carModel: string;
+  paintColor: string;
+  vinNumber: string;
+  transmission: boolean;
   pickupDate: Date;
   returnDate: Date;
 };
@@ -126,10 +136,10 @@ const locationFields = [
 ];
 
 export default function Shipping() {
-  const [carYear, setCarYear] = React.useState('');
-
-  const handleChange = (event: SelectChangeEvent) => {
-    setCarYear(event.target.value as string);
+  const [trans, setTrans] = useState('automatic');
+  const [year, setYear] = useState('');
+  const handleYearChange = (event: SelectChangeEvent) => {
+    setYear(event.target.value as string);
   };
 
   const {
@@ -144,34 +154,28 @@ export default function Shipping() {
   useEffect(() => {
     setValue('firstName', shippingAddress.firstName);
     setValue('lastName', shippingAddress.lastName);
+    setValue('email', shippingAddress.email);
+    setValue('phoneNumber', shippingAddress.phoneNumber);
     setValue('address', shippingAddress.address);
     setValue('city', shippingAddress.city);
-    setValue('postalCode', shippingAddress.postalCode);
-    setValue('phoneNumber', shippingAddress.phoneNumber);
-    setValue('email', shippingAddress.email);
+    setValue('zipCode', shippingAddress.zipCode);
+    setValue('carYear', shippingAddress.carYear);
+    setValue('carMake', shippingAddress.carMake);
+    setValue('carModel', shippingAddress.carModel);
+    setValue('paintColor', shippingAddress.paintColor);
+    setValue('vinNumber', shippingAddress.vinNumber);
+    setValue('transmission', shippingAddress.transmission);
+    setValue('pickupDate', shippingAddress.pickupDate);
+    setValue('returnDate', shippingAddress.returnDate);
+    console.log('state', shippingAddress);
   }, []);
 
-  const submitHandler = ({
-    firstName,
-    lastName,
-    address,
-    city,
-    postalCode,
-    email,
-    pickupDate,
-    returnDate,
-  }: submitPropTypes) => {
+  const submitHandler = (props: submitPropTypes) => {
+    console.log('props received during submit', props);
     dispatch({
       type: 'SAVE_SHIPPING_ADDRESS',
       payload: {
-        firstName,
-        lastName,
-        address,
-        city,
-        postalCode,
-        email,
-        pickupDate,
-        returnDate,
+        props,
       },
     });
     router.push('/placeorder');
@@ -267,31 +271,25 @@ export default function Shipping() {
               Car Information
               <List>
                 <ListItem>
-                  <Controller
-                    render={({ field }) => (
-                      <FormControl fullWidth>
-                        <InputLabel id="demo-simple-select-label">
-                          Car Year
-                        </InputLabel>
-                        <Select
-                          {...field}
-                          labelId="demo-simple-select-label"
-                          fullWidth
-                          variant="outlined"
-                          label="Car Year"
-                        >
-                          {[...Array(40).keys()].map((year) => (
-                            <MenuItem value={2021 - year} key={2021 - year}>
-                              {2021 - year}
-                            </MenuItem>
-                          ))}
-                        </Select>
-                      </FormControl>
-                    )}
-                    control={control}
-                    name="carYear"
-                    defaultValue=""
-                  />
+                  <FormControl fullWidth>
+                    <InputLabel id="demo-simple-select-label">
+                      Car Year
+                    </InputLabel>
+                    <Select
+                      labelId="demo-simple-select-label"
+                      fullWidth
+                      variant="outlined"
+                      label="Car Year"
+                      value={year}
+                      onChange={handleYearChange}
+                    >
+                      {[...Array(40).keys()].map((year) => (
+                        <MenuItem value={2021 - year} key={2021 - year}>
+                          {2021 - year}
+                        </MenuItem>
+                      ))}
+                    </Select>
+                  </FormControl>
                 </ListItem>
                 {vehicleFields.map((field, i) => (
                   <ListItem key={`list-input-id-${i}`}>
@@ -304,7 +302,30 @@ export default function Shipping() {
                     />
                   </ListItem>
                 ))}
-                <ListItem></ListItem>
+                <ListItem>
+                  <FormControl fullWidth>
+                    <FormLabel component="legend">Transmission</FormLabel>
+                    <RadioGroup
+                      row
+                      aria-label="transmission"
+                      defaultValue="automatic"
+                      value={trans}
+                      onChange={(e) => setTrans(e.target.value)}
+                      name="transmission"
+                    >
+                      <FormControlLabel
+                        value="automatic"
+                        control={<Radio />}
+                        label="Automatic"
+                      />
+                      <FormControlLabel
+                        value="manual"
+                        control={<Radio />}
+                        label="Manual"
+                      />
+                    </RadioGroup>
+                  </FormControl>
+                </ListItem>
               </List>
             </Typography>
           </Grid>
@@ -339,8 +360,8 @@ export default function Shipping() {
                           {...field}
                         />
                         <FormHelperText>
-                          {errors.returnDate
-                            ? errors.returnDate.type === 'minLength'
+                          {errors.pickupDate
+                            ? errors.pickupDate.type === 'minLength'
                               ? `Date length is 10 digits`
                               : `Date is required`
                             : ''}
