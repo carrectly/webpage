@@ -13,15 +13,21 @@ export type faqSubGroupsTypes =
 export type ServiceType = {
   id: number;
   name: string;
-  price?: string | number;
+  price?: Array<number>;
   duration?: string;
   shortDescription: string;
   longDescription: string;
   images: Array<string>;
 };
 
+export type ServiceDatesType = {
+  pickUpDate: Date;
+  returnDate: Date;
+};
+
 export type StateType = {
   cartItems: ServiceType[];
+  serviceDates: any;
   shippingAddress: any;
 };
 

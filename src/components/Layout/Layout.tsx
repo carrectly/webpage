@@ -106,7 +106,7 @@ const Layout: FC<Props> = ({ children, title }) => {
             </Box>
           </Toolbar>
         </AppBar>
-        <Grid sx={{ margin: 0, padding: 0, height: '100%', width: '100vw' }}>
+        <Grid sx={{ margin: 0, padding: 0, minHeight: '90vh', width: '100vw' }}>
           {children}
         </Grid>
         <BottomNavigation

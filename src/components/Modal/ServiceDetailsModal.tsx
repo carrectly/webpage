@@ -1,13 +1,12 @@
 import * as React from 'react';
 import Image from 'next/image';
+import { List, ListItem } from '@mui/material';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import StyledCarousel from '../StyledCarousel/StyledCarousel';
-import StyledEmotionButton from '../Buttons/StyledEmotionButton';
-import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import { ModalProps } from '../../../utils/types';
-
+import AddButton from '../Buttons/AddButton';
 const wrapper = {
   position: 'absolute' as const,
   top: '50%',
@@ -59,20 +58,23 @@ export default function ServiceDetailsModal({
             flexDirection="row"
             justifyContent="space-between"
           >
-            <Typography sx={{ mt: 2 }}>
-              Price: ${serviceDetails.price}
-            </Typography>
+            <Typography sx={{ mt: 2 }}>Price:</Typography>
+            <List sx={{ display: 'flex', flexDirection: 'row' }}>
+              {serviceDetails.price &&
+                serviceDetails.price.map((el, i) => (
+                  <ListItem key={`price-variant-${i}`}>${el}</ListItem>
+                ))}
+            </List>
+
             {/* need to update once we have the hours field in the data */}
             {false ? (
               <Typography sx={{ mt: 2 }}>
-                Time: ${serviceDetails.price}
+                Time: ${serviceDetails.duration}
               </Typography>
             ) : (
               <div />
             )}
-            <StyledEmotionButton bgColor="rgb(116, 55, 148)" textColor="#fff">
-              Add <AddCircleOutlineIcon fontSize="small" />
-            </StyledEmotionButton>
+            <AddButton serviceObject={serviceDetails} />
           </Box>
         </Box>
       </Modal>

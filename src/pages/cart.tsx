@@ -7,7 +7,6 @@ import {
   Grid,
   TableContainer,
   Table,
-  Typography,
   TableHead,
   TableBody,
   TableRow,
@@ -20,23 +19,27 @@ import {
 } from '@mui/material';
 import { useRouter } from 'next/router';
 import StepperComponent from '../components/Stepper/Stepper';
+import CartModal from '../components/Modal/CartModal';
 
 function CartScreen() {
   const router = useRouter();
   const { state, dispatch } = useContext(Store);
+
   const { cartItems } = state;
 
   const removeItemHandler = (itemId: number) => {
     dispatch({ type: 'CART_REMOVE_ITEM', payload: itemId });
   };
   const checkoutHandler = () => {
-    router.push('/datepicker');
+    router.push('/customerdetails');
   };
+
+  const totalPrice = () => {
+    return cartItems.reduce((a, c) => a + c.price[0], 0);
+  };
+
   return (
     <Layout title="Shopping Cart">
-      <Typography component="h1" variant="h1">
-        Shopping Cart
-      </Typography>
       <StepperComponent activeStep={0} />
       {cartItems.length === 0 ? (
         <div>
@@ -52,23 +55,29 @@ function CartScreen() {
               <Table>
                 <TableHead>
                   <TableRow>
-                    <TableCell>Image</TableCell>
                     <TableCell>Name</TableCell>
-                    <TableCell align="right">Price</TableCell>
+                    <TableCell align="right">Estimated Price</TableCell>
+                    <TableCell align="right">Estimated Durarion</TableCell>
                     <TableCell align="right">Action</TableCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>
                   {cartItems.map((item) => (
                     <TableRow key={item.id}>
-                      <TableCell> Empty</TableCell>
-
                       <TableCell>
-                        <Link>
-                          <Typography>{item.name}</Typography>
-                        </Link>
+                        <CartModal serviceObject={item} />
                       </TableCell>
-                      <TableCell align="right">${item.price}</TableCell>
+                      <TableCell align="right">
+                        <List sx={{ display: 'flex', flexDirection: 'row' }}>
+                          {item.price &&
+                            item.price.map((el, i) => (
+                              <ListItem key={`price-variant-${i}`}>
+                                ${el}
+                              </ListItem>
+                            ))}
+                        </List>
+                      </TableCell>
+                      <TableCell align="right">{item.duration}</TableCell>
                       <TableCell align="right">
                         <Button
                           variant="contained"
@@ -87,13 +96,7 @@ function CartScreen() {
           <Grid item md={3} xs={12}>
             <Card>
               <List>
-                <ListItem>
-                  {/* <Typography variant="h2">
-                    Subtotal ({cartItems.reduce((a, c) => a + c.quantity, 0)}{' '}
-                    items) : $
-                    {cartItems.reduce((a, c) => a + c.quantity * c.price, 0)}
-                  </Typography> */}
-                </ListItem>
+                <ListItem>Estimated total price: ${totalPrice()}</ListItem>
                 <ListItem>
                   <Button
                     onClick={checkoutHandler}

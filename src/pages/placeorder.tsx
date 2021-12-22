@@ -27,6 +27,10 @@ function PlaceOrder() {
   const { state, dispatch } = useContext(Store);
   const { cartItems, shippingAddress } = state;
 
+  const totalPrice = () => {
+    return cartItems.reduce((a, c) => a + c.price[0], 0);
+  };
+
   useEffect(() => {
     if (cartItems.length === 0) {
       router.push('/cart');
@@ -61,11 +65,13 @@ function PlaceOrder() {
       //   enqueueSnackbar(getError(err), { variant: 'error' });
     }
   };
+  const summaryArr = Object.entries(shippingAddress);
+  console.log('arr', summaryArr);
   return (
     <Layout title="Place Order">
-      <StepperComponent activeStep={3}></StepperComponent>
-      <Typography component="h1" variant="h1">
-        Place Order
+      <StepperComponent activeStep={2}></StepperComponent>
+      <Typography component="h2" variant="h2" align="center">
+        Order summary
       </Typography>
 
       <Grid container spacing={1}>
@@ -73,22 +79,22 @@ function PlaceOrder() {
           <Card>
             <List>
               <ListItem>
-                <Typography component="h2" variant="h2">
-                  Shipping Address
+                <Typography component="h3" variant="h3">
+                  Customer Details Summary
                 </Typography>
               </ListItem>
-              <ListItem>
-                {shippingAddress.firstName}, {shippingAddress.lastName},{' '}
-                {shippingAddress.address}, {shippingAddress.city},{' '}
-                {shippingAddress.postalCode}, {shippingAddress.country}
-              </ListItem>
+              {summaryArr.map((info, i) => (
+                <ListItem key={`summary-line-id-${i}`}>
+                  {info[0]}: {info[1]}
+                </ListItem>
+              ))}
             </List>
           </Card>
           <Card>
             <List>
               <ListItem>
-                <Typography component="h2" variant="h2">
-                  Order Items
+                <Typography component="h3" variant="h3">
+                  Services Requested
                 </Typography>
               </ListItem>
               <ListItem>
@@ -105,24 +111,23 @@ function PlaceOrder() {
                     <TableBody>
                       {cartItems.map((item) => (
                         <TableRow key={item.id}>
-                          {/* <TableCell>
-                            <Link>
-                              <Image
-                                src={item.image}
-                                alt={item.name}
-                                width={50}
-                                height={50}
-                              ></Image>
-                            </Link>
-                          </TableCell> */}
-
                           <TableCell>
                             <Link>
                               <Typography>{item.name}</Typography>
                             </Link>
                           </TableCell>
                           <TableCell align="right">
-                            <Typography>${item.price}</Typography>
+                            Price:
+                            <List
+                              sx={{ display: 'flex', flexDirection: 'row' }}
+                            >
+                              {item.price &&
+                                item.price.map((el, i) => (
+                                  <ListItem key={`price-variant-${i}`}>
+                                    ${el}
+                                  </ListItem>
+                                ))}
+                            </List>
                           </TableCell>
                         </TableRow>
                       ))}
@@ -142,23 +147,13 @@ function PlaceOrder() {
               <ListItem>
                 <Grid container>
                   <Grid item xs={6}>
-                    <Typography>Items:</Typography>
-                  </Grid>
-                  <Grid item xs={6}>
-                    <Typography align="right">${'200'}</Typography>
-                  </Grid>
-                </Grid>
-              </ListItem>
-              <ListItem>
-                <Grid container>
-                  <Grid item xs={6}>
                     <Typography>
-                      <strong>Total:</strong>
+                      <strong>Estimated total:</strong>
                     </Typography>
                   </Grid>
                   <Grid item xs={6}>
                     <Typography align="right">
-                      <strong>${'100'}</strong>
+                      <strong>${totalPrice()}</strong>
                     </Typography>
                   </Grid>
                 </Grid>
