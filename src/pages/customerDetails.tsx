@@ -36,11 +36,11 @@ type submitPropTypes = {
   carYear: string;
   carMake: string;
   carModel: string;
-  paintColor?: string;
-  vinNumber?: string;
+  carColor?: string;
+  vin?: string;
   transmission?: string;
   pickupDate: Moment;
-  returnDate: Moment;
+  dropoffDate: Moment;
   customerComments?: string;
 };
 
@@ -105,8 +105,8 @@ const vehicleFields = [
       minLength: 2,
     },
   },
-  { fieldName: 'paintColor', fieldLabel: 'Paint Color' },
-  { fieldName: 'vinNumber', fieldLabel: 'Vin Number' },
+  { fieldName: 'carColor', fieldLabel: 'Paint Color' },
+  { fieldName: 'vin', fieldLabel: 'Vin Number' },
 ];
 
 const locationFields = [
@@ -156,9 +156,9 @@ export default function Shipping() {
     setValue('zipCode', shippingAddress.zipCode);
     setValue('carMake', shippingAddress.carMake);
     setValue('carModel', shippingAddress.carModel);
-    setValue('paintColor', shippingAddress.paintColor);
+    setValue('carColor', shippingAddress.carColor);
     setValue('transmission', shippingAddress.transmission);
-    setValue('vinNumber', shippingAddress.vinNumber);
+    setValue('vin', shippingAddress.vin);
     setValue('customerComments', shippingAddress.customerComments);
   }, []);
 
@@ -385,7 +385,7 @@ export default function Shipping() {
                 <ListItem>
                   <Controller
                     control={control}
-                    name="returnDate"
+                    name="dropoffDate"
                     render={({ field }) => (
                       <DatePickerCustom
                         placeHolder="Select desired vehicle drop off date"

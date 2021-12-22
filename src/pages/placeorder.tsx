@@ -21,11 +21,43 @@ import {
 import { useRouter } from 'next/router';
 // import { useSnackbar } from 'notistack';
 import StepperComponent from '../components/Stepper/Stepper';
+import axios from 'axios';
+import { v4 as uuidv4 } from 'uuid';
 
 function PlaceOrder() {
   const router = useRouter();
   const { state, dispatch } = useContext(Store);
   const { cartItems, shippingAddress } = state;
+  const myuuid = uuidv4();
+  const { firstName, lastName, email, phoneNumber } = shippingAddress;
+  const customerObj = { firstName, lastName, email, phoneNumber };
+  const {
+    address,
+    city,
+    zipcode,
+    carYear,
+    carMake,
+    carModel,
+    carColor,
+    vin,
+    pickupDate,
+    dropoffDate,
+    customerComments,
+  } = shippingAddress;
+  const orderObj = {
+    hash: myuuid,
+    address,
+    city,
+    zipcode,
+    carYear,
+    carMake,
+    carModel,
+    carColor,
+    vin,
+    pickupDate,
+    dropoffDate,
+    customerComments,
+  };
 
   const totalPrice = () => {
     return cartItems.reduce((a, c) => a + c.price[0], 0);
@@ -39,33 +71,28 @@ function PlaceOrder() {
   }, []);
   //   const { closeSnackbar, enqueueSnackbar } = useSnackbar();
   const [loading, setLoading] = useState(false);
+
   const placeOrderHandler = async () => {
     // closeSnackbar();
     try {
       setLoading(true);
-      //   const { data } = await axios.post(
-      //     '/api/orders',
-      //     {
-      //       orderItems: cartItems,
-      //       shippingAddress,
-      //       itemsPrice,
-      //     },
-      //     {
-      //       headers: {
-      //         authorization: `Bearer ${userInfo.token}`,
-      //       },
-      //     }
-      //   );
+      const { data } = await axios.post(
+        'https://carrectly-admin-staging.herokuapp.com/wpbookings/neworder',
+        {
+          services: cartItems,
+          customer: customerObj,
+          order: orderObj,
+        }
+      );
       dispatch({ type: 'CART_CLEAR' });
 
       setLoading(false);
-      //   router.push(`/order/${data._id}`);
     } catch (err) {
       setLoading(false);
       //   enqueueSnackbar(getError(err), { variant: 'error' });
     }
   };
-  const summaryArr = Object.entries(shippingAddress);
+  const summaryArr = Object.entries(shippingAddress) || [];
   console.log('arr', summaryArr);
   return (
     <Layout title="Place Order">
@@ -83,11 +110,11 @@ function PlaceOrder() {
                   Customer Details Summary
                 </Typography>
               </ListItem>
-              {summaryArr.map((info, i) => (
+              {/* {summaryArr.map((info, i) => (
                 <ListItem key={`summary-line-id-${i}`}>
                   {info[0]}: {info[1]}
                 </ListItem>
-              ))}
+              ))} */}
             </List>
           </Card>
           <Card>
@@ -117,7 +144,7 @@ function PlaceOrder() {
                             </Link>
                           </TableCell>
                           <TableCell align="right">
-                            Price:
+                            {/* Price:
                             <List
                               sx={{ display: 'flex', flexDirection: 'row' }}
                             >
@@ -127,7 +154,7 @@ function PlaceOrder() {
                                     ${el}
                                   </ListItem>
                                 ))}
-                            </List>
+                            </List> */}
                           </TableCell>
                         </TableRow>
                       ))}
