@@ -1,7 +1,7 @@
 import Image, { ImageProps } from 'next/image';
 import styled from '@emotion/styled';
 import React, { FC } from 'react';
-import {BgImageContainerProps, BgImageProps} from '../../../utils/types'
+import { BgImageContainerProps, BgImageProps } from '../../../utils/types';
 
 const Container = styled.section<BgImageContainerProps>`
   position: relative;
@@ -14,7 +14,7 @@ const Container = styled.section<BgImageContainerProps>`
 `;
 
 const StyledImage = styled(Image)<ImageProps>`
-  z-index: -20;
+  z-index: 1;
   border-radius: 5px;
 `;
 
@@ -27,7 +27,6 @@ const InnerContainer = styled.div`
   height: 100%;
   border-radius: 5px;
 `;
-
 
 /**
  * <BgImage>

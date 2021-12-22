@@ -41,6 +41,7 @@ type submitPropTypes = {
   transmission?: string;
   pickupDate: Moment;
   returnDate: Moment;
+  customerComments?: string;
 };
 
 interface CustomProps {
@@ -158,6 +159,7 @@ export default function Shipping() {
     setValue('paintColor', shippingAddress.paintColor);
     setValue('transmission', shippingAddress.transmission);
     setValue('vinNumber', shippingAddress.vinNumber);
+    setValue('customerComments', shippingAddress.customerComments);
   }, []);
 
   const submitHandler = (props: submitPropTypes) => {
@@ -342,6 +344,24 @@ export default function Shipping() {
                     />
                   </ListItem>
                 ))}
+                <ListItem>
+                  <Controller
+                    name="customerComments"
+                    control={control}
+                    defaultValue=""
+                    render={({ field }) => (
+                      <TextField
+                        variant="outlined"
+                        fullWidth
+                        minRows={2}
+                        multiline
+                        id="customerComments"
+                        label="Additional Comments"
+                        {...field}
+                      ></TextField>
+                    )}
+                  ></Controller>
+                </ListItem>
               </List>
             </Typography>
           </Grid>
