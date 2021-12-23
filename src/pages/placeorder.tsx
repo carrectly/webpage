@@ -24,6 +24,8 @@ import StepperComponent from '../components/Stepper/Stepper';
 import axios from 'axios';
 import { v4 as uuidv4 } from 'uuid';
 
+// adding comments
+
 function PlaceOrder() {
   const router = useRouter();
   const { state, dispatch } = useContext(Store);
