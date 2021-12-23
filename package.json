@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "lint-fix": "next lint --fix"
+    "lint-fix": "next lint --fix",
+    "heroku-token": "NODE_ENV=development script/encrypt-heroku-auth-token.js"
   },
   "dependencies": {
     "@emotion/css": "^11.7.1",
