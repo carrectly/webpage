@@ -31,7 +31,7 @@ function CartScreen() {
     dispatch({ type: 'CART_REMOVE_ITEM', payload: itemId });
   };
   const checkoutHandler = () => {
-    router.push('/customerdetails');
+    router.push('/orderdetails');
   };
 
   const totalPrice = () => {
