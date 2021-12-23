@@ -25,7 +25,8 @@
     "@emotion/import-from-emotion": "error",
     "@emotion/styled-import": "error",
     "unused-imports/no-unused-imports-ts": 2,
-    "react/jsx-key": "warn"
+    "react/jsx-key": "warn",
+    "@typescript-eslint/ban-ts-ignore": "off"
   },
   "settings": {
     "react": {

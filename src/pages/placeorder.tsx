@@ -110,11 +110,11 @@ function PlaceOrder() {
                   Customer Details Summary
                 </Typography>
               </ListItem>
-              {/* {summaryArr.map((info, i) => (
+              {summaryArr.map((info, i) => (
                 <ListItem key={`summary-line-id-${i}`}>
                   {info[0]}: {info[1]}
                 </ListItem>
-              ))} */}
+              ))}
             </List>
           </Card>
           <Card>
@@ -144,7 +144,7 @@ function PlaceOrder() {
                             </Link>
                           </TableCell>
                           <TableCell align="right">
-                            {/* Price:
+                            Price:
                             <List
                               sx={{ display: 'flex', flexDirection: 'row' }}
                             >
@@ -154,7 +154,7 @@ function PlaceOrder() {
                                     ${el}
                                   </ListItem>
                                 ))}
-                            </List> */}
+                            </List>
                           </TableCell>
                         </TableRow>
                       ))}
