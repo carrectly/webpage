@@ -27,7 +27,6 @@ export type ServiceDatesType = {
 
 export type StateType = {
   cartItems: ServiceType[];
-  serviceDates: any;
   shippingAddress: any;
 };
 

@@ -60,7 +60,13 @@ function PlaceOrder() {
   };
 
   const totalPrice = () => {
-    return cartItems.reduce((a, c) => a + c.price[0], 0);
+    return cartItems.reduce((a, c) => {
+      if (c.price) {
+        return a + c.price[0];
+      } else {
+        return a;
+      }
+    }, 0);
   };
 
   useEffect(() => {
