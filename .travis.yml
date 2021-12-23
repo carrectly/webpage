@@ -1,0 +1,23 @@
+language: node_js
+node_js:
+  - 16 # uses version 12
+dist: xenial # uses xenial environment
+notifications:
+  email:
+    on_success: change # default: change (only when going from broken to fixed)
+    on_failure: always # default: always (which is annoying, as it should be)
+install:
+  - npm ci # faster, goes only from package-lock
+script:
+  - npm run build # make the bundle
+before_deploy: # omit node_modules, since we set skip_cleanup below
+  - rm -rf node_modules
+deploy: # see README for details on these keys
+  # prevents travis from deleting the build
+  skip_cleanup: true
+  provider: heroku
+  # app should be your heroku app name; see README
+  app: carrectly-nextjs
+  # the secure key indicates an encrypted value; see README
+  api_key:
+    secure: hVg49Laultu2A7gY2HM+orqedqCExFwwpthklQetBwF3/+zKp2zXHuxAwdER6FmW8ISLacBLBKJH4P9PlCjiTHyP3XILwGWm36Orla1oQkUtYKG0xjRzwgbasxw7G7ztp1SSJLo25gl8Dlnf/8Cw0RnYQUjnLarauwTHStIpVEOD+QT3RjsV5LzFeCQm6ktNCJ9XyNiw50X4n5hGJzikpoGT0RnmTEEMCzNvVpEksioD0vnuNeTdJUAG0GpBDWtiiwUhQsXKKbfCtyq0lKrjsxYMJo4f6ktMeHHuUrhmIB/7Bz5k9KhKp6sU5iN4+6QlZc3mI9SI9KNTMsbPLcwfn3kgVEnZ0LUOI+81gEr+sukssnSXEas13t3/WnMTUgJb/WOOB9aRh8qQLzL8psjaU0tsj4ynPNgaMhT/cv+p0jC7jhaKNIglWfnYDP5GxCFHXmEk5cG/wHGmt6dfr9zDKDg6WmYOOKijzk8RMkOzd5mJMrCP3d7k+BAOznN+FwrEpHOvEmQKt+lLKP/p5YZl17tly+Aj6+eg68sBy96/Tnzeyqt0q9WVRINHwukKicr5Isxp+t8POnliSMZD1J01XfE4mfSqbZgbpzxkEwJQjf5kiF0pW+XEDrfmigGC9juvhlhnRkfhqhnZstt6i0xA7YD0DiXBinv4tzm9LUgKLjw=

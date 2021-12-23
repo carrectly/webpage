@@ -8,7 +8,7 @@ interface datePickerCustomProps {
   onChange?: (value: Moment | null, dateString: string) => void;
 }
 
-function range(start, end) {
+function range(start: number, end: number) {
   const result = [];
   for (let i = start; i < end; i++) {
     result.push(i);
@@ -16,7 +16,7 @@ function range(start, end) {
   return result;
 }
 
-function disabledDate(current) {
+function disabledDate(current: moment.MomentInput) {
   // Can not select days before today and today
   return (
     (current && current < moment().add(-1, 'days').endOf('day')) ||

@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "lint-fix": "next lint --fix"
+    "lint-fix": "next lint --fix",
+    "heroku-token": "NODE_ENV=development script/encrypt-heroku-auth-token.js"
   },
   "dependencies": {
     "@emotion/css": "^11.7.1",
@@ -29,22 +30,27 @@
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-hook-form": "^7.22.2",
-    "react-imask": "^6.2.2",
+    "react-imask": "^6.0.7",
     "sharp": "^0.29.3",
-    "typescript-cookie": "^1.0.0"
+    "typescript-cookie": "^1.0.0",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "@emotion/babel-plugin": "^11.7.1",
     "@emotion/eslint-plugin": "^11.7.0",
     "@types/google.maps": "^3.47.2",
     "@types/react": "17.0.37",
+    "@types/uuid": "^8.3.3",
     "@typescript-eslint/eslint-plugin": "^5.7.0",
     "@typescript-eslint/parser": "^5.7.0",
     "eslint": "8.4.1",
     "eslint-config-next": "12.0.7",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-unused-imports": "^2.0.0",
+    "git-url-parse": "^11.6.0",
     "prettier": "^2.5.1",
-    "typescript": "^4.5.4"
+    "simple-git": "^2.48.0",
+    "typescript": "^4.5.4",
+    "yaml": "^1.10.2"
   }
 }

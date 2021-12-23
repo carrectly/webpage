@@ -17,7 +17,7 @@ import { useRouter } from 'next/router';
 import React, { useContext, useEffect } from 'react';
 import Layout from '../components/Layout/Layout';
 import { Store } from '../../utils/Store';
-import { useForm, Controller } from 'react-hook-form';
+import { useForm, Controller, SubmitHandler } from 'react-hook-form';
 import StepperComponent from '../components/Stepper/Stepper';
 import DatePickerCustom from '../components/Forms/ServiceDates';
 import Select from '@mui/material/Select';
@@ -36,11 +36,11 @@ type submitPropTypes = {
   carYear: string;
   carMake: string;
   carModel: string;
-  paintColor?: string;
-  vinNumber?: string;
+  carColor?: string;
+  vin?: string;
   transmission?: string;
   pickupDate: Moment;
-  returnDate: Moment;
+  dropoffDate: Moment;
   customerComments?: string;
 };
 
@@ -55,7 +55,9 @@ const TextMaskCustom = React.forwardRef<HTMLElement, CustomProps>(
     return (
       <IMaskInput
         {...other}
-        mask="(#00) 000-0000"
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
+        mask={'(#00) 000-0000'}
         definitions={{
           '#': /[1-9]/,
         }}
@@ -105,8 +107,8 @@ const vehicleFields = [
       minLength: 2,
     },
   },
-  { fieldName: 'paintColor', fieldLabel: 'Paint Color' },
-  { fieldName: 'vinNumber', fieldLabel: 'Vin Number' },
+  { fieldName: 'carColor', fieldLabel: 'Paint Color' },
+  { fieldName: 'vin', fieldLabel: 'Vin Number' },
 ];
 
 const locationFields = [
@@ -156,18 +158,18 @@ export default function Shipping() {
     setValue('zipCode', shippingAddress.zipCode);
     setValue('carMake', shippingAddress.carMake);
     setValue('carModel', shippingAddress.carModel);
-    setValue('paintColor', shippingAddress.paintColor);
+    setValue('carColor', shippingAddress.carColor);
     setValue('transmission', shippingAddress.transmission);
-    setValue('vinNumber', shippingAddress.vinNumber);
+    setValue('vin', shippingAddress.vin);
     setValue('customerComments', shippingAddress.customerComments);
   }, []);
 
-  const submitHandler = (props: submitPropTypes) => {
-    console.log('props received during submit', props);
+  const onSubmit: SubmitHandler<submitPropTypes> = (data) => {
+    console.log('props received during submit', data);
     dispatch({
       type: 'SAVE_SHIPPING_ADDRESS',
       payload: {
-        props,
+        data,
       },
     });
     router.push('/placeorder');
@@ -177,7 +179,7 @@ export default function Shipping() {
     <Layout title="Shipping Address">
       <StepperComponent activeStep={1} />
 
-      <form onSubmit={handleSubmit(submitHandler)}>
+      <form onSubmit={handleSubmit(onSubmit)}>
         <Grid container spacing={2} width="100%">
           <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
             <Typography component="h4" variant="h4" align="center">
@@ -385,7 +387,7 @@ export default function Shipping() {
                 <ListItem>
                   <Controller
                     control={control}
-                    name="returnDate"
+                    name="dropoffDate"
                     render={({ field }) => (
                       <DatePickerCustom
                         placeHolder="Select desired vehicle drop off date"
