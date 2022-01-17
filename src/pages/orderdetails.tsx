@@ -169,9 +169,7 @@ export default function Shipping() {
     console.log('props received during submit', data);
     dispatch({
       type: 'SAVE_SHIPPING_ADDRESS',
-      payload: {
-        data,
-      },
+      payload: data,
     });
     router.push('/placeorder');
   };

@@ -84,14 +84,11 @@ function PlaceOrder() {
     // closeSnackbar();
     try {
       setLoading(true);
-      const { data } = await axios.post(
-        'https://carrectly-admin-staging.herokuapp.com/wpbookings/neworder',
-        {
-          services: cartItems,
-          customer: customerObj,
-          order: orderObj,
-        }
-      );
+      const { data } = await axios.post('/api', {
+        services: cartItems,
+        customer: customerObj,
+        order: orderObj,
+      });
       dispatch({ type: 'CART_CLEAR' });
 
       setLoading(false);
@@ -119,9 +116,7 @@ function PlaceOrder() {
                 </Typography>
               </ListItem>
               {summaryArr.map((info, i) => (
-                <ListItem key={`summary-line-id-${i}`}>
-                  {info[0]}: {info[1]}
-                </ListItem>
+                <ListItem key={`summary-line-id-${i}`}>{info[0]}</ListItem>
               ))}
             </List>
           </Card>
