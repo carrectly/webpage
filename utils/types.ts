@@ -1,3 +1,5 @@
+import { Moment } from 'moment';
+
 export interface TabPanelProps {
   index: number;
   value: number;
@@ -20,6 +22,25 @@ export type ServiceType = {
   images: Array<string>;
 };
 
+export type OrderDetailsType = {
+  firstName: string;
+  lastName: string;
+  email: string;
+  phoneNumber: string;
+  address: string;
+  city: string;
+  zipCode: string;
+  carYear: string;
+  carMake: string;
+  carModel: string;
+  carColor?: string;
+  vin?: string;
+  transmission?: string;
+  pickupDate: Moment;
+  dropoffDate: Moment;
+  customerComments?: string;
+};
+
 export type ServiceDatesType = {
   pickUpDate: Date;
   returnDate: Date;
@@ -27,7 +48,7 @@ export type ServiceDatesType = {
 
 export type StateType = {
   cartItems: ServiceType[];
-  shippingAddress: any;
+  shippingAddress: OrderDetailsType;
 };
 
 export type ActionType = {
