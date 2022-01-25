@@ -4,12 +4,10 @@ import { StateType, ActionType } from '../utils/types';
 
 const initialState = {
   cartItems: Cookies.get('cartItems')
-    ? // @ts-ignore
-      JSON.parse(Cookies.get('cartItems'))
+    ? JSON.parse(Cookies.get('cartItems') as string)
     : [],
   shippingAddress: Cookies.get('shippingAddress')
-    ? // @ts-ignore
-      JSON.parse(Cookies.get('shippingAddress'))
+    ? JSON.parse(Cookies.get('shippingAddress') as string)
     : {},
 };
 
