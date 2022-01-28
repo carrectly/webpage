@@ -7,7 +7,11 @@ const initialState = {
     ? JSON.parse(Cookies.get('cartItems') as string)
     : [],
   shippingAddress: Cookies.get('shippingAddress')
-    ? JSON.parse(Cookies.get('shippingAddress') as string)
+    ? {
+        ...JSON.parse(Cookies.get('shippingAddress') as string),
+        pickupDate: undefined,
+        dropoffDate: undefined,
+      }
     : {},
 };
 
