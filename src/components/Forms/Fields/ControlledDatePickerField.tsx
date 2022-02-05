@@ -1,13 +1,14 @@
-import React, { FC } from 'react';
+import React, { FC, useCallback } from 'react';
 import { DatePicker } from 'antd';
-import moment from 'moment';
+import moment, { Moment } from 'moment';
 import { Control, Controller } from 'react-hook-form';
-
 interface ControlledDatePickerFieldProps {
   fieldName: string;
   fieldLabel: string;
   control: Control;
   required?: boolean;
+  disabled?: boolean;
+  startDate?: Moment;
 }
 
 function range(start: number, end: number) {
@@ -18,26 +19,50 @@ function range(start: number, end: number) {
   return result;
 }
 
-function disabledDate(current: moment.MomentInput) {
-  // Can not select days before today and today
-  return (
-    (current && current < moment().endOf('day')) ||
-    moment(current).weekday() === 0
-  );
-}
-
-function disabledDateTime() {
-  return {
-    disabledHours: () => [...range(0, 8), ...range(18, 24)],
-  };
-}
-
 const ControlledDatePickerField: FC<ControlledDatePickerFieldProps> = ({
   control,
   fieldName,
   fieldLabel,
   required,
+  startDate = moment(),
+  disabled,
 }) => {
+  const disabledDate = useCallback(
+    (date: Moment) => {
+      const dateToCheck = date
+        .clone()
+        .set({ hour: startDate.hour(), minute: 10, second: 0 });
+      return (
+        dateToCheck.weekday() === 0 ||
+        dateToCheck < startDate.clone().startOf('day') ||
+        (dateToCheck.isSame(startDate, 'day') &&
+          dateToCheck >
+            startDate.clone().set({ hour: 16, minute: 0, second: 0 }))
+      );
+    },
+    [startDate]
+  );
+
+  const disabledTime = useCallback(
+    (date: Moment | null) => {
+      if (date && date.isSame(startDate, 'day')) {
+        return {
+          disabledHours: () => [
+            ...range(
+              0,
+              startDate.clone().add(150, 'minutes').startOf('hour').hour()
+            ),
+            ...range(18, 24),
+          ],
+        };
+      }
+      return {
+        disabledHours: () => [...range(0, 8), ...range(18, 24)],
+      };
+    },
+    [startDate]
+  );
+
   return (
     <Controller
       control={control}
@@ -45,15 +70,15 @@ const ControlledDatePickerField: FC<ControlledDatePickerFieldProps> = ({
       rules={{ required }}
       render={({ field }) => (
         <DatePicker
-          format="YYYY-MM-DD HH:mm"
+          format="YYYY-MM-DD HH:00"
           placeholder={fieldLabel}
+          disabled={disabled}
           showTime={{
-            defaultValue: moment('00:00:00', 'HH:mm'),
-            minuteStep: 60,
+            showHour: true,
+            hideDisabledOptions: true,
           }}
           disabledDate={disabledDate}
-          disabledTime={disabledDateTime}
-          hideDisabledOptions={true}
+          disabledTime={disabledTime}
           style={{ width: '100%', padding: '16.5px 14px' }}
           size="large"
           {...field}

@@ -27,12 +27,12 @@ const ControlledRadioGroupField: React.FC<RadioGroupFieldProps> = ({
     <Controller
       control={control}
       name={fieldName}
+      defaultValue={options[0].value}
       render={({ field }) => (
         <FormControl fullWidth>
           <FormLabel component="legend">{fieldLabel}</FormLabel>
           <RadioGroup
             row
-            defaultValue={options[0].value}
             value={field.value || ''}
             onChange={(e) => field.onChange(e)}
           >

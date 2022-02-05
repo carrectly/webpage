@@ -1,15 +1,20 @@
 import React from 'react';
-import { Control } from 'react-hook-form';
+import { Control, FieldValues, UseFormWatch } from 'react-hook-form';
 import { List, ListItem, Typography } from '@mui/material';
 import ControlledDatePickerField from './Fields/ControlledDatePickerField';
+import moment, { Moment } from 'moment';
 
 interface ServiceDateFormProps {
   control: Control;
+  watch: UseFormWatch<FieldValues>;
 }
 
 export const ServiceDateForm: React.FC<ServiceDateFormProps> = ({
   control,
+  watch,
 }) => {
+  const watchPickupDate = watch('pickupDate');
+
   return (
     <>
       <Typography component="h4" variant="h4" align="center">
@@ -26,6 +31,8 @@ export const ServiceDateForm: React.FC<ServiceDateFormProps> = ({
         <ListItem>
           <ControlledDatePickerField
             control={control}
+            disabled={!Boolean(watchPickupDate)}
+            startDate={moment(watchPickupDate).add(4, 'hours')}
             fieldName={'dropoffDate'}
             fieldLabel={'Select desired vehicle drop off date'}
           />
