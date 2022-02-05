@@ -57,6 +57,7 @@ const Home: NextPage = () => {
               effect="scrollx"
               arrows={true}
               autoplay={false}
+              arrowSpacing="-50px"
               prevArrow={<KeyboardArrowLeftOutlinedIcon />}
               nextArrow={<ChevronRightOutlinedIcon />}
             >
