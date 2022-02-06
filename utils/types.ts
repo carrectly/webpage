@@ -86,6 +86,10 @@ export interface ServiceObject {
   serviceObject: ServiceType;
 }
 
+export interface customTableProps {
+  cartItemsArray: Array<ServiceType>;
+}
+
 export interface ModalProps {
   open: boolean;
   onClose: () => void;

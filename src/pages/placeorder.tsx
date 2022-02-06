@@ -4,14 +4,7 @@ import Layout from '../components/Layout/Layout';
 import { Store } from '../../utils/Store';
 import {
   Grid,
-  TableContainer,
-  Table,
   Typography,
-  TableHead,
-  TableBody,
-  TableRow,
-  TableCell,
-  Link,
   CircularProgress,
   Button,
   Card,
@@ -23,6 +16,7 @@ import { useRouter } from 'next/router';
 import StepperComponent from '../components/Stepper/Stepper';
 import axios from 'axios';
 import { v4 as uuidv4 } from 'uuid';
+import CustomTable from '../components/Table/CustomTable';
 
 // adding comments
 
@@ -109,63 +103,16 @@ function PlaceOrder() {
       <Grid container spacing={1}>
         <Grid item md={9} xs={12}>
           <Card>
-            <List>
-              <ListItem>
-                <Typography component="h3" variant="h3">
-                  Customer Details Summary
-                </Typography>
-              </ListItem>
-              {summaryArr.map((info, i) => (
-                <ListItem key={`summary-line-id-${i}`}>{info[0]}</ListItem>
-              ))}
-            </List>
+            <Typography component="h4" variant="h4" align="center">
+              Customer Details Summary
+            </Typography>
           </Card>
           <Card>
-            <List>
-              <ListItem>
-                <Typography component="h3" variant="h3">
-                  Services Requested
-                </Typography>
-              </ListItem>
-              <ListItem>
-                <TableContainer>
-                  <Table>
-                    <TableHead>
-                      <TableRow>
-                        <TableCell>Image</TableCell>
-                        <TableCell>Name</TableCell>
-                        <TableCell align="right">Quantity</TableCell>
-                        <TableCell align="right">Price</TableCell>
-                      </TableRow>
-                    </TableHead>
-                    <TableBody>
-                      {cartItems.map((item) => (
-                        <TableRow key={item.id}>
-                          <TableCell>
-                            <Link>
-                              <Typography>{item.name}</Typography>
-                            </Link>
-                          </TableCell>
-                          <TableCell align="right">
-                            Price:
-                            <List
-                              sx={{ display: 'flex', flexDirection: 'row' }}
-                            >
-                              {item.price &&
-                                item.price.map((el, i) => (
-                                  <ListItem key={`price-variant-${i}`}>
-                                    ${el}
-                                  </ListItem>
-                                ))}
-                            </List>
-                          </TableCell>
-                        </TableRow>
-                      ))}
-                    </TableBody>
-                  </Table>
-                </TableContainer>
-              </ListItem>
-            </List>
+            <Typography component="h4" variant="h4" align="center">
+              Services Requested
+            </Typography>
+
+            <CustomTable cartItemsArray={cartItems} />
           </Card>
         </Grid>
         <Grid item md={3} xs={12}>
