@@ -1,5 +1,5 @@
 import { Moment } from 'moment';
-
+import { GridColDef } from '@mui/x-data-grid';
 export interface TabPanelProps {
   index: number;
   value: number;
@@ -87,6 +87,7 @@ export interface ServiceObject {
 }
 
 export interface customTableProps {
+  columns: GridColDef[];
   cartItemsArray: Array<ServiceType>;
 }
 

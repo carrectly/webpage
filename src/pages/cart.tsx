@@ -6,8 +6,8 @@ import NextLink from 'next/link';
 import { Grid, Link, Button, Card, List, ListItem } from '@mui/material';
 import { useRouter } from 'next/router';
 import StepperComponent from '../components/Stepper/Stepper';
-
-import CustomTable from '../components/Table/CustomTable';
+import ServicesDataTable from 'components/Table/ServicesDataTable';
+import cartTableColumns from 'components/Table/Columns/CartServicesColumns';
 
 function CartScreen() {
   const router = useRouter();
@@ -42,7 +42,10 @@ function CartScreen() {
       ) : (
         <Grid container spacing={1}>
           <Grid item md={9} xs={12}>
-            <CustomTable cartItemsArray={cartItems} />
+            <ServicesDataTable
+              cartItemsArray={cartItems}
+              columns={cartTableColumns}
+            />
           </Grid>
           <Grid item md={3} xs={12}>
             <Card>

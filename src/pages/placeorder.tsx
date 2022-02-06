@@ -8,16 +8,21 @@ import {
   CircularProgress,
   Button,
   Card,
-  List,
   ListItem,
+  TableContainer,
+  Table,
+  TableCell,
+  TableRow,
 } from '@mui/material';
 import { useRouter } from 'next/router';
 // import { useSnackbar } from 'notistack';
 import StepperComponent from '../components/Stepper/Stepper';
 import axios from 'axios';
 import { v4 as uuidv4 } from 'uuid';
-import CustomTable from '../components/Table/CustomTable';
-
+import ServicesDataTable from 'components/Table/ServicesDataTable';
+import orderSummaryColumns from 'components/Table/Columns/OrderSummaryColumns';
+import { fieldLabelsUI } from '../../utils/helperFunctions';
+import moment from 'moment';
 // adding comments
 
 function PlaceOrder() {
@@ -91,66 +96,104 @@ function PlaceOrder() {
       //   enqueueSnackbar(getError(err), { variant: 'error' });
     }
   };
+
+  const editServicesHandler = () => {
+    router.push('/cart');
+  };
+
+  const editCustomerInfo = () => {
+    router.push('/orderdetails');
+  };
+
   const summaryArr = Object.entries(shippingAddress) || [];
   console.log('arr', summaryArr);
   return (
     <Layout title="Place Order">
       <StepperComponent activeStep={2}></StepperComponent>
-      <Typography component="h2" variant="h2" align="center">
-        Order summary
-      </Typography>
 
       <Grid container spacing={1}>
-        <Grid item md={9} xs={12}>
+        <Grid item md={6} xs={12}>
           <Card>
             <Typography component="h4" variant="h4" align="center">
               Customer Details Summary
             </Typography>
-          </Card>
-          <Card>
-            <Typography component="h4" variant="h4" align="center">
-              Services Requested
-            </Typography>
-
-            <CustomTable cartItemsArray={cartItems} />
+            <TableContainer>
+              <Table>
+                {summaryArr.map((el) =>
+                  el[1] ? (
+                    el[0] === 'dropoffDate' || el[0] === 'pickupDate' ? (
+                      <TableRow>
+                        <TableCell>{fieldLabelsUI[el[0]]}</TableCell>
+                        <TableCell>
+                          {moment(el[1]).format('MM-DD-YY HH:00')}
+                        </TableCell>
+                      </TableRow>
+                    ) : (
+                      <TableRow>
+                        <TableCell>{fieldLabelsUI[el[0]]}</TableCell>
+                        <TableCell>{el[1]}</TableCell>
+                      </TableRow>
+                    )
+                  ) : (
+                    <div />
+                  )
+                )}
+              </Table>
+            </TableContainer>
+            <Button
+              onClick={editCustomerInfo}
+              variant="outlined"
+              color="primary"
+              fullWidth
+            >
+              Edit customer info
+            </Button>
           </Card>
         </Grid>
-        <Grid item md={3} xs={12}>
+        <Grid item md={6} xs={12}>
           <Card>
-            <List>
+            <Typography component="h4" variant="h4" align="center">
+              Order Summary
+            </Typography>
+
+            <ServicesDataTable
+              cartItemsArray={cartItems}
+              columns={orderSummaryColumns}
+            />
+            <Grid container>
+              <Grid item xs={6}>
+                <Typography>
+                  <strong>Estimated total:</strong>
+                </Typography>
+              </Grid>
+              <Grid item xs={6}>
+                <Typography align="right">
+                  <strong>${totalPrice()}</strong>
+                </Typography>
+              </Grid>
+            </Grid>
+
+            <Button
+              onClick={placeOrderHandler}
+              variant="contained"
+              color="primary"
+              fullWidth
+            >
+              Place Order
+            </Button>
+            {loading && (
               <ListItem>
-                <Typography variant="h2">Order Summary</Typography>
+                <CircularProgress />
               </ListItem>
-              <ListItem>
-                <Grid container>
-                  <Grid item xs={6}>
-                    <Typography>
-                      <strong>Estimated total:</strong>
-                    </Typography>
-                  </Grid>
-                  <Grid item xs={6}>
-                    <Typography align="right">
-                      <strong>${totalPrice()}</strong>
-                    </Typography>
-                  </Grid>
-                </Grid>
-              </ListItem>
-              <ListItem>
-                <Button
-                  onClick={placeOrderHandler}
-                  variant="contained"
-                  color="primary"
-                  fullWidth
-                >
-                  Place Order
-                </Button>
-              </ListItem>
-              {loading && (
-                <ListItem>
-                  <CircularProgress />
-                </ListItem>
-              )}
-            </List>
+            )}
+            <Button
+              onClick={editServicesHandler}
+              variant="outlined"
+              color="primary"
+              fullWidth
+            >
+              Edit Services
+            </Button>
           </Card>
         </Grid>
       </Grid>
