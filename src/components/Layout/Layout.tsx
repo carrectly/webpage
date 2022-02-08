@@ -18,6 +18,8 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import StyledCartIcon from '../StyledCartIcon/StyledCartIcon';
+import SecurityIcon from '@mui/icons-material/Security';
+import FeedIcon from '@mui/icons-material/Feed';
 
 type Props = {
   title?: string;
@@ -112,53 +114,74 @@ const Layout: FC<Props> = ({ children, title }) => {
         <BottomNavigation
           showLabels
           value={'Developed by AB'}
+          onChange={(event, newValue) => {
+            console.log('event', event);
+            console.log('value', newValue);
+          }}
           sx={{ backgroundColor: 'primary.main', width: '100vw' }}
         >
+          <Box
+            sx={{
+              color: 'white',
+              display: 'flex',
+              flexDirection: 'row',
+              alignItems: 'center',
+            }}
+          >
+            773.800.9085 | info@carrectly.com
+          </Box>
           <BottomNavigationAction
-            label={<span>773.800.9085 | info@carrectly.com</span>}
+            label="Facebook"
+            value="facebook"
+            href="https://www.facebook.com/Carrectly"
+            target="_blank"
+            showLabel
             sx={{ color: 'white' }}
+            icon={<FacebookIcon color="secondary" />}
           />
-          <StyledLink href="https://www.facebook.com/Carrectly" target="_blank">
-            <BottomNavigationAction
-              label="Facebook"
-              showLabel
-              sx={{ color: 'white' }}
-              icon={<FacebookIcon color="secondary" />}
-            />
-          </StyledLink>
-          <StyledLink href="https://twitter.com/Carrectly" target="_blank">
-            <BottomNavigationAction
-              label="Twitter"
-              showLabel
-              sx={{ color: 'white' }}
-              icon={<TwitterIcon color="secondary" />}
-            />
-          </StyledLink>
-          <StyledLink
+          <BottomNavigationAction
+            label="Twitter"
+            value="twitter"
+            href="https://twitter.com/Carrectly"
+            target="_blank"
+            showLabel
+            sx={{ color: 'white' }}
+            icon={<TwitterIcon color="secondary" />}
+          />
+          <BottomNavigationAction
+            label="Instagram"
+            value="instagram"
             href="https://www.instagram.com/carrectly/"
             target="_blank"
-          >
-            <BottomNavigationAction
-              label="Instagram"
-              showLabel
-              sx={{ color: 'white' }}
-              icon={<InstagramIcon color="secondary" />}
-            />
-          </StyledLink>
-          <StyledLink
+            showLabel
+            sx={{ color: 'white' }}
+            icon={<InstagramIcon color="secondary" />}
+          />
+          <BottomNavigationAction
+            label="LinkedIn"
+            value="linkedin"
             href="https://www.linkedin.com/company/carrectly/"
             target="_blank"
-          >
-            <BottomNavigationAction
-              label="LinkedIn"
-              showLabel
-              sx={{ color: 'white' }}
-              icon={<LinkedInIcon color="secondary" />}
-            />
-          </StyledLink>
+            showLabel
+            sx={{ color: 'white' }}
+            icon={<LinkedInIcon color="secondary" />}
+          />
+          <BottomNavigationAction
+            label="Terms & Conditions"
+            value="Terms"
+            href="termsAndConditions"
+            showLabel
+            sx={{ color: 'white' }}
+            icon={<FeedIcon color="secondary" />}
+          />
+          <BottomNavigationAction
+            label="Privacy Policy"
+            value="Privacy"
+            showLabel
+            sx={{ color: 'white' }}
+            icon={<SecurityIcon color="secondary" />}
+          />
         </BottomNavigation>
-
-        {/* <Footer className={style.footer} /> */}
       </Box>
     </>
   );
