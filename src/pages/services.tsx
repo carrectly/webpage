@@ -45,6 +45,9 @@ const Services = () => {
               '.Mui-expanded': {
                 backgroundColor: '#743794',
                 color: 'white',
+                ':hover': {
+                  backgroundColor: '#743794',
+                },
               },
             }}
           >

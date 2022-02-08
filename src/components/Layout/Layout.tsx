@@ -177,6 +177,7 @@ const Layout: FC<Props> = ({ children, title }) => {
           <BottomNavigationAction
             label="Privacy Policy"
             value="Privacy"
+            href="privacyPolicy"
             showLabel
             sx={{ color: 'white' }}
             icon={<SecurityIcon color="secondary" />}

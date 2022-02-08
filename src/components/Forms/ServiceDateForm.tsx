@@ -2,7 +2,7 @@ import React from 'react';
 import { Control, FieldValues, UseFormWatch } from 'react-hook-form';
 import { List, ListItem, Typography } from '@mui/material';
 import ControlledDatePickerField from './Fields/ControlledDatePickerField';
-import moment, { Moment } from 'moment';
+import moment from 'moment';
 
 interface ServiceDateFormProps {
   control: Control;
