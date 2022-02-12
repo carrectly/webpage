@@ -6,7 +6,7 @@ const cartTableColumns: GridColDef[] = [
   { field: 'name', headerName: 'Service Name', flex: 1 },
   {
     field: 'price',
-    headerName: 'Price Range',
+    headerName: 'Price Range (small | medium | large)',
     flex: 1,
     renderCell: (params: GridRenderCellParams) => (
       <PriceRangeCell row={params.row} />
