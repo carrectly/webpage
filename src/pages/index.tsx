@@ -1,7 +1,7 @@
 import type { NextPage } from 'next';
 import React from 'react';
 import Image from 'next/image';
-import { Box, Typography, Fab } from '@mui/material';
+import { Box, Typography, Fab, Card, CardMedia } from '@mui/material';
 import Layout from '../components/Layout/Layout';
 import styles from '../../styles/Layout.module.css';
 import BgImage from '../components/BgImage/BgImage';
@@ -49,24 +49,6 @@ const Home: NextPage = () => {
         height={425}
         priority
       />
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2970.201669311961!2d-87.63763688455857!3d41.888519779221355!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd2ac744df609%3A0x2ff52a1da777dcc1!2sCarrectly%20Auto%20Care!5e0!3m2!1sen!2sus!4v1644696086194!5m2!1sen!2sus"
-        width="600"
-        height="450"
-        loading="lazy"
-      ></iframe>
-
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2970.201669311961!2d-87.63763688455857!3d41.888519779221355!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd2ac744df609%3A0x2ff52a1da777dcc1!2sCarrectly%20Auto%20Care!5e0!3m2!1sen!2sus!4v1644696271347!5m2!1sen!2sus"
-        width="600"
-        height="450"
-        loading="lazy"
-      ></iframe>
-      {/* <iframe
-        width="100%"
-        height="700px"
-        src="https://www.yelp.com/biz/carrectly-auto-care-chicago?hrid=K4HwJNgbpHapnllsOW_94A&utm_campaign=www_review_share_popup&utm_medium=copy_link&utm_source=(direct)"
-      /> */}
 
       <YelpReviews />
       <Typography
@@ -131,6 +113,34 @@ const Home: NextPage = () => {
           </Box>
         </Box>
       </BgImage>
+      <Card
+        sx={{
+          display: 'flex',
+          flexDirection: 'row',
+          justifyContent: 'center',
+        }}
+      >
+        <CardMedia
+          component="iframe"
+          width="80%"
+          height="450"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2970.201669311961!2d-87.63763688455857!3d41.888519779221355!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd2ac744df609%3A0x2ff52a1da777dcc1!2sCarrectly%20Auto%20Care!5e0!3m2!1sen!2sus!4v1644696086194!5m2!1sen!2sus"
+        />
+      </Card>
+      {/* <Box
+        width="100%"
+        display="flex"
+        flexDirection="row"
+        justifyContent="center"
+        sx={{ padding: '30px' }}
+      >
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2970.201669311961!2d-87.63763688455857!3d41.888519779221355!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd2ac744df609%3A0x2ff52a1da777dcc1!2sCarrectly%20Auto%20Care!5e0!3m2!1sen!2sus!4v1644696086194!5m2!1sen!2sus"
+          width="80%"
+          height="450"
+          loading="lazy"
+        ></iframe>
+      </Box> */}
       <Fab
         sx={fabIsh.sx}
         aria-label={fabIsh.label}

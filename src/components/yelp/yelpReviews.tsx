@@ -1,53 +1,56 @@
+import { Box } from '@mui/material';
 import React from 'react';
 import { useEffect } from 'react';
 
+const reviewsIds = [
+  'PnTjWZ_jC9f2wY8VnEcRLg',
+  '5Nb2ouXgXh63FsWOjIjTaA',
+  '6cazOQg35n-SwgW8QqgFBQ',
+  'sUgc5QimCys-2K-shv9_2Q',
+  'CwOlA4H6v3VLnsbNW_dgjg',
+  'hBlWEnF7JT8uzGgAOAzh7w',
+  'xlfrONiaMQF-cR3qFq1RIA',
+  'rRocVuVR9wpyQcVr_qFEsQ',
+  '_9fJiQOcj9lMQ00qUs-SfA',
+  'coJc7jwOzhbVGx1vpgYDJg',
+  'RnMw6C5oheiD2LiDio7_jg',
+];
+
 function YelpReviews() {
+  const spansArr = reviewsIds.map((reviewId) => (
+    <div key={reviewId} style={{ padding: '15px', minWidth: '400px' }}>
+      <span
+        className="yelp-review"
+        data-review-id={reviewId}
+        data-hostname="www.yelp.com"
+      ></span>
+    </div>
+  ));
   useEffect(() => {
     const scriptTag = document.createElement('script');
 
     scriptTag.src = 'https://www.yelp.com/embed/widgets.js';
     scriptTag.async = true;
     scriptTag.type = 'text/javascript';
-    document.getElementById('yelpReview').appendChild(scriptTag);
-    return () => {
-      document.getElementById('yelpReview').removeChild(scriptTag);
-    };
+    document.getElementById('yelpReview')?.appendChild(scriptTag);
+    // @Eduardo - getting an error here while removing the script tag. not sure if we need to clean up after unmount or not
+    // return () => {
+    //   document.getElementById('yelpReview')?.removeChild(scriptTag);
+    // };
   }, []);
 
   return (
-    <div id="yelpReview" width="100%" height="700px">
-      <span
-        className="yelp-review"
-        data-review-id="PnTjWZ_jC9f2wY8VnEcRLg"
-        data-hostname="www.yelp.com"
-      >
-        Read{' '}
-        <a
-          href="https://www.yelp.com/user_details?userid=Y23hv4wktm6EMBVbhdGWiw"
-          rel="nofollow noopener"
-        >
-          Michael W.
-        </a>
-        's{' '}
-        <a
-          href="https://www.yelp.com/biz/carrectly-auto-care-chicago?hrid=PnTjWZ_jC9f2wY8VnEcRLg"
-          rel="nofollow noopener"
-        >
-          review
-        </a>{' '}
-        of{' '}
-        <a
-          href="https://www.yelp.com/biz/TJwlpHYs_n7FyoTK3jN5-A"
-          rel="nofollow noopener"
-        >
-          Carrectly Auto Care
-        </a>{' '}
-        on{' '}
-        <a href="https://www.yelp.com" rel="nofollow noopener">
-          Yelp
-        </a>
-      </span>
-    </div>
+    <Box
+      id="yelpReview"
+      width="100%"
+      display="flex"
+      flexDirection="row"
+      justifyContent="space-between"
+      alignContent="space-between"
+      sx={{ overflow: 'auto' }}
+    >
+      {spansArr}
+    </Box>
   );
 }
 
