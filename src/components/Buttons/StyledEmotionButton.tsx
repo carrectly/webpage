@@ -29,7 +29,8 @@ const StyledButton = styled.button<IButtonProps>`
   padding: 4px;
   margin: 5px;
   &:hover {
-    color: white;
+    color: ${(props) => props.backgroundColor};
+    background-color: ${(props) => props.fontColor};
   }
 `;
 
@@ -37,10 +38,14 @@ const StyledEmotionButton: FC<StyledEmotionButtonProps> = ({
   bgColor,
   textColor,
   children,
-  handleClick
+  handleClick,
 }) => {
   return (
-    <StyledButton backgroundColor={bgColor} fontColor={textColor} onClick={handleClick}>
+    <StyledButton
+      backgroundColor={bgColor}
+      fontColor={textColor}
+      onClick={handleClick}
+    >
       {children}
     </StyledButton>
   );

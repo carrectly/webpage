@@ -30,7 +30,6 @@ export default function Shipping() {
   }, [state]);
 
   const onSubmit: SubmitHandler<OrderDetailsType> = (data) => {
-    console.log('props received during submit', data);
     dispatch({
       type: 'SAVE_SHIPPING_ADDRESS',
       payload: data,

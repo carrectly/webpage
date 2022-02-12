@@ -52,6 +52,10 @@ function CartScreen() {
               <List>
                 <ListItem>Estimated total price: ${totalPrice()}</ListItem>
                 <ListItem>
+                  Note: Total price and duration will vary based on the size of
+                  your vehicle*
+                </ListItem>
+                <ListItem>
                   <Button
                     onClick={checkoutHandler}
                     variant="contained"

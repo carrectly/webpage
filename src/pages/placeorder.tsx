@@ -106,7 +106,7 @@ function PlaceOrder() {
   };
 
   const summaryArr = Object.entries(shippingAddress) || [];
-  console.log('arr', summaryArr);
+
   return (
     <Layout title="Place Order">
       <StepperComponent activeStep={2}></StepperComponent>

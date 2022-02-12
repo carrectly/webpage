@@ -1,6 +1,6 @@
 import type { NextPage } from 'next';
 import Image from 'next/image';
-import { Box, Typography } from '@mui/material';
+import { Box, Typography, Fab } from '@mui/material';
 import Layout from '../components/Layout/Layout';
 import styles from '../../styles/Layout.module.css';
 import BgImage from '../components/BgImage/BgImage';
@@ -8,8 +8,35 @@ import howItWorksArr from '../data/howItWorks.json';
 import KeyboardArrowLeftOutlinedIcon from '@mui/icons-material/KeyboardArrowLeftOutlined';
 import ChevronRightOutlinedIcon from '@mui/icons-material/ChevronRightOutlined';
 import StyledCarouselComponent from '../components/StyledCarousel/StyledCarousel';
+import { SxProps } from '@mui/system';
+import AddIcon from '@mui/icons-material/Add';
+import { useRouter } from 'next/router';
+
+const fabStyle = {
+  zIndex: 35,
+  margin: '0px',
+  top: 'auto',
+  right: '25px',
+  bottom: '70px',
+  fontSize: '2rem',
+  left: 'auto',
+  position: 'fixed',
+};
+
+const fabIsh = {
+  color: 'primary' as const,
+  sx: fabStyle as SxProps,
+  icon: <AddIcon />,
+  label: 'Add',
+};
 
 const Home: NextPage = () => {
+  const router = useRouter();
+
+  const handleNewBookingClick = () => {
+    router.push('/services');
+  };
+
   return (
     <Layout>
       <Image
@@ -83,6 +110,16 @@ const Home: NextPage = () => {
           </Box>
         </Box>
       </BgImage>
+      <Fab
+        sx={fabIsh.sx}
+        aria-label={fabIsh.label}
+        color={fabIsh.color}
+        size="large"
+        variant="extended"
+        onClick={() => handleNewBookingClick()}
+      >
+        Book new services {fabIsh.icon}
+      </Fab>
     </Layout>
   );
 };
