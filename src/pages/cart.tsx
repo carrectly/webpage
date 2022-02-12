@@ -3,33 +3,18 @@ import dynamic from 'next/dynamic';
 import Layout from '../components/Layout/Layout';
 import { Store } from '../../utils/Store';
 import NextLink from 'next/link';
-import {
-  Grid,
-  TableContainer,
-  Table,
-  TableHead,
-  TableBody,
-  TableRow,
-  TableCell,
-  Link,
-  Button,
-  Card,
-  List,
-  ListItem,
-} from '@mui/material';
+import { Grid, Link, Button, Card, List, ListItem } from '@mui/material';
 import { useRouter } from 'next/router';
 import StepperComponent from '../components/Stepper/Stepper';
-import CartModal from '../components/Modal/CartModal';
+import ServicesDataTable from 'components/Table/ServicesDataTable';
+import cartTableColumns from 'components/Table/Columns/CartServicesColumns';
 
 function CartScreen() {
   const router = useRouter();
-  const { state, dispatch } = useContext(Store);
+  const { state } = useContext(Store);
 
   const { cartItems } = state;
 
-  const removeItemHandler = (itemId: number) => {
-    dispatch({ type: 'CART_REMOVE_ITEM', payload: itemId });
-  };
   const checkoutHandler = () => {
     router.push('/orderdetails');
   };
@@ -57,47 +42,10 @@ function CartScreen() {
       ) : (
         <Grid container spacing={1}>
           <Grid item md={9} xs={12}>
-            <TableContainer>
-              <Table>
-                <TableHead>
-                  <TableRow>
-                    <TableCell>Name</TableCell>
-                    <TableCell align="right">Estimated Price</TableCell>
-                    <TableCell align="right">Estimated Durarion</TableCell>
-                    <TableCell align="right">Action</TableCell>
-                  </TableRow>
-                </TableHead>
-                <TableBody>
-                  {cartItems.map((item) => (
-                    <TableRow key={item.id}>
-                      <TableCell>
-                        <CartModal serviceObject={item} />
-                      </TableCell>
-                      <TableCell align="right">
-                        <List sx={{ display: 'flex', flexDirection: 'row' }}>
-                          {item.price &&
-                            item.price.map((el, i) => (
-                              <ListItem key={`price-variant-${i}`}>
-                                ${el}
-                              </ListItem>
-                            ))}
-                        </List>
-                      </TableCell>
-                      <TableCell align="right">{item.duration}</TableCell>
-                      <TableCell align="right">
-                        <Button
-                          variant="contained"
-                          color="secondary"
-                          onClick={() => removeItemHandler(item.id)}
-                        >
-                          x
-                        </Button>
-                      </TableCell>
-                    </TableRow>
-                  ))}
-                </TableBody>
-              </Table>
-            </TableContainer>
+            <ServicesDataTable
+              cartItemsArray={cartItems}
+              columns={cartTableColumns}
+            />
           </Grid>
           <Grid item md={3} xs={12}>
             <Card>

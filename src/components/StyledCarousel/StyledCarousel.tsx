@@ -6,6 +6,7 @@ import ChevronRightOutlinedIcon from '@mui/icons-material/ChevronRightOutlined';
 import KeyboardArrowLeftOutlinedIcon from '@mui/icons-material/KeyboardArrowLeftOutlined';
 interface CustomCarouselProps extends CarouselProps {
   width?: string;
+  arrowSpacing?: string;
 }
 
 const StyledCarousel = styled(Carousel)<CustomCarouselProps>`
@@ -24,16 +25,23 @@ const StyledCarousel = styled(Carousel)<CustomCarouselProps>`
     background: #cdafde;
   }
 
-  .ant-carousel .slick-prev,
-  .ant-carousel .slick-next {
-    color: #bababa !important;
+  > .slick-next {
+    right: ${(props) => props.arrowSpacing};
+    z-index: 22;
+  }
+
+  > .slick-prev {
+    left: ${(props) => props.arrowSpacing};
+    z-index: 22;
   }
 
   .slick-arrow {
     color: #bababa !important;
+    width: 40px;
+    height: 40px;
   }
   .slick-arrow:hover {
-    color: black !important;
+    color: #cdafde !important;
   }
 `;
 
@@ -44,6 +52,7 @@ const StyledCarouselComponent: FC<CustomCarouselProps> = ({
   width = 'inherit',
   autoplay = false,
   children,
+  arrowSpacing = '-25px',
 }) => {
   return (
     <StyledCarousel
@@ -52,7 +61,9 @@ const StyledCarouselComponent: FC<CustomCarouselProps> = ({
       effect={effect}
       width={width}
       autoplay={autoplay}
-      prevArrow={<KeyboardArrowLeftOutlinedIcon />} nextArrow={<ChevronRightOutlinedIcon />}
+      arrowSpacing={arrowSpacing}
+      prevArrow={<KeyboardArrowLeftOutlinedIcon />}
+      nextArrow={<ChevronRightOutlinedIcon />}
     >
       {children}
     </StyledCarousel>

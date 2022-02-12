@@ -35,11 +35,18 @@ const iconsArr = [
 const Services = () => {
   return (
     <Layout>
-      <Grid container justifyContent="center">
+      <Grid container justifyContent="center" sx={{ padding: '25px 0 0 0' }}>
         {serviceArray.map((service, index) => (
           <Accordion
             key={`accordiong_id_${index}`}
-            sx={{ width: '90vw', margin: '10px' }}
+            sx={{
+              width: '90vw',
+              margin: '10px',
+              '.Mui-expanded': {
+                backgroundColor: '#743794',
+                color: 'white',
+              },
+            }}
           >
             <AccordionSummary
               sx={{
@@ -49,7 +56,7 @@ const Services = () => {
                   backgroundColor: '#dddd',
                 },
               }}
-              expandIcon={<ExpandMoreIcon color="primary" />}
+              expandIcon={<ExpandMoreIcon color="inherit" />}
               aria-controls="panel1a-content"
               id="panel1a-header"
             >
