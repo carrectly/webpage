@@ -1,7 +1,14 @@
 import type { NextPage } from 'next';
 import React from 'react';
 import Image from 'next/image';
-import { Box, Typography, Fab, Card, CardMedia } from '@mui/material';
+import {
+  Box,
+  Typography,
+  Fab,
+  Card,
+  CardMedia,
+  CardContent,
+} from '@mui/material';
 import Layout from '../components/Layout/Layout';
 import styles from '../../styles/Layout.module.css';
 import BgImage from '../components/BgImage/BgImage';
@@ -113,20 +120,84 @@ const Home: NextPage = () => {
           </Box>
         </Box>
       </BgImage>
-      <Card
+      <Box
         sx={{
           display: 'flex',
           flexDirection: 'row',
           justifyContent: 'center',
+          width: '100%',
         }}
       >
-        <CardMedia
-          component="iframe"
-          width="80%"
-          height="450"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2970.201669311961!2d-87.63763688455857!3d41.888519779221355!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd2ac744df609%3A0x2ff52a1da777dcc1!2sCarrectly%20Auto%20Care!5e0!3m2!1sen!2sus!4v1644696086194!5m2!1sen!2sus"
-        />
-      </Card>
+        <Card
+          sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            padding: '40px 0px 40px 0',
+          }}
+        >
+          <CardMedia
+            component="iframe"
+            sx={{ border: '0px' }}
+            height="450"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2970.201669311961!2d-87.63763688455857!3d41.888519779221355!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd2ac744df609%3A0x2ff52a1da777dcc1!2sCarrectly%20Auto%20Care!5e0!3m2!1sen!2sus!4v1644696086194!5m2!1sen!2sus"
+          />
+          <CardContent
+            sx={{
+              display: 'flex',
+              flexDirection: 'row',
+              justifyContent: 'space-evenly',
+              width: '100%',
+            }}
+          >
+            <Box
+              sx={{
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+              }}
+            >
+              <Typography gutterBottom variant="h5" component="div">
+                Contact
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                (773) 800-9085
+              </Typography>
+            </Box>
+            <Box
+              sx={{
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+              }}
+            >
+              <Typography gutterBottom variant="h5" component="div">
+                Address
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                We are on demand and can pick up you car from any location in
+                Chicagoland area
+              </Typography>
+            </Box>
+            <Box
+              sx={{
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+              }}
+            >
+              <Typography gutterBottom variant="h5" component="div">
+                Business Hours
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                Mon: 8:00 AM – 8:00 PM Tue: 8:00 AM – 8:00 PM Wed: 8:00 AM –
+                8:00 PM Thu: 8:00 AM – 8:00 PM Fri: 8:00 AM – 8:00 PM Sat: 8:00
+                AM – 4:00 PM Sun: Closed
+              </Typography>
+            </Box>
+          </CardContent>
+        </Card>
+      </Box>
       {/* <Box
         width="100%"
         display="flex"
