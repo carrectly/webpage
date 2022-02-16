@@ -47,7 +47,8 @@ export const CarInformationFrom: React.FC<CarInformationFromProps> = ({
     const fetchCarModels = async () => {
       if (watchCarYear && watchCarMake && carMakes.length) {
         const carMake = carMakes.find(
-          (make) => make.Make_Name === watchCarMake
+          // (make) => make.Make_Name === watchCarMake
+          (make) => make === watchCarMake
         );
         if (carMake) {
           carDatabaseApi
@@ -57,7 +58,8 @@ export const CarInformationFrom: React.FC<CarInformationFromProps> = ({
               if (
                 watchCarModel &&
                 !carModels.find(
-                  (carModel) => carModel.Model_Name === watchCarModel
+                  // (carModel) => carModel.Model_Name === watchCarModel
+                  (carModel) => carModel.Model === watchCarModel
                 )
               ) {
                 setValue('carModel', null);
@@ -83,14 +85,14 @@ export const CarInformationFrom: React.FC<CarInformationFromProps> = ({
       fieldName: 'carMake',
       fieldLabel: 'Car Make',
       loading,
-      options: carMakes?.map((make) => make.Make_Name) || [],
+      options: carMakes?.map((make) => make) || [],
       disabled: !Boolean(watchCarYear),
     },
     {
       fieldName: 'carModel',
       fieldLabel: 'Car Model',
       loading,
-      options: carModels?.map((model) => model.Model_Name) || [],
+      options: carModels?.map((model) => model.Model) || [],
       disabled: !Boolean(watchCarMake),
     },
   ];
