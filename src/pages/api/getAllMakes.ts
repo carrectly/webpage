@@ -1,6 +1,6 @@
 // import NextCors from 'nextjs-cors';
-import axios from 'axios';
 import Cors from 'cors';
+import axios from 'axios';
 
 // Initializing the cors middleware
 const cors = Cors({
@@ -24,20 +24,11 @@ function runMiddleware(req: any, res: any, fn: any) {
 async function handler(req: any, res: any) {
   // Run the middleware
   await runMiddleware(req, res, cors);
-
   try {
-    console.log('sending order', req.body);
-    // const data = await axios.post('http://localhost:1337/wpbookings/neworder', {
-    //   param: req.body,
-    // });
-    const data = await axios.post(
-      'https://carrectly-admin-staging.herokuapp.com/wpbookings/neworder',
-      {
-        param: req.body,
-      }
+    const response = await axios.get(
+      'https://carrectly-admin-staging.herokuapp.com/api/cars/getAllMakes'
     );
-    console.log('data from server', data);
-    res.status(200).send(data.statusText);
+    res.send(response.data);
   } catch (error: any) {
     return res.status(error.status || 500).end(error.message);
   }

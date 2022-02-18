@@ -24,16 +24,15 @@ const carDatabaseURL =
 export const carDatabaseApi = {
   getAllMakes: async () => {
     const carMakes = await axios
-      .get(`${carDatabaseURL}getAllMakes`)
-      .then((response) => (response as any).data.Results as CarMake[]);
-
+      .get('/api/getAllMakes')
+      .then((response) => (response as any).data as CarMake[]);
     return carMakes;
   },
 
   getAllModels: async (carMake: CarMake, carYear: string) => {
     const carModels = await axios
-      .get(`${carDatabaseURL}/getModelsByYearMake/${carMake}/${carYear}`)
-      .then((response) => (response as any).data.Results as CarModel[]);
+      .get(`/api/getModels/${carMake}/${carYear}`)
+      .then((response) => (response as any).data as CarModel[]);
 
     return carModels;
   },
