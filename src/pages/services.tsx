@@ -33,12 +33,21 @@ const iconsArr = [
 ];
 
 const Services = () => {
+  const [expanded, setExpanded] = React.useState<string | false>('POPULAR');
+
+  const handleChange =
+    (panel: string) => (event: React.SyntheticEvent, newExpanded: boolean) => {
+      setExpanded(newExpanded ? panel : false);
+    };
+
   return (
     <Layout>
       <Grid container justifyContent="center" sx={{ padding: '25px 0 0 0' }}>
         {serviceArray.map((service, index) => (
           <Accordion
             key={`accordiong_id_${index}`}
+            expanded={expanded === service.category}
+            onChange={handleChange(service.category)}
             sx={{
               width: '90vw',
               margin: '10px',

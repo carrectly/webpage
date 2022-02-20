@@ -35,7 +35,7 @@ function PlaceOrder() {
   const {
     address,
     city,
-    zipcode,
+    zipCode,
     carYear,
     carMake,
     carModel,
@@ -49,7 +49,7 @@ function PlaceOrder() {
     hash: myuuid,
     address,
     city,
-    zipcode,
+    zipCode,
     carYear,
     carMake,
     carModel,
@@ -74,7 +74,6 @@ function PlaceOrder() {
     if (cartItems.length === 0) {
       router.push('/cart');
     }
-    console.log('state after adding address', state);
   }, []);
   //   const { closeSnackbar, enqueueSnackbar } = useSnackbar();
   const [loading, setLoading] = useState(false);
@@ -83,7 +82,7 @@ function PlaceOrder() {
     // closeSnackbar();
     try {
       setLoading(true);
-      const { data } = await axios.post('/api', {
+      const { data } = await axios.post('/api/sendOrder', {
         services: cartItems,
         customer: customerObj,
         order: orderObj,
@@ -105,7 +104,7 @@ function PlaceOrder() {
     router.push('/orderdetails');
   };
 
-  const summaryArr = Object.entries(shippingAddress) || [];
+  const formEntriesKeyValueArray = Object.entries(shippingAddress) || [];
 
   return (
     <Layout title="Place Order">
@@ -119,19 +118,26 @@ function PlaceOrder() {
             </Typography>
             <TableContainer>
               <Table>
-                {summaryArr.map((el) =>
-                  el[1] ? (
-                    el[0] === 'dropoffDate' || el[0] === 'pickupDate' ? (
+                {formEntriesKeyValueArray.map((formFieldKeyValueArr) =>
+                  formFieldKeyValueArr[1] ? (
+                    formFieldKeyValueArr[0] === 'dropoffDate' ||
+                    formFieldKeyValueArr[0] === 'pickupDate' ? (
                       <TableRow>
-                        <TableCell>{fieldLabelsUI[el[0]]}</TableCell>
                         <TableCell>
-                          {moment(el[1]).format('MM-DD-YY HH:00')}
+                          {fieldLabelsUI[formFieldKeyValueArr[0]]}
+                        </TableCell>
+                        <TableCell>
+                          {moment(formFieldKeyValueArr[1]).format(
+                            'MM-DD-YY HH:00'
+                          )}
                         </TableCell>
                       </TableRow>
                     ) : (
                       <TableRow>
-                        <TableCell>{fieldLabelsUI[el[0]]}</TableCell>
-                        <TableCell>{el[1]}</TableCell>
+                        <TableCell>
+                          {fieldLabelsUI[formFieldKeyValueArr[0]]}
+                        </TableCell>
+                        <TableCell>{formFieldKeyValueArr[1]}</TableCell>
                       </TableRow>
                     )
                   ) : (
