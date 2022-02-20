@@ -114,10 +114,6 @@ const Layout: FC<Props> = ({ children, title }) => {
         <BottomNavigation
           showLabels
           value={'Developed by AB'}
-          onChange={(event, newValue) => {
-            console.log('event', event);
-            console.log('value', newValue);
-          }}
           sx={{ backgroundColor: 'primary.main', width: '100vw' }}
         >
           <Box

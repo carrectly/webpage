@@ -74,7 +74,6 @@ function PlaceOrder() {
     if (cartItems.length === 0) {
       router.push('/cart');
     }
-    console.log('state after adding address', state);
   }, []);
   //   const { closeSnackbar, enqueueSnackbar } = useSnackbar();
   const [loading, setLoading] = useState(false);
@@ -83,7 +82,7 @@ function PlaceOrder() {
     // closeSnackbar();
     try {
       setLoading(true);
-      const { data } = await axios.post('/api', {
+      const { data } = await axios.post('/api/sendOrder', {
         services: cartItems,
         customer: customerObj,
         order: orderObj,
