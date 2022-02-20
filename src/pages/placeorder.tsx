@@ -87,9 +87,12 @@ function PlaceOrder() {
         customer: customerObj,
         order: orderObj,
       });
+
+      console.log('place order data received', data);
       dispatch({ type: 'CART_CLEAR' });
 
       setLoading(false);
+      router.push('/confirmation');
     } catch (err) {
       setLoading(false);
       //   enqueueSnackbar(getError(err), { variant: 'error' });
@@ -201,6 +204,12 @@ function PlaceOrder() {
               Edit Services
             </Button>
           </Card>
+          <Typography>
+            Once the order is placed we will reach out to you via text to
+            confirm order details and to coordinate vehicle pickup times. Due to
+            increasingly high service volume, please allow a few hours for our
+            logistics team to process your booking request.
+          </Typography>
         </Grid>
       </Grid>
     </Layout>
