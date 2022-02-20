@@ -89,7 +89,7 @@ function PlaceOrder() {
       });
 
       console.log('place order data received', data);
-      // dispatch({ type: 'CART_CLEAR' });
+      dispatch({ type: 'CART_CLEAR' });
 
       setLoading(false);
       router.push('/confirmation');
