@@ -36,7 +36,7 @@ const GoogleMapIframe = () => {
         />
         <CardContent>
           <Grid container spacing={1}>
-            <Grid item md={4} xs={4}>
+            <Grid item md={4} xs={6}>
               <List>
                 <ListItem>
                   <Typography gutterBottom variant="h5" component="div">
@@ -46,7 +46,7 @@ const GoogleMapIframe = () => {
                 <ListItem>(773) 800-9085</ListItem>
               </List>
             </Grid>
-            <Grid item md={4} xs={4}>
+            <Grid item md={4} xs={6}>
               <List>
                 <ListItem>
                   <Typography gutterBottom variant="h5" component="div">
@@ -59,7 +59,7 @@ const GoogleMapIframe = () => {
                 </ListItem>
               </List>
             </Grid>
-            <Grid item md={4} xs={4}>
+            <Grid item md={4} xs={12}>
               <List>
                 <ListItem>
                   <Typography gutterBottom variant="h5" component="div">

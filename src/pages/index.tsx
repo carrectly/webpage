@@ -12,8 +12,8 @@ import StyledCarouselComponent from '../components/StyledCarousel/StyledCarousel
 import { SxProps } from '@mui/system';
 import AddIcon from '@mui/icons-material/Add';
 import { useRouter } from 'next/router';
-import YelpReviews from '../components/yelp/yelpReviews';
-import GoogleMapIframe from 'components/Map/googleMapIframe';
+import YelpReviews from '../components/Yelp/YelpReviews';
+import GoogleMapIframe from 'components/Map/GoogleMapIframe';
 
 const fabStyle = {
   zIndex: 35,
@@ -123,7 +123,7 @@ const Home: NextPage = () => {
         variant="extended"
         onClick={() => handleNewBookingClick()}
       >
-        Book new services {fabIsh.icon}
+        {fabIsh.icon} Book new services
       </Fab>
     </Layout>
   );

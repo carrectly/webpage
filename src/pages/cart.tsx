@@ -2,12 +2,12 @@ import React, { useContext } from 'react';
 import dynamic from 'next/dynamic';
 import Layout from '../components/Layout/Layout';
 import { Store } from '../../utils/Store';
-import NextLink from 'next/link';
-import { Grid, Link, Button, Card, List, ListItem } from '@mui/material';
+import { Grid, Button, Card, List, ListItem } from '@mui/material';
 import { useRouter } from 'next/router';
 import StepperComponent from '../components/Stepper/Stepper';
 import ServicesDataTable from 'components/Table/ServicesDataTable';
 import cartTableColumns from 'components/Table/Columns/CartServicesColumns';
+import EmptyCart from 'components/Cart/EmptyCart';
 
 function CartScreen() {
   const router = useRouter();
@@ -33,12 +33,7 @@ function CartScreen() {
     <Layout title="Shopping Cart">
       <StepperComponent activeStep={0} />
       {cartItems.length === 0 ? (
-        <div>
-          Cart is empty.{' '}
-          <NextLink href="/services" passHref>
-            <Link>Pick a service for your needs</Link>
-          </NextLink>
-        </div>
+        <EmptyCart />
       ) : (
         <Grid container spacing={1}>
           <Grid item md={9} xs={12}>
