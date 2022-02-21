@@ -101,3 +101,44 @@ export interface ServicesDataType {
   category: string;
   services: Array<ServiceType>;
 }
+
+export type yelpCommentType = {
+  language: string;
+  text: string;
+};
+
+export type yelpUserType = {
+  altText: string;
+  displayLocation: string;
+  eliteYear?: number;
+  friendCount?: number;
+  link: string;
+  markupDisplayName: string;
+  partnerAlias?: string;
+  photoCount?: number;
+  reviewCount?: number;
+  src: string;
+  srcSet: string;
+  userUrl: string;
+};
+
+export type yelpReviewType = {
+  appreciatedBy?: string;
+  business: object;
+  businessOwnerReplies?: [];
+  comment: yelpCommentType;
+  feedback: object;
+  id: string;
+  isUpdated: boolean;
+  lightboxMediaItems: [];
+  localizedDate: string;
+  localizedDateVisited?: string;
+  photos?: [];
+  photosUrl: string;
+  previousReviews?: [];
+  rating: number;
+  tags: [];
+  totalPhotos?: number;
+  user: yelpUserType;
+  userId: string;
+};

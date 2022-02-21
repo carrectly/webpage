@@ -1,7 +1,8 @@
 import type { NextPage } from 'next';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
-import { Box, Typography, Fab } from '@mui/material';
+import axios from 'axios';
+import { Box, Typography, Fab, CircularProgress } from '@mui/material';
 import Layout from '../components/Layout/Layout';
 import styles from '../../styles/Layout.module.css';
 import BgImage from '../components/BgImage/BgImage';
@@ -13,7 +14,7 @@ import { SxProps } from '@mui/system';
 import AddIcon from '@mui/icons-material/Add';
 import { useRouter } from 'next/router';
 import GoogleMapIframe from 'components/Map/GoogleMapIframe';
-import YelpReviews from 'components/Yelp/YelpReviews';
+import CustomReviewCard from 'components/CustomerReviews/CustomReviewCard';
 
 const fabStyle = {
   zIndex: 35,
@@ -35,10 +36,20 @@ const fabIsh = {
 
 const Home: NextPage = () => {
   const router = useRouter();
-
+  const [loading, setLoading] = useState(false);
+  const [reviewsArray, setReviews] = useState([]);
   const handleNewBookingClick = () => {
     router.push('/services');
   };
+
+  useEffect(() => {
+    setLoading(true);
+    const fetchReviews = async () => {
+      const { data } = await axios.get('/api/getReviews');
+      setReviews(data.reviews);
+    };
+    fetchReviews().finally(() => setLoading(false));
+  }, []);
 
   return (
     <Layout>
@@ -50,7 +61,21 @@ const Home: NextPage = () => {
         height={425}
         priority
       />
-      <YelpReviews />
+      <Box
+        sx={{
+          display: 'flex',
+          flexDirection: 'row',
+          width: '100%',
+          justifyContent: 'space-between',
+          alignContent: 'space-between',
+          overflow: 'auto',
+        }}
+      >
+        {loading && <CircularProgress />}
+        {reviewsArray.map((singleReview, index) => (
+          <CustomReviewCard key={`review-id-${index}`} review={singleReview} />
+        ))}
+      </Box>
       <Typography
         variant="h3"
         align="center"
