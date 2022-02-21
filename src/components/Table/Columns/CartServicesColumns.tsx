@@ -9,7 +9,7 @@ const cartTableColumns: GridColDef[] = [
     headerName: 'Price Range (small | medium | large)',
     flex: 1,
     renderCell: (params: GridRenderCellParams) => (
-      <PriceRangeCell row={params.row} />
+      <PriceRangeCell props={params} />
     ),
   },
   { field: 'duration', headerName: 'Service Duration', flex: 1 },
@@ -19,7 +19,7 @@ const cartTableColumns: GridColDef[] = [
     sortable: false,
     flex: 1,
     renderCell: (params: GridRenderCellParams) => (
-      <DeleteServiceCell row={params.row} />
+      <DeleteServiceCell props={params} />
     ),
   },
 ];

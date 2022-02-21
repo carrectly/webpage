@@ -12,8 +12,8 @@ import StyledCarouselComponent from '../components/StyledCarousel/StyledCarousel
 import { SxProps } from '@mui/system';
 import AddIcon from '@mui/icons-material/Add';
 import { useRouter } from 'next/router';
-import YelpReviews from 'components/Yelp/yelpReviews';
 import GoogleMapIframe from 'components/Map/GoogleMapIframe';
+import YelpReviews from 'components/Yelp/YelpReviews';
 
 const fabStyle = {
   zIndex: 35,
@@ -50,7 +50,6 @@ const Home: NextPage = () => {
         height={425}
         priority
       />
-
       <YelpReviews />
       <Typography
         variant="h3"

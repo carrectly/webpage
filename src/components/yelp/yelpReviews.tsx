@@ -16,7 +16,7 @@ const reviewsIds = [
   'RnMw6C5oheiD2LiDio7_jg',
 ];
 
-function YelpReviews() {
+const YelpReviews = () => {
   const spansArr = reviewsIds.map((reviewId) => (
     <div key={reviewId} style={{ padding: '15px', minWidth: '400px' }}>
       <span
@@ -52,6 +52,6 @@ function YelpReviews() {
       {spansArr}
     </Box>
   );
-}
+};
 
 export default YelpReviews;
