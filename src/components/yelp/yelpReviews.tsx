@@ -16,16 +16,17 @@ const reviewsIds = [
   'RnMw6C5oheiD2LiDio7_jg',
 ];
 
+const spansArr = reviewsIds.map((reviewId) => (
+  <div key={reviewId} style={{ padding: '15px', minWidth: '400px' }}>
+    <span
+      className="yelp-review"
+      data-review-id={reviewId}
+      data-hostname="www.yelp.com"
+    ></span>
+  </div>
+));
+
 const YelpReviews = () => {
-  const spansArr = reviewsIds.map((reviewId) => (
-    <div key={reviewId} style={{ padding: '15px', minWidth: '400px' }}>
-      <span
-        className="yelp-review"
-        data-review-id={reviewId}
-        data-hostname="www.yelp.com"
-      ></span>
-    </div>
-  ));
   useEffect(() => {
     const scriptTag = document.createElement('script');
 
