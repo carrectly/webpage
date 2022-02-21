@@ -9,7 +9,7 @@ const orderSummaryColumns: GridColDef[] = [
     headerName: 'Price',
     flex: 1,
     renderCell: (params: GridRenderCellParams) => (
-      <PriceRangeCell row={params.row} />
+      <PriceRangeCell props={params} />
     ),
   },
 ];

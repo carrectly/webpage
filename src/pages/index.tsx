@@ -12,7 +12,7 @@ import StyledCarouselComponent from '../components/StyledCarousel/StyledCarousel
 import { SxProps } from '@mui/system';
 import AddIcon from '@mui/icons-material/Add';
 import { useRouter } from 'next/router';
-import YelpReviews from 'components/Yelp/yelpReviews';
+import YelpReviews from 'components/Yelp/YelpReviews';
 import GoogleMapIframe from 'components/Map/GoogleMapIframe';
 
 const fabStyle = {
