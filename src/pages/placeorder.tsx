@@ -91,7 +91,6 @@ function PlaceOrder() {
         order: orderObj,
       });
 
-      console.log('place order data received', data);
       dispatch({ type: 'CART_CLEAR' });
 
       setLoading(false);
