@@ -24,6 +24,9 @@ import orderSummaryColumns from 'components/Table/Columns/OrderSummaryColumns';
 import { fieldLabelsUI } from '../../utils/helperFunctions';
 import moment from 'moment';
 // adding comments
+import { OrderDetailsType } from '../../utils/types';
+
+type P = keyof OrderDetailsType;
 
 function PlaceOrder() {
   const router = useRouter();
@@ -107,7 +110,7 @@ function PlaceOrder() {
     router.push('/orderdetails');
   };
 
-  const formEntriesKeyValueArray = Object.entries(shippingAddress) || [];
+  const formEntriesKeyValueArray = Object.entries(shippingAddress);
 
   return (
     <Layout title="Place Order">
@@ -127,7 +130,7 @@ function PlaceOrder() {
                     formFieldKeyValueArr[0] === 'pickupDate' ? (
                       <TableRow>
                         <TableCell>
-                          {fieldLabelsUI[formFieldKeyValueArr[0]]}
+                          {fieldLabelsUI[formFieldKeyValueArr[0] as P]}
                         </TableCell>
                         <TableCell>
                           {moment(formFieldKeyValueArr[1]).format(
@@ -138,7 +141,7 @@ function PlaceOrder() {
                     ) : (
                       <TableRow>
                         <TableCell>
-                          {fieldLabelsUI[formFieldKeyValueArr[0]]}
+                          {fieldLabelsUI[formFieldKeyValueArr[0] as P]}
                         </TableCell>
                         <TableCell>{formFieldKeyValueArr[1]}</TableCell>
                       </TableRow>
