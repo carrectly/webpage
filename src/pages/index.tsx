@@ -13,7 +13,7 @@ import { SxProps } from '@mui/system';
 import AddIcon from '@mui/icons-material/Add';
 import { useRouter } from 'next/router';
 import GoogleMapIframe from 'components/Map/GoogleMapIframe';
-import YelpReviews from 'components/Yelp/YelpReviews';
+import YelpReviews from '../components/Yelp/YelpReviews';
 
 const fabStyle = {
   zIndex: 35,
