@@ -20,12 +20,8 @@ function CartScreen() {
   };
 
   const totalPrice = () => {
-    return cartItems.reduce((a, c) => {
-      if (c.price) {
-        return a + c.price[0];
-      } else {
-        return a;
-      }
+    return cartItems.reduce((subTotal, service) => {
+      return subTotal + (service.prices ? service.prices[0] : 0);
     }, 0);
   };
 

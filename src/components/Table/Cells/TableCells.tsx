@@ -1,13 +1,14 @@
 import { Button, List, ListItem } from '@mui/material';
-import React, { useContext, FC } from 'react';
+import { GridRowModel } from '@mui/x-data-grid';
+import React, { useContext } from 'react';
 import { Store } from '../../../../utils/Store';
-import { GridRenderCellParams } from '@mui/x-data-grid';
+import { ServiceType } from '../../../../utils/types';
 
-type cellAttributes = {
-  props: GridRenderCellParams;
-};
+interface CellAttributes {
+  row: GridRowModel<ServiceType>;
+}
 
-export const DeleteServiceCell: FC<cellAttributes> = ({ props }) => {
+export const DeleteServiceCell: React.FC<CellAttributes> = ({ row }) => {
   const { dispatch } = useContext(Store);
   const removeItemHandler = (itemId: number) => {
     dispatch({ type: 'CART_REMOVE_ITEM', payload: itemId });
@@ -16,29 +17,20 @@ export const DeleteServiceCell: FC<cellAttributes> = ({ props }) => {
     <Button
       variant="contained"
       color="secondary"
-      onClick={() => removeItemHandler(props.row.id)}
+      onClick={() => removeItemHandler(row.id)}
     >
       x
     </Button>
   );
 };
 
-export const PriceRangeCell: FC<cellAttributes> = ({ props }) => {
+export const PriceRangeCell: React.FC<CellAttributes> = ({ row }) => {
   return (
     <List sx={{ display: 'flex', flexDirection: 'row' }}>
-      {props.row.price &&
-        props.row.price.map(
-          (
-            el:
-              | boolean
-              | React.ReactChild
-              | React.ReactFragment
-              | React.ReactPortal
-              | null
-              | undefined,
-            i: any
-          ) => <ListItem key={`price-variant-${i}`}>${el}</ListItem>
-        )}
+      {row?.prices &&
+        row.prices.map((price, index) => (
+          <ListItem key={`price-variant-${index}`}>${price}</ListItem>
+        ))}
     </List>
   );
 };
