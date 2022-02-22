@@ -15,7 +15,6 @@ import {
   TableRow,
 } from '@mui/material';
 import { useRouter } from 'next/router';
-// import { useSnackbar } from 'notistack';
 import StepperComponent from '../components/Stepper/Stepper';
 import axios from 'axios';
 import { v4 as uuidv4 } from 'uuid';
@@ -23,7 +22,6 @@ import ServicesDataTable from 'components/Table/ServicesDataTable';
 import orderSummaryColumns from 'components/Table/Columns/OrderSummaryColumns';
 import { fieldLabelsUI } from '../../utils/helperFunctions';
 import moment from 'moment';
-// adding comments
 import { OrderDetailsType } from '../../utils/types';
 
 type P = keyof OrderDetailsType;
@@ -32,44 +30,16 @@ function PlaceOrder() {
   const router = useRouter();
   const { state, dispatch } = useContext(Store);
   const { cartItems, shippingAddress } = state;
-  const myuuid = uuidv4();
-  const { firstName, lastName, email, phoneNumber } = shippingAddress;
-  const customerObj = { firstName, lastName, email, phoneNumber };
-  const {
-    address,
-    city,
-    zipCode,
-    carYear,
-    carMake,
-    carModel,
-    carColor,
-    vin,
-    pickupDate,
-    dropoffDate,
-    customerComments,
-  } = shippingAddress;
-  const orderObj = {
-    hash: myuuid,
-    address,
-    city,
-    zipCode,
-    carYear,
-    carMake,
-    carModel,
-    carColor,
-    vin,
-    pickupDate,
-    dropoffDate,
-    customerComments,
-  };
+  const [loading, setLoading] = useState(false);
+
+  const { firstName, lastName, email, phoneNumber, ...orderInfo } =
+    shippingAddress;
+  const customerInfo = { firstName, lastName, email, phoneNumber };
+  (orderInfo as any).hash = uuidv4();
 
   const totalPrice = () => {
-    return cartItems.reduce((a, c) => {
-      if (c.price) {
-        return a + c.price[0];
-      } else {
-        return a;
-      }
+    return cartItems.reduce((subTotal, service) => {
+      return subTotal + (service.prices ? service.prices[0] : 0);
     }, 0);
   };
 
@@ -78,17 +48,14 @@ function PlaceOrder() {
       router.push('/cart');
     }
   }, []);
-  //   const { closeSnackbar, enqueueSnackbar } = useSnackbar();
-  const [loading, setLoading] = useState(false);
 
   const placeOrderHandler = async () => {
-    // closeSnackbar();
     try {
       setLoading(true);
-      const { data } = await axios.post('/api/sendOrder', {
+      await axios.post('/api/sendOrder', {
         services: cartItems,
-        customer: customerObj,
-        order: orderObj,
+        customer: customerInfo,
+        order: orderInfo,
       });
 
       dispatch({ type: 'CART_CLEAR' });
@@ -97,7 +64,6 @@ function PlaceOrder() {
       router.push('/confirmation');
     } catch (err) {
       setLoading(false);
-      //   enqueueSnackbar(getError(err), { variant: 'error' });
     }
   };
 
@@ -108,8 +74,6 @@ function PlaceOrder() {
   const editCustomerInfo = () => {
     router.push('/orderdetails');
   };
-
-  const formEntriesKeyValueArray = Object.entries(shippingAddress);
 
   return (
     <Layout title="Place Order">
@@ -123,32 +87,23 @@ function PlaceOrder() {
             </Typography>
             <TableContainer>
               <Table>
-                {formEntriesKeyValueArray.map((formFieldKeyValueArr) =>
-                  formFieldKeyValueArr[1] ? (
-                    formFieldKeyValueArr[0] === 'dropoffDate' ||
-                    formFieldKeyValueArr[0] === 'pickupDate' ? (
-                      <TableRow>
+                {Object.keys(shippingAddress).map((key) => {
+                  const value = shippingAddress[key as keyof OrderDetailsType];
+                  return (
+                    value && (
+                      <TableRow key={key}>
                         <TableCell>
-                          {fieldLabelsUI[formFieldKeyValueArr[0] as P]}
+                          {fieldLabelsUI[key as keyof typeof fieldLabelsUI]}
                         </TableCell>
                         <TableCell>
-                          {moment(formFieldKeyValueArr[1]).format(
-                            'MM-DD-YY HH:00'
-                          )}
+                          {key === 'dropoffDate' || key === 'pickupDate'
+                            ? moment(value).format('MM-DD-YY HH:00')
+                            : value}
                         </TableCell>
-                      </TableRow>
-                    ) : (
-                      <TableRow>
-                        <TableCell>
-                          {fieldLabelsUI[formFieldKeyValueArr[0] as P]}
-                        </TableCell>
-                        <TableCell>{formFieldKeyValueArr[1]}</TableCell>
                       </TableRow>
                     )
-                  ) : (
-                    <div />
-                  )
-                )}
+                  );
+                })}
               </Table>
             </TableContainer>
             <Button

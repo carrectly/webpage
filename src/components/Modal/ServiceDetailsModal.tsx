@@ -63,7 +63,7 @@ export default function ServiceDetailsModal({
               <Typography id="modal-modal-description" sx={{ mt: 2 }}>
                 {serviceDetails.longDescription.split('✔').map((el: string) => {
                   if (el.length > 1) {
-                    return <div>{`✔ ${el}`}</div>;
+                    return <div key={el}>{`✔ ${el}`}</div>;
                   }
                 })}
               </Typography>
@@ -77,9 +77,9 @@ export default function ServiceDetailsModal({
             >
               <Typography sx={{ mt: 2 }}>Price:</Typography>
               <List sx={{ display: 'flex', flexDirection: 'row' }}>
-                {serviceDetails.price &&
-                  serviceDetails.price.map((el, i) => (
-                    <ListItem key={`price-variant-${i}`}>${el}</ListItem>
+                {serviceDetails.prices &&
+                  serviceDetails.prices.map((price, index) => (
+                    <ListItem key={`price-variant-${index}`}>${price}</ListItem>
                   ))}
               </List>
 

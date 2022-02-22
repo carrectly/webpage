@@ -15,11 +15,11 @@ export type faqSubGroupsTypes =
 export type ServiceType = {
   id: number;
   name: string;
-  price?: Array<number>;
+  prices?: number[];
   duration?: string;
   shortDescription: string;
   longDescription: string;
-  images: Array<string>;
+  images: string[];
 };
 
 export type OrderDetailsType = {
