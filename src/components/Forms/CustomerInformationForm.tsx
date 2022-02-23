@@ -21,10 +21,8 @@ const TextMaskCustom = React.forwardRef<HTMLElement, CustomProps>(
       <IMaskInput
         {...other}
         //@ts-expect-error Incorrect type declaration in library, no fix at time of import
-        mask="(#00) 000-0000"
-        definitions={{
-          '#': /[1-9]/,
-        }}
+        mask={'(000) 000-0000'}
+        unmask={true}
         inputRef={ref}
         onAccept={(value: any) =>
           onChange({ target: { name: props.name, value } })
@@ -64,7 +62,7 @@ export const CustomerInformationForm: React.FC<
         },
       },
       rules: {
-        minLength: 14,
+        minLength: 10,
       },
       helperText: {
         minLength: undefined,
