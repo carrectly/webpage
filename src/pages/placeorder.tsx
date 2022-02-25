@@ -7,12 +7,7 @@ import {
   Typography,
   CircularProgress,
   Button,
-  Card,
   ListItem,
-  TableContainer,
-  Table,
-  TableCell,
-  TableRow,
 } from '@mui/material';
 import { useRouter } from 'next/router';
 import StepperComponent from '../components/Stepper/Stepper';
@@ -20,11 +15,9 @@ import axios from 'axios';
 import { v4 as uuidv4 } from 'uuid';
 import ServicesDataTable from 'components/Table/ServicesDataTable';
 import orderSummaryColumns from 'components/Table/Columns/OrderSummaryColumns';
-import { fieldLabelsUI } from '../../utils/helperFunctions';
-import moment from 'moment';
-import { OrderDetailsType } from '../../utils/types';
+import { CustomerDetailsSummary } from 'components/Table/CustomerDetailsSummary';
 import { ServiceType } from '../../utils/types';
-type P = keyof OrderDetailsType;
+import { CardShadow } from 'components/StyledBaseComponents/CardShadow';
 
 function PlaceOrder() {
   const router = useRouter();
@@ -79,54 +72,17 @@ function PlaceOrder() {
     router.push('/cart');
   };
 
-  const editCustomerInfo = () => {
-    router.push('/orderdetails');
-  };
-
   return (
     <Layout title="Place Order">
       <StepperComponent activeStep={2}></StepperComponent>
 
-      <Grid container spacing={1}>
-        <Grid item md={6} xs={12}>
-          <Card>
-            <Typography component="h4" variant="h4" align="center">
-              Customer Details Summary
-            </Typography>
-            <TableContainer>
-              <Table>
-                {Object.keys(shippingAddress).map((key) => {
-                  const value = shippingAddress[key as keyof OrderDetailsType];
-                  return (
-                    value && (
-                      <TableRow key={key}>
-                        <TableCell>
-                          {fieldLabelsUI[key as keyof typeof fieldLabelsUI]}
-                        </TableCell>
-                        <TableCell>
-                          {key === 'dropoffDate' || key === 'pickupDate'
-                            ? moment(value).format('MM-DD-YY HH:00')
-                            : value}
-                        </TableCell>
-                      </TableRow>
-                    )
-                  );
-                })}
-              </Table>
-            </TableContainer>
-            <Button
-              onClick={editCustomerInfo}
-              variant="outlined"
-              color="primary"
-              fullWidth
-            >
-              Edit customer info
-            </Button>
-          </Card>
+      <Grid container spacing={3} padding="20px">
+        <Grid item md={5} xs={12}>
+          <CustomerDetailsSummary />
         </Grid>
-        <Grid item md={6} xs={12}>
-          <Card>
-            <Typography component="h4" variant="h4" align="center">
+        <Grid item md={7} xs={12}>
+          <CardShadow>
+            <Typography variant="h4" component="h4" margin="10px">
               Order Summary
             </Typography>
 
@@ -134,7 +90,11 @@ function PlaceOrder() {
               cartItemsArray={cartItems}
               columns={orderSummaryColumns}
             />
-            <Grid container>
+            <Grid
+              container
+              padding="10px"
+              borderTop="solid 1px rgb(224, 224, 224)"
+            >
               <Grid item xs={6}>
                 <Typography>
                   <strong>Estimated total:</strong>
@@ -146,30 +106,31 @@ function PlaceOrder() {
                 </Typography>
               </Grid>
             </Grid>
-
-            <Button
-              onClick={placeOrderHandler}
-              variant="contained"
-              color="primary"
-              fullWidth
-            >
-              Place Order
-            </Button>
-            {loading && (
-              <ListItem>
-                <CircularProgress />
-              </ListItem>
-            )}
-            <Button
-              onClick={editServicesHandler}
-              variant="outlined"
-              color="primary"
-              fullWidth
-            >
-              Edit Services
-            </Button>
-          </Card>
-          <Typography>
+          </CardShadow>
+          <Button
+            onClick={placeOrderHandler}
+            variant="contained"
+            color="primary"
+            fullWidth
+            sx={{ marginTop: '20px' }}
+          >
+            Place Order
+          </Button>
+          {loading && (
+            <ListItem>
+              <CircularProgress />
+            </ListItem>
+          )}
+          <Button
+            onClick={editServicesHandler}
+            variant="outlined"
+            color="primary"
+            fullWidth
+            sx={{ marginTop: '10px' }}
+          >
+            Edit Services
+          </Button>
+          <Typography marginTop="10px" fontSize="0.9rem">
             Once the order is placed we will reach out to you via text to
             confirm order details and to coordinate vehicle pickup times. Due to
             increasingly high service volume, please allow a few hours for our

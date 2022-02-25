@@ -28,6 +28,8 @@ type Props = {
 const StyledLink = styled(Link)<LinkProps>({
   color: 'white',
   padding: 10,
+  fontSize: '1.1rem',
+  fontWeight: 'bold',
 });
 
 const Layout: FC<Props> = ({ children, title }) => {
@@ -57,13 +59,13 @@ const Layout: FC<Props> = ({ children, title }) => {
         sx={{
           display: 'flex',
           flexDirection: 'column',
+          justifyContent: 'space-between',
           margin: 0,
           padding: 0,
           minHeight: '100vh',
-          width: '100vw',
         }}
       >
-        <AppBar position="static">
+        <AppBar position="sticky">
           {/* <Toolbar className={style.nav}> */}
           <Toolbar>
             <Box
@@ -77,7 +79,7 @@ const Layout: FC<Props> = ({ children, title }) => {
                   display="flex"
                   flexDirection="column"
                   justifyContent="center"
-                  sx={{ width: 200 }}
+                  sx={{ width: 200, cursor: 'pointer' }}
                 >
                   <Image
                     src="/images/home/logo.png"
@@ -87,9 +89,6 @@ const Layout: FC<Props> = ({ children, title }) => {
                     priority
                   />
                 </Box>
-              </NextLink>
-              <NextLink href="/" passHref>
-                <StyledLink>Home</StyledLink>
               </NextLink>
               <NextLink href="/about" passHref>
                 <StyledLink>About</StyledLink>
@@ -108,13 +107,21 @@ const Layout: FC<Props> = ({ children, title }) => {
             </Box>
           </Toolbar>
         </AppBar>
-        <Grid sx={{ margin: 0, padding: 0, minHeight: '90vh', width: '100vw' }}>
+        <Grid
+          sx={{
+            margin: 'auto',
+            padding: 0,
+            width: '100%',
+            maxWidth: '1500px',
+            flexGrow: 1,
+          }}
+        >
           {children}
         </Grid>
         <BottomNavigation
           showLabels
           value={'Developed by AB'}
-          sx={{ backgroundColor: 'primary.main', width: '100vw' }}
+          sx={{ backgroundColor: 'primary.main' }}
         >
           <Box
             sx={{
