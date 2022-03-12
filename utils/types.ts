@@ -1,10 +1,6 @@
 import { Moment } from 'moment';
 import { GridColDef } from '@mui/x-data-grid';
 import { CarModel } from 'apiWrappers/carDatabaseApi';
-export interface TabPanelProps {
-  index: number;
-  value: number;
-}
 
 export type faqSubGroupsTypes =
   | 'basics'
@@ -68,22 +64,6 @@ export type aboutDetailsProps = {
 export type AboutCardProps = {
   info: aboutDetailsProps;
 };
-
-export interface BgImageProps {
-  alignItems?: string;
-  imgalt: string;
-  imgsrc: string;
-  height?: string;
-  justifyContent?: string;
-  width?: string;
-}
-
-export interface BgImageContainerProps {
-  alignItems: string;
-  justifyContent: string;
-  height: string;
-  width: string;
-}
 
 export interface ServiceObject {
   serviceObject: ServiceType;

@@ -1,38 +1,18 @@
 import React, { FC } from 'react';
 import Head from 'next/head';
-import Image from 'next/image';
-import {
-  AppBar,
-  Toolbar,
-  Link,
-  Box,
-  LinkProps,
-  BottomNavigation,
-  BottomNavigationAction,
-  Grid,
-} from '@mui/material';
-import { styled } from '@mui/material/styles';
-import NextLink from 'next/link';
-import FacebookIcon from '@mui/icons-material/Facebook';
-import TwitterIcon from '@mui/icons-material/Twitter';
-import InstagramIcon from '@mui/icons-material/Instagram';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import StyledCartIcon from '../StyledCartIcon/StyledCartIcon';
-import SecurityIcon from '@mui/icons-material/Security';
-import FeedIcon from '@mui/icons-material/Feed';
+import { SponsorsRibbon } from 'components/Ribbon/SponsorsRibbon';
+import { useRouter } from 'next/router';
+import { Box, Grid } from '@mui/material';
+import { Footer } from '../Footer/Footer';
+import Header from 'components/Header/Header';
 
 type Props = {
   title?: string;
 };
 
-const StyledLink = styled(Link)<LinkProps>({
-  color: 'white',
-  padding: 10,
-  fontSize: '1.1rem',
-  fontWeight: 'bold',
-});
-
 const Layout: FC<Props> = ({ children, title }) => {
+  const router = useRouter();
+  const currentPage = router.pathname;
   return (
     <>
       <Head>
@@ -65,48 +45,7 @@ const Layout: FC<Props> = ({ children, title }) => {
           minHeight: '100vh',
         }}
       >
-        <AppBar position="sticky">
-          {/* <Toolbar className={style.nav}> */}
-          <Toolbar>
-            <Box
-              display="flex"
-              flexDirection="row"
-              justifyContent="space-evenly"
-              sx={{ width: '100%' }}
-            >
-              <NextLink href="/" passHref>
-                <Box
-                  display="flex"
-                  flexDirection="column"
-                  justifyContent="center"
-                  sx={{ width: 200, cursor: 'pointer' }}
-                >
-                  <Image
-                    src="/images/home/logo.png"
-                    alt="car wrench"
-                    width={200}
-                    height={50}
-                    priority
-                  />
-                </Box>
-              </NextLink>
-              <NextLink href="/about" passHref>
-                <StyledLink>About</StyledLink>
-              </NextLink>
-              <NextLink href="/services" passHref>
-                <StyledLink>Services</StyledLink>
-              </NextLink>
-              <NextLink href="/faq" passHref>
-                <StyledLink>FAQ</StyledLink>
-              </NextLink>
-              <NextLink href="/cart" passHref>
-                <StyledLink>
-                  <StyledCartIcon />
-                </StyledLink>
-              </NextLink>
-            </Box>
-          </Toolbar>
-        </AppBar>
+        <Header />
         <Grid
           sx={{
             margin: 'auto',
@@ -118,74 +57,8 @@ const Layout: FC<Props> = ({ children, title }) => {
         >
           {children}
         </Grid>
-        <BottomNavigation
-          showLabels
-          value={'Developed by AB'}
-          sx={{ backgroundColor: 'primary.main' }}
-        >
-          <Box
-            sx={{
-              color: 'white',
-              display: 'flex',
-              flexDirection: 'row',
-              alignItems: 'center',
-            }}
-          >
-            773.800.9085 | info@carrectly.com
-          </Box>
-          <BottomNavigationAction
-            label="Facebook"
-            value="facebook"
-            href="https://www.facebook.com/Carrectly"
-            target="_blank"
-            showLabel
-            sx={{ color: 'white' }}
-            icon={<FacebookIcon color="secondary" />}
-          />
-          <BottomNavigationAction
-            label="Twitter"
-            value="twitter"
-            href="https://twitter.com/Carrectly"
-            target="_blank"
-            showLabel
-            sx={{ color: 'white' }}
-            icon={<TwitterIcon color="secondary" />}
-          />
-          <BottomNavigationAction
-            label="Instagram"
-            value="instagram"
-            href="https://www.instagram.com/carrectly/"
-            target="_blank"
-            showLabel
-            sx={{ color: 'white' }}
-            icon={<InstagramIcon color="secondary" />}
-          />
-          <BottomNavigationAction
-            label="LinkedIn"
-            value="linkedin"
-            href="https://www.linkedin.com/company/carrectly/"
-            target="_blank"
-            showLabel
-            sx={{ color: 'white' }}
-            icon={<LinkedInIcon color="secondary" />}
-          />
-          <BottomNavigationAction
-            label="Terms & Conditions"
-            value="Terms"
-            href="termsAndConditions"
-            showLabel
-            sx={{ color: 'white' }}
-            icon={<FeedIcon color="secondary" />}
-          />
-          <BottomNavigationAction
-            label="Privacy Policy"
-            value="Privacy"
-            href="privacyPolicy"
-            showLabel
-            sx={{ color: 'white' }}
-            icon={<SecurityIcon color="secondary" />}
-          />
-        </BottomNavigation>
+        {currentPage === '/' ? <SponsorsRibbon /> : ''}
+        <Footer />
       </Box>
     </>
   );

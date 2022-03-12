@@ -18,6 +18,7 @@ import orderSummaryColumns from 'components/Table/Columns/OrderSummaryColumns';
 import { CustomerDetailsSummary } from 'components/Table/CustomerDetailsSummary';
 import { ServiceType } from '../../utils/types';
 import { CardShadow } from 'components/StyledBaseComponents/CardShadow';
+import { totalPrice } from '../../utils/helperFunctions';
 
 function PlaceOrder() {
   const router = useRouter();
@@ -48,23 +49,18 @@ function PlaceOrder() {
     email,
     phoneNumber: Number(phoneNumber),
   };
-  (orderInfo as any).hash = uuidv4();
-  (orderInfo as any).carModel = orderInfo.carModel.Model;
 
-  const totalPrice = () => {
-    return cartItems.reduce((subTotal, service) => {
-      if (service.prices.length > 2) {
-        return subTotal + service.prices[priceIndex];
-      }
-      return subTotal + service.prices[0];
-    }, 0);
+  const order = {
+    hash: uuidv4(),
+    ...orderInfo,
+    carModel: orderInfo.carModel.Model,
   };
 
   useEffect(() => {
     if (cartItems.length === 0) {
       router.push('/cart');
     }
-  }, []);
+  }, [cartItems.length, router]);
 
   const placeOrderHandler = async () => {
     try {
@@ -72,7 +68,7 @@ function PlaceOrder() {
       await axios.post('/api/sendOrder', {
         services: basicCartItems,
         customer: customerInfo,
-        order: orderInfo,
+        order,
       });
 
       dispatch({ type: 'CART_CLEAR' });
@@ -93,10 +89,10 @@ function PlaceOrder() {
       <StepperComponent activeStep={2}></StepperComponent>
 
       <Grid container spacing={3} padding="20px">
-        <Grid item md={5} xs={12}>
+        <Grid item md={6} xs={12}>
           <CustomerDetailsSummary />
         </Grid>
-        <Grid item md={7} xs={12}>
+        <Grid item md={6} xs={12}>
           <CardShadow>
             <Typography variant="h4" component="h4" margin="10px">
               Order Summary
@@ -118,7 +114,7 @@ function PlaceOrder() {
               </Grid>
               <Grid item xs={6}>
                 <Typography align="right">
-                  <strong>${totalPrice()}</strong>
+                  <strong>${totalPrice(cartItems, priceIndex)}</strong>
                 </Typography>
               </Grid>
             </Grid>

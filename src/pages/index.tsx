@@ -4,20 +4,14 @@ import Image from 'next/image';
 import axios from 'axios';
 import { Box, Typography, Fab, CircularProgress } from '@mui/material';
 import Layout from '../components/Layout/Layout';
-import styles from '../../styles/Layout.module.css';
-import BgImage from '../components/BgImage/BgImage';
-import howItWorksArr from '../data/howItWorks.json';
-import KeyboardArrowLeftOutlinedIcon from '@mui/icons-material/KeyboardArrowLeftOutlined';
-import ChevronRightOutlinedIcon from '@mui/icons-material/ChevronRightOutlined';
-import StyledCarouselComponent from '../components/StyledCarousel/StyledCarousel';
-import { SxProps } from '@mui/system';
 import AddIcon from '@mui/icons-material/Add';
 import { useRouter } from 'next/router';
-import GoogleMapIframe from 'components/Map/GoogleMapIframe';
 import CustomReviewCard from 'components/CustomerReviews/CustomReviewCard';
+import { styled } from '@mui/system';
+import { HomeCarousel } from 'components/homeCarousel/homeCarousel';
 
-const fabStyle = {
-  zIndex: 35,
+const StyledFab = styled(Fab)(({ theme }) => ({
+  zIndex: 20,
   margin: '0px',
   top: 'auto',
   right: '25px',
@@ -25,13 +19,20 @@ const fabStyle = {
   fontSize: '2rem',
   left: 'auto',
   position: 'fixed',
-};
+  backgroundColor: '#511bd6',
+  [theme.breakpoints.down('md')]: {
+    left: 0,
+    bottom: 0,
+    width: '100%',
+    borderRadius: 0,
+  },
+}));
 
-const fabIsh = {
-  color: 'primary' as const,
-  sx: fabStyle as SxProps,
-  icon: <AddIcon />,
-  label: 'Add',
+const IconStyle = {
+  color: 'white',
+  opacity: 0.8,
+  stroke: 'white',
+  fontSize: '2rem',
 };
 
 const Home: NextPage = () => {
@@ -61,6 +62,8 @@ const Home: NextPage = () => {
         height={425}
         priority
       />
+      <HomeCarousel />
+
       <Box
         sx={{
           display: 'flex',
@@ -69,6 +72,7 @@ const Home: NextPage = () => {
           justifyContent: 'space-between',
           alignContent: 'space-between',
           overflow: 'auto',
+          margin: '20px 0 20px 0',
         }}
       >
         {loading && <CircularProgress />}
@@ -76,79 +80,24 @@ const Home: NextPage = () => {
           <CustomReviewCard key={`review-id-${index}`} review={singleReview} />
         ))}
       </Box>
-      <Typography
-        variant="h3"
-        align="center"
-        sx={{
-          marginBottom: '25px',
-          marginTop: '25px',
-          color: '#bababa',
-          letterSpacing: '24px',
-        }}
-      >
-        HOW IT WORKS
-      </Typography>
-      <BgImage
-        imgsrc="/images/home/car-1.jpg"
-        imgalt="test"
-        height="900px"
-        width="100%"
-      >
-        <Box
-          display="flex"
-          flexDirection={'column'}
-          justifyContent="center"
-          sx={{ height: '900px' }}
-        >
-          <Box
-            display="flex"
-            flexDirection="row"
-            justifyContent="center"
-            sx={{ height: '600px', position: 'relative' }}
-          >
-            <StyledCarouselComponent
-              dots={true}
-              width="400px"
-              effect="scrollx"
-              arrows={true}
-              autoplay={false}
-              arrowSpacing="-50px"
-              prevArrow={<KeyboardArrowLeftOutlinedIcon />}
-              nextArrow={<ChevronRightOutlinedIcon />}
-            >
-              {howItWorksArr.map((el, index) => (
-                <Box
-                  className={styles.carouselCard}
-                  sx={{ width: '400px' }}
-                  key={`home-slider-id-${index}`}
-                >
-                  <Typography
-                    variant="h2"
-                    align="center"
-                    sx={{ color: '#bababa' }}
-                  >
-                    {index + 1}. {el.title}
-                  </Typography>
-                  <Typography variant="body1" align="center">
-                    {el.description}
-                  </Typography>
-                </Box>
-              ))}
-            </StyledCarouselComponent>
-          </Box>
-        </Box>
-      </BgImage>
-      <GoogleMapIframe />
-      <Fab
-        sx={fabIsh.sx}
-        aria-label={fabIsh.label}
-        color={fabIsh.color}
+
+      <StyledFab
+        aria-label={'Add'}
         size="large"
         variant="extended"
         onClick={() => handleNewBookingClick()}
       >
-        {fabIsh.icon} Book new services
-      </Fab>
+        <AddIcon sx={IconStyle} />
+        <Typography
+          variant="h4"
+          component="h4"
+          color="white"
+          margin="10px"
+          marginLeft="5px"
+        >
+          Request Services
+        </Typography>
+      </StyledFab>
     </Layout>
   );
 };
