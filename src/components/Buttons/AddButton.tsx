@@ -15,7 +15,7 @@ const AddButton: FC<ServiceObject> = ({ serviceObject }) => {
     dispatch({ type: 'CART_ADD_ITEM', payload: product });
   };
   const removeFromCartHandler = async (product: ServiceType) => {
-    dispatch({ type: 'CART_REMOVE_ITEM', payload: product });
+    dispatch({ type: 'CART_REMOVE_ITEM', payload: product.id });
   };
 
   const inCart = cartItems.find(({ id }) => id === serviceObject.id);
