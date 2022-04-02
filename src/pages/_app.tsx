@@ -54,6 +54,7 @@ const App = (props: MyAppProps) => {
             gtag('config', '${gtag.GA_TRACKING_ID}', {
               page_path: window.location.pathname,
             });
+            gtag('config', '${gtag.GA_ADS_ID}');
           `,
             }}
           />
