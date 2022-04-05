@@ -32,15 +32,11 @@ const ControlledDatePickerField: React.FC<ControlledDatePickerFieldProps> = ({
 }) => {
   const disabledDate = useCallback(
     (date: Moment) => {
-      const dateToCheck = date
-        .clone()
-        .set({ hour: startDate.hour(), minute: 10, second: 0 });
+      const dateToCheck = date.clone().set({ hour: startDate.hour(), minute: 10, second: 0 });
       return (
         dateToCheck.weekday() === 0 ||
         dateToCheck < startDate.clone().startOf('day') ||
-        (dateToCheck.isSame(startDate, 'day') &&
-          dateToCheck >
-            startDate.clone().set({ hour: 16, minute: 0, second: 0 }))
+        (dateToCheck.isSame(startDate, 'day') && dateToCheck > startDate.clone().set({ hour: 16, minute: 0, second: 0 }))
       );
     },
     [startDate]
@@ -50,13 +46,7 @@ const ControlledDatePickerField: React.FC<ControlledDatePickerFieldProps> = ({
     (date: Moment | null) => {
       if (date && date.isSame(startDate, 'day')) {
         return {
-          disabledHours: () => [
-            ...range(
-              0,
-              startDate.clone().add(150, 'minutes').startOf('hour').hour()
-            ),
-            ...range(18, 24),
-          ],
+          disabledHours: () => [...range(0, startDate.clone().add(150, 'minutes').startOf('hour').hour()), ...range(18, 24)],
         };
       }
       return {
@@ -74,11 +64,13 @@ const ControlledDatePickerField: React.FC<ControlledDatePickerFieldProps> = ({
       render={({ field }) => (
         <Box sx={{ display: 'flex', flexDirection: 'column', width: '100%' }}>
           <DatePicker
+            placement="topLeft"
             format="YYYY-MM-DD HH:00"
             placeholder={`Select desired ${fieldLabel}`}
             disabled={disabled}
             showTime={{
               showHour: true,
+              format: 'HH:00',
               hideDisabledOptions: true,
             }}
             showNow={false}
@@ -99,9 +91,7 @@ const ControlledDatePickerField: React.FC<ControlledDatePickerFieldProps> = ({
                 fontSize: '0.75rem',
                 margin: '3px 14px 0px',
               }}
-            >{`${
-              fieldLabel.charAt(0).toUpperCase() + fieldLabel.slice(1)
-            } is required`}</Typography>
+            >{`${fieldLabel.charAt(0).toUpperCase() + fieldLabel.slice(1)} is required`}</Typography>
           )}
         </Box>
       )}
