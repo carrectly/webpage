@@ -49,6 +49,7 @@ const ControlledDatePickerField: React.FC<ControlledDatePickerFieldProps> = ({
           disabledHours: () => [...range(0, startDate.clone().add(150, 'minutes').startOf('hour').hour()), ...range(18, 24)],
         };
       }
+
       return {
         disabledHours: () => [...range(0, 8), ...range(18, 24)],
       };
@@ -69,6 +70,7 @@ const ControlledDatePickerField: React.FC<ControlledDatePickerFieldProps> = ({
             placeholder={`Select desired ${fieldLabel}`}
             disabled={disabled}
             showTime={{
+              defaultValue: moment('00:00', 'HH:00'),
               showHour: true,
               format: 'HH:00',
               hideDisabledOptions: true,

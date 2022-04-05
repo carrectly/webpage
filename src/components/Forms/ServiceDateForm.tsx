@@ -1,11 +1,5 @@
 import React, { useEffect } from 'react';
-import {
-  Control,
-  FieldErrors,
-  FieldValues,
-  UseFormSetValue,
-  UseFormWatch,
-} from 'react-hook-form';
+import { Control, FieldErrors, FieldValues, UseFormSetValue, UseFormWatch } from 'react-hook-form';
 import { List, ListItem, Typography } from '@mui/material';
 import ControlledDatePickerField from './Fields/ControlledDatePickerField';
 import moment from 'moment';
@@ -17,17 +11,11 @@ interface ServiceDateFormProps {
   setValue: UseFormSetValue<FieldValues>;
 }
 
-export const ServiceDateForm: React.FC<ServiceDateFormProps> = ({
-  control,
-  errors,
-  watch,
-  setValue,
-}) => {
+export const ServiceDateForm: React.FC<ServiceDateFormProps> = ({ control, errors, watch, setValue }) => {
   const watchPickupDate = watch('pickupDate');
   const watchDropOffDate = watch('dropoffDate');
   useEffect(() => {
-    if (!watchPickupDate || watchDropOffDate < watchPickupDate)
-      setValue('dropoffDate', null);
+    if (!watchPickupDate || watchDropOffDate < watchPickupDate) setValue('dropoffDate', null);
   }, [watchPickupDate, watchDropOffDate, setValue]);
 
   return (
@@ -37,20 +25,14 @@ export const ServiceDateForm: React.FC<ServiceDateFormProps> = ({
       </Typography>
       <List>
         <ListItem>
-          <ControlledDatePickerField
-            control={control}
-            errors={errors}
-            fieldName={'pickupDate'}
-            fieldLabel={'vehicle pick up date'}
-            required
-          />
+          <ControlledDatePickerField control={control} errors={errors} fieldName={'pickupDate'} fieldLabel={'vehicle pick up date'} required />
         </ListItem>
         <ListItem>
           <ControlledDatePickerField
             control={control}
             errors={errors}
             disabled={!Boolean(watchPickupDate)}
-            startDate={moment(watchPickupDate).add(4, 'hours')}
+            startDate={moment(watchPickupDate).add(2, 'hours')}
             fieldName={'dropoffDate'}
             fieldLabel={'vehicle drop off date'}
             required
@@ -63,8 +45,7 @@ export const ServiceDateForm: React.FC<ServiceDateFormProps> = ({
             opacity: 0.6,
           }}
         >
-          Note: The drop off date can be changed based on the selected services.
-          We will contact you in case of a reschedule.
+          Note: The drop off date can be changed based on the selected services. We will contact you in case of a reschedule.
         </Typography>
       </List>
     </>
