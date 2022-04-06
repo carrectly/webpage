@@ -2,14 +2,15 @@
 pipeline {
          agent any
 
+         environment{
+             dockerImage =''
+         }
+
          stages {
                  stage('Checout') {
                  steps {
                      checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/gortovenko/carrectly.git']]])
                     }
-                 }
-                 environment{
-                    dockerImage ='' 
                  } 
                  stage('Build Docker image') {
                  steps {
