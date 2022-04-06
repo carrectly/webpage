@@ -1,18 +1,42 @@
 pipeline {
-  environment {
-    jenkins_home = "/var/jenkins_home"
-    imagename = "pavlohortovenko20/adminpage"
-    docker_branch = "pavlohortovenko20/carrectlyweb"
-  }
+         agent any
+         stages {
+                 stage('2) {
+                 steps {
+                     echo 'Hi, itisgood. Starting to build the App.'
+                 }
+                 }
+                 stage('Test') {
+                 steps {
+                    input('Do you want to proceed?')
+                 }
+                 }
+                 stage('Deploy') {
+                 parallel {
+                            stage('Deploy start ') {
+                           steps {
+                                echo "Start the deploy .."
+                           }
+                           }
+                            stage('Deploying now') {
+                            agent {
+                                    docker {
+                                            reuseNode true
+                                            image ‘nginx’
+                                           }
+                                    }
 
-    stage('Install NPM packages') {
-      steps {
-        sh "cd ./carrectly-fe && npm i" 
+                              steps {
+                                echo "Docker Created"
+                              }
+                           }
+                           }
+                           }
+                 stage('Prod') {
+                     steps {
+                                echo "App is Prod Ready"
+                              }
 
-      }
-    }
-    stage('Building image') {
-      steps{
-       sh "docker build -f Dockerfile.build . -t project-build:${docker_branch}"
-      }
-    }
+              }
+}
+}
