@@ -1,9 +1,7 @@
-def DOCKER_IMAGE_BRANCH = "pavlohortovenko20/carrectlyweb"
-def GIT_COMMIT_HASH = "https://github.com/gortovenko/carrectly.git"
-
 pipeline {
   environment {
     imagename = "pavlohortovenko20/adminpage"
+    docker_branch = "pavlohortovenko20/carrectlyweb"
   }
 
     stage('Install NPM packages') {
@@ -14,17 +12,6 @@ pipeline {
     }
     stage('Building image') {
       steps{
-       sh "docker build -f Dockerfile.build . -t project-build:${DOCKER_IMAGE_BRANCH}"
+       sh "docker build -f Dockerfile.build . -t project-build:${docker_branch}"
       }
     }
-    /*stage('Push Docker image') {
-      steps{
-       sh "docker tag -f Dockerfile.build . -t project-build:${DOCKER_IMAGE_BRANCH}"
-      }
-    }
-    stage('Push Docker image') {
-      steps{
-       sh "docker tag -f Dockerfile.build . -t project-build:${DOCKER_IMAGE_BRANCH}"
-      }
-    }
-    */
