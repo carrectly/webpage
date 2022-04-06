@@ -4,7 +4,7 @@ pipeline {
          stages {
                  stage(build) {
                  steps {
-                     sh 'docker build -f Dockerfile.build . --tag project-build:${DOCKER_IMAGE_BRANCH}'
+                     sh 'docker build  Dockerfile.build . --tag project-build:${DOCKER_IMAGE_BRANCH}'
                     }
                  }
                  stage(test) {
