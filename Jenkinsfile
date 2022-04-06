@@ -2,18 +2,17 @@ def DOCKER_IMAGE_BRANCH = "pavlohortovenko20/carrectlyweb"
 pipeline {
          agent any
          stages {
-                 stage(build) {
+                 stage('build') {
                  steps {
-                     sh 'docker build("${DOCKER_IMAGE_BRANCH}:${env.BUILD_ID}"}'
-                     echo '${DOCKER_IMAGE_BRANCH}:${env.BUILD_ID}'
+                     sh 'docker build("${DOCKER_IMAGE_BRANCH}:${env.BUILD_ID}")'
                     }
                  }
-                 stage(test) {
+                 stage('test') {
                  steps {
                      echo 'Hi, itisgood. Starting to build the App.'
                     }
                  }
-                 stage(deploy) {
+                 stage('deploy') {
                  steps {
                      echo 'Hi, itisgood. Starting to build the App.'
                     }
