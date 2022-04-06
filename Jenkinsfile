@@ -4,7 +4,6 @@ pipeline {
          stages {
                  stage(build) {
                  steps {
-                     sh 'npm i'
                      sh 'docker build -f Dockerfile.build . -t project-build:${DOCKER_IMAGE_BRANCH}'
                     }
                  }
