@@ -2,11 +2,9 @@ def DOCKER_IMAGE_BRANCH = "pavlohortovenko20/carrectlyweb"
 pipeline {
          agent any
          stages {
-                 stage('build') {
+                 stage('Checout') {
                  steps {
-                     def customImage = docker.build("my-image:${env.BUILD_ID}")
-                     customImage.inside {
-                     sh 'make test'
+                     checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/gortovenko/carrectly.git']]])
                     }
                  }
                  stage('test') {
