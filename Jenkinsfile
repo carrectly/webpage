@@ -4,7 +4,7 @@ pipeline {
 
          environment{
              dockerImage =''
-             registry = 'pavlohortovenko20/carrectlyweb'
+             registry ='pavlohortovenko20/carrectlyweb'
          }
 
          stages {
