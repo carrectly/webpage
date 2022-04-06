@@ -4,17 +4,8 @@ def GIT_COMMIT_HASH = "https://github.com/gortovenko/carrectly.git"
 pipeline {
   environment {
     imagename = "pavlohortovenko20/adminpage"
-    registryCredential = 'yenigul-dockerhub'
-    dockerImage = ''
   }
-  agent any
-  stages {
-    stage('Cloning Git') {
-      steps {
-        sh "git clone https://github.com/gortovenko/carrectly.git" 
 
-      }
-    }
     stage('Install NPM packages') {
       steps {
         sh "cd ./carrectly-fe && npm i" 
