@@ -1,5 +1,6 @@
 pipeline {
   environment {
+    jenkins_home = "/var/jenkins_home"
     imagename = "pavlohortovenko20/adminpage"
     docker_branch = "pavlohortovenko20/carrectlyweb"
   }
