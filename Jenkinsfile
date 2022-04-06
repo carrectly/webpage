@@ -4,9 +4,9 @@ pipeline {
          stages {
                  stage('build') {
                  steps {
-                     echo "------- start building ---------"
-                     sh "docker.build("my-image:${env.BUILD_ID}")"
-                     echo "---------it's okay--------------"
+                     def customImage = docker.build("my-image:${env.BUILD_ID}")
+                     customImage.inside {
+                     sh 'make test'
                     }
                  }
                  stage('test') {
