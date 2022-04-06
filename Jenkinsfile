@@ -5,7 +5,7 @@ pipeline {
                  stage('build') {
                  steps {
                      echo "------- start building ---------"
-                     sh `docker.build -t test-version .`
+                     sh ` docker.build -t test-version . `
                      echo "---------it's okay--------------"
                     }
                  }
