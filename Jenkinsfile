@@ -17,5 +17,5 @@ pipeline {
                      echo 'Hi, itisgood. Starting to build the App.'
                     }
                  }
-         }
-    }
+            }
+        }
