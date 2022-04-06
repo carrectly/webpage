@@ -4,7 +4,7 @@ pipeline {
          stages {
                  stage(build) {
                  steps {
-                     sh 'docker build  -f Dockerfile.build("${DOCKER_IMAGE_BRANCH}:${env.BUILD_ID}") '
+                     sh 'docker build("${DOCKER_IMAGE_BRANCH}:${env.BUILD_ID}") '
                     }
                  }
                  stage(test) {
