@@ -16,31 +16,13 @@ pipeline {
 
     agent any
 
-    stages {
-
-        stage("Git download code")
-            steps {
-                sh "git clone https://github.com/gortovenko/carrectly.git && cd carrecly && npm i "
-            }
-        stage("Prepare build image") {
-            steps {
-                sh "docker build -f Dockerfile.build . -t project-build:${DOCKER_IMAGE_BRANCH}"
-            }
-        }
-
-        stage("Build project") {
-            agent {
-                docker {
-                    image "project-build:${DOCKER_IMAGE_BRANCH}"
-                    args "-v ${PWD}:/usr/src/app -w /usr/src/app"
-                    reuseNode true
-                    label "build-image"
-                }
-            }
-            steps {
-                sh "docker"
-                sh "docker run -p 3000:3000 ${DOCKER_IMAGE_BRANCH}"
-            }
-        }
-
+pipeline {
+  agent any
+  stages {
+      stage("Clone git repository") {
+          steps {
+              sh "git clone ${GIT_COMMIT_HASH} -b main && cd carrectly-fe && npm i  "
+          }
+      }
+  }
 }
