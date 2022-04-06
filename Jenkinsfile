@@ -4,7 +4,9 @@ pipeline {
          stages {
                  stage('build') {
                  steps {
+                     echo "------- start building ---------"
                      sh 'docker build("${DOCKER_IMAGE_BRANCH}:${env.BUILD_ID}")'
+                     echo "---------it's okay--------------"
                     }
                  }
                  stage('test') {
