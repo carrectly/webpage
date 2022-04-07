@@ -13,7 +13,7 @@ pipeline {
                      checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/gortovenko/carrectly.git']]])
                     }
                  } 
-                 stage('Build Docker image') {
+              /*   stage('Build Docker image') {
                  steps {
                      script {
                         dockerImage=docker.build registry
@@ -24,6 +24,6 @@ pipeline {
                  steps {
                      echo 'Hi, itisgood. Starting to build the App.'
                     }
-                 }
+                 }*/
             }
         }
