@@ -16,8 +16,7 @@ pipeline {
                  stage('Build Docker image') {
                  steps {
                      script {
-                         npm install && 
-                        dockerImage =docker.build registry
+                        dockerImage=docker.build registry
                       }
                     }
                  }
