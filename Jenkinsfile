@@ -13,16 +13,10 @@ pipeline {
                      checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/gortovenko/carrectly.git']]])
                     }
                  } 
-                 stage('install npm') {
-                 steps{
-                     script {
-                         npm i ß
-                     }
-                 }
-                 }
                  stage('Build Docker image') {
                  steps {
                      script {
+                         npm install && 
                         dockerImage =docker.build registry
                       }
                     }
