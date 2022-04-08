@@ -4,7 +4,7 @@ pipeline {
 
          environment{
              dockerImage =''
-             registry ='pavlohortovenko20/carrectlyweb'
+             registry ='https://hub.docker.com/pavlohortovenko20/'
              registryCredential ='dockerhub_id'
              ID ='carrectlyweb'
          }
@@ -25,7 +25,7 @@ pipeline {
                  stage('push image to hub') {
                  steps {
                      script{
-                          docker.withRegistry( 'https://hub.docker.com/', "https://hub.docker.com/:${ID}" ) {
+                          docker.withRegistry( 'https://hub.docker.com/', "${registry}:${ID}" ) {
                           dockerImage.push()
                         }
                     }
