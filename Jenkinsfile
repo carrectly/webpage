@@ -5,6 +5,7 @@ pipeline {
          environment{
              dockerImage =''
              registry ='pavlohortovenko20/carrectlyweb'
+             registryCredential ='dockerhub_id'
          }
 
          stages {
@@ -20,9 +21,13 @@ pipeline {
                       }
                     }
                  }
-                 stage('deploy') {
+                 stage('push image to hub') {
                  steps {
-                     echo 'Hi, itisgood. Starting to build the App.'
+                     script{
+                          docker.withRegistry( '', registryCredential ) {
+                          dockerImage.push()
+                          }
+                        }
                     }
                  }
             }
