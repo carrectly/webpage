@@ -26,17 +26,17 @@ pipeline {
                      script{
                           docker.withRegistry( '', registryCredential ) {
                           dockerImage.push()
+                          }
                         }
                     }
-                 stage('run docker image') {
-                 steps {
-                     script{
+                }
+                stage('run docker image') {
+                steps {
+                    script{
                           sh "docker run --rm -p 1337:1337 pavlohortovenko20/carrectlyweb:latest" 
                         }
                     }
-                
                 }
-
             } 
         }
     }
