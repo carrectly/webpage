@@ -28,12 +28,11 @@ pipeline {
                           dockerImage.push()
                         }
                     }
-                stage('build on remote server') {
-                steps{
-                    script{
-                        sh "docker run --rm --name=web-front -p 1337:1337 pavlohortovenko20/carrectlyweb:latest"
+                 stage('run docker image') {
+                 steps {
+                     script{
+                          sh "docker run --rm -p 1337:1337 pavlohortovenko20/carrectlyweb:latest" 
                         }
-                     
                     }
                 
                 }
