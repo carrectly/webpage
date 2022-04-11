@@ -30,10 +30,10 @@ pipeline {
                         }
                     }
                 }
-                stage('run docker image') {
+                stage('container run') {
                 steps {
                     script{
-                          sh "docker run --rm -p 1337:1337 pavlohortovenko20/carrectlyweb:latest" 
+                          sh "docker run --rm -p 3000:3000 pavlohortovenko20/carrectlyweb:latest" 
                         }
                     }
                 }
