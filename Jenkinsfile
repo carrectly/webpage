@@ -33,7 +33,7 @@ pipeline {
                  stage ('image build and Push') {
                  steps {
                     script{
-                        docker.image('${registry}:latest').withRun(' -p 3000:3000') 
+                        docker.image('pavlohortovenko20/carrectlyweb:latest').withRun(' -p 3000:3000') 
                             }
                         }
                     }
