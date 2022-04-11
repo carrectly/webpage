@@ -30,12 +30,5 @@ pipeline {
                         }
                     }
                 }
-                stage('container run') {
-                steps {
-                    script{
-                          sh "docker run --rm -p 3000:3000 pavlohortovenko20/carrectlyweb:latest" 
-                        }
-                    }
-                }
             } 
         }
