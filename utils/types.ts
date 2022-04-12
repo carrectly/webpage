@@ -2,12 +2,7 @@ import { Moment } from 'moment';
 import { GridColDef } from '@mui/x-data-grid';
 import { CarModel } from 'apiWrappers/carDatabaseApi';
 
-export type faqSubGroupsTypes =
-  | 'basics'
-  | 'services'
-  | 'payments'
-  | 'changes'
-  | 'info';
+export type faqSubGroupsTypes = 'basics' | 'services' | 'payments' | 'changes' | 'info';
 
 export type ServiceType = {
   id: number;

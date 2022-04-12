@@ -83,11 +83,7 @@ const Faq = () => {
             justifyContent: 'space-evenly',
           }}
         >
-          <Tabs
-            value={value}
-            onChange={handleChange}
-            aria-label="basic tabs example"
-          >
+          <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
             {Object.keys(faqData).map((group, index) => (
               <Tab
                 id={`simple-tab-${index}`}

@@ -7,7 +7,9 @@ export type timeSlot = {
 
 export const schedulingApi = {
   getDisabledTimes: async () => {
-    const disabledTimes = await axios.get('/api/getDisabledTimes').then((response) => response.data as timeSlot[]);
+    const disabledTimes = await axios
+      .get('/api/getDisabledTimes')
+      .then((response) => response.data as timeSlot[]);
     return disabledTimes;
   },
 };

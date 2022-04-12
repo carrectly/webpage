@@ -48,15 +48,25 @@ function CartScreen() {
           >
             <ServicesDataTable cartItemsArray={cartItems} columns={cartTableColumns} />
           </CardShadow>
-          <Button onClick={servicesHandler} variant="outlined" color="primary" fullWidth sx={{ marginTop: '20px' }}>
+          <Button
+            onClick={servicesHandler}
+            variant="outlined"
+            color="primary"
+            fullWidth
+            sx={{ marginTop: '20px' }}
+          >
             + Add more services
           </Button>
         </Grid>
         <Grid item md={4} xs={12}>
           <CardShadow>
             <List>
-              <ListItem sx={{ fontWeight: 'bold' }}>Estimated total price: ${totalPrice(cartItems, priceIndex)}</ListItem>
-              <ListItem sx={{ color: 'dimgray' }}>Note: Total price and duration will vary based on the size of your vehicle</ListItem>
+              <ListItem sx={{ fontWeight: 'bold' }}>
+                Estimated total price: ${totalPrice(cartItems, priceIndex)}
+              </ListItem>
+              <ListItem sx={{ color: 'dimgray' }}>
+                Note: Total price and duration will vary based on the size of your vehicle
+              </ListItem>
               <ListItem>
                 <Button
                   onClick={checkoutHandler}

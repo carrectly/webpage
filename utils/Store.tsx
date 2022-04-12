@@ -3,12 +3,8 @@ import React, { createContext, useReducer } from 'react';
 import { StateType, Action } from '../utils/types';
 
 const initialState = {
-  cartItems: Cookies.get('cartItems')
-    ? JSON.parse(Cookies.get('cartItems') as string)
-    : [],
-  carSize: Cookies.get('carSize')
-    ? (Cookies.get('carSize') as string)
-    : 'small',
+  cartItems: Cookies.get('cartItems') ? JSON.parse(Cookies.get('cartItems') as string) : [],
+  carSize: Cookies.get('carSize') ? (Cookies.get('carSize') as string) : 'small',
   shippingAddress: Cookies.get('shippingAddress')
     ? {
         ...JSON.parse(Cookies.get('shippingAddress') as string),
@@ -52,7 +48,7 @@ function reducer(state: StateType, action: Action) {
     }
     case 'CART_REMOVE_ITEM': {
       const cartItems = state.cartItems.filter(
-        (item) => Number(item.id) !== Number(action.payload)
+        (item) => Number(item.id) !== Number(action.payload),
       );
       Cookies.set('cartItems', JSON.stringify(cartItems));
       return {
@@ -89,7 +85,5 @@ function reducer(state: StateType, action: Action) {
 export const StoreProvider: React.FC = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  return (
-    <Store.Provider value={{ state, dispatch }}>{children}</Store.Provider>
-  );
+  return <Store.Provider value={{ state, dispatch }}>{children}</Store.Provider>;
 };

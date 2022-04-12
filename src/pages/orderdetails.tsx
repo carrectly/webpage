@@ -25,7 +25,7 @@ export default function Shipping() {
 
   useEffect(() => {
     Object.keys(shippingAddress).map((key) =>
-      setValue(key, shippingAddress[key as keyof OrderDetailsType])
+      setValue(key, shippingAddress[key as keyof OrderDetailsType]),
     );
   }, [state, setValue, shippingAddress]);
 
@@ -58,17 +58,10 @@ export default function Shipping() {
             <AddressForm control={control} errors={errors} />
           </Grid>
           <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
-            <ServiceDateForm
-              control={control}
-              errors={errors}
-              watch={watch}
-              setValue={setValue}
-            />
+            <ServiceDateForm control={control} errors={errors} watch={watch} setValue={setValue} />
           </Grid>
         </Grid>
-        <div
-          style={{ margin: '20px auto', width: '40%', minWidth: 'fit-content' }}
-        >
+        <div style={{ margin: '20px auto', width: '40%', minWidth: 'fit-content' }}>
           <Button variant="contained" type="submit" fullWidth color="primary">
             Continue to order summary
           </Button>

@@ -13,23 +13,21 @@ interface BgImageProps {
 
 const Container = styled('section', {
   shouldForwardProp: (prop) => prop === 'children',
-})<BgImageContainerProps>(
-  ({ theme, backgroundImage, mobileBackgroundImage }) => ({
-    overflow: 'hidden',
-    position: 'relative',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundImage,
-    backgroundPosition: 'center',
-    backgroundRepeat: 'no-repeat',
-    [theme.breakpoints.down('sm')]: {
-      backgroundSize: 'cover',
-      backgroundPosition: 'bottom',
-      backgroundImage: mobileBackgroundImage,
-    },
-  })
-);
+})<BgImageContainerProps>(({ theme, backgroundImage, mobileBackgroundImage }) => ({
+  overflow: 'hidden',
+  position: 'relative',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  backgroundImage,
+  backgroundPosition: 'center',
+  backgroundRepeat: 'no-repeat',
+  [theme.breakpoints.down('sm')]: {
+    backgroundSize: 'cover',
+    backgroundPosition: 'bottom',
+    backgroundImage: mobileBackgroundImage,
+  },
+}));
 
 const BgImage: React.FC<BgImageProps> = ({
   backgroundImage,
@@ -40,9 +38,7 @@ const BgImage: React.FC<BgImageProps> = ({
   return (
     <Container
       backgroundImage={`url('${backgroundImage}')`}
-      mobileBackgroundImage={`url('${
-        mobileBackgroundImage || backgroundImage
-      }')`}
+      mobileBackgroundImage={`url('${mobileBackgroundImage || backgroundImage}')`}
       sx={sx}
     >
       {children}

@@ -1,4 +1,4 @@
-import React, {  FC, useContext } from 'react';
+import React, { FC, useContext } from 'react';
 import Badge, { BadgeProps } from '@mui/material/Badge';
 import { styled } from '@mui/material/styles';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
@@ -15,14 +15,12 @@ const StyledBadge = styled(Badge)<BadgeProps>(({ theme }) => ({
 }));
 
 const StyledCartIcon: FC = () => {
-    const { state } = useContext(Store);
-    const {
-      cartItems 
-    } = state;
+  const { state } = useContext(Store);
+  const { cartItems } = state;
   return (
-      <StyledBadge badgeContent={cartItems.length} color="warning">
-        <ShoppingCartIcon sx={{ color: 'white'}}/>
-      </StyledBadge>
+    <StyledBadge badgeContent={cartItems.length} color="warning">
+      <ShoppingCartIcon sx={{ color: 'white' }} />
+    </StyledBadge>
   );
 };
 

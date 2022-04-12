@@ -2,10 +2,7 @@ import React, { FC } from 'react';
 import { DataGrid } from '@mui/x-data-grid';
 import { customTableProps } from '../../../utils/types';
 
-const ServicesDataTable: FC<customTableProps> = ({
-  cartItemsArray,
-  columns,
-}) => {
+const ServicesDataTable: FC<customTableProps> = ({ cartItemsArray, columns }) => {
   return (
     <DataGrid
       rows={cartItemsArray}

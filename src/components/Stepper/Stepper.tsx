@@ -5,11 +5,7 @@ export default function StepperComponent({ activeStep = 0 }) {
   const isStepActive = (step: number) => activeStep === step;
 
   return (
-    <Stepper
-      activeStep={activeStep}
-      alternativeLabel
-      sx={{ padding: '30px 0px' }}
-    >
+    <Stepper activeStep={activeStep} alternativeLabel sx={{ padding: '30px 0px' }}>
       {['Shopping cart', 'Personal Info', 'Place Order'].map((label, step) => (
         <Step key={step}>
           <StepLabel>

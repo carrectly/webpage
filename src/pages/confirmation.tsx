@@ -27,7 +27,14 @@ const Confirmation = () => {
           Hooray!!! We received your order and will be reaching out to you shortly.
         </Typography>
         <Box sx={{ display: 'relative', width: '60%' }}>
-          <Image src="/images/home/happy-mechanic.png" alt="empty cart" layout="responsive" width={500} height={700} priority />
+          <Image
+            src="/images/home/happy-mechanic.png"
+            alt="empty cart"
+            layout="responsive"
+            width={500}
+            height={700}
+            priority
+          />
         </Box>
       </Box>
     </Layout>
