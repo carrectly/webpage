@@ -36,7 +36,7 @@ pipeline {
                         def dockerRun = 'docker run -p 3000:3000 -d -name web-carrectly pavlohortovenko20/carrectlyweb:latest'
                         /*docker.image('pavlohortovenko20/carrectlyweb:latest').withRun(' -p 3000:3000') */
                         sshagent(['ssh_key']) {
-                          sh 'ssh -o StrictHostKeyChecking=no jenkins-user@34.133.77.250 ${dockerRun}'
+                          sh 'ssh -o StrictHostKeyChecking=no info-user@34.133.77.250 ${dockerRun}'
                         }
                     }
                 }
