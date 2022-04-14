@@ -36,7 +36,7 @@ pipeline {
                         def dockerRun = 'docker run -p 3000:3000 -d -name web-carrectly pavlohortovenko20/carrectlyweb:latest'
                         /*docker.image('pavlohortovenko20/carrectlyweb:latest').withRun(' -p 3000:3000') */
                         sshagent(['ssh_key']) {
-                          sh 'ssh -i /home/info/.ssh/info info@34.66.206.42 ${dockerRun}'
+                          sh 'chmod 755 /home/info/.ssh/info && chown ${USER} /home/info/.ssh/info && ssh -i /home/info/.ssh/info info@34.66.206.42 ${dockerRun}'
                         }
                     }
                 }
