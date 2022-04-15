@@ -37,7 +37,7 @@ pipeline {
                  steps {
                     script{
                         sshagent(['ssh_key']) {
-                          sh 'sudo ssh  -i /home/info/.ssh/info root@34.66.206.42 ${dockerClean} ${dockerCleanImg}'
+                          sh 'sudo ssh  -i /home/info/.ssh/info root@34.66.206.42 ${dockerClean} && ${dockerCleanImg}'
                                  }
                             }
                         }
