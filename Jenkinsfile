@@ -17,6 +17,12 @@ pipeline {
                      checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/gortovenko/carrectly.git']]])
                     }
                  } 
+                 stage('clean Docker image') {
+                 steps {
+                     script {
+                        sh '${dockerClean} ${dockerCleanImg}'
+                      }
+                    }
                  stage('Build Docker image') {
                  steps {
                      script {
@@ -33,7 +39,7 @@ pipeline {
                         }
                     }
                 }
-                     stage ('clear older images and container') {
+                 stage ('clear older images and container') {
                  steps {
                     script{
                         sshagent(['ssh_key']) {
