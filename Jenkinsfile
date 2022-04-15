@@ -8,7 +8,7 @@ pipeline {
              registryCredential ='dockerhub_cred'
              dockerRun ='docker run -p 3000:3000 -d --name web-carrectly pavlohortovenko20/carrectlyweb:latest'
              dockerClean =' docker stop $(docker ps -aq)'
-             dockerCleanImg = ' docker rmi $(docker images) '
+             dockerCleanImg = 'docker container rm $(docker container ls -aq) && docker rmi $(docker images -aq) '
          }
 
          stages {
