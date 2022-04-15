@@ -33,15 +33,6 @@ pipeline {
                         }
                     }
                 }
-                 stage ('clear older images and container') {
-                 steps {
-                    script{
-                        sshagent(['ssh_key']) {
-                          sh 'sudo ssh  -i /home/info/.ssh/info root@34.66.206.42 ${dockerClean} && ${dockerCleanImg}'
-                                 }
-                            }
-                        }
-                    }
                  stage ('image build and Push') {
                  steps {
                     script{
