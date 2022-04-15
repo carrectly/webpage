@@ -23,6 +23,7 @@ pipeline {
                         sh '${dockerClean} && ${dockerCleanImg}'
                       }
                     }
+                 }
                  stage('Build Docker image') {
                  steps {
                      script {
