@@ -21,7 +21,11 @@ pipeline {
                  steps {
                      script {
                          sh "docker container prune"
+                           }
                         }
+                    }
+                stage('remote container') {
+                steps {
                      script {
                             sh "docker rmi $(docker images -q)"
                         }
