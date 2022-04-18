@@ -28,7 +28,7 @@ pipeline {
                  stage('remote images') {
                  steps {
                      script {
-                         sh ' ${dockerCleanImg}'
+                         sh '$(docker ps -qf "name=<your_docker_name>")'
                         }
                     }
                 }
