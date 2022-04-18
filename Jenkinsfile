@@ -18,20 +18,16 @@ pipeline {
                      checkout([$class: 'GitSCM', branches: [[name: '*/pipeline']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/carrectly/webpage.git']]])
                     }
                  } 
-                 stage('Remove olders containers') {
+                 stage('remove alder images') {
                  steps {
-                     script {
-                         sh '''if [ \$(docker ps -qf "name=<your_docker_name>") ]; then docker stop \$(docker ps -qf "name=<your_docker_name>");'''
-                           }
+                     sshagent(['<ssh_key>']) {
+                        sh """
+                            if [ \$(docker ps -qf "name=<your_docker_name>") ]; then docker stop \$(docker ps -qf "name=<your_docker_name>"); fi && \
+                            docker rmi $(docker images -qf)
+                            """
+                            }
                         }
                     }
-                 stage('remote images') {
-                 steps {
-                     script {
-                         sh '$(docker ps -qf "name=<your_docker_name>")'
-                        }
-                    }
-                }
                  stage('Build Docker image') {
                  steps {
                      script {
