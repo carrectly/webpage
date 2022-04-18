@@ -4,7 +4,7 @@ pipeline {
 
          environment{
              dockerImage =''
-             registry ='pavlohortovenko20/carrectlyweb'
+             registry ='carrectly/webpage'
              registryCredential ='dockerhub_cred'
              dockerRun ='docker run -p 3000:3000 -d --name web-carrectly pavlohortovenko20/carrectlyweb:latest'
              dockerClean =' docker stop $(docker ps -aq)'
@@ -14,7 +14,7 @@ pipeline {
          stages {
                  stage('Checout') {
                  steps {
-                     checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/gortovenko/carrectly.git']]])
+                     checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/carrectly/webpage.git']]])
                     }
                  } 
                  stage('Build Docker image') {
