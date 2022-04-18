@@ -46,8 +46,8 @@ pipeline {
                     script{
                         sshagent(['ssh_cred']) {
                           sh """
-                          ''' ls -la /home/${USER}/.ssh/ ''' && \
-                          '''sudo ssh  -i /home/${USER}/.ssh/info root@34.66.206.42 ''' && \
+                          ''' ls -la /home/info/.ssh/ ''' && \
+                          'sudo ssh  -i /home/info/.ssh/info root@34.66.206.42 ' && \
                           docker pull ${env.REGISTRY}:${env.BUILD_ID} && \
                            if [ \$(docker ps -qf "name=<your_docker_name>") ]; then docker stop \$(docker ps -qf "name=<your_docker_name>"); fi && \
                             docker run -d -p 3000:3000 --name <your_docker_name>_${env.BUILD_ID} ${env.REGISTRY}:${env.BUILD_ID}
