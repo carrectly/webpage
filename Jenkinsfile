@@ -24,10 +24,10 @@ pipeline {
                            }
                         }
                     }
-                stage('remote images') {
-                steps {
+                 stage('remote images') {
+                 steps {
                      script {
-                       sh "docker rmi $(docker images -q)"
+                      sh "docker rmi $(docker images -q)"
                         }
                     }
                 }
