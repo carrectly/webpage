@@ -20,7 +20,8 @@ pipeline {
                  stage('Remove olders containers') {
                  steps {
                      script {
-                         sh "docker container prune &&  docker rmi $(docker images -q)"
+                         sh "docker container prune"
+                         sh "docker rmi $(docker images -q)"
                         }
                     }
                  }
