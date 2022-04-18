@@ -17,6 +17,12 @@ pipeline {
                      checkout([$class: 'GitSCM', branches: [[name: '*/pipeline']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/carrectly/webpage.git']]])
                     }
                  } 
+                 stage('Remove olders containers')
+                 steps{
+                     script {
+                         sh "docker container prune"
+                     }
+                 }
                  stage('Build Docker image') {
                  steps {
                      script {
