@@ -36,7 +36,6 @@ pipeline {
                  stage ('image build and Push') {
                  steps {
                     script{
-                        /*docker.image('pavlohortovenko20/carrectlyweb:latest').withRun(' -p 3000:3000') */
                         sshagent(['ssh_key']) {
                           sh 'sudo ssh  -i /home/info/.ssh/info root@34.66.206.42 ${dockerRun}'
                         }
