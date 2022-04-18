@@ -14,7 +14,7 @@ pipeline {
          stages {
                  stage('Checout') {
                  steps {
-                     checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/carrectly/webpage.git']]])
+                     checkout([$class: 'GitSCM', branches: [[name: '*/pipeline']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/carrectly/webpage.git']]])
                     }
                  } 
                  stage('Build Docker image') {
