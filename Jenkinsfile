@@ -4,7 +4,7 @@ pipeline {
 
          environment{
              dockerImage =''
-             registry ='carrectly/webpage'
+             registry ='pavlohortovenko20/carrectlyweb'
              registryCredential ='dockerhub_cred'
              dockerRun ='docker run -p 3000:3000 -d --name web-carrectly pavlohortovenko20/carrectlyweb:latest'
              dockerClean =' docker stop $(docker ps -aq)'
