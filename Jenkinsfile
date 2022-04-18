@@ -20,10 +20,10 @@ pipeline {
                  stage('remove older images') {
                  steps {
                      script {
-                        sh """
+                        sh '
                             if [ \$(docker ps -qf "name=<your_docker_name>") ]; then docker stop \$(docker ps -qf "name=<your_docker_name>"); fi && \
                             docker rmi $(docker images -qf)
-                            """
+                            '
                             }
                         }
                     }
