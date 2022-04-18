@@ -21,7 +21,7 @@ pipeline {
                  stage('Remove olders containers') {
                  steps {
                      script {
-                         sh "docker container prune"
+                         sh '''if [ \$(docker ps -qf "name=<your_docker_name>") ]; then docker stop \$(docker ps -qf "name=<your_docker_name>");'''
                            }
                         }
                     }
