@@ -27,7 +27,7 @@ pipeline {
                  stage('remote images') {
                  steps {
                      script {
-                      sh "docker rmi $(docker images -q)"
+                      bash "docker rmi $(docker images -q)"
                         }
                     }
                 }
