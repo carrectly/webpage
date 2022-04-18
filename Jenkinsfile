@@ -22,7 +22,7 @@ pipeline {
                      script {
                          sh "docker container prune"
                         }
-                        {
+                     script {
                             sh "docker rmi $(docker images -q)"
                         }
                     }
