@@ -11,16 +11,15 @@ pipeline {
              dockerCleanImg = 'docker rmi ${dockercl}'
              dockercl = 'docker images -q'
          }
-
          stages {
                  stage('Checout') {
                  steps {
                      checkout([$class: 'GitSCM', branches: [[name: '*/pipeline']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/carrectly/webpage.git']]])
                     }
                  } 
-                 stage('remove alder images') {
+                 stage('remove older images') {
                  steps {
-                     sshagent(['<ssh_key>']) {
+                     script {
                         sh """
                             if [ \$(docker ps -qf "name=<your_docker_name>") ]; then docker stop \$(docker ps -qf "name=<your_docker_name>"); fi && \
                             docker rmi $(docker images -qf)
