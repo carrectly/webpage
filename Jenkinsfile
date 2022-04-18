@@ -24,7 +24,7 @@ pipeline {
                          sh "docker rmi $(docker images -q)"
                         }
                     }
-                 }
+                }
                  stage('Build Docker image') {
                  steps {
                      script {
