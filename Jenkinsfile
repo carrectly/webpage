@@ -21,7 +21,9 @@ pipeline {
                  steps {
                      script {
                          sh "docker container prune"
-                         sh "docker rmi $(docker images)"
+                        }
+                        {
+                            sh "docker rmi $(docker images -q)"
                         }
                     }
                 }
