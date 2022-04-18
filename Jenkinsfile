@@ -18,7 +18,7 @@ pipeline {
                     }
                  } 
                  stage('Remove olders containers')
-                 steps{
+                 steps {
                      script {
                          sh "docker container prune"
                      }
