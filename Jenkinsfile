@@ -47,12 +47,9 @@ pipeline {
                     steps {
                         script{
                             sshagent(['ssh_cred']) {
-                            sh 
-                               "sudo ssh  -i /home/info/.ssh/info info@34.66.206.42 ${dockercd}
-                               "
+                            sh 'sudo ssh  -i /home/info/.ssh/info info@34.66.206.42 ${dockercd}'
                             }
                         }
-                         
                     }
                 }
             }
