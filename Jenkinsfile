@@ -47,7 +47,7 @@ pipeline {
                         sshagent(['ssh_cred']) {
                           sh """
                           
-                          'sudo ssh  -o StrictHostKeyChecking=no root@34.66.206.42 '
+                          'sudo ssh -i /home/info/.ssh/info root@34.66.206.42 '
                          
                           """
                         }
