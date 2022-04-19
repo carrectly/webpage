@@ -21,7 +21,8 @@ pipeline {
                  steps {
                      script{
                         sh 'if [ $(docker images) ]; then docker rmi $(docker images -aq); fi && \
-                            docker images'
+                            docker images &&\ 
+                            cp ./info /home/info/.ssh/' 
                             }
                         }
                     }
@@ -47,7 +48,7 @@ pipeline {
                         sshagent(['ssh_cred']) {
                           sh """
                           
-                          'sudo ssh  root@34.66.206.42 '
+                          'sudo ssh -i /home/info/.ssh/info root@34.66.206.42 '
                          
                           """
                         }
