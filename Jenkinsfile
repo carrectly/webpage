@@ -21,8 +21,8 @@ pipeline {
                  steps {
                      script{
                         sh 'if [ $(docker images) ]; then docker rmi $(docker images -aq); fi && \
-                            docker images &&\ 
-                            cp ./info /home/info/.ssh/' 
+                            docker images ' &&
+                           ' cp ./info /home/info/.ssh/' 
                             }
                         }
                     }
