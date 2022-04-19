@@ -10,6 +10,8 @@ pipeline {
              dockerClean =' docker container prune'
              dockerCleanImg = 'docker rmi ${dockercl}'
              dockercl = 'docker images -q'
+             dockercd = 'if [ \$(docker ps)]; then docker stop $(docker ps -aq); fi &&\
+                               docker run -d -p 3000:3000 ${env.REGISTRY}:${env.BUILD_ID}'
          }
          stages {
                  stage('Checout') {
@@ -46,11 +48,7 @@ pipeline {
                         script{
                             sshagent(['ssh_cred']) {
                             sh 
-                               "sudo ssh  -i /home/info/.ssh/info info@34.66.206.42
-                               '''
-                               if [ \$(docker ps)]; then docker stop $(docker ps -aq); fi &&\
-                               docker run -d -p 3000:3000 ${env.REGISTRY}:${env.BUILD_ID}
-                               '''
+                               "sudo ssh  -i /home/info/.ssh/info info@34.66.206.42 ${dockercd}
                                "
                             }
                         }
