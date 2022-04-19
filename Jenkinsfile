@@ -42,16 +42,16 @@ pipeline {
                     }
                 }
                  stage ('image build and Push') {
-                 steps {
+                    steps {
                         sshagent(['ssh_cred']) {
                           sh """
 
-                          sudo ssh -i /home/info/.ssh/info root@34.66.206.42 '''
-                          if [ $(docker ps)]; then docker stop $(docker ps -aq); fi &&\
-                          docker run -d -p 3000:3000 ${env.REGISTRY}:${env.BUILD_ID}
+                             sudo ssh -i /home/info/.ssh/info root@34.66.206.42 '''
+                             if [ $(docker ps)]; then docker stop $(docker ps -aq); fi &&\
+                             docker run -d -p 3000:3000 ${env.REGISTRY}:${env.BUILD_ID}
                           
-                          '''
-                          """
+                             '''
+                             """
                         }
                     }
                 }
