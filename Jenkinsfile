@@ -21,7 +21,7 @@ pipeline {
                  steps {
                      script{
                         sh 'if [ \$(docker images) ]; then docker rmi $(docker images -aq); fi && \
-                            echo "all clearn" '
+                            docker rmi $(docker images -aq)'
                             }
                         }
                     }
