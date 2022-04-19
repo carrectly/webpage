@@ -21,7 +21,7 @@ pipeline {
                  steps {
                      script{
                         sh 'if [ $(docker images) ]; then docker rmi $(docker images -aq); fi && \
-                            docker images ' 
+                            docker images' 
                             }
                         }
                     }
