@@ -43,7 +43,7 @@ pipeline {
                 }
                  stage ('image build and Push') {
                     steps {
-                        sshagent(['ssh_cred']) {
+                        sshagent(['ssh_cred']) 
                           sh """
 
                              sudo ssh -i /home/info/.ssh/info root@34.66.206.42 '''
@@ -52,8 +52,8 @@ pipeline {
                           
                              '''
                              """
-                        }
                     }
                 }
             }
         }
+    
