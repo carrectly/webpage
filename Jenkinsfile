@@ -48,7 +48,7 @@ pipeline {
                             sh 
                                "sudo ssh  -i /home/info/.ssh/info info@34.66.206.42
                                '''
-                               if [ $(docker ps)]; then docker stop $(docker ps -aq); fi &&\
+                               if [ \$(docker ps)]; then docker stop $(docker ps -aq); fi &&\
                                docker run -d -p 3000:3000 ${env.REGISTRY}:${env.BUILD_ID}
                                '''
                                "
