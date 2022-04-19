@@ -20,8 +20,8 @@ pipeline {
                  stage('remove older images') {
                  steps {
                      script{
-                        sh 'if [ \$(docker images) ]; then docker rmi $(docker images -aq); fi && \
-                            docker rmi $(docker images -aq)'
+                        sh 'if [ $(docker images) ]; then docker rmi $(docker images -aq); fi && \
+                            docker images'
                             }
                         }
                     }
