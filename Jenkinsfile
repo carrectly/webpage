@@ -49,6 +49,7 @@ pipeline {
                             sh '''
                             sudo ssh  -i /home/pavlohortovenko/.ssh/gcp pavlohortovenko@34.66.206.42
                             """
+                            docker login --username pavlohortovenko20 --password-stdin ${env.REGISTRY} && \
                             docker pull pavlohortovenko20/carrectlyweb:latest && \
                             if [ \$(docker ps -aq)]; then docker stop \$(docker ps -aq); fi && \
                             docker run -p 3000:3000 -d --name web-carrectly pavlohortovenko20/carrectlyweb:latest
