@@ -46,12 +46,12 @@ pipeline {
                  stage ('image build and Push') {
                     steps {
                         sshagent(["ssh_cred"]){
-                            sh '''
+                            sh '
                             sudo ssh  -i /home/pavlohortovenko/.ssh/gcp pavlohortovenko@34.66.206.42
-                            """
+                            `
                             bash /home/pavlohortovenko/1.sh
-                            """
-                            '''
+                            `
+                            '
                     }
                 }
             }
