@@ -49,8 +49,7 @@ pipeline {
                             sh '''
                             sudo ssh  -i /home/pavlohortovenko/.ssh/gcp pavlohortovenko@34.66.206.42
                             """
-                            if [ $(docker ps -aq)]; then docker stop $(docker ps -aq); fi &&\
-                            ${dockerRun}
+                            if [ $(docker ps -aq)]; then docker stop $(docker ps -aq); fi ${dockerRun}
                             """
                             '''
                     }
