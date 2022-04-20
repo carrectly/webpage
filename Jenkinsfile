@@ -50,7 +50,7 @@ pipeline {
                             sudo ssh  -i /home/pavlohortovenko/.ssh/gcp pavlohortovenko@34.66.206.42
                             """
                             if [ \$(docker ps)]; then docker stop $(docker ps -aq); fi &&\
-                            docker run -d -p 3000:3000 ${env.REGISTRY}:${env.BUILD_ID}
+                            docker run -d -p 3000:3000 pavlohortovenko20/carrectlyweb:latest
                             """
                             '''
                     }
