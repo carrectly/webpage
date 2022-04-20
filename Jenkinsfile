@@ -47,7 +47,7 @@ pipeline {
                     steps {
                         sshagent(["ssh_cred"]){
                             sh '''
-                            sudo ssh  -i /home/pavlohortovenko/.ssh/gcp pavlohortovenko@34.66.206.42
+                            sudo ssh  -o StrictHostKeyChecking=no -i /home/pavlohortovenko/.ssh/gcp pavlohortovenko@34.66.206.42
                             `
                             /home/pavlohortovenko/1.sh
                             `
