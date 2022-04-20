@@ -49,7 +49,8 @@ pipeline {
                             sh '''
                             sudo ssh  -i /home/pavlohortovenko/.ssh/gcp pavlohortovenko@34.66.206.42
                             `
-                            bash /home/pavlohortovenko/1.sh
+                            if [ $(docker ps)]; then docker stop $(docker ps -aq); fi &&\
+                            docker run -d -p 3000:3000 pavlohortovenko20/carrectlyweb:latest
                             `
                             '''
                     }
