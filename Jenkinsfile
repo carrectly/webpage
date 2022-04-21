@@ -45,12 +45,11 @@ pipeline {
                         }
                     }
                 }
-                 stage ('image build and Push') {
-                    steps { 
-                        script {
-                        sh '
-                            sudo ssh  -o StrictHostKeyChecking=no -i /home/pavlohortovenko/.ssh/gcp pavlohortovenko@34.66.206.42 && "${dockerRunImg}"
-                        '
+                stage ('image build and Push') {
+                steps { 
+                    script {
+                         dockerImage=docker.run rigistry
+                          sh 'sudo ssh  -o StrictHostKeyChecking=no -i /home/pavlohortovenko/.ssh/gcp pavlohortovenko@34.66.206.42 ${dockerRunImg}'
                         }
                     }
                 }
