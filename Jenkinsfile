@@ -12,7 +12,7 @@ pipeline {
              dockercl = 'docker images -q'
              dockerRunImg = 'if [ $(docker ps -aq) ]; then docker rmi $(docker ps -aq); fi && \
                             docker run -d -p 3000:3000 pavlohortovenko20/carrectlyweb:latest '
-             dockercd = 'if [ \$(docker ps)]; then docker stop $(docker ps -a); fi &&\
+             dockercd = 'if [ \$(docker ps -aq)]; then docker stop $(docker ps -aq); fi &&\
                                docker run -d -p 3000:3000 pavlohortovenko20/carrectlyweb:latest'
          }
          stages {
