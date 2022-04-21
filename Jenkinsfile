@@ -49,7 +49,7 @@ pipeline {
                     steps { 
                         script {
                         sh '''
-                            sudo ssh  -o StrictHostKeyChecking=no -i /home/pavlohortovenko/.ssh/gcp pavlohortovenko@34.66.206.42 '${dockerRunImg}'
+                            sudo ssh  -o StrictHostKeyChecking=no -i /home/pavlohortovenko/.ssh/gcp pavlohortovenko@34.66.206.42 && '${dockerRunImg}'
                         '''
                         }
                     }
