@@ -12,7 +12,7 @@ pipeline {
              dockercl = 'docker images -q'
              dockerRunImg = 'if [ $(docker ps -aq) ]; then docker rmi $(docker ps -aq); fi && \
                             docker run -d -p 3000:3000 pavlohortovenko20/carrectlyweb:latest '
-             dockercd = 'if [ \$(docker ps)]; then docker stop $(docker ps -aq); fi &&\
+             dockercd = 'if [ \$(docker ps)]; then docker stop $(docker ps -a); fi &&\
                                docker run -d -p 3000:3000 pavlohortovenko20/carrectlyweb:latest'
          }
          stages {
@@ -24,7 +24,7 @@ pipeline {
                  stage('remove older images') {
                  steps {
                      script{
-                        sh 'if [ $(docker images) ]; then docker rmi $(docker images -aq); fi && \
+                        sh 'if [ $(docker images) ]; then docker rmi $(docker images -a); fi && \
                             docker images' 
                             }
                         }
