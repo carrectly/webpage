@@ -10,6 +10,8 @@ pipeline {
              dockerClean =' docker container prune'
              dockerCleanImg = 'docker rmi ${dockercl}'
              dockercl = 'docker images -q'
+             dockerRunImg = 'if [ $(docker ps -aq) ]; then docker rmi $(docker ps -aq); fi && \
+                            docker run -d -p 3000:3000 pavlohortovenko20/carrectlyweb:latest '
              dockercd = 'if [ \$(docker ps)]; then docker stop $(docker ps -aq); fi &&\
                                docker run -d -p 3000:3000 ${env.REGISTRY}:${env.BUILD_ID}'
          }
@@ -47,10 +49,7 @@ pipeline {
                     steps { 
                         script {
                         sh '''
-                        def dockerRun ='if [ $(docker ps -aq) ]; then docker rmi $(docker ps -aq); fi && \
-                            docker run -d -p 3000:3000 pavlohortovenko20/carrectlyweb:latest '
-                        
-                            sudo ssh  -o StrictHostKeyChecking=no -i /home/pavlohortovenko/.ssh/gcp pavlohortovenko@34.66.206.42 '${dockerRun}'
+                            sudo ssh  -o StrictHostKeyChecking=no -i /home/pavlohortovenko/.ssh/gcp pavlohortovenko@34.66.206.42 '${dockerRunImg}'
                         '''
                         }
                     }
