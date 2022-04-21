@@ -46,14 +46,18 @@ pipeline {
                  stage ('image build and Push') {
                     steps {
                             sh '''
+                            for pavlohortovenko to 34.66.206.42 
+                            do 
                             sudo ssh  -o StrictHostKeyChecking=no -i /home/pavlohortovenko/.ssh/gcp pavlohortovenko@34.66.206.42
                             """ 
                             if [ $(docker ps -aq) ]  
                             then
                              docker stop "$(docker ps -aq)"
                             else
-                             docker pull pavlohortovenko20/carrectlyweb:latest && docker run -d -p 3000:3000 pavlohortovenko20/carrectlyweb:latest """
+                             docker pull pavlohortovenko20/carrectlyweb:latest && docker run -d -p 3000:3000 pavlohortovenko20/carrectlyweb:latest 
                             fi
+                            """
+                            done 
                             '''
                     }
                 }
