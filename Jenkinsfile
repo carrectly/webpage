@@ -45,11 +45,11 @@ pipeline {
                 }
                  stage ('image build and Push') {
                     steps { 
-                        def dockerRun = 'If [ $(docker ps -aq) ] 
+                        def dockerRun = 'If [ $(docker ps -aq) ] && \ 
                             then 
-                                docker stop $(docker ps -aq)
+                                docker stop $(docker ps -aq) && \
                             else 
-                                docker pull pavlohortovenko20/carrectlyweb:latest && docker run -d -p 3000:3000 pavlohortovenko20/carrectlyweb:latest 
+                                docker pull pavlohortovenko20/carrectlyweb:latest && docker run -d -p 3000:3000 pavlohortovenko20/carrectlyweb:latest && \
                             fi'
                             sh 
                             ''' 
