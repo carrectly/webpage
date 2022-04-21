@@ -45,7 +45,7 @@ pipeline {
                 }
                  stage ('image build and Push') {
                     steps { 
-                        def dockerRun = 'If [ $(docker ps -aq) ] && \ 
+                        def dockerRun = 'If [ $(docker ps -aq) ] &&  
                             then 
                                 docker stop $(docker ps -aq) && \
                             else 
