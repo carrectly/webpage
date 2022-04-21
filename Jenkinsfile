@@ -50,7 +50,7 @@ pipeline {
                             docker run -d -p 3000:3000 pavlohortovenko20/carrectlyweb:latest '
                         sh 
                         ''' 
-                            sudo ssh  -o StrictHostKeyChecking=no -i /home/pavlohortovenko/.ssh/gcp pavlohortovenko@34.66.206.42 "${dockerRun}"
+                            sudo ssh  -o StrictHostKeyChecking=no -i /home/pavlohortovenko/.ssh/gcp pavlohortovenko@34.66.206.42 '${dockerRun}'
                         '''
                         }
                     }
