@@ -46,9 +46,9 @@ pipeline {
                  stage ('image build and Push') {
                     steps {
                             sh '''
-                            for pavlohortovenko to 34.66.206.42 
-                            do 
+                            for  pavlohortovenko to  
                             sudo ssh  -o StrictHostKeyChecking=no -i /home/pavlohortovenko/.ssh/gcp pavlohortovenko@34.66.206.42
+                            do
                             """ 
                             if [ $(docker ps -aq) ]  
                             then
