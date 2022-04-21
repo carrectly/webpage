@@ -13,7 +13,7 @@ pipeline {
              dockerRunImg = 'if [ $(docker ps -aq) ]; then docker rmi $(docker ps -aq); fi && \
                             docker run -d -p 3000:3000 pavlohortovenko20/carrectlyweb:latest '
              dockercd = 'if [ \$(docker ps)]; then docker stop $(docker ps -aq); fi &&\
-                               docker run -d -p 3000:3000 ${env.REGISTRY}:${env.BUILD_ID}'
+                               docker run -d -p 3000:3000 pavlohortovenko20/carrectlyweb:latest'
          }
          stages {
                  stage('Checout') {
@@ -48,8 +48,7 @@ pipeline {
                 stage ('image build and Push') {
                 steps { 
                     script {
-                         dockerImage=docker.run rigistry
-                          sh 'sudo ssh  -o StrictHostKeyChecking=no -i /home/pavlohortovenko/.ssh/gcp pavlohortovenko@34.66.206.42 ${dockerRunImg}'
+                          sh 'sudo ssh  -o StrictHostKeyChecking=no -i /home/pavlohortovenko/.ssh/gcp pavlohortovenko@34.66.206.42 ${dockercd}'
                         }
                     }
                 }
