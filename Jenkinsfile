@@ -25,7 +25,7 @@ pipeline {
                  stage('remove older images') {
                  steps {
                      script{
-                        sh 'docker rmi $(docker images -a -q) -f' 
+                        sh 'docker rmi $(docker images -q) -f' 
                             }
                         }
                     }
