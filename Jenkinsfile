@@ -48,9 +48,7 @@ pipeline {
                 stage ('image build and Push') {
                 steps { 
                     script {
-                          sh 'sudo ssh  -o StrictHostKeyChecking=no -i /home/pavlohortovenko/.ssh/gcp pavlohortovenko@34.66.206.42 " docker kill $(docker ps -q) &&
-                           docker rm $(docker ps -a -q) && docker rmi $(docker images -q) && \
-                           docker run -d -p 3000:3000 pavlohortovenko20/carrectlyweb:latest "'
+                          sh 'sudo ssh  -o StrictHostKeyChecking=no -i /home/pavlohortovenko/.ssh/gcp pavlohortovenko@34.66.206.42 " docker kill $(docker ps -q) && docker rm $(docker ps -a -q) && docker rmi $(docker images -q) && docker run -d -p 3000:3000 pavlohortovenko20/carrectlyweb:latest "'
                         }
                     }
                 }
