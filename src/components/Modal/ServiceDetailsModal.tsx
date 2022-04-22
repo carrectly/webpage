@@ -33,11 +33,7 @@ const ImageWrapper = styled('div')(() => ({
   aspectRatio: '16/9',
 }));
 
-export default function ServiceDetailsModal({
-  open,
-  onClose,
-  serviceDetails,
-}: ModalProps) {
+export default function ServiceDetailsModal({ open, onClose, serviceDetails }: ModalProps) {
   return (
     <Modal
       open={open}
@@ -49,12 +45,7 @@ export default function ServiceDetailsModal({
         <StyledCarousel autoplay dots={false} arrows arrowSpacing="15px">
           {serviceDetails.images.map((image, i) => (
             <ImageWrapper key={`card-slider-id-${i}`}>
-              <Image
-                src={image}
-                alt={serviceDetails.name}
-                layout="fill"
-                objectFit="contain"
-              />
+              <Image src={image} alt={serviceDetails.name} layout="fill" objectFit="contain" />
             </ImageWrapper>
           ))}
         </StyledCarousel>
@@ -88,35 +79,33 @@ export default function ServiceDetailsModal({
             id="modal-modal-description"
             sx={{ overflow: 'auto', padding: 0, fontSize: '1.5rem' }}
           >
-            {serviceDetails.longDescription
-              .split('✔')
-              .map((description, index) => {
-                if (description.length > 1) {
-                  return (
-                    <ListItem
-                      key={`${serviceDetails.name}-${index}`}
-                      alignItems="flex-start"
-                      sx={(theme) => ({
-                        paddingLeft: 0,
-                        paddingRight: 0,
-                        [theme.breakpoints.down('md')]: { paddingTop: 0 },
-                      })}
+            {serviceDetails.longDescription.split('✔').map((description, index) => {
+              if (description.length > 1) {
+                return (
+                  <ListItem
+                    key={`${serviceDetails.name}-${index}`}
+                    alignItems="flex-start"
+                    sx={(theme) => ({
+                      paddingLeft: 0,
+                      paddingRight: 0,
+                      [theme.breakpoints.down('md')]: { paddingTop: 0 },
+                    })}
+                  >
+                    <ListItemIcon
+                      sx={{
+                        minWidth: 0,
+                        paddingRight: '5px',
+                        margin: 0,
+                        lineHeight: 1,
+                      }}
                     >
-                      <ListItemIcon
-                        sx={{
-                          minWidth: 0,
-                          paddingRight: '5px',
-                          margin: 0,
-                          lineHeight: 1,
-                        }}
-                      >
-                        &#9745;
-                      </ListItemIcon>
-                      <Typography>{description}</Typography>
-                    </ListItem>
-                  );
-                }
-              })}
+                      &#9745;
+                    </ListItemIcon>
+                    <Typography>{description}</Typography>
+                  </ListItem>
+                );
+              }
+            })}
           </List>
 
           <Divider sx={{ marginTop: '10px', marginBottom: '5px' }} />

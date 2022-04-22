@@ -19,10 +19,7 @@ export const fieldLabelsUI = {
   customerComments: 'Additional Comments',
 };
 
-export const totalPrice = (
-  cartItemsArray: ServiceType[],
-  priceIndex: number
-) => {
+export const totalPrice = (cartItemsArray: ServiceType[], priceIndex: number) => {
   return cartItemsArray.reduce((subTotal, service) => {
     if (service.prices.length > 2) {
       return subTotal + service.prices[priceIndex];

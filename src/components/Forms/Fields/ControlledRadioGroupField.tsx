@@ -1,11 +1,5 @@
 import React from 'react';
-import {
-  FormControl,
-  FormControlLabel,
-  FormLabel,
-  Radio,
-  RadioGroup,
-} from '@mui/material';
+import { FormControl, FormControlLabel, FormLabel, Radio, RadioGroup } from '@mui/material';
 import { Controller, Control } from 'react-hook-form';
 
 interface RadioGroupFieldProps {
@@ -31,11 +25,7 @@ const ControlledRadioGroupField: React.FC<RadioGroupFieldProps> = ({
       render={({ field }) => (
         <FormControl fullWidth>
           <FormLabel component="legend">{fieldLabel}</FormLabel>
-          <RadioGroup
-            row
-            value={field.value || ''}
-            onChange={(e) => field.onChange(e)}
-          >
+          <RadioGroup row value={field.value || ''} onChange={(e) => field.onChange(e)}>
             {options.map((option) => (
               <FormControlLabel
                 key={`${fieldName}-${option.value}-option`}

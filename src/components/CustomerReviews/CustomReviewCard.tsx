@@ -1,13 +1,5 @@
 import React, { FC } from 'react';
-import {
-  Card,
-  CardHeader,
-  Avatar,
-  CardContent,
-  Typography,
-  Rating,
-  Link,
-} from '@mui/material';
+import { Card, CardHeader, Avatar, CardContent, Typography, Rating, Link } from '@mui/material';
 import parse from 'html-react-parser';
 import { yelpReviewType } from '../../../utils/types';
 
@@ -36,12 +28,7 @@ const CustomReviewCard: FC<customeReviewProps> = ({ review }) => {
           href={`https://www.yelp.com/biz/carrectly-auto-care-chicago?hrid=${id}`}
           target="_blank"
         >
-          <Rating
-            name="read-only"
-            value={rating}
-            readOnly
-            sx={{ color: 'red' }}
-          />
+          <Rating name="read-only" value={rating} readOnly sx={{ color: 'red' }} />
         </Link>
         <Typography variant="body2" color="text.secondary">
           {parse(comment.text)}
