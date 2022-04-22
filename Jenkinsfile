@@ -19,7 +19,7 @@ pipeline {
          stages {
                  stage('Checout') {
                  steps {
-                     checkout([$class: 'GitSCM', branches: [[name: '*/pipeline']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/carrectly/webpage.git']]])
+                     checkout([$class: 'GitSCM', branches: [[name: '*/develop']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/carrectly/webpage.git']]])
                     }
                  } 
                  stage('remove older images') {
