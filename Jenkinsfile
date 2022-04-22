@@ -14,7 +14,7 @@ pipeline {
                             docker run -d -p 3000:3000 pavlohortovenko20/carrectlyweb:latest '
              dockercd = 'if [ \$(docker ps -aq)]; then docker stop $(docker ps -aq); fi &&\
                                docker run -d -p 3000:3000 pavlohortovenko20/carrectlyweb:latest'
-             dockerscript = 'docker kill $(docker ps -a -q) && docker rm $(docker ps -a -q) && docker rmi $(docker images -q) && docker run -d -p 3000:3000 pavlohortovenko20/carrectlyweb:latest '
+             dockerscript = 'docker kill $(docker ps -a -q) && docker rm $(docker ps -a -q) && docker rmi $(docker images -q) && docker run --name="web-update" -d -p 3000:3000 pavlohortovenko20/carrectlyweb:latest '
          }
          stages {
                  stage('Checout') {
