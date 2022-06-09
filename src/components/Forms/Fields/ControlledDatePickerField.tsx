@@ -39,10 +39,11 @@ const ControlledDatePickerField: React.FC<ControlledDatePickerFieldProps> = ({
       return (
         dateToCheck.weekday() === 0 ||
         dateToCheck < startDate.clone().startOf('day') ||
-        (dateToCheck.isSame(startDate, 'day') && dateToCheck > startDate.clone().set({ hour: 16, minute: 0, second: 0 }))
+        (dateToCheck.isSame(startDate, 'day') &&
+          dateToCheck > startDate.clone().set({ hour: 16, minute: 0, second: 0 }))
       );
     },
-    [startDate]
+    [startDate],
   );
 
   const disabledTime = useCallback(
@@ -56,7 +57,11 @@ const ControlledDatePickerField: React.FC<ControlledDatePickerFieldProps> = ({
 
       if (date && date.isSame(startDate, 'day')) {
         return {
-          disabledHours: () => [...range(0, startDate.clone().add(150, 'minutes').startOf('hour').hour()), ...range(18, 24), ...disabledTimeSlots],
+          disabledHours: () => [
+            ...range(0, startDate.clone().add(150, 'minutes').startOf('hour').hour()),
+            ...range(18, 24),
+            ...disabledTimeSlots,
+          ],
         };
       }
 
@@ -64,7 +69,7 @@ const ControlledDatePickerField: React.FC<ControlledDatePickerFieldProps> = ({
         disabledHours: () => [...range(0, 8), ...range(18, 24), ...disabledTimeSlots],
       };
     },
-    [startDate, disabledTimes]
+    [startDate, disabledTimes],
   );
 
   return (
@@ -103,7 +108,9 @@ const ControlledDatePickerField: React.FC<ControlledDatePickerFieldProps> = ({
                 fontSize: '0.75rem',
                 margin: '3px 14px 0px',
               }}
-            >{`${fieldLabel.charAt(0).toUpperCase() + fieldLabel.slice(1)} is required`}</Typography>
+            >{`${
+              fieldLabel.charAt(0).toUpperCase() + fieldLabel.slice(1)
+            } is required`}</Typography>
           )}
         </Box>
       )}

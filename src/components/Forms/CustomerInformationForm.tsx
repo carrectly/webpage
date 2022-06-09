@@ -14,28 +14,28 @@ interface CustomProps {
   name: string;
 }
 
-const TextMaskCustom = React.forwardRef<HTMLElement, CustomProps>(
-  function TextMaskCustom(props, ref) {
-    const { onChange, ...other } = props;
-    return (
-      <IMaskInput
-        {...other}
-        //@ts-expect-error Incorrect type declaration in library, no fix at time of import
-        mask={'(000) 000-0000'}
-        unmask={true}
-        inputRef={ref}
-        onAccept={(value: string) =>
-          onChange({ target: { name: props.name, value } })
-        }
-        overwrite
-      />
-    );
-  }
-);
+const TextMaskCustom = React.forwardRef<HTMLElement, CustomProps>(function TextMaskCustom(
+  props,
+  ref,
+) {
+  const { onChange, ...other } = props;
+  return (
+    <IMaskInput
+      {...other}
+      //@ts-expect-error Incorrect type declaration in library, no fix at time of import
+      mask={'(000) 000-0000'}
+      unmask={true}
+      inputRef={ref}
+      onAccept={(value: string) => onChange({ target: { name: props.name, value } })}
+      overwrite
+    />
+  );
+});
 
-export const CustomerInformationForm: React.FC<
-  CustomerInformationFormProps
-> = ({ control, errors }) => {
+export const CustomerInformationForm: React.FC<CustomerInformationFormProps> = ({
+  control,
+  errors,
+}) => {
   const customerFields = [
     {
       fieldName: 'firstName',

@@ -86,15 +86,9 @@ export const Footer: React.FC = () => {
       </Grid>
 
       <Grid item xs={12} md={4} sx={gridStyle}>
-        <Typography fontSize={copyRightFontSize}>
-          Copyright © 2022 Carrectly
-        </Typography>
+        <Typography fontSize={copyRightFontSize}>Copyright © 2022 Carrectly</Typography>
         <Typography fontSize={copyRightFontSize}>·</Typography>
-        <Link
-          fontSize={copyRightFontSize}
-          color="#ffff"
-          href="termsAndConditions"
-        >
+        <Link fontSize={copyRightFontSize} color="#ffff" href="termsAndConditions">
           Terms & Conditions
         </Link>
         <Typography fontSize={copyRightFontSize}>·</Typography>

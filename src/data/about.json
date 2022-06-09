@@ -1,32 +1,32 @@
 [
-    {
-        "title": "Convenience",
-        "image": "/images/general/convenience.png",
-        "description": "Your time is valuable – don’t waste it researching service centers, driving around, juggling your schedule around appointments, or waiting at the shop. Let Carrectly deal with the hassle: you can now service your car without leaving your home or office."
-    },
-    {
-        "title": "Highest-Rated Service",
-        "image": "/images/general/highservice.png",
-        "description": "Have a peace of mind by doing business with an auto repair center and spa that deliver high quality work at a fair price. We are 5-star rated on Yelp, Facebook, and Google. We cannot be any more proud to be loved by car owners all across Chicago. Here to help you."
-    },
-    {
-        "title": "Dedicated Team",
-        "image": "/images/general/dedicatedteam.png",
-        "description": "Carrectly is a team of auto enthusiasts and problem solvers. Our tech gurus are able to secure the best transparent prices for any repair in Chicago, as well as ensure quality and predict completion time for each service. And our in-field car-savvy concierges go through rigorous training, as well as background and driving record checks."
-    },
-    {
-        "title": "Simplicity",
-        "image": "/images/general/simplicity.png",
-        "description": "Our concierges handle paperwork and resolve any issues, all while keeping you informed. We ask your approval for any extra expenses and you pay online when the service is completed and your vehicle is back. With Carrectly, auto maintenance is as simple and hassle-free as it can be."
-    },
-    {
-        "title": "Peace Of Mind",
-        "image": "/images/general/peaceofmind.png",
-        "description": "On top of your own auto policy, our additional $1MM liability insurance covers the car while in our care. All facilities, spas, and shops have garage liability and business auto policies while your car is serviced. You have peace of mind from pick-up to drop-off."
-    },
-    {
-        "title": "Innovation",
-        "image": "/images/general/innovation.png",
-        "description": "We are constantly expanding our service area and offerings. Our team works hard to simplify scheduling and solve known bottlenecks of the auto industry. As a result, unlike other shops, we are able to provide services without the wait. Repair or detailing – your car goes straights into the facility and work starts right away."
-    }
+  {
+    "title": "Convenience",
+    "image": "/images/general/convenience.png",
+    "description": "Your time is valuable – don’t waste it researching service centers, driving around, juggling your schedule around appointments, or waiting at the shop. Let Carrectly deal with the hassle: you can now service your car without leaving your home or office."
+  },
+  {
+    "title": "Highest-Rated Service",
+    "image": "/images/general/highservice.png",
+    "description": "Have a peace of mind by doing business with an auto repair center and spa that deliver high quality work at a fair price. We are 5-star rated on Yelp, Facebook, and Google. We cannot be any more proud to be loved by car owners all across Chicago. Here to help you."
+  },
+  {
+    "title": "Dedicated Team",
+    "image": "/images/general/dedicatedteam.png",
+    "description": "Carrectly is a team of auto enthusiasts and problem solvers. Our tech gurus are able to secure the best transparent prices for any repair in Chicago, as well as ensure quality and predict completion time for each service. And our in-field car-savvy concierges go through rigorous training, as well as background and driving record checks."
+  },
+  {
+    "title": "Simplicity",
+    "image": "/images/general/simplicity.png",
+    "description": "Our concierges handle paperwork and resolve any issues, all while keeping you informed. We ask your approval for any extra expenses and you pay online when the service is completed and your vehicle is back. With Carrectly, auto maintenance is as simple and hassle-free as it can be."
+  },
+  {
+    "title": "Peace Of Mind",
+    "image": "/images/general/peaceofmind.png",
+    "description": "On top of your own auto policy, our additional $1MM liability insurance covers the car while in our care. All facilities, spas, and shops have garage liability and business auto policies while your car is serviced. You have peace of mind from pick-up to drop-off."
+  },
+  {
+    "title": "Innovation",
+    "image": "/images/general/innovation.png",
+    "description": "We are constantly expanding our service area and offerings. Our team works hard to simplify scheduling and solve known bottlenecks of the auto industry. As a result, unlike other shops, we are able to provide services without the wait. Repair or detailing – your car goes straights into the facility and work starts right away."
+  }
 ]

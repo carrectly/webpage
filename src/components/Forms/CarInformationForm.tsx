@@ -1,11 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import {
-  Control,
-  FieldErrors,
-  FieldValues,
-  UseFormSetValue,
-  UseFormWatch,
-} from 'react-hook-form';
+import { Control, FieldErrors, FieldValues, UseFormSetValue, UseFormWatch } from 'react-hook-form';
 import { List, ListItem, Typography } from '@mui/material';
 import { CarMake, carDatabaseApi, CarModel } from 'apiWrappers/carDatabaseApi';
 import ControlledInputField from './Fields/ControlledInputField';
@@ -28,11 +22,7 @@ export const CarInformationFrom: React.FC<CarInformationFromProps> = ({
   watch,
   setValue,
 }) => {
-  const [watchCarYear, watchCarMake, watchCarModel] = watch([
-    'carYear',
-    'carMake',
-    'carModel',
-  ]);
+  const [watchCarYear, watchCarMake, watchCarModel] = watch(['carYear', 'carMake', 'carModel']);
   const [carMakes, setCarMakes] = useState<CarMake[]>([]);
   const [carModels, setCarModels] = useState<CarModel[]>([]);
   const [loading, setLoading] = useState(false);
@@ -48,33 +38,29 @@ export const CarInformationFrom: React.FC<CarInformationFromProps> = ({
   useEffect(() => {
     const fetchCarModels = async () => {
       if (watchCarYear && watchCarMake) {
-        carDatabaseApi
-          .getAllModels(watchCarMake, watchCarYear)
-          .then((carModels) => {
-            setCarModels(carModels);
-            if (
-              watchCarModel &&
-              !carModels.find(
-                (carModel) => carModel.Model === watchCarModel.Model
-              )
-            ) {
-              setValue('carModel', null);
-            }
-          });
+        carDatabaseApi.getAllModels(watchCarMake, watchCarYear).then((carModels) => {
+          setCarModels(carModels);
+          if (
+            watchCarModel &&
+            !carModels.find((carModel) => carModel.Model === watchCarModel.Model)
+          ) {
+            setValue('carModel', null);
+          }
+        });
       }
     };
 
     setLoading(true);
     fetchCarModels().finally(() => setLoading(false));
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [watchCarYear, watchCarMake]); 
+  }, [watchCarYear, watchCarMake]);
 
   const vehicleFields: AutoCompleteProps<string | CarModel>[] = [
     {
       fieldName: 'carYear',
       fieldLabel: 'Car Year',
       options: Array.from({ length: moment().get('year') - 1979 }, (_, i) =>
-        (moment().get('year') - i).toString()
+        (moment().get('year') - i).toString(),
       ),
     },
     {

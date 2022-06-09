@@ -1,13 +1,10 @@
 import axios from 'axios';
 import type { NextApiRequest, NextApiResponse } from 'next';
 
-export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse
-) {
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   try {
     const response = await axios.get(
-      `${process.env.CARRECTLY_ADMIN_URL}/api/cars/getModels/${req.query.make}/${req.query.year}`
+      `${process.env.CARRECTLY_ADMIN_URL}/api/cars/getModels/${req.query.make}/${req.query.year}`,
     );
     res.send(response.data);
     // eslint-disable-next-line @typescript-eslint/no-explicit-any

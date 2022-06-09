@@ -1,10 +1,5 @@
 import React from 'react';
-import {
-  Controller,
-  Control,
-  FieldErrors,
-  RegisterOptions,
-} from 'react-hook-form';
+import { Controller, Control, FieldErrors, RegisterOptions } from 'react-hook-form';
 import { TextField, TextFieldProps } from '@mui/material';
 
 interface InputFieldProps {

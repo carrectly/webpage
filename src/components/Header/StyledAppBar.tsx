@@ -1,7 +1,6 @@
 import styled from '@emotion/styled';
-import {AppBar, AppBarProps} from '@mui/material'
+import { AppBar, AppBarProps } from '@mui/material';
 import { FC } from 'react';
-
 
 const StyledNav = styled(AppBar)<AppBarProps>`
   height: 50px;
@@ -23,10 +22,8 @@ const StyledNav = styled(AppBar)<AppBarProps>`
   },
 `;
 
-const StyledNavBar: FC = ({children}) => {
-  return (
-    <StyledNav>{children}</StyledNav>
-  );
+const StyledNavBar: FC = ({ children }) => {
+  return <StyledNav>{children}</StyledNav>;
 };
 
 export default StyledNavBar;

@@ -78,11 +78,7 @@ const ServiceCard: FC<ServiceObject> = ({ serviceObject }) => {
           </Box>
         </Box>
       </BgImage>
-      <ServiceDetialsModal
-        open={open}
-        onClose={handleClose}
-        serviceDetails={serviceObject}
-      />
+      <ServiceDetialsModal open={open} onClose={handleClose} serviceDetails={serviceObject} />
     </>
   );
 };

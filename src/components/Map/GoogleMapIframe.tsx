@@ -49,8 +49,7 @@ const GoogleMapIframe = () => {
                     </Typography>
                   </ListItem>
                   <ListItem>
-                    We are on demand and can pick up your car from any location
-                    in Chicagoland area
+                    We are on demand and can pick up your car from any location in Chicagoland area
                   </ListItem>
                 </List>
               </Grid>
