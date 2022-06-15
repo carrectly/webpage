@@ -8,6 +8,11 @@ spec:
     matchLabels:
       app: carrectlyweb
   replicas: 3
+  strategy: 
+     type: RollingUpdate
+     rollingUpdate:
+       maxSurge: 50%
+       maxUnavailable: 0%
   template:
     metadata:
       labels:
