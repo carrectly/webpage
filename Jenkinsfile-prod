@@ -1,6 +1,7 @@
 pipeline {
          agent any
          environment{
+            PROJECT_ID = 'adminpage-chicago'
              CREDENTIALS_ID = 'gke'
              CLUSTER_NAME = 'adminpage-chicago-k8s'
              LOCATION = 'us-east4-b'
