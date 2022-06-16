@@ -36,3 +36,17 @@ spec:
           targetPort: 3000
        selector:
         app: carrectlyweb
+
+---
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: carrectlyweb-autoscaling 
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: carrectlyweb
+  minReplicas: 3
+  maxReplicas: 8
+  targetCPUUtilizationPercentage: 70
