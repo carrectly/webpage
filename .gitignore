@@ -35,3 +35,6 @@ yarn-error.log*
 .vercel
 
 ./secrets.ts
+
+#environment variables
+.env

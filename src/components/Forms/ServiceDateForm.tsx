@@ -12,7 +12,12 @@ interface ServiceDateFormProps {
   setValue: UseFormSetValue<FieldValues>;
 }
 
-export const ServiceDateForm: React.FC<ServiceDateFormProps> = ({ control, errors, watch, setValue }) => {
+export const ServiceDateForm: React.FC<ServiceDateFormProps> = ({
+  control,
+  errors,
+  watch,
+  setValue,
+}) => {
   const watchPickupDate = watch('pickupDate');
   const watchDropOffDate = watch('dropoffDate');
   const [loading, setLoading] = useState(false);
@@ -84,7 +89,8 @@ export const ServiceDateForm: React.FC<ServiceDateFormProps> = ({ control, error
             opacity: 0.6,
           }}
         >
-          Note: The drop off date can be changed based on the selected services. We will contact you in case of a reschedule.
+          Note: The drop off date can be changed based on the selected services. We will contact you
+          in case of a reschedule.
         </Typography>
       </List>
     </>

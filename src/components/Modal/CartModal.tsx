@@ -14,11 +14,7 @@ const CartModal: FC<ServiceObject> = ({ serviceObject }) => {
   return (
     <Box>
       <Link onClick={handleOpen}>{serviceObject.name}</Link>
-      <ServiceDetialsModal
-        open={open}
-        onClose={handleClose}
-        serviceDetails={serviceObject}
-      />
+      <ServiceDetialsModal open={open} onClose={handleClose} serviceDetails={serviceObject} />
     </Box>
   );
 };

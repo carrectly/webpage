@@ -8,10 +8,7 @@ interface AddressFormProps {
   errors: FieldErrors;
 }
 
-export const AddressForm: React.FC<AddressFormProps> = ({
-  control,
-  errors,
-}) => {
+export const AddressForm: React.FC<AddressFormProps> = ({ control, errors }) => {
   const locationFields = [
     {
       fieldName: 'address',

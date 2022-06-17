@@ -78,10 +78,7 @@ const Home: NextPage = () => {
         {loading && <CircularProgress />}
         {Array.isArray(reviewsArray) &&
           reviewsArray.map((singleReview, index) => (
-            <CustomReviewCard
-              key={`review-id-${index}`}
-              review={singleReview}
-            />
+            <CustomReviewCard key={`review-id-${index}`} review={singleReview} />
           ))}
       </Box>
 
@@ -92,13 +89,7 @@ const Home: NextPage = () => {
         onClick={() => handleNewBookingClick()}
       >
         <AddIcon sx={IconStyle} />
-        <Typography
-          variant="h4"
-          component="h4"
-          color="white"
-          margin="10px"
-          marginLeft="5px"
-        >
+        <Typography variant="h4" component="h4" color="white" margin="10px" marginLeft="5px">
           Request Services
         </Typography>
       </StyledFab>

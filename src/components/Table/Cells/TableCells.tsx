@@ -57,9 +57,7 @@ export const PriceRangeCell: React.FC<CellAttributes> = ({ row }) => {
   if (row.prices.length > 2) {
     return (
       <List sx={{ display: 'flex', flexDirection: 'row' }}>
-        <ListItem key={`price-variant-${priceIndex}`}>
-          ${row.prices[priceIndex]}
-        </ListItem>
+        <ListItem key={`price-variant-${priceIndex}`}>${row.prices[priceIndex]}</ListItem>
       </List>
     );
   }

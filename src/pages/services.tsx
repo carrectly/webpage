@@ -2,13 +2,7 @@ import React from 'react';
 import serviceArray from '../data/services.json';
 import Layout from '../components/Layout/Layout';
 import ServiceCard from '../components/ServiceCards/ServiceCard';
-import {
-  Grid,
-  Box,
-  Accordion,
-  AccordionSummary,
-  AccordionDetails,
-} from '@mui/material';
+import { Grid, Box, Accordion, AccordionSummary, AccordionDetails } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import StarIcon from '@mui/icons-material/Star';
 import LocalCarWashIcon from '@mui/icons-material/LocalCarWash';
@@ -35,10 +29,9 @@ const iconsArr = [
 const Services = () => {
   const [expanded, setExpanded] = React.useState<string | false>('POPULAR');
 
-  const handleChange =
-    (panel: string) => (event: React.SyntheticEvent, newExpanded: boolean) => {
-      setExpanded(newExpanded ? panel : false);
-    };
+  const handleChange = (panel: string) => (event: React.SyntheticEvent, newExpanded: boolean) => {
+    setExpanded(newExpanded ? panel : false);
+  };
 
   return (
     <Layout>

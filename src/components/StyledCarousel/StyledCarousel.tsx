@@ -10,37 +10,35 @@ interface CustomCarouselProps extends CarouselProps {
   sx?: SxProps<Theme>;
 }
 
-const StyledCarousel = styled(Carousel)<CustomCarouselProps>(
-  ({ arrowSpacing, dotSpacing }) => ({
-    '> .slick-next': {
-      right: arrowSpacing,
-    },
-    '> .slick-prev': {
-      left: arrowSpacing,
-    },
-    '.slick-arrow': {
-      color: 'white',
-      width: '70px',
-      height: 'auto',
-      zIndex: 3,
-    },
-    '.slick-arrow:hover': {
-      color: '#cdafde ',
-    },
-    '> .slick-dots li button': {
-      marginTop: dotSpacing,
-      width: '10px',
-      height: '10px',
-      borderRadius: '100%',
-      background: '#83509f',
-    },
-    '> .slick-dots li.slick-active button': {
-      width: '12px',
-      height: '12px',
-      background: '#cdafde',
-    },
-  })
-);
+const StyledCarousel = styled(Carousel)<CustomCarouselProps>(({ arrowSpacing, dotSpacing }) => ({
+  '> .slick-next': {
+    right: arrowSpacing,
+  },
+  '> .slick-prev': {
+    left: arrowSpacing,
+  },
+  '.slick-arrow': {
+    color: 'white',
+    width: '70px',
+    height: 'auto',
+    zIndex: 3,
+  },
+  '.slick-arrow:hover': {
+    color: '#cdafde ',
+  },
+  '> .slick-dots li button': {
+    marginTop: dotSpacing,
+    width: '10px',
+    height: '10px',
+    borderRadius: '100%',
+    background: '#83509f',
+  },
+  '> .slick-dots li.slick-active button': {
+    width: '12px',
+    height: '12px',
+    background: '#cdafde',
+  },
+}));
 
 const StyledCarouselComponent: React.FC<CustomCarouselProps> = ({
   arrowSpacing,

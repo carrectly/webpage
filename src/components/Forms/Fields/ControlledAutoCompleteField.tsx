@@ -1,11 +1,6 @@
 import React from 'react';
 import { Controller, Control, FieldErrors } from 'react-hook-form';
-import {
-  Autocomplete,
-  TextField,
-  createFilterOptions,
-  FilterOptionsState,
-} from '@mui/material';
+import { Autocomplete, TextField, createFilterOptions, FilterOptionsState } from '@mui/material';
 
 export type AutoCompleteProps<OptionsType> = {
   fieldName: string;
@@ -38,10 +33,7 @@ const ControlledAutocompleteField = <OptionsType,>({
   const OPTIONS_LIMIT = 500;
   const defaultFilterOptions = createFilterOptions();
 
-  const filterOptions = (
-    options: unknown[],
-    state: FilterOptionsState<unknown>
-  ) => {
+  const filterOptions = (options: unknown[], state: FilterOptionsState<unknown>) => {
     return defaultFilterOptions(options, state).slice(0, OPTIONS_LIMIT);
   };
 

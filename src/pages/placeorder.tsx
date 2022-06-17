@@ -39,7 +39,8 @@ function PlaceOrder() {
     return `id: ${item.id}, serviceName: ${item.name} price: ${finalItemPrice}`; // temporarily using prices array
   });
 
-  const { firstName, lastName, email, phoneNumber, customerComments, ...orderInfo } = shippingAddress;
+  const { firstName, lastName, email, phoneNumber, customerComments, ...orderInfo } =
+    shippingAddress;
 
   const customerInfo = {
     firstName,
@@ -57,7 +58,6 @@ function PlaceOrder() {
     carModel: orderInfo.carModel.Model,
   };
 
-  console.log('order info', order);
   const placeOrderHandler = async () => {
     try {
       setLoading(true);
@@ -106,7 +106,13 @@ function PlaceOrder() {
               </Grid>
             </Grid>
           </CardShadow>
-          <Button onClick={placeOrderHandler} variant="contained" color="primary" fullWidth sx={{ marginTop: '20px' }}>
+          <Button
+            onClick={placeOrderHandler}
+            variant="contained"
+            color="primary"
+            fullWidth
+            sx={{ marginTop: '20px' }}
+          >
             Place Order
           </Button>
           {loading && (
@@ -114,12 +120,19 @@ function PlaceOrder() {
               <CircularProgress />
             </ListItem>
           )}
-          <Button onClick={editServicesHandler} variant="outlined" color="primary" fullWidth sx={{ marginTop: '10px' }}>
+          <Button
+            onClick={editServicesHandler}
+            variant="outlined"
+            color="primary"
+            fullWidth
+            sx={{ marginTop: '10px' }}
+          >
             Edit Services
           </Button>
           <Typography marginTop="10px" fontSize="0.9rem">
-            Once the order is placed we will reach out to you via text to confirm order details and to coordinate vehicle pickup times. Due to
-            increasingly high service volume, please allow a few hours for our logistics team to process your booking request.
+            Once the order is placed we will reach out to you via text to confirm order details and
+            to coordinate vehicle pickup times. Due to increasingly high service volume, please
+            allow a few hours for our logistics team to process your booking request.
           </Typography>
         </Grid>
       </Grid>

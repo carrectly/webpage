@@ -33,29 +33,26 @@ export const CustomerDetailsSummary: React.FC = () => {
         <TableContainer>
           <Table>
             <TableBody>
-              {Object.keys(shippingAddress).reduce<React.ReactNode[]>(
-                (tableRows, key) => {
-                  const value = shippingAddress[key as keyof OrderDetailsType];
-                  if (value) {
-                    tableRows.push(
-                      <TableRow key={key}>
-                        <TableCell sx={{ fontWeight: 'bold' }}>
-                          {fieldLabelsUI[key as keyof typeof fieldLabelsUI]}
-                        </TableCell>
-                        <TableCell sx={{ color: 'dimgray' }}>
-                          {typeof value === 'string'
-                            ? value
-                            : 'Model' in value
-                            ? value.Model
-                            : moment(value).format('MM-DD-YY HH:00')}
-                        </TableCell>
-                      </TableRow>
-                    );
-                  }
-                  return tableRows;
-                },
-                []
-              )}
+              {Object.keys(shippingAddress).reduce<React.ReactNode[]>((tableRows, key) => {
+                const value = shippingAddress[key as keyof OrderDetailsType];
+                if (value) {
+                  tableRows.push(
+                    <TableRow key={key}>
+                      <TableCell sx={{ fontWeight: 'bold' }}>
+                        {fieldLabelsUI[key as keyof typeof fieldLabelsUI]}
+                      </TableCell>
+                      <TableCell sx={{ color: 'dimgray' }}>
+                        {typeof value === 'string'
+                          ? value
+                          : 'Model' in value
+                          ? value.Model
+                          : moment(value).format('MM-DD-YY HH:00')}
+                      </TableCell>
+                    </TableRow>,
+                  );
+                }
+                return tableRows;
+              }, [])}
             </TableBody>
           </Table>
         </TableContainer>
