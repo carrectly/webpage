@@ -1,7 +1,5 @@
-import React from 'react';
-import serviceArray from '../data/services.json';
+import React, { useMemo } from 'react';
 import Layout from '../components/Layout/Layout';
-import ServiceCard from '../components/ServiceCards/ServiceCard';
 import { Grid, Box, Accordion, AccordionSummary, AccordionDetails } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import StarIcon from '@mui/icons-material/Star';
@@ -13,6 +11,9 @@ import CarRepairIcon from '@mui/icons-material/CarRepair';
 import CarRentalIcon from '@mui/icons-material/CarRental';
 import DirectionsCarIcon from '@mui/icons-material/DirectionsCar';
 import Inventory2Icon from '@mui/icons-material/Inventory2';
+import serviceArray from '../data/services.json';
+import ServiceCard from '../components/ServiceCards/ServiceCard';
+import axios from 'axios';
 
 const iconsArr = [
   <StarIcon key="star-icon" />,
@@ -26,17 +27,54 @@ const iconsArr = [
   <CarRentalIcon key="car-rental-icon" />,
 ];
 
+interface Service {
+  id: number;
+  name: string;
+  price: string;
+  price_customer?: string[];
+  duration?: string;
+  description: string;
+  is_show_user: boolean;
+  short_description: string;
+  long_description: string;
+  createdAt?: string;
+  updatedAt?: string;
+}
+
 const Services = () => {
-  const [expanded, setExpanded] = React.useState<string | false>('POPULAR');
+  const [expanded, setExpanded] = React.useState<string | false>('MOST POPULAR');
+  const [admin_services, setServicesList] = React.useState<Service[]>([]);
 
   const handleChange = (panel: string) => (event: React.SyntheticEvent, newExpanded: boolean) => {
     setExpanded(newExpanded ? panel : false);
   };
 
+  const memoizedServices = useMemo(() => {
+    axios.get<Service[]>('/api/getServices').then((response) => setServicesList(response.data));
+
+    const array_of_services = serviceArray.map((block: any) => {
+      block.services.map((service: any) => {
+        service.shortDescription = admin_services.find(
+          (it) => it.id === service.id,
+        )?.short_description;
+        service.longDescription = admin_services.find(
+          (it) => it.id === service.id,
+        )?.long_description;
+        service.duration = admin_services.find((it) => it.id === service.id)?.duration;
+        service.prices = admin_services.find((it) => it.id === service.id)?.price_customer;
+        service.name = admin_services.find((it) => it.id === service.id)?.name;
+        return service;
+      });
+      return block;
+    });
+
+    return array_of_services;
+  }, []);
+  console.log(memoizedServices);
   return (
     <Layout>
       <Grid container justifyContent="center" sx={{ padding: '25px 0 0 0' }}>
-        {serviceArray.map((service, index) => (
+        {memoizedServices.map((service, index) => (
           <Accordion
             key={`accordiong_id_${index}`}
             expanded={expanded === service.category}
