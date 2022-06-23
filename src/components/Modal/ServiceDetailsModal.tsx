@@ -79,7 +79,7 @@ export default function ServiceDetailsModal({ open, onClose, serviceDetails }: M
             id="modal-modal-description"
             sx={{ overflow: 'auto', padding: 0, fontSize: '1.5rem' }}
           >
-            {serviceDetails.longDescription.split('✔').map((description, index) => {
+            {serviceDetails.longDescription?.split('✔').map((description, index) => {
               if (description.length > 1) {
                 return (
                   <ListItem

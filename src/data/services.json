@@ -4,13 +4,7 @@
     "services": [
       {
         "id": 15,
-        "name": "FREE Quote",
-        "prices": [
-          0
-        ],
-        "duration": "same day",
-        "shortDescription": "Free online quote for any mechanical repair or body work",
-        "longDescription": "✔Describe a problem in a comment box below ✔Email us the photos + VIN for any body work ✔We will run our estimate and send you a free quote ✔No obligation at all",
+        "priority": 0,
         "images": [
           "/images/mechanical_repair/FREE_Repair_Quote/80665a85e554e166f17e8494ac09e8e6.jpg",
           "/images/mechanical_repair/FREE_Repair_Quote/DIY-car-repair-880x660-1.jpeg",
@@ -26,13 +20,7 @@
       },
       {
         "id": 19,
-        "name": "Auto Body Shop",
-        "prices": [
-          0
-        ],
-        "duration": "1 day",
-        "shortDescription": "Fill out the form and email us some photos & VIN - we will work on a free estimate right away",
-        "longDescription": "✔To verify you are getting the best price when it comes to vehicle repairs or maintenance, we will gladly do research for you and take it to couple of shops to compare ",
+        "priority": 1,
         "images": [
           "/images/body_shop/Auto_Body_Shop/Repair-Estimate.jpg",
           "/images/body_shop/Auto_Body_Shop/alignment_laser_new.jpeg",
@@ -51,15 +39,7 @@
       },
       {
         "id": 106,
-        "name": "Deluxe Wash",
-        "prices": [
-          40,
-          45,
-          50
-        ],
-        "duration": "2-4 hours",
-        "shortDescription": "Best in and out hand car wash in Chicago, without waiting in line",
-        "longDescription": "✔Soft cloth exterior wash ✔All carpets, seats, and trunk vacuumed ✔Interior, dash and console wiped down ✔Tire dressing and microfiber drying are included",
+        "priority": 2,
         "images": [
           "/images/wash_detail/Deluxe_Hand_Wash/Car_Detailing_near_me-best_hand_wash_Chicago.jpg",
           "/images/wash_detail/Deluxe_Hand_Wash/Honda-best_hand_wash_near_me-Chicago-Auto_Detailing.jpg",
@@ -77,15 +57,7 @@
       },
       {
         "id": 166,
-        "name": "Ozone Disinfection",
-        "prices": [
-          40,
-          70,
-          110
-        ],
-        "duration": "2hrs / 4hrs / 8hrs",
-        "shortDescription": "Disinfect your car with ozone - it destroys mold, bacteria, viruses & odors",
-        "longDescription": "✔ Ozone is one of the most powerful disinfectants ✔ Quickly and effectively sanitizes passenger vehicles and kills germs  ✔In addition to eliminating bacteria, it also destroys bad odors",
+        "priority": 3,
         "images": [
           "/images/wash_detail/Ozone_Disinfection/Car-Ozone-Treatment-1.jpg",
           "/images/wash_detail/Ozone_Disinfection/Ozone-Treatment-for-Car.jpg",
@@ -98,13 +70,7 @@
       },
       {
         "id": 171,
-        "name": "Tire Repair",
-        "prices": [
-          65
-        ],
-        "duration": "4",
-        "shortDescription": "Tire leaking air? No worries: we'll patch, re-seal, and re-balance it",
-        "longDescription": "✔Is your tire leaking air? ✔We will inspect it, patch or reseal it ✔If non-reparable, we can find an identical new or used ✔Installation and re-balancing is included",
+        "priority": 4,
         "images": [
           "/images/wheels_tires/Tire_Repair/flat_tire_repair_mobile.jpg",
           "/images/wheels_tires/Tire_Repair/flat_tire_repair_spare_install_chicago.jpeg",
@@ -121,13 +87,7 @@
       },
       {
         "id": 12,
-        "name": "Emission Test",
-        "prices": [
-          75
-        ],
-        "duration": "2-4 hours",
-        "shortDescription": "With no EPA facilities left in Chicago, pass the test without wasting hours",
-        "longDescription": "✔With no EPA facilities left in Chicago, we bring your car to one in the nearest suburb ✔Shall the car fail the test – we can take it for diagnostics and repair at the shop",
+        "priority": 5,
         "images": [
           "/images/mechanical_repair/Emission_Test/03EMISSIONS-superJumbo.jpg",
           "/images/mechanical_repair/Emission_Test/Car-Emissions-Test.jpg",
@@ -136,13 +96,7 @@
       },
       {
         "id": 3,
-        "name": "Battery Jump, Test & Swap",
-        "prices": [
-          75
-        ],
-        "duration": "2",
-        "shortDescription": "Dead battery? We come to you to jump, test or replace the battery",
-        "longDescription": "✔Concierge will come to you to jump the car ✔We will test the battery and either replace the battery on the spot or take it into the shop to install it",
+        "priority": 6,
         "images": [
           "/images/mechanical_repair/Battery_Jump,_Test___Swap/AAA_Battery_Service_Chicago.png",
           "/images/mechanical_repair/Battery_Jump,_Test___Swap/CarBattery.jpeg",
@@ -158,13 +112,7 @@
       },
       {
         "id": 34,
-        "name": "Problem Diagnostics",
-        "prices": [
-          140
-        ],
-        "duration": "2-6 hours",
-        "shortDescription": "Car acting up, warning lights on? We'll take it for diagnostics and estimate repairs",
-        "longDescription": "✔Car acting up, warning light on? ✔We take it to diagnose the problem, update you on the issue and send an estimate ✔If you decide to repair, $70 goes towards its cost",
+        "priority": 7,
         "images": [
           "/images/mechanical_repair/Problem_Diagnostics/best-auto-diagnostic-chicago.jpg",
           "/images/mechanical_repair/Problem_Diagnostics/best-automotive-diagnostic-scanner.jpg",
@@ -177,14 +125,7 @@
       },
       {
         "id": 45,
-        "name": "Synthetic Oil Change",
-        "prices": [
-          110,
-          140
-        ],
-        "duration": "2-5 hours",
-        "shortDescription": "Synthetic Oil and filter change with none of the hassles or wasted time",
-        "longDescription": "✔Full synthetic Oil & Filter change ✔Fluids check and top-off ✔Up to 5 QTs for most car ✔Newer, higher-end vehicles will need Premium Mobile1 oil (+ $35)",
+        "priority": 8,
         "images": [
           "/images/mechanical_repair/Full_Synthetic_Oil_Change/Boise-Automotive-Repair-Shop.jpg",
           "/images/mechanical_repair/Full_Synthetic_Oil_Change/GettyImages-693170166-5a99f020c67335003717a070.jpg",
@@ -199,15 +140,7 @@
       },
       {
         "id": 165,
-        "name": "Mini Detail",
-        "prices": [
-          165,
-          180,
-          195
-        ],
-        "duration": "3.5 - 5 hours",
-        "shortDescription": "Better than a wash, less than a full detail. Wash + Spot Cleaning",
-        "longDescription": "✔A thorough deluxe wash, detailers spend more time on the car, spot and stain cleaning only ✔Unlike full Interior Detail, does not include shampooing",
+        "priority": 9,
         "images": [
           "/images/wash_detail/Mini_Detail/auto_car_wash_vintage_car_restoration.jpg",
           "/images/wash_detail/Mini_Detail/auto_detailing_near_me.jpg",
@@ -232,13 +165,7 @@
       },
       {
         "id": 26,
-        "name": "Multi point Inspection",
-        "prices": [
-          140
-        ],
-        "duration": "3-6 hours",
-        "shortDescription": "Check the basics of your car or steer away from buying a lemon",
-        "longDescription": "✔Multi-point inspection of fluids, hoses, belts, brakes, cooling system, suspension, HVAC, tires, etc ✔Check engine errors scan, battery test ✔You'll get a full report",
+        "priority": 10,
         "images": [
           "/images/mechanical_repair/Multi-Point_Inspection/Battery_Jump___Replacement_in_Chicago_-_AAA.jpg",
           "/images/mechanical_repair/Multi-Point_Inspection/Car-Inspection-in-Chicago.jpg",
@@ -253,15 +180,7 @@
       },
       {
         "id": 163,
-        "name": "Interior Detail",
-        "prices": [
-          255,
-          275,
-          295
-        ],
-        "duration": "5-8 hours",
-        "shortDescription": "Full deep cleaning and shampoo of your entire interior. Fresh, clean, and sparkling. ",
-        "longDescription": "✔Compressed air blow-out ✔Vacuum, brush & shampoo carpets, mats, headliner, belts & trunk ✔All cracks, vents, crevices are detailed ✔Seats are deep cleaned & shampooed; leather is treated with conditioner",
+        "priority": 11,
         "images": [
           "/images/wash_detail/Interior_Detail/auto_car_wash_vintage_car_restoration.jpg",
           "/images/wash_detail/Interior_Detail/auto_detailing_near_me.jpg",
@@ -286,15 +205,7 @@
       },
       {
         "id": 14,
-        "name": "Exterior Detail",
-        "prices": [
-          255,
-          275,
-          295
-        ],
-        "duration": "5-8 hours",
-        "shortDescription": "Removes scratches and swirl marks. Restores and locks-in the shine",
-        "longDescription": "✔Snow foam pre-soak & full hand wash ✔Clay Bar & IronX treatment to decontaminate the paint ✔ Microfiber, chamois & air drying ✔1-step buff & 2-step polish to restore the shine, remove minor scratches & swirls ✔Synthetic sealant with wax for protection✔Regular inside wash - included",
+        "priority": 12,
         "images": [
           "/images/wash_detail/Exterior_Detail/Auto-Ceramic-Chicago-Detailing-Ceramic_Coating.jpg",
           "/images/wash_detail/Exterior_Detail/Auto-Chicago-Ceramic-Ceramic_Coating-Wash.jpg",
@@ -316,14 +227,7 @@
       },
       {
         "id": 5,
-        "name": "Brake Pads / Pads with Rotors",
-        "prices": [
-          275,
-          485
-        ],
-        "duration": "3-8 hours",
-        "shortDescription": "Squeaking or grinding noise? You need new pads or pads & rotors. Consider it solved",
-        "longDescription": "✔We’ll inspect your brakes, rotors and tires ✔Brake pads replacement for one fixed price, per axle (covers 95% of cars) ✔Parts, labor, taxes, and logistics included",
+        "priority": 13,
         "images": [
           "/images/mechanical_repair/Brake_Pads_Replacement/252f9f83-b497-44d0-ab13-519573e98738-scaled.jpg",
           "/images/mechanical_repair/Brake_Pads_Replacement/Brake-Repair-Pads-and-Rotors-Chicago.jpg",
@@ -336,14 +240,7 @@
       },
       {
         "id": 169,
-        "name": "Regular Maintenance",
-        "prices": [
-          335,
-          375
-        ],
-        "duration": "4-8 hours",
-        "shortDescription": "Oil change, inspection, tire rotation, filters change, fluids, check engine, scan & more",
-        "longDescription": "✔Full Maintenance service ✔Synthetic Oil package, PLUS: ✔Multi-Point Inspection ✔Cabin and Air Filters replacement ✔Tire rotation and balancing",
+        "priority": 14,
         "images": [
           "/images/mechanical_repair/Regular_Maintenance/5-signs-need-new-battery-social.jpg",
           "/images/mechanical_repair/Regular_Maintenance/5b3bf650ecf6e519f23e1eb7.jpeg",
@@ -362,15 +259,7 @@
       },
       {
         "id": 41,
-        "name": "Showroom Detail",
-        "prices": [
-          375,
-          385,
-          395
-        ],
-        "duration": "7-11 hours",
-        "shortDescription": "Best premium quality full detailing service in Chicago. Period.",
-        "longDescription": "Combines the services of INTERIOR & EXTERIOR detailing with a FREE Engine cleaning as a bonus for a total saving of $125",
+        "priority": 15,
         "images": [
           "/images/wash_detail/Showroom_Detail/Best_Hand_Wash_Chicago(2).jpg",
           "/images/wash_detail/Showroom_Detail/Chevrolet-exterior_detailing-Chicago.jpg",
@@ -420,15 +309,7 @@
     "services": [
       {
         "id": 166,
-        "name": "Ozone Disinfection",
-        "prices": [
-          40,
-          70,
-          110
-        ],
-        "duration": "2hrs / 4hrs / 8hrs",
-        "shortDescription": "Disinfect your car with ozone - it destroys mold, bacteria, viruses & odors",
-        "longDescription": "✔ Ozone is one of the most powerful disinfectants ✔ Quickly and effectively sanitizes passenger vehicles and kills germs  ✔In addition to eliminating bacteria, it also destroys bad odors",
+        "priority": 0,
         "images": [
           "/images/wash_detail/Ozone_Disinfection/Car-Ozone-Treatment-1.jpg",
           "/images/wash_detail/Ozone_Disinfection/Ozone-Treatment-for-Car.jpg",
@@ -441,26 +322,12 @@
       },
       {
         "id": 106,
-        "name": "Deluxe Wash",
-        "prices": [
-          40,
-          45,
-          50
-        ],
-        "duration": "2-4 hours",
-        "shortDescription": "Best in and out hand car wash in Chicago, without waiting in line",
-        "longDescription": "✔Soft cloth exterior wash ✔All carpets, seats, and trunk vacuumed ✔Interior, dash and console wiped down ✔Tire dressing and microfiber drying are included",
+        "priority": 1,
         "images": []
       },
       {
         "id": 13,
-        "name": "Engine Detail",
-        "prices": [
-          75
-        ],
-        "duration": "2-3 hours",
-        "shortDescription": "Aesthetics? A leak? Rodden problem? We will decrease and detail it",
-        "longDescription": "✔Engine looking gross? ✔Have a rodent problem?  ✔Need to find a leak? ✔We will de-grease, detail, and apply sealant to your engine",
+        "priority": 2,
         "images": [
           "/images/wash_detail/Engine_Detail/Engine_Cleaning_Package-2.jpg",
           "/images/wash_detail/Engine_Detail/Untitled_1.39.2-2-scaled.jpg",
@@ -472,15 +339,7 @@
       },
       {
         "id": 57,
-        "name": "Wash & Sealant Wax",
-        "prices": [
-          80,
-          90,
-          100
-        ],
-        "duration": "",
-        "shortDescription": "Car lost its shine? Wash and hand wax it to make it shiner and protect it a little ",
-        "longDescription": "✔Full service of a regular Deluxe Wash - full in and our hand wash PLUS hand application of wax to protect the paint and give your car more shine ",
+        "priority": 3,
         "images": [
           "/images/wash_detail/Wash___Sealant_Wax/5-1-scaled.jpg",
           "/images/wash_detail/Wash___Sealant_Wax/Honda-Detailing-Auto_Chicago.jpg",
@@ -496,13 +355,7 @@
       },
       {
         "id": 18,
-        "name": "Headlight Restoration",
-        "prices": [
-          90
-        ],
-        "duration": "",
-        "shortDescription": "Oxidized, yellow, cloudy headlights? Improve the look, visibility and safety",
-        "longDescription": "✔Oxidized, discolored, yellow, cloudy headlights? ✔We'll buff, polish, and apply a sealant to improve the look, visibility and safety ✔Restores to about 85% of the “like new”",
+        "priority": 4,
         "images": [
           "/images/wash_detail/Headlight_Restoration/bigstock-Car-Service-Polishing-Of-Opti-105731030-1.jpg",
           "/images/wash_detail/Headlight_Restoration/headlight_restoration-auto_chicago-detailing_chicago.jpg",
@@ -511,15 +364,7 @@
       },
       {
         "id": 165,
-        "name": "Mini Detail",
-        "prices": [
-          165,
-          180,
-          195
-        ],
-        "duration": "3.5 - 5 hours ",
-        "shortDescription": "Better than a wash, less than a full detail. Wash + Spot Cleaning",
-        "longDescription": "✔A thorough deluxe wash, detailers spend more time on the car, spot and stain cleaning only ✔Unlike full Interior Detail, does not include shampooing",
+        "priority": 5,
         "images": [
           "/images/wash_detail/Mini_Detail/auto_car_wash_vintage_car_restoration.jpg",
           "/images/wash_detail/Mini_Detail/auto_detailing_near_me.jpg",
@@ -544,15 +389,7 @@
       },
       {
         "id": 163,
-        "name": "Interior Detail",
-        "prices": [
-          255,
-          275,
-          295
-        ],
-        "duration": "5-8 hours",
-        "shortDescription": "Full deep cleaning and shampoo of your entire interior. Fresh, clean, and sparkling. ",
-        "longDescription": "✔Compressed air blow-out ✔Vacuum, brush & shampoo carpets, mats, headliner, belts & trunk ✔All cracks, vents, crevices are detailed ✔Seats are deep cleaned & shampooed; leather is treated with conditioner",
+        "priority": 6,
         "images": [
           "/images/wash_detail/Interior_Detail/auto_car_wash_vintage_car_restoration.jpg",
           "/images/wash_detail/Interior_Detail/auto_detailing_near_me.jpg",
@@ -577,15 +414,7 @@
       },
       {
         "id": 14,
-        "name": "Exterior Detail",
-        "prices": [
-          255,
-          275,
-          295
-        ],
-        "duration": "5-8 hours",
-        "shortDescription": "Removes scratches and swirl marks. Restores and locks-in the shine",
-        "longDescription": "✔Snow foam pre-soak & full hand wash ✔Clay Bar & IronX treatment to decontaminate the paint ✔ Microfiber, chamois & air drying ✔1-step buff & 2-step polish to restore the shine, remove minor scratches & swirls ✔Synthetic sealant with wax for protection✔Regular inside wash - included",
+        "priority": 7,
         "images": [
           "/images/wash_detail/Exterior_Detail/Auto-Ceramic-Chicago-Detailing-Ceramic_Coating.jpg",
           "/images/wash_detail/Exterior_Detail/Auto-Chicago-Ceramic-Ceramic_Coating-Wash.jpg",
@@ -607,15 +436,7 @@
       },
       {
         "id": 41,
-        "name": "Showroom Detail",
-        "prices": [
-          375,
-          385,
-          395
-        ],
-        "duration": "7-11 hours",
-        "shortDescription": "Best premium quality full detailing service in Chicago. Period.",
-        "longDescription": "✔Combines the services of INTERIOR & EXTERIOR detailing with a FREE Engine cleaning as a bonus for a total saving of $125",
+        "priority": 8,
         "images": [
           "/images/wash_detail/Showroom_Detail/Best_Hand_Wash_Chicago(2).jpg",
           "/images/wash_detail/Showroom_Detail/Chevrolet-exterior_detailing-Chicago.jpg",
@@ -660,14 +481,7 @@
       },
       {
         "id": 28,
-        "name": "Paint Correction",
-        "prices": [
-          500,
-          1500
-        ],
-        "duration": "",
-        "shortDescription": "Restoring and rejuvenating the paintwork of a vehicle",
-        "longDescription": "✔Starts with a thorough wash and decontamination of the vehicle with a clay bar ✔Polishing is usually a multistage process as a range of different grades of polish are used for a refiner finish ✔when viewed in direct sunlight, it will show only true reflections and no swirl marks, scratches or blemishes",
+        "priority": 9,
         "images": [
           "/images/protection_aesthetics/Paint_Correction/1-what-is-paint-correction.jpg",
           "/images/protection_aesthetics/Paint_Correction/20200716_190322-scaled.jpg",
@@ -693,13 +507,7 @@
     "services": [
       {
         "id": 35,
-        "name": "Protective Plastic Floor Wrap",
-        "prices": [
-          5
-        ],
-        "duration": "",
-        "shortDescription": "We can put an adhesive plastic that preserves the carpet from getting dirty",
-        "longDescription": "✔ Plastic protectors to effectively and efficiently cover your freshly clean interior ",
+        "priority": 0,
         "images": [
           "/images/at_home_extras/Protective_Floor_Wrap/car_carpet_protection.jpg",
           "/images/at_home_extras/Protective_Floor_Wrap/floor_mats_for_my_car_chicago_winter.jpg",
@@ -708,14 +516,7 @@
       },
       {
         "id": 44,
-        "name": "Stickers & Adhesive Removal",
-        "prices": [
-          10,
-          20
-        ],
-        "duration": "",
-        "shortDescription": "All those old window stickers - gone Steam and / or razor removal",
-        "longDescription": "✔ Removal of old window stickers and adhesive residue ",
+        "priority": 1,
         "images": [
           "/images/at_home_extras/Stickets___Adhesive_Removal/city_of_chicago_windshield_sticker.jpg",
           "/images/at_home_extras/Stickets___Adhesive_Removal/emblem_removal_from_car_chicago.jpg",
@@ -726,13 +527,7 @@
       },
       {
         "id": 39,
-        "name": "Shampoo Floor Mats",
-        "prices": [
-          25
-        ],
-        "duration": "",
-        "shortDescription": "If your carpets are clean, but only the mats need some love - we'll get them shampooed",
-        "longDescription": "✔ If your vehicle does not need complete shampooing, we can take care of the mats only",
+        "priority": 2,
         "images": [
           "/images/at_home_extras/Protective_Floor_Wrap/car_carpet_protection.jpg",
           "/images/at_home_extras/Protective_Floor_Wrap/floor_mats_for_my_car_chicago_winter.jpg",
@@ -741,14 +536,7 @@
       },
       {
         "id": 46,
-        "name": "Tar Removal",
-        "prices": [
-          25,
-          100
-        ],
-        "duration": "",
-        "shortDescription": "Parked under the 'EL'? Drove on a freshly done road with tar splashing on your rockers?",
-        "longDescription": "✔Though it doesn’t rigidly harden on your car finish, it doesn’t come out well with ordinary cleaning ✔We use special chemicals to remove tar and get paint looking new again ",
+        "priority": 3,
         "images": [
           "/images/at_home_extras/Tar_Removal/construction_tar_on_my_car_removal.jpeg",
           "/images/at_home_extras/Tar_Removal/how_to_remove_tar_from_my_car_in_chicago.jpeg",
@@ -758,15 +546,7 @@
       },
       {
         "id": 9,
-        "name": "Dog Hair Removal",
-        "prices": [
-          35,
-          55,
-          75
-        ],
-        "duration": "",
-        "shortDescription": "Only dog owners know how hard it is to remove the hair off seats and carpets. Extra cost.",
-        "longDescription": "✔ Regular vacuuming does not remove dog hairs ✔Our detailers manually brush our pet hairs, price depends on how excessive ",
+        "priority": 4,
         "images": [
           "/images/at_home_extras/Pet_Hair___Stain_Removal/brush_dog_hair_from_car_upholstery.jpg",
           "/images/at_home_extras/Pet_Hair___Stain_Removal/car_wash_dog_hair.jpg",
@@ -779,13 +559,7 @@
       },
       {
         "id": 226,
-        "name": "Hand Wax with Synthetic Sealant",
-        "prices": [
-          45
-        ],
-        "duration": "",
-        "shortDescription": "Synthetic sealant with wax will protect the paint and bring back the sparkle",
-        "longDescription": "✔Full service of a regular Deluxe Wash - full in and our hand wash PLUS hand application of wax to protect the paint and give your car more shine ",
+        "priority": 5,
         "images": [
           "/images/wash_detail/Wash___Sealant_Wax/5-1-scaled.jpg",
           "/images/wash_detail/Wash___Sealant_Wax/Honda-Detailing-Auto_Chicago.jpg",
@@ -806,13 +580,7 @@
     "services": [
       {
         "id": 15,
-        "name": "FREE QUOTE",
-        "prices": [
-          0
-        ],
-        "duration": "",
-        "shortDescription": "Free online quote for any mechanical repair or body work",
-        "longDescription": "✔Describe a problem in a comment box below ✔Email us the photos + VIN for any body work ✔We will run our estimate and send you a free quote ✔No obligation at all",
+        "priority": 0,
         "images": [
           "/images/mechanical_repair/FREE_Repair_Quote/80665a85e554e166f17e8494ac09e8e6.jpg",
           "/images/mechanical_repair/FREE_Repair_Quote/DIY-car-repair-880x660-1.jpeg",
@@ -828,13 +596,7 @@
       },
       {
         "id": 16,
-        "name": "Fuel up",
-        "prices": [
-          10
-        ],
-        "duration": "",
-        "shortDescription": "Can't or don't want to leave your home to fill up gas? We can do it for you. ",
-        "longDescription": "✔ We locate the best price of gas near by and fill up the car for you ",
+        "priority": 1,
         "images": [
           "/images/at_home_extras/Fuel_Up/chicago_gas_station_near_me_closest.jpg",
           "/images/at_home_extras/Fuel_Up/fuel_up_my_car_filld_booster_fuel_chicago.jpeg"
@@ -842,13 +604,7 @@
       },
       {
         "id": 3,
-        "name": "Battery Jump, Test & Swap",
-        "prices": [
-          75
-        ],
-        "duration": "",
-        "shortDescription": "Dead battery? We come to you to jump, test or replace the battery",
-        "longDescription": "✔We will send a concierge to you to get your car going again ✔We will try jumping it, test the battery & alternator, and bring a new battery to swap it on a spot ✔Cost is for the service only, cost of the battery is not included. We will message you prices and options for you to pick from before heading out to you",
+        "priority": 2,
         "images": [
           "/images/mechanical_repair/Battery_Jump,_Test___Swap/AAA_Battery_Service_Chicago.png",
           "/images/mechanical_repair/Battery_Jump,_Test___Swap/CarBattery.jpeg",
@@ -864,13 +620,7 @@
       },
       {
         "id": 42,
-        "name": "Small Part Replacement",
-        "prices": [
-          70
-        ],
-        "duration": "",
-        "shortDescription": "Filters? Bulbs? This covers any service under 30 mins. ",
-        "longDescription": "✔Routine vehicle maintenance includes replacing car parts that fail due to normal wear and tear or a lack of proper maintenance ✔Cost of part plus reduced labor ",
+        "priority": 3,
         "images": [
           "/images/mechanical_repair/Small_Part_Replacement/CarBattery.jpeg",
           "/images/mechanical_repair/Small_Part_Replacement/Regular_Maintenance_In_Chicago-Service_A_B.png",
@@ -881,13 +631,7 @@
       },
       {
         "id": 12,
-        "name": "Emissions Test",
-        "prices": [
-          75
-        ],
-        "duration": "",
-        "shortDescription": "With no EPA facilities left in Chicago, pass the test without wasting hours",
-        "longDescription": "✔With no EPA facilities left in Chicago, we bring your car to one in the nearest suburb ✔Shall the car fail the test – we can take it for diagnostics and repair at the shop",
+        "priority": 4,
         "images": [
           "/images/mechanical_repair/Emission_Test/03EMISSIONS-superJumbo.jpg",
           "/images/mechanical_repair/Emission_Test/Car-Emissions-Test.jpg",
@@ -896,13 +640,7 @@
       },
       {
         "id": 36,
-        "name": "Recall & Dealership Run",
-        "prices": [
-          80
-        ],
-        "duration": "",
-        "shortDescription": "We'll bring your car for a recall or appointment with your dealership",
-        "longDescription": "✔If you are having troubles we cannot resolve for you and must take to dealership, we will gladly take the hassle out of it for you ✔Any recalls or reprogramming, we will make the dealership run so you do not have to ",
+        "priority": 5,
         "images": [
           "/images/mechanical_repair/Recall___Dealership_Run/car-dealer-showroom-display-min-scaled.jpg",
           "/images/mechanical_repair/Recall___Dealership_Run/dealership_run(1).jpg",
@@ -914,13 +652,7 @@
       },
       {
         "id": 34,
-        "name": "Problem Diagnostics",
-        "prices": [
-          140
-        ],
-        "duration": "",
-        "shortDescription": "Car acting up, warning lights on? We'll take it for diagnostics and estimate",
-        "longDescription": "✔Car acting up, warning light on? ✔We take it to diagnose the problem, update you on the issue and send an estimate ✔If you decide to repair, $70 goes towards its cost",
+        "priority": 6,
         "images": [
           "/images/mechanical_repair/Problem_Diagnostics/best-auto-diagnostic-chicago.jpg",
           "/images/mechanical_repair/Problem_Diagnostics/best-automotive-diagnostic-scanner.jpg",
@@ -933,13 +665,7 @@
       },
       {
         "id": 26,
-        "name": "Multi point Inspection",
-        "prices": [
-          140
-        ],
-        "duration": "",
-        "shortDescription": "Check the basics of your car or steer away from buying a lemon",
-        "longDescription": "✔Multi-point inspection of fluids, hoses, belts, brakes, cooling system, suspension, HVAC, tires, etc ✔Check engine errors scan, battery test ✔You'll get a full report",
+        "priority": 7,
         "images": [
           "/images/mechanical_repair/Multi-Point_Inspection/Battery_Jump___Replacement_in_Chicago_-_AAA.jpg",
           "/images/mechanical_repair/Multi-Point_Inspection/Car-Inspection-in-Chicago.jpg",
@@ -954,14 +680,7 @@
       },
       {
         "id": 45,
-        "name": "Synthetic Oil Change",
-        "prices": [
-          110,
-          140
-        ],
-        "duration": "",
-        "shortDescription": "Synthetic Oil and filter change with none of the hassles or wasted time",
-        "longDescription": "✔Full synthetic Oil & Filter change ✔Fluids check and top-off ✔Up to 5 QTs for most car ✔Newer, higher-end vehicles will need Premium Mobile1 oil (+ $30)",
+        "priority": 8,
         "images": [
           "/images/mechanical_repair/Full_Synthetic_Oil_Change/Boise-Automotive-Repair-Shop.jpg",
           "/images/mechanical_repair/Full_Synthetic_Oil_Change/GettyImages-693170166-5a99f020c67335003717a070.jpg",
@@ -976,13 +695,7 @@
       },
       {
         "id": 164,
-        "name": "Labor Cost / hour",
-        "prices": [
-          140
-        ],
-        "duration": "",
-        "shortDescription": "Hourly Labor Cost. We don't milk time or charge $200+ like some dealerships ",
-        "longDescription": "✔Whether it's repair, installation, diagnostics or you have the part you need and require labor only, our hourly rate is competitive with Chicago independent shops but include priority service, ASE technicians, AND includes pick up and drop off ",
+        "priority": 9,
         "images": [
           "/images/mechanical_repair/Labor_Cost_-_Mechanical/Oil-Change-in-Chicago.jpg",
           "/images/mechanical_repair/Labor_Cost_-_Mechanical/best_auto_repair_near_me_chicago.jpg",
@@ -997,13 +710,7 @@
       },
       {
         "id": 54,
-        "name": "TPMS Repair",
-        "prices": [
-          125
-        ],
-        "duration": "",
-        "shortDescription": "Tires are OK, but TPMS light is on? We'll diagnose and replace the sensor",
-        "longDescription": "✔TPMS light is on even when the tires seem fine? ✔We will perform tire system diagnostics ✔Will replace a failing Tire-Pressure Monitoring Sensor",
+        "priority": 10,
         "images": [
           "/images/mechanical_repair/TPMS_Repair/20200818_121526-scaled.jpg",
           "/images/mechanical_repair/TPMS_Repair/20201223_194107.jpg",
@@ -1018,13 +725,7 @@
       },
       {
         "id": 4,
-        "name": "Brake Fluid Flush",
-        "prices": [
-          150
-        ],
-        "duration": "",
-        "shortDescription": "Will check your fluid and change it when needed based on condition or car's manual",
-        "longDescription": "✔A brake fluid flush takes all the old, dirty brake fluid out of your system and replaces it with fresh, clean fluid ✔Including a brake fluid flush in your regular car maintenance is important and should be done around every 30,000 miles or every two years",
+        "priority": 11,
         "images": [
           "/images/mechanical_repair/Brake_Fluid_Flush/KFBrakeFluidEdited.jpg",
           "/images/mechanical_repair/Brake_Fluid_Flush/auto_mechanic_near_me.jpg",
@@ -1035,13 +736,7 @@
       },
       {
         "id": 1,
-        "name": "AC Coolant Recharge",
-        "prices": [
-          175
-        ],
-        "duration": "3-6 hours",
-        "shortDescription": "AC not blowing cold on a hot day in Chicago? We can help",
-        "longDescription": "✔Full  AC recharge involves evacuating the old refrigerant, and then refilling it with fresh freon",
+        "priority": 12,
         "images": [
           "/images/mechanical_repair/AC_Coolant_Recharge/Air-conditioning-system-refrigerant-recharge-862x575-1.jpg",
           "/images/mechanical_repair/AC_Coolant_Recharge/ac_coolant_recharge.jpg",
@@ -1051,13 +746,7 @@
       },
       {
         "id": 56,
-        "name": "Transmission Fluid Flush",
-        "prices": [
-          235
-        ],
-        "duration": "",
-        "shortDescription": "Extend the life of your transmission by doing the flush",
-        "longDescription": "✔Involves connecting your transmission to a professional grade machine to completely flush the transmission ✔Running solution through the lines until they come out clean ✔It then fills your system with new fluid✔Can extend life of your transmission",
+        "priority": 13,
         "images": [
           "/images/mechanical_repair/Transmission_Fluid_Flush/auto_repair_shop_for_transmission_flush.jpg",
           "/images/mechanical_repair/Transmission_Fluid_Flush/how_much_does_transmission_flush_cost_chicago.png",
@@ -1067,14 +756,7 @@
       },
       {
         "id": 6,
-        "name": "Brake Pads Replacement",
-        "prices": [
-          275,
-          485
-        ],
-        "duration": "3-8 hours",
-        "shortDescription": "Squeaking or grinding noise? You need new pads; we'll replace them",
-        "longDescription": "✔We’ll inspect your brakes, rotors and tires ✔Brake pads replacement for one fixed price, per axle (covers 95% of cars) Grinding, vibrating, and wobbling? You might need pads and rotors ✔Parts, labor, taxes, and logistics included",
+        "priority": 14,
         "images": [
           "/images/mechanical_repair/Brake_Pads_Replacement/252f9f83-b497-44d0-ab13-519573e98738-scaled.jpg",
           "/images/mechanical_repair/Brake_Pads_Replacement/Brake-Repair-Pads-and-Rotors-Chicago.jpg",
@@ -1087,14 +769,7 @@
       },
       {
         "id": 169,
-        "name": "Regular Maintenance",
-        "prices": [
-          335,
-          375
-        ],
-        "duration": "4-8 hours",
-        "shortDescription": "Oil change, inspection, tire rotation, filters change, fluids, check engine, scan & more",
-        "longDescription": "✔Full Maintenance service ✔Synthetic Oil package, PLUS: ✔Multi-Point Inspection ✔Cabin and Air Filters replacement ✔Tire rotation and balancing",
+        "priority": 15,
         "images": [
           "/images/mechanical_repair/Regular_Maintenance/5-signs-need-new-battery-social.jpg",
           "/images/mechanical_repair/Regular_Maintenance/5b3bf650ecf6e519f23e1eb7.jpeg",
@@ -1118,13 +793,7 @@
     "services": [
       {
         "id": 155,
-        "name": "Find New / Used Tires QUOTE",
-        "prices": [
-          0
-        ],
-        "duration": "",
-        "shortDescription": "Inventory of more than 50,000 used tires & can find you any new one - let us get you a deal",
-        "longDescription": "✔Whether you are preparing for the winter or need replacement of all seasons tires, we will get you a quote on new or used tires for your vehicle",
+        "priority": 0,
         "images": [
           "/images/wheels_tires/Find_New__Used_Tires_Quote/buy_new_or_used_tires_chicago.jpg",
           "/images/wheels_tires/Find_New__Used_Tires_Quote/fix_flat_tire_near_me.jpg",
@@ -1134,13 +803,7 @@
       },
       {
         "id": 171,
-        "name": "Tire Repair",
-        "prices": [
-          65
-        ],
-        "duration": "",
-        "shortDescription": "Tire leaking air? No worries: we'll patch, re-seal, and re-balance it",
-        "longDescription": "✔Is your tire leaking air? ✔We will inspect it, patch or reseal it ✔If non-reparable, we can find an identical new or used ✔Installation and re-balancing is included",
+        "priority": 1,
         "images": [
           "/images/wheels_tires/Tire_Repair/flat_tire_repair_mobile.jpg",
           "/images/wheels_tires/Tire_Repair/flat_tire_repair_spare_install_chicago.jpeg",
@@ -1157,13 +820,7 @@
       },
       {
         "id": 49,
-        "name": "Tire Rotation",
-        "prices": [
-          70
-        ],
-        "duration": "",
-        "shortDescription": "Extend the life of your tires and ensure even tire wear",
-        "longDescription": "✔By rotating your tires, you give the tires a chance to even out their wear and get extended life out of your tires✔Most manufacturers typically recommend rotating your tires every 5,000-10,000 miles",
+        "priority": 2,
         "images": [
           "/images/wheels_tires/Tire_Rotation/20200916_185142-scaled.jpg",
           "/images/wheels_tires/Tire_Rotation/Tire_Rotation_Prolong_Life_Chicago.jpg",
@@ -1177,13 +834,7 @@
       },
       {
         "id": 62,
-        "name": "Wheel Welding",
-        "prices": [
-          110
-        ],
-        "duration": "",
-        "shortDescription": "Chicago roads.... We know.... If the rim is fixable - we will fix it",
-        "longDescription": "✔If the wheel or rim is bent, we will find a way to fix it ",
+        "priority": 3,
         "images": [
           "/images/wheels_tires/Wheel_Welding/cracked_rim_repair_in_chicago.jpg",
           "/images/wheels_tires/Wheel_Welding/rim_and_tires_chicago_fix.jpg",
@@ -1195,13 +846,7 @@
       },
       {
         "id": 52,
-        "name": "Tire Rotation & Balancing",
-        "prices": [
-          125
-        ],
-        "duration": "",
-        "shortDescription": "If you drive in Chicago,balancing is only recommended once a year, but you most likely need it",
-        "longDescription": "✔During rotation, each tire and wheel is removed from your vehicle and moved to a different position to ensure that all tires wear evenly and last longer",
+        "priority": 4,
         "images": [
           "/images/wheels_tires/Tire_Rotation___Balancing/20200818_121515-1-scaled.jpg",
           "/images/wheels_tires/Tire_Rotation___Balancing/Tire-Repair-Near-Me-in-Chicago.jpg",
@@ -1217,13 +862,7 @@
       },
       {
         "id": 55,
-        "name": "TPMS Sensor Replacement",
-        "prices": [
-          125
-        ],
-        "duration": "",
-        "shortDescription": "Tires are OK, but TPMS light is on? We'll diagnose and replace the sensor",
-        "longDescription": "✔TPMS light is on even when the tires seem fine? ✔We will perform tire system diagnostics ✔Will replace a failing Tire-Pressure Monitoring Sensor",
+        "priority": 5,
         "images": [
           "/images/wheels_tires/TPMS_Repair/20201223_194107.jpg",
           "/images/wheels_tires/TPMS_Repair/TPMS_Repair.jpg",
@@ -1234,13 +873,7 @@
       },
       {
         "id": 60,
-        "name": "Wheel & Tire Storage",
-        "prices": [
-          140
-        ],
-        "duration": "",
-        "shortDescription": "Yes, we can store your summer tires through the winter season and swap them in the spring",
-        "longDescription": "✔If you are running out of storage space but would like to keep your seasonal tires; we will gladly take care of them for you until you need them again",
+        "priority": 6,
         "images": [
           "/images/wheels_tires/Wheel___Tire_Storage/find_new_tires_chicago.jpg",
           "/images/wheels_tires/Wheel___Tire_Storage/secure-tire-storage.jpg",
@@ -1249,14 +882,7 @@
       },
       {
         "id": 61,
-        "name": "Wheel Restoration",
-        "prices": [
-          125,
-          250
-        ],
-        "duration": "",
-        "shortDescription": "We offer two options: repainting and full-out powder coating. Please call with questions",
-        "longDescription": "✔Based on your preference, we will refinish the wheels to factory finish ",
+        "priority": 7,
         "images": [
           "/images/wheels_tires/Wheel_Restoration/chicago_powder_coating.jpg",
           "/images/wheels_tires/Wheel_Restoration/curb_rash_wheel_restoration.jpg",
@@ -1274,15 +900,7 @@
       },
       {
         "id": 2,
-        "name": "Alignment",
-        "prices": [
-          145,
-          145,
-          165
-        ],
-        "duration": "",
-        "shortDescription": "Tires wear unevenly? Car drifts to one side? You need an alignment",
-        "longDescription": "✔Refers to an adjustment of vehicle suspension ✔Proper alignment is adjusting the angles of the tires which affects how they make contact with the road",
+        "priority": 8,
         "images": [
           "/images/wheels_tires/Wheel_Alignment/Wheel-Alignment.jpg",
           "/images/wheels_tires/Wheel_Alignment/Wheel-alignment-nashville-auto-repair.jpg",
@@ -1298,13 +916,7 @@
     "services": [
       {
         "id": 19,
-        "name": "Auto Body Shop",
-        "prices": [
-          0
-        ],
-        "duration": "",
-        "shortDescription": "Fill out the form and email us some photos & VIN - we will work on a free estimate right away",
-        "longDescription": "✔To verify you are getting the best price when it comes to vehicle repairs or maintenance, we will gladly do research for you and take it to couple of shops to compare ",
+        "priority": 0,
         "images": [
           "/images/body_shop/Auto_Body_Shop/Repair-Estimate.jpg",
           "/images/body_shop/Auto_Body_Shop/alignment_laser_new.jpeg",
@@ -1323,14 +935,7 @@
       },
       {
         "id": 59,
-        "name": "Wet Sand",
-        "prices": [
-          50,
-          150
-        ],
-        "duration": "",
-        "shortDescription": "Sometimes you do not need to repaint just yet - we can wetsand the damaged paint and save it",
-        "longDescription": "✔Wet sanding is the process of sanding a certain measure of clear coat in order to improve or fix severely defected paint, and/or random isolated deep scratches.✔ After the sanding has been done, a heavy cutting polish is applied to bring back the gloss and shine",
+        "priority": 1,
         "images": [
           "/images/body_shop/Wet_Sanding/auto_body_shop_scratch_repair.jpg",
           "/images/body_shop/Wet_Sanding/buff_out_a_scratch_repair.jpeg",
@@ -1342,13 +947,7 @@
       },
       {
         "id": 149,
-        "name": "Auto Leather Repair",
-        "prices": [
-          150
-        ],
-        "duration": "",
-        "shortDescription": "We have one of the best leather and upholstery technicians in town. Patch or replacement - we got it ",
-        "longDescription": "✔When the seat, carpet or interior trim of a vehicle is beyond replacement, we can replace the entire upholstery of a vehicle✔ Or in cases of only one component, such as a damaged seat, upholstery replacement can be done so that the new material matches the existing material ",
+        "priority": 2,
         "images": [
           "/images/upholstery/Auto_Leather_Repair/auto_leather_repair.jpg",
           "/images/upholstery/Auto_Leather_Repair/auto_leather_seat_repair_and_conditioning.jpg",
@@ -1369,13 +968,7 @@
       },
       {
         "id": 159,
-        "name": "Glass Repair",
-        "prices": [
-          125
-        ],
-        "duration": "",
-        "shortDescription": "From a glass chip repair to full replacement - let us know what's needed - we will find a soluton ",
-        "longDescription": "✔Whether it's a  broken mirror, windshield or damage, we will provide a quote and replace it for you ",
+        "priority": 3,
         "images": [
           "/images/body_shop/Glass_Repair___Replacement/The-Ultimate-Guide-to-Windshield-Replacement-Aftercare.jpg",
           "/images/body_shop/Glass_Repair___Replacement/broken_windshield-min.2e16d0ba.fill-800x450-1.jpg",
@@ -1385,13 +978,7 @@
       },
       {
         "id": 167,
-        "name": "Paint Chip Fix / Touch-Up",
-        "prices": [
-          125
-        ],
-        "duration": "2-4 hours",
-        "shortDescription": "Let us clean up the damage, match your paint, and touch up the paint to cover the damage",
-        "longDescription": "✔If there is no need to full repainting parts of the vehicle, we can do small touch ups to match the factory color",
+        "priority": 4,
         "images": [
           "/images/body_shop/Paint_Chip___Touch-Up/IMG_3747.jpg",
           "/images/body_shop/Paint_Chip___Touch-Up/car-scratch-repair-royalty-free-image-1605299341.jpeg",
@@ -1406,13 +993,7 @@
       },
       {
         "id": 168,
-        "name": "Paintless Dent Removal",
-        "prices": [
-          125
-        ],
-        "duration": "",
-        "shortDescription": "PDR is a great method to pull some dings without paying a price of a full repair and repainting",
-        "longDescription": "✔Paintless Dent Removal will eliminate random dings on the car without removing or replacing any parts of your vehicle ",
+        "priority": 5,
         "images": [
           "/images/body_shop/Paintless_Dent_Removal/best-dent-repair-services-1080x675-1.jpg",
           "/images/body_shop/Paintless_Dent_Removal/paintless_dent_removal.jpg",
@@ -1423,14 +1004,7 @@
       },
       {
         "id": 161,
-        "name": "Headliner Replacement",
-        "prices": [
-          500,
-          900
-        ],
-        "duration": "",
-        "shortDescription": "We can repair and replace the sagging headliner. Materials + labor is included. A few days of work. ",
-        "longDescription": "✔Replacing sagging headliners that become loose over time is another common repair ✔Will match color to the rest of the interior and have it looking like new again",
+        "priority": 6,
         "images": [
           "/images/upholstery/Headliner_Replacement/Headlinings-1-1024x576-1.jpg",
           "/images/upholstery/Headliner_Replacement/auto_headliner_installation_service_in_chicago.jpg",
@@ -1441,14 +1015,7 @@
       },
       {
         "id": 30,
-        "name": "Panel Repaint",
-        "prices": [
-          400,
-          650
-        ],
-        "duration": "",
-        "shortDescription": "Any small or big paint job is not a problem - just send us some photos and we'll fix it for you ",
-        "longDescription": "✔Individual, damaged quarter panel replacement can be done in an effort to save the customer time and money ✔We do any type of work: Repair dents, fix scratches, repaint any panels ",
+        "priority": 7,
         "images": [
           "/images/upholstery/Auto_Leather_Repair/auto_leather_repair.jpg",
           "/images/upholstery/Auto_Leather_Repair/auto_leather_seat_repair_and_conditioning.jpg",
@@ -1469,13 +1036,7 @@
       },
       {
         "id": 156,
-        "name": "Flooded Carpet Repair",
-        "prices": [
-          450
-        ],
-        "duration": "",
-        "shortDescription": "Flooded car, wet and soaked carpet & padding, odor or mold? We can still save it! ",
-        "longDescription": "✔If your car has been flooded, we can help and deal with the insurance company. ✔Whether it's stripping old padding, assesing mold damage, installing new upholstery, we will get it back to pre-water damage condition ",
+        "priority": 8,
         "images": [
           "/images/upholstery/Flooded_Carpet_Repair/best_car_carpet_cleaning.jpg",
           "/images/upholstery/Flooded_Carpet_Repair/home_carpet.jpg",
@@ -1491,28 +1052,14 @@
     "services": [
       {
         "id": 48,
-        "name": "Tint Removal",
-        "prices": [
-          40,
-          125
-        ],
-        "duration": "",
-        "shortDescription": "Yes, we can peel that old tint for you begfore you put on nice, new ones",
-        "longDescription": "✔If your old tints are peeling or damaged, we will gladly remove them for you before applying a new set ",
+        "priority": 0,
         "images": [
           "/images/protection_aesthetics/Tint_Removal/Window-tint-removal-sarasota-fl-2.jpg"
         ]
       },
       {
         "id": 111,
-        "name": "Chrome Delete",
-        "prices": [
-          50,
-          750
-        ],
-        "duration": "",
-        "shortDescription": "Don't like the outdated look of chrome? Chrome-delete any element you'd like",
-        "longDescription": "✔Beautiful, no damage process of creating a subtle difference from the factory finish ✔Change the styling of your car quickly, easily and at an affordable price",
+        "priority": 1,
         "images": [
           "/images/protection_aesthetics/Chrome_Delete/chrome_delete_tesla_model_x_tesland.jpg",
           "/images/protection_aesthetics/Chrome_Delete/maxresdefault-1-1.jpg"
@@ -1520,14 +1067,7 @@
       },
       {
         "id": 47,
-        "name": "Tints",
-        "prices": [
-          260,
-          600
-        ],
-        "duration": "",
-        "shortDescription": "Tints provide heat and UV protection, and eliminates a feeling of driving in an aquarium",
-        "longDescription": "✔If you need help picking a brand or tinting percentage, we will gladly provide advice and samples of product ✔ Let the true pros do your next tint job. ",
+        "priority": 2,
         "images": [
           "/images/protection_aesthetics/Auto_Tints/Car-tint-1.jpg",
           "/images/protection_aesthetics/Auto_Tints/Window-tint-removal-sarasota-fl-2.jpg",
@@ -1539,14 +1079,7 @@
       },
       {
         "id": 33,
-        "name": "PPF Half Front",
-        "prices": [
-          650,
-          800
-        ],
-        "duration": "",
-        "shortDescription": "There is no protection against chips and scratches like PPF - Half Front.",
-        "longDescription": "✔Protect the high impact areas of your vehicle with this partial protection package",
+        "priority": 3,
         "images": [
           "/images/protection_aesthetics/PPF_-_Paint_Protection_Film/20210320_112948.jpg",
           "/images/protection_aesthetics/PPF_-_Paint_Protection_Film/20210320_112953.jpg",
@@ -1562,14 +1095,7 @@
       },
       {
         "id": 32,
-        "name": "PPF Full Front",
-        "prices": [
-          1500,
-          2100
-        ],
-        "duration": "",
-        "shortDescription": "There is no protection against chips and scratches like PPF - Full Front.",
-        "longDescription": "✔Our most popular application ✔Makes the film practically invisible ",
+        "priority": 4,
         "images": [
           "/images/protection_aesthetics/PPF_-_Paint_Protection_Film/20210320_112948.jpg",
           "/images/protection_aesthetics/PPF_-_Paint_Protection_Film/20210320_112953.jpg",
@@ -1585,13 +1111,7 @@
       },
       {
         "id": 31,
-        "name": "PPF Full Car",
-        "prices": [
-          3000
-        ],
-        "duration": "",
-        "shortDescription": "There is no protection against chips and scratches like PPF - Full Car",
-        "longDescription": "✔If you have a special car and want to keep it looking perfect all the time with minimal fuss then this is the solution✔ This package provides peace of mind that the entire painted surface of your vehicle is protected from impacts",
+        "priority": 5,
         "images": [
           "/images/protection_aesthetics/PPF_-_Paint_Protection_Film/20210320_112948.jpg",
           "/images/protection_aesthetics/PPF_-_Paint_Protection_Film/20210320_112953.jpg",
@@ -1607,15 +1127,7 @@
       },
       {
         "id": 8,
-        "name": "Ceramic Coating & Paint Correction",
-        "prices": [
-          750,
-          1100,
-          1800
-        ],
-        "duration": "",
-        "shortDescription": "Please fill out this form and we'll email or call you to answer all your questions",
-        "longDescription": "✔Ceramic is more of an aesthetic choice with some water repellent qualities✔Will gladly walk you through the process! ",
+        "priority": 6,
         "images": [
           "/images/protection_aesthetics/Ceramic_Coating/20210320_155912.jpg",
           "/images/protection_aesthetics/Ceramic_Coating/20210320_155917.jpg",
@@ -1631,14 +1143,7 @@
       },
       {
         "id": 175,
-        "name": "Vinyl Wrap",
-        "prices": [
-          2500,
-          4500
-        ],
-        "duration": "",
-        "shortDescription": "Please fill out this form and we'll email or call you to answer all your questions",
-        "longDescription": "✔Improve your car's apprearance without repainting the whole car! ✔A vinyl wrap is often more cost effective, faster and more durable than that custom paint job",
+        "priority": 7,
         "images": [
           "/images/protection_aesthetics/Vinyl_Wrap/246775212_5068935173121085_6702154097871468986_n.jpg",
           "/images/protection_aesthetics/Vinyl_Wrap/Tsautop-Snow-Camo-Vinyl-Camouflage-Car-Wrap.jpg",
@@ -1656,13 +1161,7 @@
     "services": [
       {
         "id": 63,
-        "name": "Wiper Blade Replacement",
-        "prices": [
-          30
-        ],
-        "duration": "",
-        "shortDescription": "As simple as that: we will find swap your blades for you on the spot",
-        "longDescription": "✔We will replace them for you so you can drive confidently in any weather conditions",
+        "priority": 0,
         "images": [
           "/images/at_home_extras/Wiper_Blade_Replacement/change_windshield_wiper_chicago.jpg",
           "/images/at_home_extras/Wiper_Blade_Replacement/mobile_wiper_blade_replacement.jpg",
@@ -1673,13 +1172,7 @@
       },
       {
         "id": 21,
-        "name": "Jump Start",
-        "prices": [
-          50
-        ],
-        "duration": "",
-        "shortDescription": "No jumping cables? No time to deal with it? We can send a concierge to you ASAP",
-        "longDescription": "✔If your battery died and you do not have time or cables to start it, we will gladly send someone to help! ",
+        "priority": 1,
         "images": [
           "/images/at_home_extras/Jump_Start/AAA_Battery_Service_Chicago.png",
           "/images/at_home_extras/Jump_Start/auto_mechanic_to_replace_the_battery_chicago.jpeg",
@@ -1694,13 +1187,7 @@
       },
       {
         "id": 70,
-        "name": "Flat Tire Swap",
-        "prices": [
-          60
-        ],
-        "duration": "",
-        "shortDescription": "Flat tire and definitely not feeling like putting on a donut? We'll do it for you! ",
-        "longDescription": "✔If your tire is flat, we will gladly put on a spare or take it in for patch and resealing if needed ",
+        "priority": 2,
         "images": [
           "/images/at_home_extras/Flat_Tire_Swap/flat_tire_repair_mobile.jpg",
           "/images/at_home_extras/Flat_Tire_Swap/flat_tire_repair_spare_install_chicago.jpeg",
@@ -1714,13 +1201,7 @@
       },
       {
         "id": 3,
-        "name": "Battery Jump, Test & Replacement",
-        "prices": [
-          75
-        ],
-        "duration": "",
-        "shortDescription": "Dead battery? We come to you to jump, test or replace the battery",
-        "longDescription": "✔If your battery died and you do not have time or cables to start it, we will gladly send someone to help! ✔We will also bring a battery for your make and model of the vehicle and replace it on the spot for you ",
+        "priority": 3,
         "images": [
           "/images/at_home_extras/Battery_Jump,_Test___Swap/AAA_Battery_Service_Chicago.png",
           "/images/at_home_extras/Battery_Jump,_Test___Swap/auto_mechanic_to_replace_the_battery_chicago.jpeg",
@@ -1735,13 +1216,7 @@
       },
       {
         "id": 151,
-        "name": "Car Unlock",
-        "prices": [
-          90
-        ],
-        "duration": "",
-        "shortDescription": "Similarly to AAA, we can send you a tech who will unlock the car for you",
-        "longDescription": "✔Car unloack assistance without the high price or wait times ",
+        "priority": 4,
         "images": [
           "/images/at_home_extras/Car_Unlock/chicago_auto_locksmith.jpg",
           "/images/at_home_extras/Car_Unlock/chicago_locksmith_for_the_car_near_me.jpg"
@@ -1754,13 +1229,7 @@
     "services": [
       {
         "id": 177,
-        "name": "Winterization",
-        "prices": [
-          175
-        ],
-        "duration": "",
-        "shortDescription": "We've pre-packaged some popular services for a discount. ",
-        "longDescription": "✔This package will ensure your car is in good condition to get throigh our Chicago winter. ✔ Includes full regular inspection with an emphasis on safety: Antifreeze, wipers, tires, heating, battery are are thoroughly examined. ✔ Includes both front wipers replacement (parts and labor)",
+        "priority": 0,
         "images": [
           "/images/everything_else/Winterization/Regular_Maintenance_In_Chicago-Service_A_B.png",
           "/images/everything_else/Winterization/car_winterization.jpg",
@@ -1774,14 +1243,7 @@
       },
       {
         "id": 154,
-        "name": "Detail & Oil Change",
-        "prices": [
-          295,
-          365
-        ],
-        "duration": "",
-        "shortDescription": "We've pre-packaged some popular services for a discount. ",
-        "longDescription": "✔As simple as that, either a Full Interior OR Full Exterior detailing & Full Synthetic oil change for a discount. ",
+        "priority": 1,
         "images": [
           "/images/everything_else/Detail___Oil_Change/auto_detailing_special_chicago.jpg",
           "/images/everything_else/Detail___Oil_Change/auto_upholstery_cleaning.jpg",
@@ -1796,14 +1258,7 @@
       },
       {
         "id": 153,
-        "name": "Detail & Full Inspection",
-        "prices": [
-          325,
-          365
-        ],
-        "duration": "",
-        "shortDescription": "We've pre-packaged some popular services for a discount. ",
-        "longDescription": "✔Detailing and a Full insoection pre-packaged for some extra savings",
+        "priority": 2,
         "images": [
           "/images/everything_else/Detail___Full_Inspection/auto_detailing_special_chicago.jpg",
           "/images/everything_else/Detail___Full_Inspection/auto_upholstery_cleaning.jpg",
@@ -1829,14 +1284,7 @@
       },
       {
         "id": 160,
-        "name": "Groupon Special",
-        "prices": [
-          180,
-          450
-        ],
-        "duration": "",
-        "shortDescription": "We've pre-packaged some popular services for a discount. ",
-        "longDescription": "✔Check out our Groupon specials and see if there are any services that might interes you - we are here to help and get it done",
+        "priority": 3,
         "images": [
           "/images/everything_else/Groupon_Special/best_mobile_car_wash.jpg",
           "/images/everything_else/Groupon_Special/car_inspection_groupon.jpg",
@@ -1852,13 +1300,7 @@
     "services": [
       {
         "id": 69,
-        "name": "CUSTOM REQUESTS",
-        "prices": [
-          0
-        ],
-        "duration": "",
-        "shortDescription": "Go ahead, send us you to-do list. We do everything and like a good challenge",
-        "longDescription": "✔Yes, we are probably the only place in North America where you can give pretty much any car service TO-DO list to and we'll get it all sorted out ✔ One place that does it all, without you leaving your home ✔Welcome to the future, Chicagoan :))",
+        "priority": 0,
         "images": [
           "/images/everything_else/Custom_Request/best_auto_service_chicago.jpg",
           "/images/everything_else/Custom_Request/car_dealership_custom_work.jpg",
@@ -1873,14 +1315,7 @@
       },
       {
         "id": 172,
-        "name": "TOWING",
-        "prices": [
-          140,
-          200
-        ],
-        "duration": "1-3 hours",
-        "shortDescription": "Send us the time and place - we'll arrange the towing for you, even on a short notice",
-        "longDescription": "✔Finding a reliable towing company yourself that would not try to rip you off is not easy, to the the least ✔Or you can reach out to us and we'll arrange everything for you",
+        "priority": 1,
         "images": [
           "/images/everything_else/Towing/car_towing_near_me_AAA.jpg",
           "/images/everything_else/Towing/chicago_tripple_A_car_towing.jpg",
@@ -1891,13 +1326,7 @@
       },
       {
         "id": 162,
-        "name": "INTER-STATE CAR SHIPPING",
-        "prices": [
-          500
-        ],
-        "duration": "1-7 days",
-        "shortDescription": "Please email us your requiremenets and timing - we will work on a quote",
-        "longDescription": "✔If you are here for cross-country car shipping and moving, you probably have done some research already and know how painful the experience of finding a reliable hauling company can be ✔We are here to to make things as simple as they can be",
+        "priority": 2,
         "images": [
           "/images/everything_else/Inter-State_Car_Shipping/car_shipping_chicago.jpg",
           "/images/everything_else/Inter-State_Car_Shipping/haul_my_car_interstate.jpg",
@@ -1908,13 +1337,7 @@
       },
       {
         "id": 150,
-        "name": "CAR STORAGE",
-        "prices": [
-          500
-        ],
-        "duration": "week-year",
-        "shortDescription": "We offer short and long term vehicle storage solutions. Email with any questions. ",
-        "longDescription": "✔Please contact us for prices and we'll find the best storage solution for you",
+        "priority": 3,
         "images": [
           "/images/everything_else/Car_Storage/car_storage_in_chidago.jpg",
           "/images/everything_else/Car_Storage/long_term_parking_near_me_in_chicago.jpg",
