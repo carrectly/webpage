@@ -8,40 +8,40 @@ spec:
     matchLabels:
       app: carrectlyweb
   replicas: 3
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxSurge: 50%
-      maxUnavailable: 0%
+  strategy: 
+     type: RollingUpdate
+     rollingUpdate:
+       maxSurge: 50%
+       maxUnavailable: 0%
   template:
     metadata:
       labels:
-        app: carrectlyweb
+         app: carrectlyweb
     spec:
       containers:
         - name: carrectlyweb
-          image: '<imageTag>'
+          image: "<imageTag>"
 
 ---
-apiVersion: v1
-kind: Service
-metadata:
-  name: carrectlyweb-service
-  labels:
-    app: carrectlyweb
-spec:
-  ports:
-    - name: carrectlyweb
-      port: 3000
-      targetPort: 3000
-  selector:
-    app: carrectlyweb
+    apiVersion: v1
+    kind: Service
+    metadata:
+      name: carrectlyweb-service
+      labels:
+        app: carrectlyweb
+    spec:
+       ports:
+        - name: carrectlyweb
+          port: 3000
+          targetPort: 3000
+       selector:
+        app: carrectlyweb
 
 ---
 apiVersion: autoscaling/v1
 kind: HorizontalPodAutoscaler
 metadata:
-  name: carrectlyweb-autoscaling
+  name: carrectlyweb-autoscaling 
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
