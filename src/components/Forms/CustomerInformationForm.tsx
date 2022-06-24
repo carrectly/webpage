@@ -22,11 +22,11 @@ const TextMaskCustom = React.forwardRef<HTMLElement, CustomProps>(function TextM
   return (
     <IMaskInput
       {...other}
-      //@ts-expect-error Incorrect type declaration in library, no fix at time of import
+      //@ts-no-check Incorrect type declaration in library, no fix at time of import
       mask={'(000) 000-0000'}
       unmask={true}
-      inputRef={ref}
-      onAccept={(value: string) => onChange({ target: { name: props.name, value } })}
+      inputRef={ref as any}
+      onAccept={(value: any) => onChange({ target: { name: props.name, value } })}
       overwrite
     />
   );
