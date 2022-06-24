@@ -1,4 +1,5 @@
-import React, { useMemo } from 'react';
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import React, { useEffect } from 'react';
 import Layout from '../components/Layout/Layout';
 import { Grid, Box, Accordion, AccordionSummary, AccordionDetails } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
@@ -14,6 +15,8 @@ import Inventory2Icon from '@mui/icons-material/Inventory2';
 import serviceArray from '../data/services.json';
 import ServiceCard from '../components/ServiceCards/ServiceCard';
 import axios from 'axios';
+import { ServiceType } from '../../utils/types';
+import Loader from '../../public/images/general/loader.svg';
 
 const iconsArr = [
   <StarIcon key="star-icon" />,
@@ -41,40 +44,74 @@ interface Service {
   updatedAt?: string;
 }
 
+interface ServiceList {
+  category: string;
+  services: ServiceType[];
+}
+
+const mergeServices = (admin_services: Service[]) => {
+  const array_of_services = serviceArray.map((block: any) => {
+    block.services.map((service: any) => {
+      service.shortDescription = admin_services.find(
+        (it) => it.id === service.id,
+      )?.short_description;
+      service.longDescription = admin_services.find((it) => it.id === service.id)?.long_description;
+      service.duration = admin_services.find((it) => it.id === service.id)?.duration;
+      service.prices = admin_services.find((it) => it.id === service.id)?.price_customer;
+      service.name = admin_services.find((it) => it.id === service.id)?.name;
+      return service;
+    });
+    return block;
+  });
+
+  return array_of_services;
+};
+
 const Services = () => {
   const [expanded, setExpanded] = React.useState<string | false>('MOST POPULAR');
-  const [admin_services, setServicesList] = React.useState<Service[]>([]);
+  const [data, setData] = React.useState<ServiceList[]>([]);
+  const [isLoading, setLoading] = React.useState(false);
 
   const handleChange = (panel: string) => (event: React.SyntheticEvent, newExpanded: boolean) => {
     setExpanded(newExpanded ? panel : false);
   };
 
-  const memoizedServices = useMemo(() => {
-    axios.get<Service[]>('/api/getServices').then((response) => setServicesList(response.data));
+  useEffect(() => {
+    if (data.length === 0) {
+      const fetchServices = async () => {
+        setLoading(true);
+        const { data } = await axios.get('/api/getServices');
+        return data;
+      };
 
-    const array_of_services = serviceArray.map((block: any) => {
-      block.services.map((service: any) => {
-        service.shortDescription = admin_services.find(
-          (it) => it.id === service.id,
-        )?.short_description;
-        service.longDescription = admin_services.find(
-          (it) => it.id === service.id,
-        )?.long_description;
-        service.duration = admin_services.find((it) => it.id === service.id)?.duration;
-        service.prices = admin_services.find((it) => it.id === service.id)?.price_customer;
-        service.name = admin_services.find((it) => it.id === service.id)?.name;
-        return service;
+      fetchServices().then((data) => {
+        const new_arr = mergeServices(data);
+        setData(new_arr);
+        setLoading(false);
       });
-      return block;
-    });
-
-    return array_of_services;
+    }
   }, []);
-  console.log(memoizedServices);
+
+  if (isLoading)
+    return (
+      <Layout>
+        <div
+          style={{
+            position: 'fixed',
+            top: '50%',
+            left: '50%',
+            transform: 'translate(-50%, -50%)',
+          }}
+        >
+          <Loader />
+        </div>
+      </Layout>
+    );
+
   return (
     <Layout>
       <Grid container justifyContent="center" sx={{ padding: '25px 0 0 0' }}>
-        {memoizedServices.map((service, index) => (
+        {data.map((service, index) => (
           <Accordion
             key={`accordiong_id_${index}`}
             expanded={expanded === service.category}
