@@ -1,12 +1,12 @@
 import React from 'react';
-import { Controller, Control, FieldErrors, RegisterOptions } from 'react-hook-form';
+import { Controller, Control, RegisterOptions } from 'react-hook-form';
 import { TextField, TextFieldProps } from '@mui/material';
 
 interface InputFieldProps {
   fieldName: string;
   fieldLabel: string;
   control: Control;
-  errors: FieldErrors;
+  errors: any;
   disabled?: boolean;
   required?: boolean;
   minLength?: number;
@@ -34,6 +34,9 @@ const ControlledInputField: React.FC<InputFieldProps> = ({
     ...customHelperText,
   };
 
+  const typeError = errors[fieldName]?.type;
+  const helpText = helperText[typeError];
+
   return (
     <Controller
       name={fieldName}
@@ -48,10 +51,7 @@ const ControlledInputField: React.FC<InputFieldProps> = ({
           id={fieldName}
           label={fieldLabel}
           error={Boolean(errors[fieldName])}
-          helperText={
-            errors[fieldName] &&
-            (helperText[errors[fieldName].type] || `${fieldLabel} is not valid`)
-          }
+          helperText={errors[fieldName] && (helpText || `${fieldLabel} is not valid`)}
           {...extraProps}
           {...field}
         />
