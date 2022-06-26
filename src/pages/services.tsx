@@ -1,3 +1,4 @@
+
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useEffect } from 'react';
 import Layout from '../components/Layout/Layout';
@@ -112,6 +113,7 @@ const Services = () => {
     <Layout>
       <Grid container justifyContent="center" sx={{ padding: '25px 0 0 0' }}>
         {data.map((service, index) => (
+
           <Accordion
             key={`accordiong_id_${index}`}
             expanded={expanded === service.category}
