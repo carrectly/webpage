@@ -17,6 +17,7 @@ pipeline {
                  stage('Build Docker image') {
                  steps {
                      script {
+                        sh 'echo CARRECTLY_ADMIN_URL=$CARRECTLY_ADMIN_URL  >>.env'
                         dockerImage=docker.build registry
                       }
                     }

@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import React, { useContext, useEffect } from 'react';
 import Layout from 'components/Layout/Layout';
 import { Store } from '../../utils/Store';
-import { useForm, SubmitHandler } from 'react-hook-form';
+import { useForm, SubmitHandler, FieldValues } from 'react-hook-form';
 import StepperComponent from 'components/Stepper/Stepper';
 import { CustomerInformationForm } from 'components/Forms/CustomerInformationForm';
 import { CarInformationFrom } from 'components/Forms/CarInformationForm';
@@ -29,7 +29,7 @@ export default function Shipping() {
     );
   }, [state, setValue, shippingAddress]);
 
-  const onSubmit: SubmitHandler<OrderDetailsType> = (data) => {
+  const onSubmit: SubmitHandler<FieldValues> = (data) => {
     dispatch({
       type: 'SAVE_SHIPPING_ADDRESS',
       payload: data,
