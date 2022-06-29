@@ -36,7 +36,6 @@ spec:
           targetPort: 3000
        selector:
         app: carrectlyweb
-
 ---
 apiVersion: autoscaling/v1
 kind: HorizontalPodAutoscaler
