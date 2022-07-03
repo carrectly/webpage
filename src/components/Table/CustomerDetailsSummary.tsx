@@ -14,15 +14,31 @@ import { OrderDetailsType } from '../../../utils/types';
 import { Store } from '../../../utils/Store';
 import moment from 'moment';
 import { CardShadow } from 'components/StyledBaseComponents/CardShadow';
+import Cookies from 'js-cookie';
 
 export const CustomerDetailsSummary: React.FC = () => {
   const router = useRouter();
-  const { state } = useContext(Store);
-  const { shippingAddress } = state;
+  const { state, dispatch } = useContext(Store);
+  const { shippingAddress, cartItems, carSize } = state;
 
   const editCustomerInfo = () => {
     router.push('/orderdetails');
   };
+
+  if (shippingAddress.dropoffDate === undefined || shippingAddress.pickupDate === undefined) {
+    const dropoffDate = JSON.parse(Cookies.get('shippingAddress') as string).dropoffDate;
+    const pickupDate = JSON.parse(Cookies.get('shippingAddress') as string).pickupDate;
+    shippingAddress.dropoffDate = moment(dropoffDate);
+    shippingAddress.pickupDate = moment(pickupDate);
+    dispatch({
+      type: 'SAVE_SHIPPING_ADDRESS',
+      payload: {
+        cartItems,
+        carSize,
+        ...shippingAddress,
+      },
+    });
+  }
 
   return (
     <>
