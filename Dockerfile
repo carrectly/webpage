@@ -4,7 +4,12 @@ WORKDIR /app
 
 COPY . /app
 
+ENV PATH ./.env:/app/.env:$PATH
+
 RUN npm i 
 
 EXPOSE 3000
-CMD  npm run dev
+
+RUN npm run build
+
+CMD ["npm", "start"]

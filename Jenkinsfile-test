@@ -6,7 +6,7 @@ pipeline {
              LOCATION = 'us-central1-c'
              CREDENTIALS_ID = 'gke'
              registry = "pavlohortovenko20/carrectlyweb:${env.BUILD_NUMBER}"
-             registryCredential ='dockerhub_cred'
+             registryCredential = 'dockerhub_cred'
          }
          stages {
                  stage('Checout') {
@@ -17,6 +17,7 @@ pipeline {
                  stage('Build Docker image') {
                  steps {
                      script {
+                        sh 'echo CARRECTLY_ADMIN_URL=$CARRECTLY_ADMIN_URL_DEV >>.env'
                         dockerImage=docker.build registry
                       }
                     }
