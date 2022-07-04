@@ -6,8 +6,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     const response = await axios.post(`${process.env.CARRECTLY_ADMIN_URL}/api/newBooking`, {
       param: req.body,
     });
-
-    await axios.post(`${process.env.CARRECTLY_ADMIN_URL_OLD}/api/newBooking`, {
+    
+    await axios.post('https://carrectlyadmin.com/api/newBooking', {
       param: req.body,
     });
 
