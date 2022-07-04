@@ -3,11 +3,11 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   try {
-    const response = await axios.post(`${process.env.CARRECTLY_ADMIN_URL}/api/newBooking`, {
+    const response = await axios.post(`${process.env.CARRECTLY_ADMIN_URL}/api/booking`, {
       param: req.body,
     });
 
-    await axios.post(`${process.env.CARRECTLY_ADMIN_URL_OLD}/api/newBooking`, {
+    await axios.post(`${process.env.CARRECTLY_ADMIN_URL_OLD}/api/booking`, {
       param: req.body,
     });
 
