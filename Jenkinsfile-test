@@ -57,6 +57,12 @@ pipeline {
                     verifyDeployments: true])
                     }
                 }
+                stage('Clear cache') {
+                    steps {
+                        script {
+                            sh "curl -X POST -H 'X-Auth-Key: ERmTcV7AlF2qB9txHYeNTyu5BU0ublGIJaVsBuHO' -H 'X-Auth-Email: Taras@carrectly.com'  -H \'type: application/json\' -d'{\"purge_everything\" :true}' 'https://api.cloudflare.com/client/v4/zones/b50ae345b88af2be373473c5be04a489/purge_cache'"
+                    }
+                }
             }
         }
     
