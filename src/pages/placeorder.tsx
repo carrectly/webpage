@@ -36,6 +36,7 @@ function PlaceOrder() {
 
   const failSafeCommentServicesRequested = cartItems.map((item: ServiceType) => {
     // const finalItemPrice = item.prices.length > 2 ? +item.prices[priceIndex] : +item.prices[0];
+
     return item.name; // temporarily using prices array
   });
 
