@@ -51,7 +51,7 @@ export const CustomerDetailsSummary: React.FC = () => {
             <TableBody>
               {Object.keys(shippingAddress).reduce<React.ReactNode[]>((tableRows, key) => {
                 const value = shippingAddress[key as keyof OrderDetailsType];
-                if (value) {
+                if (value && fieldLabelsUI[key as keyof typeof fieldLabelsUI]) {
                   tableRows.push(
                     <TableRow key={key}>
                       <TableCell sx={{ fontWeight: 'bold' }}>
