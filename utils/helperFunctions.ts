@@ -20,9 +20,9 @@ export const fieldLabelsUI = {
 
 export const totalPrice = (cartItemsArray: ServiceType[], priceIndex: number) => {
   return cartItemsArray.reduce((subTotal, service) => {
-    if (service.prices.length > 2) {
-      return subTotal + service.prices[priceIndex];
+    if (service.prices?.length > 2) {
+      return subTotal + +service.prices[priceIndex];
     }
-    return subTotal + service.prices[0];
+    return subTotal + +service.prices[0];
   }, 0);
 };
