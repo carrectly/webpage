@@ -100,12 +100,11 @@ const PlacesAutocomplete = ({ labelField, control, fieldName, required, errors }
           value={value}
           onChange={(event: any, newValue: any | null) => {
             setOptions(newValue ? [newValue, ...options] : options);
-
             const address = newValue?.description;
             newValue
               ? getGeocode({ address }).then((results) => {
                   const zipCode = getZipCode(results[0], false);
-                  newValue.description = `${newValue?.description}, ${zipCode}`;
+                  newValue.description = `${newValue?.description}, ${zipCode ? zipCode : ''}`;
                   setValue(newValue);
                   field.onChange(newValue?.description);
                 })
